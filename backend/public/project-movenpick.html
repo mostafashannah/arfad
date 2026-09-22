@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem("arfad-theme") || "light";
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+})();
+</script>
 <title>Movenpick ARFAD Projects</title>
 <meta name="description" content="850 doors, kitchen joinery and 4,850&nbsp;m&sup2; of wall cladding delivered for a 5-star hotel development.">
 <meta name="robots" content="index, follow, max-image-preview:large">
@@ -69,6 +79,10 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       <a href="contact.html">Contact</a>
     </nav>
     <a class="btn solid cta-desktop" href="contact.html">Request a Quote</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -272,6 +286,25 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     });
   }, {threshold:.4});
   parsed.forEach(function(p){ io2.observe(p.el); });
+})();
+
+/* light/dark mode toggle */
+(function(){
+  var btn = document.getElementById("themeToggle");
+  if(!btn) return;
+  function current(){ return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+  function sync(){
+    var t = current();
+    btn.setAttribute("aria-pressed", t === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  }
+  sync();
+  btn.addEventListener("click", function(){
+    var next = current() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try{ localStorage.setItem("arfad-theme", next); }catch(e){}
+    sync();
+  });
 })();
 
 /* mobile nav toggle */

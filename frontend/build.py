@@ -33,6 +33,10 @@ def nav(active):
       {links_html}
     </nav>
     <a class="btn solid cta-desktop" href="{cta_href}">{cta}</a>
+    <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
@@ -72,6 +76,17 @@ FOOTER = '''<footer id="contact">
 WHATSAPP_FAB = '''<a class="whatsapp-fab" href="https://wa.me/966561210469" target="_blank" rel="noopener" aria-label="Chat with ARFAD on WhatsApp">
   <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.699 4.606 1.902 6.47L4 29l7.72-1.865A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.6a9.57 9.57 0 0 1-4.885-1.34l-.35-.207-4.58 1.106 1.223-4.463-.228-.365A9.56 9.56 0 0 1 5.6 15c0-5.735 4.668-10.4 10.404-10.4C21.738 4.6 26.4 9.265 26.4 15s-4.662 10.4-10.396 10.4Zm5.71-7.79c-.313-.157-1.85-.913-2.137-1.017-.287-.104-.496-.157-.705.157-.208.313-.808 1.017-.99 1.226-.183.209-.365.235-.678.078-.313-.157-1.322-.487-2.518-1.552-.93-.83-1.559-1.855-1.741-2.168-.183-.313-.02-.482.137-.638.14-.14.313-.365.47-.548.157-.183.209-.313.313-.522.104-.209.052-.391-.026-.548-.078-.157-.705-1.7-.966-2.328-.254-.61-.512-.527-.705-.537l-.6-.011c-.209 0-.548.078-.835.391-.287.313-1.096 1.07-1.096 2.612s1.122 3.03 1.278 3.239c.157.209 2.208 3.372 5.35 4.728.747.323 1.33.516 1.784.66.749.238 1.431.204 1.97.124.601-.09 1.85-.756 2.11-1.487.261-.73.261-1.356.183-1.487-.078-.13-.287-.209-.6-.365Z"/></svg>
 </a>'''
+
+THEME_INIT = '''<script>
+(function(){
+  try{
+    var t = localStorage.getItem("arfad-theme") || "light";
+    document.documentElement.setAttribute("data-theme", t);
+  }catch(e){
+    document.documentElement.setAttribute("data-theme", "light");
+  }
+})();
+</script>'''
 
 HEAD = '''<title>{title}</title>
 <meta name="description" content="{desc}">
@@ -251,6 +266,25 @@ JS_REVEAL_OBSERVER = '''<script>
   parsed.forEach(function(p){ io2.observe(p.el); });
 })();
 
+/* light/dark mode toggle */
+(function(){
+  var btn = document.getElementById("themeToggle");
+  if(!btn) return;
+  function current(){ return document.documentElement.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+  function sync(){
+    var t = current();
+    btn.setAttribute("aria-pressed", t === "dark" ? "true" : "false");
+    btn.setAttribute("aria-label", t === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  }
+  sync();
+  btn.addEventListener("click", function(){
+    var next = current() === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try{ localStorage.setItem("arfad-theme", next); }catch(e){}
+    sync();
+  });
+})();
+
 /* mobile nav toggle */
 (function(){
   var toggle = document.querySelector(".nav-toggle");
@@ -300,7 +334,7 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     canonical_path = path or active
     canonical = f"{SITE_URL}/{canonical_path}"
     og_title = _strip_tags(title)
-    head = HEAD.format(title=title, desc=desc, canonical=canonical, og_title=og_title, site_url=SITE_URL)
+    head = THEME_INIT + "\n" + HEAD.format(title=title, desc=desc, canonical=canonical, og_title=og_title, site_url=SITE_URL)
     head += "\n" + ORG_SCHEMA
     if extra_head:
         head += "\n" + extra_head

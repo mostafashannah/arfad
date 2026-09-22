@@ -14,6 +14,7 @@
   --badge-bg:#E8F0FA;
   --card:#FFFFFF;
   --shadow: 0 20px 50px -30px rgba(10,37,64,.25);
+  --nav-scrolled-bg: rgba(255,255,255,.92);
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
@@ -32,6 +33,7 @@
     --badge-bg:rgba(9,20,35,.16);
     --card:#101C2B;
     --shadow: 0 20px 50px -30px rgba(0,0,0,.6);
+    --nav-scrolled-bg: rgba(11,20,32,.92);
   }
 }
 :root[data-theme="dark"]{
@@ -50,6 +52,7 @@
   --badge-bg:rgba(9,20,35,.16);
   --card:#101C2B;
   --shadow: 0 20px 50px -30px rgba(0,0,0,.6);
+  --nav-scrolled-bg: rgba(11,20,32,.92);
 }
 
 *{box-sizing:border-box;}
@@ -155,24 +158,25 @@ header.nav .btn.solid:hover{background:var(--bronze-deep);border-color:var(--bro
 /* scrolled state: background fades in past 50px, logo/menu revert from white-on-photo to dark-on-light */
 header.nav{transition:background .25s ease, border-color .25s ease, backdrop-filter .25s ease;}
 header.nav.nav-scrolled{
-  background:rgba(255,255,255,.92);
+  background:var(--nav-scrolled-bg);
   backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);
 }
-header.nav.nav-scrolled .brand{color:var(--navy);}
+header.nav.nav-scrolled .brand{color:var(--ink);}
 header.nav.nav-scrolled .brand-mark{filter:none;}
-header.nav.nav-scrolled .brand-name{color:var(--navy);text-shadow:none;}
+header.nav.nav-scrolled .brand-name{color:var(--ink);text-shadow:none;}
 header.nav.nav-scrolled .brand-name img{filter:none;}
 header.nav.nav-scrolled .brand-name small{color:var(--ink-soft);}
-header.nav.nav-scrolled nav.links{color:var(--navy);}
-header.nav.nav-scrolled nav.links a{color:var(--navy);text-shadow:none;}
-header.nav.nav-scrolled nav.links a:not(:last-child)::after{color:rgba(10,37,64,.35);}
+header.nav.nav-scrolled nav.links{color:var(--ink);}
+header.nav.nav-scrolled nav.links a{color:var(--ink);text-shadow:none;}
+header.nav.nav-scrolled nav.links a:not(:last-child)::after{color:var(--ink-soft);}
 header.nav.nav-scrolled nav.links a:hover,header.nav.nav-scrolled nav.links a[aria-current="page"]{color:var(--bronze-deep);}
-header.nav.nav-scrolled .btn{border-color:var(--navy);color:var(--navy);}
-header.nav.nav-scrolled .btn:hover{background:var(--navy);color:#fff;}
+header.nav.nav-scrolled .btn{border-color:var(--ink);color:var(--ink);}
+header.nav.nav-scrolled .btn:hover{background:var(--ink);color:var(--bg);}
 header.nav.nav-scrolled .btn.solid{background:var(--bronze);border-color:var(--bronze);color:#fff;}
 header.nav.nav-scrolled .btn.solid:hover{background:var(--bronze-deep);border-color:var(--bronze-deep);color:#fff;}
-header.nav.nav-scrolled .nav-toggle span{background:var(--navy);box-shadow:none;}
+header.nav.nav-scrolled .theme-toggle{color:var(--ink);}
+header.nav.nav-scrolled .nav-toggle span{background:var(--ink);box-shadow:none;}
 
 /* mobile nav toggle (hamburger) */
 .nav-toggle{
@@ -182,6 +186,21 @@ header.nav.nav-scrolled .nav-toggle span{background:var(--navy);box-shadow:none;
 }
 .nav-toggle span{display:block;width:22px;height:2px;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.45);transition:transform .2s,opacity .2s;}
 .nav-toggle span+span{margin-top:5px;}
+
+/* light/dark mode toggle */
+.theme-toggle{
+  display:flex;align-items:center;justify-content:center;flex:none;
+  width:36px;height:36px;padding:0;margin:0;border-radius:50%;
+  background:transparent;border:1px solid rgba(255,255,255,.5);color:#fff;
+  cursor:pointer;transition:background .2s,color .2s,border-color .2s;
+}
+header.nav.nav-scrolled .theme-toggle{border-color:var(--line);}
+.theme-toggle:hover{background:rgba(255,255,255,.15);}
+header.nav.nav-scrolled .theme-toggle:hover{background:var(--badge-bg);}
+.theme-toggle svg{width:17px;height:17px;display:block;}
+.theme-toggle .icon-moon{display:none;}
+:root[data-theme="dark"] .theme-toggle .icon-sun{display:none;}
+:root[data-theme="dark"] .theme-toggle .icon-moon{display:block;}
 
 @media (max-width:900px){
   .nav-toggle{display:flex;flex-direction:column;}
@@ -470,7 +489,7 @@ html:not(.has-js) .hero-caption:first-child{opacity:1;}
 .client-band{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px;}
 .chip{
   font-family:"Montserrat",sans-serif;font-size:.72rem;letter-spacing:.03em;
-  background:var(--badge-bg);border:1px solid transparent;padding:7px 12px;border-radius:100px;color:var(--navy);
+  background:var(--badge-bg);border:1px solid transparent;padding:7px 12px;border-radius:100px;color:var(--ink);
 }
 
 /* client logo slider */
