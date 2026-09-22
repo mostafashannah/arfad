@@ -213,10 +213,10 @@ header.nav.nav-scrolled .nav-toggle span{background:var(--ink);box-shadow:none;}
 .btn{
   font-family:"Montserrat",sans-serif;font-size:.78rem;letter-spacing:.04em;text-transform:none;
   padding:12px 22px;border-radius:100px;text-decoration:none;font-weight:600;white-space:nowrap;
-  border:1.5px solid var(--bronze-light);color:var(--bronze-light);
+  border:1.5px solid var(--accent-text);color:var(--accent-text);
   transition:background .15s,color .15s,transform .15s;
 }
-.btn:hover{background:var(--bronze-light);color:#fff;transform:translateY(-1px);}
+.btn:hover{background:var(--accent-text);color:var(--bg);transform:translateY(-1px);}
 .btn.solid{background:var(--bronze);border-color:var(--bronze);color:#fff;position:relative;overflow:hidden;}
 .btn.solid:hover{background:var(--bronze-deep);border-color:var(--bronze-deep);color:#fff;}
 .btn.solid::after{
