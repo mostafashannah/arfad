@@ -163,9 +163,9 @@ TRACK_SCRIPT = '''<script>
   try{
     var payload = JSON.stringify({ path: location.pathname, referrer: document.referrer || null });
     if(navigator.sendBeacon){
-      navigator.sendBeacon("/api/track", new Blob([payload], { type: "application/json" }));
+      navigator.sendBeacon("/api/visit", new Blob([payload], { type: "application/json" }));
     } else {
-      fetch("/api/track", { method: "POST", headers: { "Content-Type": "application/json" }, body: payload, keepalive: true }).catch(function(){});
+      fetch("/api/visit", { method: "POST", headers: { "Content-Type": "application/json" }, body: payload, keepalive: true }).catch(function(){});
     }
   }catch(e){}
 })();
