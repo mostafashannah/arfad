@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "db:push": "drizzle-kit push",
-    "seed": "tsx db/seed.ts"
+    "seed": "tsx db/seed.ts",
+    "register-media": "tsx db/register-site-media.ts"
   },
   "dependencies": {
     "@libsql/client": "^0.14.0",

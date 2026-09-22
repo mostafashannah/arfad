@@ -4,5 +4,7 @@ export async function register() {
     await ensureSchema();
     const { runSeed } = await import("./db/seed");
     await runSeed();
+    const { registerSiteMedia } = await import("./db/register-site-media");
+    await registerSiteMedia();
   }
 }
