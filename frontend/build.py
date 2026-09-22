@@ -157,6 +157,19 @@ window.scrollTo(0,0);
 window.addEventListener("pageshow", function(){ window.scrollTo(0,0); });
 window.addEventListener("load", function(){ window.scrollTo(0,0); });
 </script>'''
+
+TRACK_SCRIPT = '''<script>
+(function(){
+  try{
+    var payload = JSON.stringify({ path: location.pathname, referrer: document.referrer || null });
+    if(navigator.sendBeacon){
+      navigator.sendBeacon("/api/track", new Blob([payload], { type: "application/json" }));
+    } else {
+      fetch("/api/track", { method: "POST", headers: { "Content-Type": "application/json" }, body: payload, keepalive: true }).catch(function(){});
+    }
+  }catch(e){}
+})();
+</script>'''
 JS_REVEAL_OBSERVER = '''<script>
 (function(){
   var sel = ".head,.svc-card,.cert-card,.cert-photo-card,.feature-card,.stat-cell,.contact-card,.vm-item,.process-step,.table-wrap,.about-grid>div,.qual-cols>*,.detail-hero .wrap>*,.img-divider,.thumb-grid>*,.why-item,.client-band,.client-marquee,.foot-grid>*";
@@ -349,7 +362,7 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     head += "\n" + ORG_SCHEMA
     if extra_head:
         head += "\n" + extra_head
-    content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER + "\n" + WHATSAPP_FAB + "\n" + THEME_SWITCH + "\n" + JS_REVEAL_OBSERVER
+    content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER + "\n" + WHATSAPP_FAB + "\n" + THEME_SWITCH + "\n" + JS_REVEAL_OBSERVER + "\n" + TRACK_SCRIPT
     if wrap:
         # standalone page (served as-is, not auto-wrapped by the Artifact skeleton)
         return DOCTYPE_OPEN.format(head=head) + content + DOCTYPE_CLOSE

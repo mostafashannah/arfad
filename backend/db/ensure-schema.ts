@@ -65,6 +65,15 @@ const STATEMENTS = [
     image TEXT NOT NULL,
     updated_at INTEGER NOT NULL DEFAULT (unixepoch())
   )`,
+  `CREATE TABLE IF NOT EXISTS page_views (
+    id TEXT PRIMARY KEY NOT NULL,
+    path TEXT NOT NULL,
+    country TEXT,
+    referrer TEXT,
+    created_at INTEGER NOT NULL DEFAULT (unixepoch())
+  )`,
+  `CREATE INDEX IF NOT EXISTS page_views_created_at_idx ON page_views (created_at)`,
+  `CREATE INDEX IF NOT EXISTS page_views_path_idx ON page_views (path)`,
 ];
 
 let ensured: Promise<void> | null = null;

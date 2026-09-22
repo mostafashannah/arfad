@@ -13,10 +13,12 @@ import {
   Users,
   LogOut,
   ExternalLink,
+  BarChart3,
 } from "lucide-react";
 
 const links = [
   { href: "/admin", label: "Overview", icon: LayoutDashboard },
+  { href: "/admin/analytics", label: "Analytics", icon: BarChart3 },
   { href: "/admin/services", label: "Services", icon: Hammer },
   { href: "/admin/projects", label: "Projects", icon: Building2 },
   { href: "/admin/settings", label: "Site Settings", icon: Settings2 },

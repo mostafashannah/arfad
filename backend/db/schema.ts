@@ -97,3 +97,13 @@ export const certificates = sqliteTable("certificates", {
     .notNull()
     .default(sql`(unixepoch())`),
 });
+
+export const pageViews = sqliteTable("page_views", {
+  id: id(),
+  path: text("path").notNull(),
+  country: text("country"), // ISO 3166-1 alpha-2, e.g. "SA", or null if not resolvable
+  referrer: text("referrer"),
+  createdAt: integer("created_at", { mode: "timestamp" })
+    .notNull()
+    .default(sql`(unixepoch())`),
+});
