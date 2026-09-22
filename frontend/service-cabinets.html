@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Cabinets &amp; Wardrobes &mdash; ARFAD</title>
+<title>Interior Woodworks ARFAD</title>
 <meta name="description" content="Kitchen cabinets, wardrobes, vanities and storage systems manufactured for residential and hospitality scale.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.arfad.com.sa/service-cabinets.html">
 <meta name="theme-color" content="#091423">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ARFAD International Industrial Co.">
-<meta property="og:title" content="Cabinets  Wardrobes  ARFAD">
+<meta property="og:title" content="Interior Woodworks ARFAD">
 <meta property="og:description" content="Kitchen cabinets, wardrobes, vanities and storage systems manufactured for residential and hospitality scale.">
 <meta property="og:url" content="https://www.arfad.com.sa/service-cabinets.html">
 <meta property="og:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Cabinets  Wardrobes  ARFAD">
+<meta name="twitter:title" content="Interior Woodworks ARFAD">
 <meta name="twitter:description" content="Kitchen cabinets, wardrobes, vanities and storage systems manufactured for residential and hospitality scale.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
@@ -78,9 +78,9 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   <section class="detail-hero" style="background-image:url('img/svc-cabinets.jpg');">
     <div class="hero-overlay"></div>
     <div class="wrap">
-      <p class="crumb"><a href="index.html">Home</a> / <a href="services.html">Services</a> / Cabinets &amp; Wardrobes</p>
-      <p class="eyebrow">03 &mdash; Our Services</p>
-      <h1>Cabinets &amp; Wardrobes</h1>
+      <p class="crumb"><a href="index.html">Home</a> / <a href="services.html">Services</a> / Interior Woodworks</p>
+      <p class="eyebrow">03 Our Services</p>
+      <h1>Interior Woodworks</h1>
     </div>
   </section>
 
@@ -88,7 +88,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     <div class="wrap about-grid">
       <div>
         <p class="eyebrow">Overview</p>
-        <h2 style="margin-top:10px;">Cabinets &amp; Wardrobes</h2>
+        <h2 style="margin-top:10px;">Interior Woodworks</h2>
         <p style="margin-top:20px;font-size:1.02rem;">Kitchen cabinets, wardrobes, vanities and storage systems manufactured for residential and hospitality scale.</p>
         <ul class="qual-list" style="margin-top:24px;">
         <li>Kitchen cabinets and fitted wardrobes</li>
@@ -113,7 +113,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       </div>
       <div class="svc-grid">
         <a class="svc-card" href="service-doors.html">
-          <div class="thumb" style="background-image:url('img/svc-doors.jpg');"></div>
+          <div class="thumb" style="background-image:url('img/mod-doors-teaser.jpg');"></div>
           <div class="body"><span class="idx">01</span><h3>Wooden Doors</h3><p>Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and&hellip;</p></div>
         </a>
         <a class="svc-card" href="service-joinery.html">
@@ -135,7 +135,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   <section class="section cta-band">
     <div class="wrap" style="text-align:center;">
       <p class="eyebrow" style="justify-content:center;">Get in touch</p>
-      <h2 style="margin-top:14px;font-size:clamp(1.9rem,4vw,2.8rem);max-width:26ch;margin-inline:auto;">Ready to start your cabinets &amp; wardrobes project?</h2>
+      <h2 style="margin-top:14px;font-size:clamp(1.9rem,4vw,2.8rem);max-width:26ch;margin-inline:auto;">Ready to start your interior woodworks project?</h2>
       <div class="hero-cta" style="justify-content:center;margin-top:30px;">
         <a class="btn cta-band-btn" href="contact.html">Request a Quote</a>
         <a class="btn cta-band-btn-outline" href="mailto:info@arfad.com.sa">Email Us</a>
@@ -168,7 +168,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &mdash; Est. 2004</span>
+    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. Est. 2004</span>
     <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>
@@ -306,6 +306,17 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       toggle.setAttribute("aria-label", "Open menu");
     });
   });
+})();
+
+/* header background after scrolling past 50px */
+(function(){
+  var header = document.querySelector("header.nav");
+  if(!header) return;
+  function onScroll(){
+    header.classList.toggle("nav-scrolled", window.scrollY > 50);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
 })();
 
 </script>

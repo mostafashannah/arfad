@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Services &mdash; ARFAD</title>
+<title>Services ARFAD</title>
 <meta name="description" content="Nine architectural woodwork disciplines: doors, joinery, cabinets, cladding, thermowood, furniture, countertops, traditional woodworks and WPC.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.arfad.com.sa/services.html">
 <meta name="theme-color" content="#091423">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ARFAD International Industrial Co.">
-<meta property="og:title" content="Services  ARFAD">
+<meta property="og:title" content="Services ARFAD">
 <meta property="og:description" content="Nine architectural woodwork disciplines: doors, joinery, cabinets, cladding, thermowood, furniture, countertops, traditional woodworks and WPC.">
 <meta property="og:url" content="https://www.arfad.com.sa/services.html">
 <meta property="og:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Services  ARFAD">
+<meta name="twitter:title" content="Services ARFAD">
 <meta name="twitter:description" content="Nine architectural woodwork disciplines: doors, joinery, cabinets, cladding, thermowood, furniture, countertops, traditional woodworks and WPC.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
@@ -85,9 +85,9 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       <p class="crumb"><a href="index.html">Home</a> / Services</p>
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">02 &mdash; What We Deliver</p>
+          <p class="eyebrow">01 What We Deliver</p>
           <h1>A full scope of<br>architectural woodwork.</h1>
-          <p class="hero-lede">Nine disciplines, one factory &mdash; from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.</p>
+          <p class="hero-lede">Nine disciplines, one factory from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.</p>
         </div>
         <div class="hero-caption">
           <p class="eyebrow">Traditional Woodworks</p>
@@ -107,7 +107,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     <div class="wrap">
       <div class="svc-grid">
         <a class="svc-card" href="service-doors.html">
-          <div class="thumb" style="background-image:url('img/svc-doors.jpg');"></div>
+          <div class="thumb" style="background-image:url('img/mod-doors-teaser.jpg');"></div>
           <div class="body"><span class="idx">01</span><h3>Wooden Doors</h3><p>Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and X-ray protected doors — Intertek certified up to 120 minutes fire resistance.</p></div>
         </a>
         <a class="svc-card" href="service-joinery.html">
@@ -116,7 +116,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
         </a>
         <a class="svc-card" href="service-cabinets.html">
           <div class="thumb" style="background-image:url('img/svc-cabinets.jpg');"></div>
-          <div class="body"><span class="idx">03</span><h3>Cabinets &amp; Wardrobes</h3><p>Kitchen cabinets, wardrobes, vanities and storage systems manufactured for residential and hospitality scale.</p></div>
+          <div class="body"><span class="idx">03</span><h3>Interior Woodworks</h3><p>Kitchen cabinets, wardrobes, vanities and storage systems manufactured for residential and hospitality scale.</p></div>
         </a>
         <a class="svc-card" href="service-cladding.html">
           <div class="thumb" style="background-image:url('img/svc-cladding.jpg');"></div>
@@ -172,7 +172,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &mdash; Est. 2004</span>
+    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. Est. 2004</span>
     <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>
@@ -310,6 +310,17 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       toggle.setAttribute("aria-label", "Open menu");
     });
   });
+})();
+
+/* header background after scrolling past 50px */
+(function(){
+  var header = document.querySelector("header.nav");
+  if(!header) return;
+  function onScroll(){
+    header.classList.toggle("nav-scrolled", window.scrollY > 50);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
 })();
 
 </script>

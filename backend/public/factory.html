@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Factory &amp; Technology &mdash; ARFAD</title>
+<title>Factory &amp; Technology ARFAD</title>
 <meta name="description" content="Inside ARFAD's 20,000 m² factory in Jubail: production zones, in-house capability and the full CNC machinery fleet.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.arfad.com.sa/factory.html">
 <meta name="theme-color" content="#091423">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ARFAD International Industrial Co.">
-<meta property="og:title" content="Factory  Technology  ARFAD">
+<meta property="og:title" content="Factory  Technology ARFAD">
 <meta property="og:description" content="Inside ARFAD's 20,000 m² factory in Jubail: production zones, in-house capability and the full CNC machinery fleet.">
 <meta property="og:url" content="https://www.arfad.com.sa/factory.html">
 <meta property="og:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Factory  Technology  ARFAD">
+<meta name="twitter:title" content="Factory  Technology ARFAD">
 <meta name="twitter:description" content="Inside ARFAD's 20,000 m² factory in Jubail: production zones, in-house capability and the full CNC machinery fleet.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
@@ -85,7 +85,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       <p class="crumb"><a href="index.html">Home</a> / Factory</p>
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">04 &mdash; Factory &amp; Technology</p>
+          <p class="eyebrow">01 Factory &amp; Technology</p>
           <h1>Built for scale.<br>Equipped for excellence.</h1>
           <p class="hero-lede">A 20,000&nbsp;m&sup2; factory in Jubail Industrial City, equipped with a comprehensive range of specialized woodworking machinery.</p>
         </div>
@@ -125,6 +125,17 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
         <h2>Advanced machinery. Precise output. Every time.</h2>
         <p class="ink-soft">ARFAD's factory is equipped with a comprehensive range of specialized woodworking machinery, supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.</p>
       </div>
+      <div class="thumb-grid" style="margin-bottom:36px;">
+        <div class="thumb-photo" style="background-image:url('img/machine-cefla-drying.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-sektar-panel-saw.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-wide-belt-sanding.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-hot-cold-presser.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-cabinet-presser.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-edge-banding.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-six-side-molding.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-spray-booth.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-reciprocating-spray.jpg');"></div>
+      </div>
       <ul class="machine-list">
         <li>Circular Table Saw Machine</li><li>Wide Belt Sander Machine</li>
         <li>Surface Planer Machine</li><li>Hydraulic Press Machine</li>
@@ -145,7 +156,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   <section class="section on-navy">
     <div class="wrap" style="text-align:center;">
       <p class="eyebrow" style="justify-content:center;">Quality, safety &amp; sustainability</p>
-      <h2 style="margin-top:14px;">Every stage is reviewed &mdash; from raw material to final handover.</h2>
+      <h2 style="margin-top:14px;">Every stage is reviewed from raw material to final handover.</h2>
       <div class="hero-cta" style="justify-content:center;margin-top:26px;">
         <a class="btn solid" href="quality.html">See Our Quality Standards</a>
       </div>
@@ -177,7 +188,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &mdash; Est. 2004</span>
+    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. Est. 2004</span>
     <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>
@@ -315,6 +326,17 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       toggle.setAttribute("aria-label", "Open menu");
     });
   });
+})();
+
+/* header background after scrolling past 50px */
+(function(){
+  var header = document.querySelector("header.nav");
+  if(!header) return;
+  function onScroll(){
+    header.classList.toggle("nav-scrolled", window.scrollY > 50);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
 })();
 
 </script>

@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Red Sea Global &mdash; ARFAD Projects</title>
+<title>Red Sea Global ARFAD Projects</title>
 <meta name="description" content="4,758+ doors installed across AMAALA staff villages (Packages 1, Zones 1/2/7), thermowood exterior cladding for secondary infrastructure, and full luxury resort joinery for the Six Senses Resorts at Triple Bay. Registered Vendor No. S10357393.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.arfad.com.sa/project-redsea-amaala.html">
 <meta name="theme-color" content="#091423">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ARFAD International Industrial Co.">
-<meta property="og:title" content="Red Sea Global  ARFAD Projects">
+<meta property="og:title" content="Red Sea Global ARFAD Projects">
 <meta property="og:description" content="4,758+ doors installed across AMAALA staff villages (Packages 1, Zones 1/2/7), thermowood exterior cladding for secondary infrastructure, and full luxury resort joinery for the Six Senses Resorts at Triple Bay. Registered Vendor No. S10357393.">
 <meta property="og:url" content="https://www.arfad.com.sa/project-redsea-amaala.html">
 <meta property="og:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Red Sea Global  ARFAD Projects">
+<meta name="twitter:title" content="Red Sea Global ARFAD Projects">
 <meta name="twitter:description" content="4,758+ doors installed across AMAALA staff villages (Packages 1, Zones 1/2/7), thermowood exterior cladding for secondary infrastructure, and full luxury resort joinery for the Six Senses Resorts at Triple Bay. Registered Vendor No. S10357393.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
@@ -160,7 +160,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &mdash; Est. 2004</span>
+    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. Est. 2004</span>
     <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>
@@ -298,6 +298,17 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       toggle.setAttribute("aria-label", "Open menu");
     });
   });
+})();
+
+/* header background after scrolling past 50px */
+(function(){
+  var header = document.querySelector("header.nav");
+  if(!header) return;
+  function onScroll(){
+    header.classList.toggle("nav-scrolled", window.scrollY > 50);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
 })();
 
 </script>

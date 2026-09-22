@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>WPC Works &mdash; ARFAD</title>
+<title>WPC Works ARFAD</title>
 <meta name="description" content="Wood-look decking, wall cladding, pergolas and fencing engineered for weather resistance and low maintenance.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.arfad.com.sa/service-wpc.html">
 <meta name="theme-color" content="#091423">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ARFAD International Industrial Co.">
-<meta property="og:title" content="WPC Works  ARFAD">
+<meta property="og:title" content="WPC Works ARFAD">
 <meta property="og:description" content="Wood-look decking, wall cladding, pergolas and fencing engineered for weather resistance and low maintenance.">
 <meta property="og:url" content="https://www.arfad.com.sa/service-wpc.html">
 <meta property="og:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="WPC Works  ARFAD">
+<meta name="twitter:title" content="WPC Works ARFAD">
 <meta name="twitter:description" content="Wood-look decking, wall cladding, pergolas and fencing engineered for weather resistance and low maintenance.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
@@ -79,7 +79,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     <div class="hero-overlay"></div>
     <div class="wrap">
       <p class="crumb"><a href="index.html">Home</a> / <a href="services.html">Services</a> / WPC Works</p>
-      <p class="eyebrow">09 &mdash; Our Services</p>
+      <p class="eyebrow">09 Our Services</p>
       <h1>WPC Works</h1>
     </div>
   </section>
@@ -113,7 +113,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       </div>
       <div class="svc-grid">
         <a class="svc-card" href="service-doors.html">
-          <div class="thumb" style="background-image:url('img/svc-doors.jpg');"></div>
+          <div class="thumb" style="background-image:url('img/mod-doors-teaser.jpg');"></div>
           <div class="body"><span class="idx">01</span><h3>Wooden Doors</h3><p>Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and&hellip;</p></div>
         </a>
         <a class="svc-card" href="service-joinery.html">
@@ -122,7 +122,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
         </a>
         <a class="svc-card" href="service-cabinets.html">
           <div class="thumb" style="background-image:url('img/svc-cabinets.jpg');"></div>
-          <div class="body"><span class="idx">03</span><h3>Cabinets &amp; Wardrobes</h3><p>Kitchen cabinets, wardrobes, vanities and storage systems&hellip;</p></div>
+          <div class="body"><span class="idx">03</span><h3>Interior Woodworks</h3><p>Kitchen cabinets, wardrobes, vanities and storage systems&hellip;</p></div>
         </a>
         <a class="svc-card" href="service-cladding.html">
           <div class="thumb" style="background-image:url('img/svc-cladding.jpg');"></div>
@@ -168,7 +168,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &mdash; Est. 2004</span>
+    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. Est. 2004</span>
     <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>
@@ -306,6 +306,17 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       toggle.setAttribute("aria-label", "Open menu");
     });
   });
+})();
+
+/* header background after scrolling past 50px */
+(function(){
+  var header = document.querySelector("header.nav");
+  if(!header) return;
+  function onScroll(){
+    header.classList.toggle("nav-scrolled", window.scrollY > 50);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
 })();
 
 </script>

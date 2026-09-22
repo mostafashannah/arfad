@@ -64,7 +64,7 @@ FOOTER = '''<footer id="contact">
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &mdash; Est. 2004</span>
+    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. Est. 2004</span>
     <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>'''
@@ -270,6 +270,17 @@ JS_REVEAL_OBSERVER = '''<script>
   });
 })();
 
+/* header background after scrolling past 50px */
+(function(){
+  var header = document.querySelector("header.nav");
+  if(!header) return;
+  function onScroll(){
+    header.classList.toggle("nav-scrolled", window.scrollY > 50);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
+})();
+
 </script>'''
 
 SLIDES = ["hero.jpg", "factory.jpg", "proj-rc.jpg", "proj-rsg.jpg"]
@@ -321,17 +332,17 @@ idx_body = '''<main id="top">
     <div class="wrap hero-full-inner">
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">01 &mdash; Wooden Doors</p>
+          <p class="eyebrow">01 Wooden Doors</p>
           <h1>Two decades of mastery <em>in wood.</em></h1>
-          <p class="hero-lede">Architectural wood works, interior furnishing and wooden furniture manufacturing, engineered and produced from a 20,000&nbsp;m&sup2; factory in Jubail Industrial City &mdash; trusted across the Kingdom's most demanding projects since 2004.</p>
+          <p class="hero-lede">Architectural wood works, interior furnishing and wooden furniture manufacturing, engineered and produced from a 20,000&nbsp;m&sup2; factory in Jubail Industrial City trusted across the Kingdom's most demanding projects since 2004.</p>
         </div>
         <div class="hero-caption">
-          <p class="eyebrow">02 &mdash; Cladding &amp; Ceilings</p>
+          <p class="eyebrow">02 Cladding &amp; Ceilings</p>
           <h1>Architectural cladding, <em>engineered to last.</em></h1>
-          <p class="hero-lede">Internal and external wall cladding, decorative and slatted ceilings &mdash; finished to withstand the Kingdom's climate.</p>
+          <p class="hero-lede">Internal and external wall cladding, decorative and slatted ceilings finished to withstand the Kingdom's climate.</p>
         </div>
         <div class="hero-caption">
-          <p class="eyebrow">03 &mdash; Thermowood &amp; WPC</p>
+          <p class="eyebrow">03 Thermowood &amp; WPC</p>
           <h1>Outdoor finishes built <em>for extremes.</em></h1>
           <p class="hero-lede">Thermally modified timber and WPC decking, cladding and pergolas engineered for heat, humidity and weather resistance.</p>
         </div>
@@ -353,15 +364,15 @@ idx_body = '''<main id="top">
   <section class="section">
     <div class="wrap about-grid">
       <div>
-        <p class="eyebrow">01 &mdash; Who We Are</p>
+        <p class="eyebrow">01 Who We Are</p>
         <h2 style="margin-top:10px;">Built in Jubail.<br>Trusted across the Kingdom.</h2>
-        <p style="margin-top:20px;font-size:1.02rem;">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City &mdash; serving residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
+        <p style="margin-top:20px;font-size:1.02rem;">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City serving residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
         <p style="margin-top:16px;font-size:1.02rem;">Every project is engineered and produced in-house, from raw timber to finished installation, giving clients a single accountable partner from design through delivery. Two decades of certifications, vendor registrations and repeat business stand behind that promise.</p>
         <div class="hero-cta" style="margin-top:26px;">
           <a class="btn solid" href="about.html">Read Our Story</a>
         </div>
       </div>
-      <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/11;background:url('img/svc-interior.jpg') center/cover;"></div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/11;background:url('img/who-we-are.jpg') center/cover;"></div>
     </div>
   </section>
 
@@ -370,13 +381,13 @@ idx_body = '''<main id="top">
   <section class="section on-alt">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">02 &mdash; What We Deliver</p>
+        <p class="eyebrow">02 What We Deliver</p>
         <h2>A full scope of architectural woodwork.</h2>
-        <p class="ink-soft">Nine disciplines, one factory &mdash; from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.</p>
+        <p class="ink-soft">Nine disciplines, one factory from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.</p>
       </div>
       <div class="svc-grid teaser">
         <a class="svc-card" href="service-doors.html">
-          <div class="thumb" style="background-image:url('img/svc-doors.jpg');"></div>
+          <div class="thumb" style="background-image:url('img/mod-doors-teaser.jpg');"></div>
           <div class="body"><span class="idx">01</span><h3>Wooden Doors</h3><p>Fire-rated to X-ray protected, certified up to 120 minutes.</p></div>
         </a>
         <a class="svc-card" href="service-joinery.html">
@@ -385,7 +396,7 @@ idx_body = '''<main id="top">
         </a>
         <a class="svc-card" href="service-cabinets.html">
           <div class="thumb" style="background-image:url('img/svc-interior.jpg');"></div>
-          <div class="body"><span class="idx">03</span><h3>Cabinets &amp; Wardrobes</h3><p>Kitchen cabinets, wardrobes, vanities and storage systems.</p></div>
+          <div class="body"><span class="idx">03</span><h3>Interior Woodworks</h3><p>Kitchen cabinets, wardrobes, vanities and storage systems.</p></div>
         </a>
         <a class="svc-card" href="service-cladding.html">
           <div class="thumb" style="background-image:url('img/svc-cladding.jpg');"></div>
@@ -418,7 +429,7 @@ idx_body = '''<main id="top">
 
   <section class="section on-navy" style="background:linear-gradient(180deg, rgba(10,37,64,.93), rgba(10,37,64,.97)), url('img/factory.jpg') center/cover;">
     <div class="wrap">
-      <p class="eyebrow">04 &mdash; Factory &amp; Technology</p>
+      <p class="eyebrow">03 Factory &amp; Technology</p>
       <h2 style="margin-top:10px;max-width:26ch;">Built for scale. Equipped for excellence.</h2>
       <div class="stat-grid">
         <div class="stat-cell"><div class="num">20,000 m&sup2;</div><div class="lbl">Total built-up factory area</div></div>
@@ -435,41 +446,41 @@ idx_body = '''<main id="top">
   <section class="section">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">06 &mdash; Our Projects</p>
+        <p class="eyebrow">04 Our Projects</p>
         <h2>Trusted by the Kingdom's leading organisations.</h2>
         <p class="ink-soft">A twenty-year portfolio spanning royal commissions, national giga-projects and the Kingdom's leading developers.</p>
       </div>
       <div class="feature-grid">
-        <div class="feature-card" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-rc.jpg') center/cover;">
+        <a class="feature-card" href="project-royal-commission.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-rc.jpg') center/cover;">
           <p class="eyebrow">Royal Commission &middot; Jubail &amp; Yanbu</p>
           <h4>Registered Vendor No. 14902</h4>
           <p>7 housing &amp; school phases across Jubail.</p>
-        </div>
-        <div class="feature-card" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-aramco.jpg') center/cover;">
+        </a>
+        <a class="feature-card" href="project-saudi-aramco.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-aramco.jpg') center/cover;">
           <p class="eyebrow">Saudi Aramco</p>
           <h4>Registered Vendor No. 10064085</h4>
           <p>Al Mutrafiah, SDHOP, SATORP &amp; King Salman Maritime Complex.</p>
-        </div>
-        <div class="feature-card" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-rsg.jpg') center/cover;">
+        </a>
+        <a class="feature-card" href="project-redsea-amaala.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-rsg.jpg') center/cover;">
           <p class="eyebrow">Red Sea Global &amp; AMAALA</p>
           <h4>Registered Vendor No. S10357393</h4>
           <p>4,758+ doors across staff villages and luxury resorts.</p>
-        </div>
-        <div class="feature-card" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-neom.jpg') center/cover;">
+        </a>
+        <a class="feature-card" href="project-neom.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-neom.jpg') center/cover;">
           <p class="eyebrow">NEOM</p>
           <h4>Multipurpose Hall, Auditorium &amp; VIP Lounge</h4>
           <p>100 doors, 1,700 m&sup2; cladding, bespoke joinery and premium VIP-grade finishes.</p>
-        </div>
-        <div class="feature-card" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-industrial.jpg') center/cover;">
-          <p class="eyebrow">SABIC &amp; MA'ADEN</p>
-          <h4>Registered Vendor &mdash; Industrial Housing</h4>
-          <p>2,042 villas across Al Mutrafiah &amp; Al Jubail housing, full kitchen, door, handrail &amp; vanity scope.</p>
-        </div>
-        <div class="feature-card" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-hospitality.jpg') center/cover;">
+        </a>
+        <a class="feature-card" href="project-ministry-of-defense.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-mod.jpg') center/cover;">
+          <p class="eyebrow">Ministry of Defense</p>
+          <h4>Supporting Buildings &middot; Al Qassim</h4>
+          <p>Doors for 100 flats, 1,500 m&sup2; wall cladding and 250 m&sup2; ceiling works.</p>
+        </a>
+        <a class="feature-card" href="projects.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-hospitality.jpg') center/cover;">
           <p class="eyebrow">Hospitality &amp; Commercial</p>
           <h4>Movenpick, KARAN, MISK, KAFD</h4>
           <p>5-star hotel joinery, school campuses and premium woodworks across Riyadh's financial district.</p>
-        </div>
+        </a>
       </div>
       <div style="margin-top:32px;"><a class="btn solid" href="projects.html">View Full Project Portfolio</a></div>
     </div>
@@ -496,7 +507,7 @@ write("index.html", page(
 # ---------- ABOUT ----------
 about_body = '''<main>
   <section class="hero-slider compact">
-    <div class="slide" style="background-image:url('img/about.jpg');"></div>
+    <div class="slide" style="background-image:url('img/who-we-are.jpg');"></div>
     <div class="slide" style="background-image:url('img/svc-joinery.jpg');"></div>
     <div class="slide" style="background-image:url('img/svc-interior.jpg');"></div>
     <div class="hero-overlay"></div>
@@ -505,7 +516,7 @@ about_body = '''<main>
       <p class="crumb"><a href="index.html">Home</a> / Who We Are</p>
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">01 &mdash; Who We Are</p>
+          <p class="eyebrow">01 Who We Are</p>
           <h1>Built in Jubail.<br>Trusted across the Kingdom.</h1>
           <p class="hero-lede">Two decades of mastery in architectural wood works, interior furnishing and wooden furniture manufacturing.</p>
         </div>
@@ -525,35 +536,40 @@ about_body = '''<main>
 
   <section class="section">
     <div class="wrap about-grid">
+      <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/10;background:url('img/who-we-are.jpg') center/cover;"></div>
       <div>
-        <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);margin-bottom:28px;aspect-ratio:16/10;background:url('img/about.jpg') center/cover;"></div>
-        <p style="font-size:1.02rem;">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.</p>
-        <p>Specializing in wooden doors, kitchen cabinets, wardrobes, cladding, ceilings, wooden flooring, timber &amp; WPC decking, countertops, vanities, all types of joineries and custom interior and exterior solutions &mdash; ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
+        <p class="eyebrow">01 Who We Are</p>
+        <h2 style="margin-top:10px;">Built in Jubail.<br>Trusted across the Kingdom.</h2>
+        <p style="margin-top:20px;font-size:1.02rem;">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.</p>
+        <p>Specializing in wooden doors, kitchen cabinets, wardrobes, cladding, ceilings, wooden flooring, timber &amp; WPC decking, countertops, vanities, all types of joineries and custom interior and exterior solutions ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
       </div>
-      <div class="vm-list">
-        <div class="vm-item">
-          <h4>Vision</h4>
-          <p>To become a regional standard in architectural wood works &mdash; recognized for precision, integrity, and consistent project delivery.</p>
-        </div>
-        <div class="vm-item">
-          <h4>Mission</h4>
-          <p>To design, manufacture, supply, and install high-quality wood works that meet project specifications and deliver long-term value across every sector we serve.</p>
-        </div>
-        <div class="vm-item">
-          <h4>Why ARFAD</h4>
-          <p>A system built for demanding projects &mdash; controlled manufacturing, technical execution, and scalable production backed by unyielding quality control.</p>
-        </div>
+    </div>
+    <div class="wrap vm-row">
+      <div class="vm-item">
+        <h4>Vision</h4>
+        <p>To become a regional standard in architectural wood works recognized for precision, integrity, and consistent project delivery.</p>
+      </div>
+      <div class="vm-item">
+        <h4>Mission</h4>
+        <p>To design, manufacture, supply, and install high-quality wood works that meet project specifications and deliver long-term value across every sector we serve.</p>
+      </div>
+      <div class="vm-item">
+        <h4>Why ARFAD</h4>
+        <p>A system built for demanding projects controlled manufacturing, technical execution, and scalable production backed by unyielding quality control.</p>
       </div>
     </div>
   </section>
 
+  <div class="img-divider" style="background-image:url('img/why-arfad.jpg');"></div>
+
   <section class="section on-alt">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">03 &mdash; Our Process</p>
+        <p class="eyebrow">02 Our Process</p>
         <h2>From drawing to delivery.</h2>
         <p class="ink-soft">Six controlled stages carry every project from brief to handover, with quality review built into each one.</p>
       </div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/7;margin-bottom:36px;background:url('img/from-drawing-to-delivery.jpg') center/cover;"></div>
       <div class="process-list">
         <div class="process-step"><div class="n">01</div><h4>Client Brief &amp; Requirements</h4></div>
         <div class="process-step"><div class="n">02</div><h4>Design &amp; Engineering</h4></div>
@@ -566,15 +582,15 @@ about_body = '''<main>
   </section>
 </main>'''
 write("about.html", page(
-    "Who We Are &mdash; ARFAD",
-    "ARFAD's story, vision, mission and process &mdash; two decades of architectural woodwork mastery from Jubail, KSA.",
+    "Who We Are ARFAD",
+    "ARFAD's story, vision, mission and process two decades of architectural woodwork mastery from Jubail, KSA.",
     "about.html", about_body))
 
 # ---------- SERVICES ----------
 services = [
-    ("01","doors","Wooden Doors","svc-doors.jpg","Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and X-ray protected doors — Intertek certified up to 120 minutes fire resistance."),
+    ("01","doors","Wooden Doors","mod-doors-teaser.jpg","Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and X-ray protected doors — Intertek certified up to 120 minutes fire resistance."),
     ("02","joinery","Joinery","svc-joinery.jpg","Custom joints, timber framing, architectural moldings, reception counters, hotel, restaurant, office and retail joinery, built to spec."),
-    ("03","cabinets","Cabinets &amp; Wardrobes","svc-cabinets.jpg","Kitchen cabinets, wardrobes, vanities and storage systems manufactured for residential and hospitality scale."),
+    ("03","cabinets","Interior Woodworks","svc-cabinets.jpg","Kitchen cabinets, wardrobes, vanities and storage systems manufactured for residential and hospitality scale."),
     ("04","cladding","Cladding &amp; Ceilings","svc-cladding.jpg","Internal and external wooden wall cladding, decorative panels, slatted wood, wooden and slatted ceilings engineered for precision."),
     ("05","thermowood","Thermowood","svc-thermowood.jpg","Exterior cladding, decking, pergolas, louvers, screens and canopies built for durability and dimensional stability outdoors."),
     ("06","furniture","Furniture &amp; Interiors","svc-furniture.jpg","Loose, hotel, restaurant and office furniture, custom seating and bespoke pieces for schools, auditoriums, villas and airports."),
@@ -613,9 +629,9 @@ services_body = f'''<main>
       <p class="crumb"><a href="index.html">Home</a> / Services</p>
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">02 &mdash; What We Deliver</p>
+          <p class="eyebrow">01 What We Deliver</p>
           <h1>A full scope of<br>architectural woodwork.</h1>
-          <p class="hero-lede">Nine disciplines, one factory &mdash; from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.</p>
+          <p class="hero-lede">Nine disciplines, one factory from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.</p>
         </div>
         <div class="hero-caption">
           <p class="eyebrow">Traditional Woodworks</p>
@@ -641,7 +657,7 @@ services_body = f'''<main>
 
 </main>'''
 write("services.html", page(
-    "Services &mdash; ARFAD",
+    "Services ARFAD",
     "Nine architectural woodwork disciplines: doors, joinery, cabinets, cladding, thermowood, furniture, countertops, traditional woodworks and WPC.",
     "services.html", services_body))
 
@@ -661,7 +677,7 @@ for idx, anchor, title, img, desc in services:
     <div class="hero-overlay"></div>
     <div class="wrap">
       <p class="crumb"><a href="index.html">Home</a> / <a href="services.html">Services</a> / {title}</p>
-      <p class="eyebrow">{idx} &mdash; Our Services</p>
+      <p class="eyebrow">{idx} Our Services</p>
       <h1>{title}</h1>
     </div>
   </section>
@@ -708,7 +724,7 @@ for idx, anchor, title, img, desc in services:
   </section>
 </main>'''
     write(f"service-{anchor}.html", page(
-        f"{title} &mdash; ARFAD",
+        f"{title} ARFAD",
         f"{desc}",
         "services.html", detail_body, path=f"service-{anchor}.html"))
 
@@ -724,7 +740,7 @@ factory_body = '''<main>
       <p class="crumb"><a href="index.html">Home</a> / Factory</p>
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">04 &mdash; Factory &amp; Technology</p>
+          <p class="eyebrow">01 Factory &amp; Technology</p>
           <h1>Built for scale.<br>Equipped for excellence.</h1>
           <p class="hero-lede">A 20,000&nbsp;m&sup2; factory in Jubail Industrial City, equipped with a comprehensive range of specialized woodworking machinery.</p>
         </div>
@@ -764,6 +780,17 @@ factory_body = '''<main>
         <h2>Advanced machinery. Precise output. Every time.</h2>
         <p class="ink-soft">ARFAD's factory is equipped with a comprehensive range of specialized woodworking machinery, supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.</p>
       </div>
+      <div class="thumb-grid" style="margin-bottom:36px;">
+        <div class="thumb-photo" style="background-image:url('img/machine-cefla-drying.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-sektar-panel-saw.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-wide-belt-sanding.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-hot-cold-presser.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-cabinet-presser.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-edge-banding.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-six-side-molding.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-spray-booth.jpg');"></div>
+        <div class="thumb-photo" style="background-image:url('img/machine-reciprocating-spray.jpg');"></div>
+      </div>
       <ul class="machine-list">
         <li>Circular Table Saw Machine</li><li>Wide Belt Sander Machine</li>
         <li>Surface Planer Machine</li><li>Hydraulic Press Machine</li>
@@ -784,7 +811,7 @@ factory_body = '''<main>
   <section class="section on-navy">
     <div class="wrap" style="text-align:center;">
       <p class="eyebrow" style="justify-content:center;">Quality, safety &amp; sustainability</p>
-      <h2 style="margin-top:14px;">Every stage is reviewed &mdash; from raw material to final handover.</h2>
+      <h2 style="margin-top:14px;">Every stage is reviewed from raw material to final handover.</h2>
       <div class="hero-cta" style="justify-content:center;margin-top:26px;">
         <a class="btn solid" href="quality.html">See Our Quality Standards</a>
       </div>
@@ -792,7 +819,7 @@ factory_body = '''<main>
   </section>
 </main>'''
 write("factory.html", page(
-    "Factory &amp; Technology &mdash; ARFAD",
+    "Factory &amp; Technology ARFAD",
     "Inside ARFAD's 20,000 m² factory in Jubail: production zones, in-house capability and the full CNC machinery fleet.",
     "factory.html", factory_body))
 
@@ -808,7 +835,7 @@ quality_body = '''<main>
       <p class="crumb"><a href="index.html">Home</a> / Quality</p>
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">05 &mdash; Quality, Safety &amp; Sustainability</p>
+          <p class="eyebrow">01 Quality, Safety &amp; Sustainability</p>
           <h1>Quality built into<br>every stage.</h1>
           <p class="hero-lede">Managed through documented procedures, approved specifications, material control, production checks and site supervision.</p>
         </div>
@@ -838,7 +865,7 @@ quality_body = '''<main>
           <li>Incoming material &amp; in-process factory inspection</li>
           <li>Final product &amp; site installation inspection</li>
           <li>Full inspection records &amp; quality documentation</li>
-          <li>FSC Chain of Custody &mdash; responsible, traceable wood sourcing</li>
+          <li>FSC Chain of Custody responsible, traceable wood sourcing</li>
           <li>Occupational health &amp; safety, hazard identification, controlled waste disposal</li>
         </ul>
       </div>
@@ -849,7 +876,7 @@ quality_body = '''<main>
         <div class="cert-card"><div class="badge">FSC</div><h4>FSC Chain of Custody</h4><p>Certified responsible wood sourcing</p></div>
         <div class="cert-card"><div class="badge">&check;</div><h4>Intertek Certified</h4><p>Fire-rated doors up to 120 minutes</p></div>
         <div class="cert-card"><div class="badge">AR</div><h4>Aramco Registered</h4><p>Vendor code 10064085</p></div>
-        <div class="cert-card"><div class="badge">RC</div><h4>Royal Commission Registered</h4><p>Jubail &amp; Yanbu &mdash; Vendor 14902</p></div>
+        <div class="cert-card"><div class="badge">RC</div><h4>Royal Commission Registered</h4><p>Jubail &amp; Yanbu Vendor 14902</p></div>
         <div class="cert-card"><div class="badge">RSG</div><h4>Red Sea Global Registered</h4><p>Vendor S10357393</p></div>
       </div>
     </div>
@@ -865,7 +892,7 @@ quality_body = '''<main>
       <div class="cert-grid" style="grid-template-columns:repeat(3,1fr);margin-top:24px;">
         <div class="cert-card"><div class="badge">&check;</div><h4>Warm Springs</h4><p>20&ndash;90 min fire door frame &middot; Cert. WHI18-28731422</p></div>
         <div class="cert-card"><div class="badge">&check;</div><h4>Halspan</h4><p>Universal 20&ndash;30 min fire door &middot; Cert. WHI18-28731426</p></div>
-        <div class="cert-card"><div class="badge">&check;</div><h4>Streboard</h4><p>44 &mdash; FD30 particle board core door &middot; Cert. WHI22-28731442</p></div>
+        <div class="cert-card"><div class="badge">&check;</div><h4>Streboard</h4><p>44 FD30 particle board core door &middot; Cert. WHI22-28731442</p></div>
       </div>
     </div>
   </section>
@@ -895,7 +922,7 @@ quality_body = '''<main>
       <div class="head">
         <p class="eyebrow">Certificate Gallery</p>
         <h2>Every certificate, on file.</h2>
-        <p class="ink-soft">The original scanned certificates behind every claim on this page &mdash; click any image to view it full size.</p>
+        <p class="ink-soft">The original scanned certificates behind every claim on this page click any image to view it full size.</p>
       </div>
       <div class="cert-photo-grid">
         <a class="cert-photo-card" href="img/certs/cert-iso-9001.jpg" target="_blank" rel="noopener">
@@ -912,15 +939,15 @@ quality_body = '''<main>
         </a>
         <a class="cert-photo-card" href="img/certs/cert-intertek-warmsprings.jpg" target="_blank" rel="noopener">
           <div class="cert-thumb" style="background-image:url('img/certs/cert-intertek-warmsprings.jpg');"></div>
-          <div class="cert-cap"><h4>Intertek &mdash; Warm Springs</h4><p>Fire door frame compliance certificate</p></div>
+          <div class="cert-cap"><h4>Intertek Warm Springs</h4><p>Fire door frame compliance certificate</p></div>
         </a>
         <a class="cert-photo-card" href="img/certs/cert-intertek-halspan.jpg" target="_blank" rel="noopener">
           <div class="cert-thumb" style="background-image:url('img/certs/cert-intertek-halspan.jpg');"></div>
-          <div class="cert-cap"><h4>Intertek &mdash; Halspan</h4><p>Fire door compliance certificate</p></div>
+          <div class="cert-cap"><h4>Intertek Halspan</h4><p>Fire door compliance certificate</p></div>
         </a>
         <a class="cert-photo-card" href="img/certs/cert-intertek-streboard.jpg" target="_blank" rel="noopener">
           <div class="cert-thumb" style="background-image:url('img/certs/cert-intertek-streboard.jpg');"></div>
-          <div class="cert-cap"><h4>Intertek &mdash; Streboard</h4><p>Fire door assembly compliance certificate</p></div>
+          <div class="cert-cap"><h4>Intertek Streboard</h4><p>Fire door assembly compliance certificate</p></div>
         </a>
         <a class="cert-photo-card" href="img/certs/cert-fsc.jpg" target="_blank" rel="noopener">
           <div class="cert-thumb" style="background-image:url('img/certs/cert-fsc.jpg');"></div>
@@ -947,7 +974,7 @@ quality_body = '''<main>
   </section>
 </main>'''
 write("quality.html", page(
-    "Quality &amp; Certifications &mdash; ARFAD",
+    "Quality &amp; Certifications ARFAD",
     "ISO 9001, ISO 14001, ISO 45001, FSC Chain of Custody and Intertek fire-door certification — ARFAD's quality, safety and sustainability standards.",
     "quality.html", quality_body))
 
@@ -1008,12 +1035,12 @@ chips_track_html = "\n        ".join(f'<span class="chip">{c}</span>' for c in (
 # ---------- PROJECT DETAIL GALLERIES ----------
 PROJECT_GALLERIES = {
     "royal-commission": ("Royal Commission for Jubail &amp; Yanbu","Royal Commission","Al Jubail",
-        "7 housing &amp; school phases across Jubail &mdash; 2,500+ doors, kitchens, wardrobes, vanity tops and handrails delivered. Registered Vendor No. 14902.",
+        "7 housing &amp; school phases across Jubail 2,500+ doors, kitchens, wardrobes, vanity tops and handrails delivered. Registered Vendor No. 14902.",
         ["royal-commission-1.jpg"]),
     "saudi-aramco": ("Saudi Aramco","Saudi Aramco","Jubail &middot; Dharan &middot; Ras Al Khair",
         "Al Mutrafiah Home Ownership Housing, SDHOP, SATORP, King Salman Maritime Complex &amp; Royal Commission mosques. Registered Vendor No. 10064085.",
         ["saudi-aramco-1.jpg"]),
-    "neom": ("NEOM &mdash; Multipurpose Hall, Auditorium &amp; VIP Lounge","NEOM (BECo)","NEOM",
+    "neom": ("NEOM Multipurpose Hall, Auditorium &amp; VIP Lounge","NEOM (BECo)","NEOM",
         "100 doors, 1,700&nbsp;m&sup2; cladding, 500&nbsp;m&sup2; ceiling and 100&nbsp;m&sup2; flooring for the Multipurpose Hall, plus high-end joinery and cladding for the Auditorium and luxury custom panelling for the VIP Lounge.",
         ["neom-1.jpg","neom-2.jpg","neom-3.jpg","neom-4.jpg","neom-5.jpg","neom-6.jpg"]),
     "redsea-amaala": ("Red Sea Global &amp; AMAALA","Red Sea Global","AMAALA &middot; Triple Bay",
@@ -1021,15 +1048,15 @@ PROJECT_GALLERIES = {
         ["redsea-amaala-1.jpg","redsea-amaala-2.jpg","redsea-amaala-3.jpg","redsea-amaala-4.jpg","redsea-amaala-5.jpg",
          "redsea-amaala-6.jpg","redsea-amaala-7.jpg","redsea-amaala-8.jpg","redsea-amaala-9.jpg","redsea-amaala-10.jpg"]),
     "kafd": ("King Abdullah Financial District","KAFD","Riyadh",
-        "Premium woodworks and joinery &mdash; custom vanities, cabinetry and architectural millwork delivered for one of Riyadh's landmark financial developments.",
+        "Premium woodworks and joinery custom vanities, cabinetry and architectural millwork delivered for one of Riyadh's landmark financial developments.",
         ["kafd-1.jpg","kafd-2.jpg","kafd-3.jpg"]),
-    "karan": ("KARAN Group &mdash; Hotel &amp; Housing","KARAN Group","Al Jubail",
+    "karan": ("KARAN Group Hotel &amp; Housing","KARAN Group","Al Jubail",
         "Cladding for a 5-star hotel's restaurants and function rooms, plus 744 doors and 744 kitchens for bachelor apartments.",
         ["karan-1.jpg","karan-2.jpg","karan-3.jpg"]),
-    "marafiq": ("MARAFIQ &mdash; New Head Office","MARAFIQ","Al Jubail",
-        "Complete office joinery for MARAFIQ's new head office &mdash; custom millwork, reception counters and workspace fit-out.",
+    "marafiq": ("MARAFIQ New Head Office","MARAFIQ","Al Jubail",
+        "Complete office joinery for MARAFIQ's new head office custom millwork, reception counters and workspace fit-out.",
         ["marafiq-1.jpg","marafiq-2.jpg","marafiq-3.jpg"]),
-    "ministry-of-defense": ("Ministry of Defense &mdash; Supporting Buildings","Ministry of Defense","Al Qassim",
+    "ministry-of-defense": ("Ministry of Defense Supporting Buildings","Ministry of Defense","Al Qassim",
         "Doors for 100 flats, 1,500&nbsp;m&sup2; of wall cladding and 250&nbsp;m&sup2; of ceiling works across the Ministry's supporting buildings.",
         ["ministry-of-defense-1.jpg","ministry-of-defense-2.jpg","ministry-of-defense-3.jpg"]),
     "misk": ("MISK School Phase 1 &amp; 2","MISK Foundation (Baytur)","Riyadh",
@@ -1038,17 +1065,17 @@ PROJECT_GALLERIES = {
     "movenpick": ("Movenpick 5-Star Hotel","Movenpick","Wa'ad Al Shamal",
         "850 doors, kitchen joinery and 4,850&nbsp;m&sup2; of wall cladding delivered for a 5-star hotel development.",
         ["movenpick-1.jpg","movenpick-2.jpg","movenpick-3.jpg"]),
-    "primer-steak-house": ("PRIMER Steak House &mdash; Restaurant &amp; Lounge","PRIMER Steak House","Riyadh",
+    "primer-steak-house": ("PRIMER Steak House Restaurant &amp; Lounge","PRIMER Steak House","Riyadh",
         "Full interior fit-out including dining furniture, bar joinery and bespoke restaurant millwork.",
         ["primer-steak-house-1.jpg","primer-steak-house-2.jpg","primer-steak-house-3.jpg"]),
-    "el-eissa": ("Al Eissa Compound &mdash; Project ZAC","Al Eissa Compound","&mdash;",
+    "el-eissa": ("Al Eissa Compound Project ZAC","Al Eissa Compound"," ",
         "External and internal doors, roof canopies and shade pavilions delivered for the Al Eissa Compound development.",
         ["el-eissa-1.jpg","el-eissa-2.jpg","el-eissa-3.jpg"]),
 }
 
 project_cards = []
 for slug, (title, client, loc, desc, imgs) in PROJECT_GALLERIES.items():
-    short_title = title.split(" &mdash; ")[0].split(" &middot; ")[0]
+    short_title = title.split(" ")[0].split(" &middot; ")[0]
     project_cards.append(f'''<a class="gallery-card" href="project-{slug}.html" style="background-image:url('img/projects/{imgs[0]}');">
           <div class="gc-body">
             <p class="eyebrow">{client}</p>
@@ -1115,7 +1142,7 @@ for slug, (title, client, loc, desc, imgs) in PROJECT_GALLERIES.items():
   </section>
 </main>'''
     write(f"project-{slug}.html", page(
-        f"{client} &mdash; ARFAD Projects",
+        f"{client} ARFAD Projects",
         f"{desc}",
         "projects.html", detail_body, path=f"project-{slug}.html"))
 
@@ -1130,7 +1157,7 @@ projects_body = f'''<main>
       <p class="crumb"><a href="index.html">Home</a> / Projects</p>
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">06 &mdash; Our Projects</p>
+          <p class="eyebrow">01 Our Projects</p>
           <h1>Every project we deliver is a<br>physical reflection of our standards.</h1>
           <p class="hero-lede">A twenty-year portfolio spanning royal commissions, national giga-projects and the Kingdom's leading developers.</p>
         </div>
@@ -1155,7 +1182,7 @@ projects_body = f'''<main>
         <a class="feature-card" href="project-royal-commission.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-rc.jpg') center/cover;">
           <p class="eyebrow">Royal Commission &middot; Jubail &amp; Yanbu</p>
           <h4>Registered Vendor No. 14902</h4>
-          <p>7 housing &amp; school phases across Jubail &mdash; 2,500+ doors, kitchens, wardrobes, vanity tops and handrails delivered.</p>
+          <p>7 housing &amp; school phases across Jubail 2,500+ doors, kitchens, wardrobes, vanity tops and handrails delivered.</p>
           <span class="view-link">View Project &rarr;</span>
         </a>
         <a class="feature-card" href="project-saudi-aramco.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-aramco.jpg') center/cover;">
@@ -1176,11 +1203,12 @@ projects_body = f'''<main>
           <p>100 doors, 1,700 m&sup2; cladding, bespoke joinery and premium VIP-grade finishes.</p>
           <span class="view-link">View Project &rarr;</span>
         </a>
-        <div class="feature-card" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-industrial.jpg') center/cover;">
-          <p class="eyebrow">SABIC &amp; MA'ADEN</p>
-          <h4>Registered Vendor &mdash; Industrial Housing</h4>
-          <p>2,042 villas across Al Mutrafiah &amp; Al Jubail housing, full kitchen, door, handrail &amp; vanity scope.</p>
-        </div>
+        <a class="feature-card" href="project-ministry-of-defense.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-mod.jpg') center/cover;">
+          <p class="eyebrow">Ministry of Defense</p>
+          <h4>Supporting Buildings &middot; Al Qassim</h4>
+          <p>Doors for 100 flats, 1,500 m&sup2; wall cladding and 250 m&sup2; ceiling works.</p>
+          <span class="view-link">View Project &rarr;</span>
+        </a>
         <div class="feature-card" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-hospitality.jpg') center/cover;">
           <p class="eyebrow">Hospitality &amp; Commercial</p>
           <h4>Movenpick, KARAN, MISK, KAFD</h4>
@@ -1221,7 +1249,7 @@ projects_body = f'''<main>
   </section>
 </main>'''
 write("projects.html", page(
-    "Projects &mdash; ARFAD",
+    "Projects ARFAD",
     "ARFAD's project portfolio: Royal Commission, Saudi Aramco, Red Sea Global, AMAALA, NEOM, SABIC, MA'ADEN and more.",
     "projects.html", projects_body))
 
@@ -1244,7 +1272,7 @@ contact_body = '''<main>
         <div class="hero-caption">
           <p class="eyebrow">Start a Project</p>
           <h1>Tell us what<br>you're building.</h1>
-          <p class="hero-lede">Share your drawings and specifications &mdash; our team will respond with a scoped quote.</p>
+          <p class="hero-lede">Share your drawings and specifications our team will respond with a scoped quote.</p>
         </div>
         <div class="hero-caption">
           <p class="eyebrow">Trusted Delivery</p>
@@ -1269,14 +1297,14 @@ contact_body = '''<main>
         </div>
       </div>
       <div class="map-box" style="padding:0;overflow:hidden;position:relative;">
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=49.5967%2C26.9846%2C49.6767%2C27.0246&layer=mapnik&marker=27.0046%2C49.6367" width="100%" height="100%" style="border:0;position:absolute;inset:0;filter:saturate(.85) brightness(.95);" loading="lazy" title="ARFAD location map &mdash; Jubail Industrial City"></iframe>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=49.5967%2C26.9846%2C49.6767%2C27.0246&layer=mapnik&marker=27.0046%2C49.6367" width="100%" height="100%" style="border:0;position:absolute;inset:0;filter:saturate(.85) brightness(.95);" loading="lazy" title="ARFAD location map Jubail Industrial City"></iframe>
         <a href="https://www.google.com/maps/search/?api=1&query=ARFAD+International+Industrial+Co%2C+Jubail+Industrial+City%2C+Saudi+Arabia" target="_blank" rel="noopener" class="btn solid" style="position:absolute;left:16px;bottom:16px;z-index:2;">Open in Google Maps</a>
       </div>
     </div>
   </section>
 </main>'''
 write("contact.html", page(
-    "Contact &mdash; ARFAD",
+    "Contact ARFAD",
     "Get in touch with ARFAD International Industrial Co. in Jubail Industrial City, Saudi Arabia.",
     "contact.html", contact_body))
 

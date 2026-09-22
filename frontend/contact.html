@@ -3,19 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Contact &mdash; ARFAD</title>
+<title>Contact ARFAD</title>
 <meta name="description" content="Get in touch with ARFAD International Industrial Co. in Jubail Industrial City, Saudi Arabia.">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://www.arfad.com.sa/contact.html">
 <meta name="theme-color" content="#091423">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ARFAD International Industrial Co.">
-<meta property="og:title" content="Contact  ARFAD">
+<meta property="og:title" content="Contact ARFAD">
 <meta property="og:description" content="Get in touch with ARFAD International Industrial Co. in Jubail Industrial City, Saudi Arabia.">
 <meta property="og:url" content="https://www.arfad.com.sa/contact.html">
 <meta property="og:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Contact  ARFAD">
+<meta name="twitter:title" content="Contact ARFAD">
 <meta name="twitter:description" content="Get in touch with ARFAD International Industrial Co. in Jubail Industrial City, Saudi Arabia.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
@@ -92,7 +92,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
         <div class="hero-caption">
           <p class="eyebrow">Start a Project</p>
           <h1>Tell us what<br>you're building.</h1>
-          <p class="hero-lede">Share your drawings and specifications &mdash; our team will respond with a scoped quote.</p>
+          <p class="hero-lede">Share your drawings and specifications our team will respond with a scoped quote.</p>
         </div>
         <div class="hero-caption">
           <p class="eyebrow">Trusted Delivery</p>
@@ -117,7 +117,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
         </div>
       </div>
       <div class="map-box" style="padding:0;overflow:hidden;position:relative;">
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=49.5967%2C26.9846%2C49.6767%2C27.0246&layer=mapnik&marker=27.0046%2C49.6367" width="100%" height="100%" style="border:0;position:absolute;inset:0;filter:saturate(.85) brightness(.95);" loading="lazy" title="ARFAD location map &mdash; Jubail Industrial City"></iframe>
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=49.5967%2C26.9846%2C49.6767%2C27.0246&layer=mapnik&marker=27.0046%2C49.6367" width="100%" height="100%" style="border:0;position:absolute;inset:0;filter:saturate(.85) brightness(.95);" loading="lazy" title="ARFAD location map Jubail Industrial City"></iframe>
         <a href="https://www.google.com/maps/search/?api=1&query=ARFAD+International+Industrial+Co%2C+Jubail+Industrial+City%2C+Saudi+Arabia" target="_blank" rel="noopener" class="btn solid" style="position:absolute;left:16px;bottom:16px;z-index:2;">Open in Google Maps</a>
       </div>
     </div>
@@ -148,7 +148,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &mdash; Est. 2004</span>
+    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. Est. 2004</span>
     <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>
@@ -286,6 +286,17 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       toggle.setAttribute("aria-label", "Open menu");
     });
   });
+})();
+
+/* header background after scrolling past 50px */
+(function(){
+  var header = document.querySelector("header.nav");
+  if(!header) return;
+  function onScroll(){
+    header.classList.toggle("nav-scrolled", window.scrollY > 50);
+  }
+  onScroll();
+  window.addEventListener("scroll", onScroll, {passive:true});
 })();
 
 </script>
