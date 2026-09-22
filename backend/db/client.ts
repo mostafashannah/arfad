@@ -8,7 +8,7 @@ const resolvedPath = path.isAbsolute(dbPath) ? dbPath : path.join(process.cwd(),
 
 const globalForDb = globalThis as unknown as { sqlite?: Client };
 
-const sqlite = globalForDb.sqlite ?? createClient({ url: `file:${resolvedPath}` });
+export const sqlite = globalForDb.sqlite ?? createClient({ url: `file:${resolvedPath}` });
 sqlite.execute("PRAGMA foreign_keys = ON").catch(() => {});
 
 if (process.env.NODE_ENV !== "production") globalForDb.sqlite = sqlite;
