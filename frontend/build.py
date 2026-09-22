@@ -469,7 +469,7 @@ idx_body = '''<main id="top">
           <div class="body"><span class="idx">06</span><h3>Furniture &amp; Interiors</h3><p>Loose, hotel, restaurant and office furniture, custom pieces.</p></div>
         </a>
         <a class="svc-card" href="service-countertops.html">
-          <div class="thumb" style="background-image:url('img/svc-countertops.jpg');"></div>
+          <div class="thumb" style="background-image:url('img/svc-countertops-reception.jpg');"></div>
           <div class="body"><span class="idx">07</span><h3>Countertops &amp; Surfaces</h3><p>Natural stone, engineered stone and quartz, fabricated in-house.</p></div>
         </a>
         <a class="svc-card" href="service-traditional.html">
@@ -652,7 +652,7 @@ services = [
     ("04","cladding","Cladding &amp; Ceilings","svc-cladding.jpg","Internal and external wooden wall cladding, decorative panels, slatted wood, wooden and slatted ceilings engineered for precision."),
     ("05","thermowood","Thermowood","svc-thermowood.jpg","Exterior cladding, decking, pergolas, louvers, screens and canopies built for durability and dimensional stability outdoors."),
     ("06","furniture","Furniture &amp; Interiors","svc-furniture.jpg","Loose, hotel, restaurant and office furniture, custom seating and bespoke pieces for schools, auditoriums, villas and airports."),
-    ("07","countertops","Countertops &amp; Surfaces","svc-countertops.jpg","Natural stone, engineered stone, quartz, kitchen and vanity tops, fabricated and finished in-house."),
+    ("07","countertops","Countertops &amp; Surfaces","svc-countertops-reception.jpg","Natural stone, engineered stone, quartz, kitchen and vanity tops, fabricated and finished in-house."),
     ("08","traditional","Traditional Woodworks","svc-traditional.jpg","Hand-carved panels, geometric mashrabiya screens, Islamic-patterned doors and mosque furniture rooted in Arabic craftsmanship."),
     ("09","wpc","WPC Works","svc-wpc.jpg","Wood-look decking, wall cladding, pergolas and fencing engineered for weather resistance and low maintenance."),
 ]
