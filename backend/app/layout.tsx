@@ -7,10 +7,24 @@ export const metadata: Metadata = {
   description: "Edit ARFAD's website content, projects, services and media.",
 };
 
+const THEME_INIT = `
+(function(){
+  try{
+    var t = localStorage.getItem("admin-theme") || "dark";
+    if(t === "dark") document.documentElement.classList.add("dark");
+  }catch(e){
+    document.documentElement.classList.add("dark");
+  }
+})();
+`;
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
+      </head>
+      <body className="antialiased bg-background text-foreground">
         <Providers>{children}</Providers>
       </body>
     </html>

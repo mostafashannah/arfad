@@ -1,5 +1,6 @@
-import { Card, Title, Text, Metric, Grid, AreaChart, List, ListItem, Flex, BadgeDelta } from "@tremor/react";
+import { AreaChart } from "@tremor/react";
 import { sqlite } from "@/db/client";
+import { PageHeader } from "@/components/admin/page-header";
 
 export const dynamic = "force-dynamic";
 
@@ -54,6 +55,7 @@ export default async function AnalyticsPage() {
     n: Number(r.n),
   }));
   const topCountry = countries[0];
+  const maxCountryViews = countries[0]?.n ?? 1;
 
   const paths = (pathRes.rows as unknown as Row[]).map((r) => ({
     path: r.path as string,
@@ -62,78 +64,81 @@ export default async function AnalyticsPage() {
   const maxPathViews = paths[0]?.n ?? 1;
 
   return (
-    <div className="space-y-8">
-      <div>
-        <Title>Analytics</Title>
-        <Text>Traffic across the public site — visits, where from, and which pages.</Text>
+    <div>
+      <PageHeader title="Analytics" subtitle="Traffic across the public site — visits, where from, and which pages." />
+
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <div className="rounded-2xl border border-border bg-card p-5">
+          <p className="text-sm text-muted-foreground">All-time pageviews</p>
+          <p className="mt-2 text-3xl font-semibold tracking-tight">{total.toLocaleString()}</p>
+        </div>
+        <div className="rounded-2xl border border-border bg-card p-5">
+          <p className="text-sm text-muted-foreground">Last 30 days</p>
+          <p className="mt-2 text-3xl font-semibold tracking-tight">{last30.toLocaleString()}</p>
+        </div>
+        <div className="rounded-2xl border border-border bg-card p-5">
+          <p className="text-sm text-muted-foreground">Top country (30d)</p>
+          <p className="mt-2 text-3xl font-semibold tracking-tight">{topCountry ? topCountry.name : "—"}</p>
+        </div>
       </div>
 
-      <Grid numItemsSm={2} numItemsLg={3} className="gap-4">
-        <Card decoration="top" decorationColor="blue">
-          <Text>All-time pageviews</Text>
-          <Metric>{total.toLocaleString()}</Metric>
-        </Card>
-        <Card decoration="top" decorationColor="blue">
-          <Text>Last 30 days</Text>
-          <Metric>{last30.toLocaleString()}</Metric>
-        </Card>
-        <Card decoration="top" decorationColor="blue">
-          <Text>Top country (30d)</Text>
-          <Metric>{topCountry ? topCountry.name : "—"}</Metric>
-        </Card>
-      </Grid>
-
-      <Card>
-        <Title>Daily traffic — last 30 days</Title>
+      <div className="mt-4 rounded-2xl border border-border bg-card p-5">
+        <p className="font-semibold">Daily traffic — last 30 days</p>
         <AreaChart
           className="mt-4 h-64"
           data={chartData}
           index="day"
           categories={["Views"]}
-          colors={["blue"]}
+          colors={["violet"]}
           showAnimation
           showLegend={false}
         />
-      </Card>
+      </div>
 
-      <Grid numItemsMd={2} className="gap-4">
-        <Card>
-          <Title>Top countries (30d)</Title>
-          <Text className="mt-1">Resolved from visitor IP address, offline lookup.</Text>
-          <List className="mt-4">
-            {countries.length === 0 && <Text className="py-4">No traffic recorded yet.</Text>}
-            {countries.map((c) => (
-              <ListItem key={c.code ?? "unknown"}>
-                <Flex justifyContent="start" className="gap-2 truncate">
-                  <Text className="truncate font-medium text-foreground">{c.name}</Text>
-                </Flex>
-                <BadgeDelta deltaType="unchanged">{c.n.toLocaleString()} views</BadgeDelta>
-              </ListItem>
-            ))}
-          </List>
-        </Card>
-        <Card>
-          <Title>Top pages (30d)</Title>
-          <Text className="mt-1">Which pages get visited.</Text>
+      <div className="mt-4 grid gap-4 md:grid-cols-2">
+        <div className="rounded-2xl border border-border bg-card p-5">
+          <p className="font-semibold">Top countries (30d)</p>
+          <p className="mt-1 text-sm text-muted-foreground">Resolved from visitor IP address, offline lookup.</p>
           <div className="mt-4 space-y-3">
-            {paths.length === 0 && <Text className="py-4">No traffic recorded yet.</Text>}
+            {countries.length === 0 && <p className="py-4 text-sm text-muted-foreground">No traffic recorded yet.</p>}
+            {countries.map((c) => (
+              <div key={c.code ?? "unknown"}>
+                <div className="flex items-center justify-between text-sm">
+                  <span className="truncate font-medium">{c.name}</span>
+                  <span className="text-muted-foreground">{c.n.toLocaleString()}</span>
+                </div>
+                <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-secondary">
+                  <div
+                    className="h-full rounded-full bg-primary"
+                    style={{ width: `${Math.max(4, (c.n / maxCountryViews) * 100)}%` }}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="rounded-2xl border border-border bg-card p-5">
+          <p className="font-semibold">Top pages (30d)</p>
+          <p className="mt-1 text-sm text-muted-foreground">Which pages get visited.</p>
+          <div className="mt-4 space-y-3">
+            {paths.length === 0 && <p className="py-4 text-sm text-muted-foreground">No traffic recorded yet.</p>}
             {paths.map((p) => (
               <div key={p.path}>
-                <Flex>
-                  <Text className="truncate font-medium text-foreground">{p.path}</Text>
-                  <Text>{p.n.toLocaleString()}</Text>
-                </Flex>
-                <div className="mt-1 h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                <div className="flex items-center justify-between text-sm">
+                  <span className="truncate font-medium">{p.path}</span>
+                  <span className="text-muted-foreground">{p.n.toLocaleString()}</span>
+                </div>
+                <div className="mt-1.5 h-1.5 w-full overflow-hidden rounded-full bg-secondary">
                   <div
-                    className="h-full rounded-full bg-blue-500"
+                    className="h-full rounded-full bg-primary"
                     style={{ width: `${Math.max(4, (p.n / maxPathViews) * 100)}%` }}
                   />
                 </div>
               </div>
             ))}
           </div>
-        </Card>
-      </Grid>
+        </div>
+      </div>
     </div>
   );
 }

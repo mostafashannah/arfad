@@ -7,6 +7,7 @@ import { Badge } from "@/components/ui/badge";
 import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Plus } from "lucide-react";
+import { PageHeader } from "@/components/admin/page-header";
 
 export const dynamic = "force-dynamic";
 
@@ -14,18 +15,18 @@ export default async function ServicesPage() {
   const allServices = await db.select().from(services).orderBy(asc(services.order)).all();
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold">Services</h1>
-          <p className="text-sm text-muted-foreground">The nine service cards on the Services page.</p>
-        </div>
-        <Button asChild>
-          <Link href="/admin/services/new">
-            <Plus className="h-4 w-4" /> New service
-          </Link>
-        </Button>
-      </div>
+    <div>
+      <PageHeader
+        title="Services"
+        subtitle="The nine service cards on the Services page."
+        action={
+          <Button asChild>
+            <Link href="/admin/services/new">
+              <Plus className="h-4 w-4" /> New service
+            </Link>
+          </Button>
+        }
+      />
 
       <Card>
         <CardHeader>

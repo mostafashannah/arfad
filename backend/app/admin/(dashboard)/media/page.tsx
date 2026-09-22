@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Upload, Trash2, Loader2, Copy, Check } from "lucide-react";
+import { PageHeader } from "@/components/admin/page-header";
 
 type Asset = { id: string; url: string; filename: string; folder: string; createdAt: string };
 
@@ -57,20 +58,20 @@ export default function MediaPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold">Media Library</h1>
-          <p className="text-sm text-muted-foreground">Every image uploaded across services, projects and settings.</p>
-        </div>
-        <div>
-          <input ref={inputRef} type="file" accept="image/*" multiple className="hidden" onChange={onFiles} />
-          <Button onClick={() => inputRef.current?.click()} disabled={uploading}>
-            {uploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
-            Upload images
-          </Button>
-        </div>
-      </div>
+    <div>
+      <PageHeader
+        title="Media Library"
+        subtitle="Every image uploaded across services, projects and settings."
+        action={
+          <div>
+            <input ref={inputRef} type="file" accept="image/*" multiple className="hidden" onChange={onFiles} />
+            <Button onClick={() => inputRef.current?.click()} disabled={uploading}>
+              {uploading ? <Loader2 className="h-4 w-4 animate-spin" /> : <Upload className="h-4 w-4" />}
+              Upload images
+            </Button>
+          </div>
+        }
+      />
 
       <Card>
         <CardHeader>

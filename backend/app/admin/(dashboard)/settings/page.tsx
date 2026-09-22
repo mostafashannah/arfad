@@ -2,6 +2,7 @@ import { db } from "@/db/client";
 import { settings } from "@/db/schema";
 import { asc } from "drizzle-orm";
 import { SettingsForm } from "@/components/admin/settings-form";
+import { PageHeader } from "@/components/admin/page-header";
 
 export const dynamic = "force-dynamic";
 
@@ -21,14 +22,11 @@ export default async function SettingsPage() {
   }, {});
 
   return (
-    <div className="space-y-6">
-      <div>
-        <h1 className="text-2xl font-semibold">Site Settings</h1>
-        <p className="text-sm text-muted-foreground">
-          Freeform text used across the site — hero copy, stats, contact info, about section.
-        </p>
-      </div>
-
+    <div>
+      <PageHeader
+        title="Site Settings"
+        subtitle="Freeform text used across the site — hero copy, stats, contact info, about section."
+      />
       <SettingsForm grouped={grouped} labels={SECTION_LABELS} />
     </div>
   );

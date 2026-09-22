@@ -30,17 +30,17 @@ export function Sidebar({ role }: { role?: string }) {
   const pathname = usePathname();
 
   return (
-    <aside className="flex h-screen w-60 flex-none flex-col border-r bg-card">
-      <div className="flex items-center gap-2 border-b px-5 py-5">
-        <div className="flex h-8 w-8 items-center justify-center rounded-md bg-primary text-sm font-bold text-primary-foreground">
+    <aside className="flex h-screen w-64 flex-none flex-col bg-background px-4 py-6">
+      <div className="flex items-center gap-3 px-2 pb-6">
+        <div className="flex h-9 w-9 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground">
           A
         </div>
         <div>
           <p className="text-sm font-semibold leading-none">ARFAD Admin</p>
-          <p className="text-xs text-muted-foreground">{role ?? "Editor"}</p>
+          <p className="mt-1 text-xs text-muted-foreground">Jubail &middot; KSA</p>
         </div>
       </div>
-      <nav className="flex-1 space-y-1 px-3 py-4">
+      <nav className="flex-1 space-y-1">
         {links.map(({ href, label, icon: Icon }) => {
           const active = href === "/admin" ? pathname === "/admin" : pathname.startsWith(href);
           return (
@@ -48,8 +48,10 @@ export function Sidebar({ role }: { role?: string }) {
               key={href}
               href={href}
               className={cn(
-                "flex items-center gap-2.5 rounded-md px-3 py-2 text-sm font-medium transition-colors",
-                active ? "bg-primary text-primary-foreground" : "text-muted-foreground hover:bg-muted hover:text-foreground"
+                "flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm font-medium transition-colors",
+                active
+                  ? "bg-secondary text-foreground"
+                  : "text-muted-foreground hover:bg-secondary/60 hover:text-foreground"
               )}
             >
               <Icon className="h-4 w-4" />
@@ -58,19 +60,19 @@ export function Sidebar({ role }: { role?: string }) {
           );
         })}
       </nav>
-      <div className="space-y-1 border-t px-3 py-4">
+      <div className="space-y-1 pt-4">
         <a
           href="/"
           target="_blank"
           rel="noreferrer"
-          className="flex items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+          className="flex items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-secondary/60 hover:text-foreground"
         >
           <ExternalLink className="h-4 w-4" />
           View public site
         </a>
         <button
           onClick={() => signOut({ callbackUrl: "/admin/login" })}
-          className="flex w-full items-center gap-2.5 rounded-md px-3 py-2 text-sm text-muted-foreground hover:bg-muted hover:text-foreground"
+          className="flex w-full items-center gap-2.5 rounded-xl px-3 py-2.5 text-sm text-muted-foreground hover:bg-secondary/60 hover:text-foreground"
         >
           <LogOut className="h-4 w-4" />
           Sign out

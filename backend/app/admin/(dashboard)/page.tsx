@@ -1,8 +1,9 @@
-import { Card, Title, Text, Metric, Grid, Flex, BadgeDelta, List, ListItem } from "@tremor/react";
 import { db } from "@/db/client";
 import { services, projects, mediaAssets, settings } from "@/db/schema";
 import { count, desc } from "drizzle-orm";
 import Link from "next/link";
+import { PageHeader } from "@/components/admin/page-header";
+import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
 
@@ -25,55 +26,64 @@ export default async function AdminOverview() {
   ];
 
   return (
-    <div className="space-y-8">
-      <div>
-        <Title>Overview</Title>
-        <Text>Everything editable on arfad.com.sa, in one place.</Text>
-      </div>
+    <div>
+      <PageHeader title="Content overview" subtitle="Everything editable on arfad.com.sa, in one place." />
 
-      <Grid numItemsSm={2} numItemsLg={4} className="gap-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((s) => (
-          <Link key={s.title} href={s.href}>
-            <Card decoration="top" decorationColor="blue" className="cursor-pointer transition hover:shadow-md">
-              <Text>{s.title}</Text>
-              <Metric>{s.value}</Metric>
-            </Card>
+          <Link
+            key={s.title}
+            href={s.href}
+            className="rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/40"
+          >
+            <p className="text-sm text-muted-foreground">{s.title}</p>
+            <p className="mt-2 text-3xl font-semibold tracking-tight">{s.value}</p>
           </Link>
         ))}
-      </Grid>
+      </div>
 
-      <Grid numItemsMd={2} className="gap-4">
-        <Card>
-          <Title>Recently updated projects</Title>
-          <List className="mt-4">
-            {recentProjects.length === 0 && <Text className="py-4">No projects yet.</Text>}
+      <div className="mt-6 grid gap-4 md:grid-cols-2">
+        <div className="rounded-2xl border border-border bg-card p-5">
+          <p className="font-semibold">Recently updated projects</p>
+          <div className="mt-4 space-y-1">
+            {recentProjects.length === 0 && <p className="py-4 text-sm text-muted-foreground">No projects yet.</p>}
             {recentProjects.map((p) => (
-              <ListItem key={p.id}>
-                <Flex justifyContent="start" className="gap-2 truncate">
-                  <Text className="truncate font-medium text-foreground">{p.title}</Text>
-                </Flex>
-                <BadgeDelta deltaType={p.published ? "increase" : "moderateDecrease"}>
-                  {p.published ? "Published" : "Draft"}
-                </BadgeDelta>
-              </ListItem>
+              <div key={p.id} className="flex items-center justify-between gap-3 rounded-xl px-2 py-2.5 hover:bg-secondary/50">
+                <span className="truncate text-sm font-medium">{p.title}</span>
+                <StatusBadge published={!!p.published} />
+              </div>
             ))}
-          </List>
-        </Card>
-        <Card>
-          <Title>Recently updated services</Title>
-          <List className="mt-4">
-            {recentServices.length === 0 && <Text className="py-4">No services yet.</Text>}
+          </div>
+        </div>
+        <div className="rounded-2xl border border-border bg-card p-5">
+          <p className="font-semibold">Recently updated services</p>
+          <div className="mt-4 space-y-1">
+            {recentServices.length === 0 && <p className="py-4 text-sm text-muted-foreground">No services yet.</p>}
             {recentServices.map((s) => (
-              <ListItem key={s.id}>
-                <Text className="font-medium text-foreground">{s.title}</Text>
-                <BadgeDelta deltaType={s.published ? "increase" : "moderateDecrease"}>
-                  {s.published ? "Published" : "Draft"}
-                </BadgeDelta>
-              </ListItem>
+              <div key={s.id} className="flex items-center justify-between gap-3 rounded-xl px-2 py-2.5 hover:bg-secondary/50">
+                <span className="truncate text-sm font-medium">{s.title}</span>
+                <StatusBadge published={!!s.published} />
+              </div>
             ))}
-          </List>
-        </Card>
-      </Grid>
+          </div>
+        </div>
+      </div>
     </div>
+  );
+}
+
+function StatusBadge({ published }: { published: boolean }) {
+  return (
+    <span
+      className={cn(
+        "inline-flex shrink-0 items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium",
+        published
+          ? "border-emerald-500/30 bg-emerald-500/10 text-emerald-500"
+          : "border-amber-500/30 bg-amber-500/10 text-amber-500"
+      )}
+    >
+      <span className={cn("h-1.5 w-1.5 rounded-full", published ? "bg-emerald-500" : "bg-amber-500")} />
+      {published ? "Published" : "Draft"}
+    </span>
   );
 }

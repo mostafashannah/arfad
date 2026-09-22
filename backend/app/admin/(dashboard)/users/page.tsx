@@ -16,6 +16,7 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Plus, Trash2, Loader2 } from "lucide-react";
+import { PageHeader } from "@/components/admin/page-header";
 
 type Member = { id: string; name: string; email: string; role: "ADMIN" | "EDITOR"; createdAt: string };
 
@@ -65,19 +66,18 @@ export default function UsersPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between">
-        <div>
-          <h1 className="text-2xl font-semibold">Team</h1>
-          <p className="text-sm text-muted-foreground">Who can sign in and edit the site.</p>
-        </div>
-        <Dialog open={open} onOpenChange={setOpen}>
-          <DialogTrigger asChild>
-            <Button>
-              <Plus className="h-4 w-4" /> Add team member
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
+    <div>
+      <PageHeader
+        title="Team"
+        subtitle="Who can sign in and edit the site."
+        action={
+          <Dialog open={open} onOpenChange={setOpen}>
+            <DialogTrigger asChild>
+              <Button>
+                <Plus className="h-4 w-4" /> Add team member
+              </Button>
+            </DialogTrigger>
+            <DialogContent>
             <DialogHeader>
               <DialogTitle>Add team member</DialogTitle>
               <DialogDescription>They'll be able to sign in immediately with this password.</DialogDescription>
@@ -125,7 +125,8 @@ export default function UsersPage() {
             </form>
           </DialogContent>
         </Dialog>
-      </div>
+        }
+      />
 
       <Card>
         <CardHeader>
