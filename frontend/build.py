@@ -754,7 +754,7 @@ for idx, anchor, title, img, desc in services:
           <a class="btn" href="services.html">All Services</a>
         </div>
       </div>
-      <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/11;background:url('img/factory.jpg') center/cover;"></div>
+      <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/11;background:url('img/{img}') center/cover;"></div>
     </div>
   </section>
 
