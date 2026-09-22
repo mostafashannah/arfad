@@ -47,7 +47,7 @@ const settingsData: { section: string; key: string; label: string; value: string
   { section: "about", key: "story", label: "Company story", value: "Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City — serving residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.", type: "textarea" },
 ];
 
-async function main() {
+export async function runSeed() {
   const email = process.env.SEED_ADMIN_EMAIL || "admin@arfad.com.sa";
   const password = process.env.SEED_ADMIN_PASSWORD || "changeme123";
   const passwordHash = await bcrypt.hash(password, 10);
@@ -96,7 +96,9 @@ async function main() {
   console.log("Done.");
 }
 
-main().catch((e) => {
-  console.error(e);
-  process.exit(1);
-});
+if (require.main === module) {
+  runSeed().catch((e) => {
+    console.error(e);
+    process.exit(1);
+  });
+}

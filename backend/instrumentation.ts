@@ -2,5 +2,7 @@ export async function register() {
   if (process.env.NEXT_RUNTIME === "nodejs") {
     const { ensureSchema } = await import("./db/ensure-schema");
     await ensureSchema();
+    const { runSeed } = await import("./db/seed");
+    await runSeed();
   }
 }
