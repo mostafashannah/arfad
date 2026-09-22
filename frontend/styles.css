@@ -145,7 +145,7 @@ header.nav{
 .brand-name small{display:block;font-family:"Montserrat",sans-serif;font-weight:400;font-size:.6rem;letter-spacing:.14em;color:rgba(255,255,255,.82);text-transform:uppercase;margin-top:1px;}
 nav.links{display:flex;gap:10px;font-family:"Montserrat",sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#fff;}
 nav.links a{text-decoration:none;transition:color .15s;padding:2px 0;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.45);}
-nav.links a:not(:last-child)::after{content:"·";margin-left:10px;color:rgba(255,255,255,.4);}
+nav.links a:not(:last-child)::after{content:"\00B7";margin-left:10px;color:rgba(255,255,255,.4);}
 nav.links a:hover,nav.links a[aria-current="page"]{color:#fff;}
 header.nav .btn{border-color:rgba(255,255,255,.65);color:#fff;transition:background .2s,color .2s,transform .15s;}
 header.nav .btn:hover{background:#fff;color:var(--navy);}
