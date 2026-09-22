@@ -9,9 +9,9 @@ NAV_LINKS = [
     ("index.html", "Home"),
     ("about.html", "Who We Are"),
     ("services.html", "Services"),
+    ("projects.html", "Projects"),
     ("factory.html", "Factory"),
     ("quality.html", "Quality"),
-    ("projects.html", "Projects"),
     ("contact.html", "Contact"),
 ]
 
@@ -47,17 +47,17 @@ FOOTER = '''<footer id="contact">
       <h4 style="text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--paper-on-navy);">ARFAD International Industrial Co.</h4>
       <p style="margin-top:8px;max-width:34ch;">Crafting excellence in wood since 2004. Luxury wooden works is our professional identity.</p>
     </div>
-    <div>
+    <div class="foot-col-offset">
       <h4>Address</h4>
       <p>Support Industrial<br>Jubail Industrial City, KSA</p>
     </div>
-    <div>
+    <div class="foot-col-offset">
       <h4>Contact</h4>
       <a href="tel:+966133417773">+966 13 341 7773</a>
       <a href="https://wa.me/966561210469">WhatsApp +966 56 121 0469</a>
       <a href="mailto:info@arfad.com.sa">info@arfad.com.sa</a>
     </div>
-    <div>
+    <div class="foot-col-offset">
       <h4>Credentials</h4>
       <p>ISO 9001:2015 &middot; ISO 14001:2015<br>ISO 45001:2018 &middot; FSC&reg; CoC Certified</p>
       <p style="margin-top:8px;">Aramco Vendor 10064085<br>Royal Commission Vendor 14902<br>Red Sea Global Vendor S10357393</p>
@@ -68,6 +68,10 @@ FOOTER = '''<footer id="contact">
     <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>'''
+
+WHATSAPP_FAB = '''<a class="whatsapp-fab" href="https://wa.me/966561210469" target="_blank" rel="noopener" aria-label="Chat with ARFAD on WhatsApp">
+  <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.699 4.606 1.902 6.47L4 29l7.72-1.865A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.6a9.57 9.57 0 0 1-4.885-1.34l-.35-.207-4.58 1.106 1.223-4.463-.228-.365A9.56 9.56 0 0 1 5.6 15c0-5.735 4.668-10.4 10.404-10.4C21.738 4.6 26.4 9.265 26.4 15s-4.662 10.4-10.396 10.4Zm5.71-7.79c-.313-.157-1.85-.913-2.137-1.017-.287-.104-.496-.157-.705.157-.208.313-.808 1.017-.99 1.226-.183.209-.365.235-.678.078-.313-.157-1.322-.487-2.518-1.552-.93-.83-1.559-1.855-1.741-2.168-.183-.313-.02-.482.137-.638.14-.14.313-.365.47-.548.157-.183.209-.313.313-.522.104-.209.052-.391-.026-.548-.078-.157-.705-1.7-.966-2.328-.254-.61-.512-.527-.705-.537l-.6-.011c-.209 0-.548.078-.835.391-.287.313-1.096 1.07-1.096 2.612s1.122 3.03 1.278 3.239c.157.209 2.208 3.372 5.35 4.728.747.323 1.33.516 1.784.66.749.238 1.431.204 1.97.124.601-.09 1.85-.756 2.11-1.487.261-.73.261-1.356.183-1.487-.078-.13-.287-.209-.6-.365Z"/></svg>
+</a>'''
 
 HEAD = '''<title>{title}</title>
 <meta name="description" content="{desc}">
@@ -289,7 +293,7 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     head += "\n" + ORG_SCHEMA
     if extra_head:
         head += "\n" + extra_head
-    content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER + "\n" + JS_REVEAL_OBSERVER
+    content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER + "\n" + WHATSAPP_FAB + "\n" + JS_REVEAL_OBSERVER
     if wrap:
         # standalone page (served as-is, not auto-wrapped by the Artifact skeleton)
         return DOCTYPE_OPEN.format(head=head) + content + DOCTYPE_CLOSE
@@ -635,21 +639,6 @@ services_body = f'''<main>
     </div>
   </section>
 
-  <section class="section on-navy">
-    <div class="wrap">
-      <p class="eyebrow">03 &mdash; Our Process</p>
-      <h2 style="margin-top:10px;">From drawing to delivery.</h2>
-      <div class="process-list">
-        <div class="process-step"><div class="n">01</div><h4>Client Brief &amp; Requirements</h4></div>
-        <div class="process-step"><div class="n">02</div><h4>Design &amp; Engineering</h4></div>
-        <div class="process-step"><div class="n">03</div><h4>Material Selection &amp; Procurement</h4></div>
-        <div class="process-step"><div class="n">04</div><h4>Factory Production &amp; CNC Machining</h4></div>
-        <div class="process-step"><div class="n">05</div><h4>Quality Control &amp; Inspection</h4></div>
-        <div class="process-step"><div class="n">06</div><h4>Site Installation &amp; Handover</h4></div>
-      </div>
-      <div style="margin-top:32px;"><a class="btn solid" href="contact.html">Request a Quote</a></div>
-    </div>
-  </section>
 </main>'''
 write("services.html", page(
     "Services &mdash; ARFAD",
@@ -1274,18 +1263,14 @@ contact_body = '''<main>
         <div class="contact-row"><span class="k">WhatsApp</span><span class="v"><a href="https://wa.me/966561210469">+966 56 121 0469</a></span></div>
         <div class="contact-row"><span class="k">Email</span><span class="v"><a href="mailto:info@arfad.com.sa">info@arfad.com.sa</a></span></div>
         <div class="contact-row"><span class="k">Website</span><span class="v"><a href="https://www.arfad.com.sa">www.arfad.com.sa</a></span></div>
-        <div class="contact-row"><span class="k">Vendors</span><span class="v">Aramco 10064085 &middot; Royal Commission 14902 &middot; Red Sea Global S10357393</span></div>
         <div class="hero-cta" style="margin-top:28px;">
           <a class="btn solid" href="mailto:info@arfad.com.sa">Email Us</a>
-          <a class="btn" href="https://wa.me/966561210469" style="border-color:var(--bronze);color:var(--bronze);">WhatsApp Us</a>
+          <a class="btn" href="https://wa.me/966561210469">WhatsApp Us</a>
         </div>
       </div>
-      <div class="map-box">
-        <div>
-          <p class="eyebrow" style="color:var(--bronze-light);margin-bottom:10px;">Factory &amp; Head Office</p>
-          <p style="font-size:1.1rem;font-weight:600;color:var(--paper-on-navy);">Jubail Industrial City<br>Kingdom of Saudi Arabia</p>
-          <p style="margin-top:10px;">20,000 m&sup2; built-up factory area</p>
-        </div>
+      <div class="map-box" style="padding:0;overflow:hidden;position:relative;">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=49.5967%2C26.9846%2C49.6767%2C27.0246&layer=mapnik&marker=27.0046%2C49.6367" width="100%" height="100%" style="border:0;position:absolute;inset:0;filter:saturate(.85) brightness(.95);" loading="lazy" title="ARFAD location map &mdash; Jubail Industrial City"></iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=ARFAD+International+Industrial+Co%2C+Jubail+Industrial+City%2C+Saudi+Arabia" target="_blank" rel="noopener" class="btn solid" style="position:absolute;left:16px;bottom:16px;z-index:2;">Open in Google Maps</a>
       </div>
     </div>
   </section>
