@@ -560,7 +560,7 @@ idx_body = '''<main id="top">
 write("index.html", page(
     "ARFAD International Industrial Co.",
     "Architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City, KSA since 2004.",
-    "index.html", idx_body, wrap=False))
+    "index.html", idx_body))
 
 # ---------- ABOUT ----------
 about_body = '''<main>
