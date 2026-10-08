@@ -84,7 +84,7 @@ def nav(active):
 
 def _accredited_track():
     chips = "".join(
-        '<span class="acc-chip acc-logo%s" title="%s"><img src="img/accreditation/%s" alt="%s" loading="lazy"></span>' % (" dark" if dark else "", esc(n), f, esc(n))
+        '<span class="acc-chip acc-logo%s" title="%s"><img src="/img/accreditation/%s" alt="%s" loading="lazy"></span>' % ("" if dark else " light", esc(n), f, esc(n))
         for n, f, dark in ACCREDITED)
     return chips * 3
 
@@ -586,8 +586,22 @@ JS_REVEAL_OBSERVER = '''<script>
       var cp = el("p"); (ct.credentials || []).forEach(function(line, i){ if(i) cp.appendChild(document.createElement("br")); cp.appendChild(document.createTextNode(line)); }); box.appendChild(cp);
     }
   }
+  function renderAcc(items){
+    var track = document.querySelector(".acc-track"), wrapBox = document.querySelector(".foot-accredited");
+    if(!track || !wrapBox) return;
+    wrapBox.hidden = !items.length;
+    track.textContent = "";
+    for(var pass = 0; pass < 3; pass++){
+      items.forEach(function(it){
+        var s = el("span", "acc-chip acc-logo" + (it.light ? " light" : "")); s.title = it.name;
+        var i = el("img"); i.src = it.logo; i.alt = it.name; i.loading = "lazy"; s.appendChild(i);
+        track.appendChild(s);
+      });
+    }
+  }
   function get(u){ return fetch(u, {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); }
   get("/api/navigation").then(function(j){ if(j && j.items && j.items.length && norm(j.items) !== norm(baked.nav)) renderNav(j.items); });
+  get("/api/accreditations").then(function(j){ if(j && Array.isArray(j.items) && baked.accreditations && norm(j.items) !== norm(baked.accreditations)) renderAcc(j.items); });
   get("/api/footer").then(function(j){ if(j && j.footer && norm(j.footer) !== norm(baked.footer)) renderFooter(j.footer); });
 })();
 
@@ -675,7 +689,8 @@ def _strip_tags(s):
     return re.sub(r"&\w+;", "", re.sub(r"<[^>]+>", "", s))
 
 import json as _json
-SITE_DEFAULTS = {"nav": NAV_DEFAULT, "footer": FOOTER_DEFAULT}
+ACCREDITATIONS_DEFAULT = [{"name": n, "logo": "/img/accreditation/" + f, "light": not dark} for n, f, dark in ACCREDITED]
+SITE_DEFAULTS = {"nav": NAV_DEFAULT, "footer": FOOTER_DEFAULT, "accreditations": ACCREDITATIONS_DEFAULT}
 SITE_DEFAULTS_TAG = '<script type="application/json" id="site-defaults">' + _json.dumps(SITE_DEFAULTS, ensure_ascii=False).replace("</", "<\\/") + '</script>'
 
 def page(title, desc, active, body, extra_head="", wrap=True, path=None):

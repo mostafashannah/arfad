@@ -311,5 +311,52 @@
       "left": "© 2026 ARFAD International Industrial Co. · Est. 2004",
       "right": "ARFAD, 20+ Years of Excellence in Woodwork"
     }
-  }
+  },
+  "accreditations": [
+    {
+      "name": "ISO 9001:2015",
+      "logo": "/img/accreditation/iso-9001.png",
+      "light": false
+    },
+    {
+      "name": "ISO 14001:2015",
+      "logo": "/img/accreditation/iso-14001.png",
+      "light": false
+    },
+    {
+      "name": "ISO 45001:2018",
+      "logo": "/img/accreditation/iso-45001.png",
+      "light": false
+    },
+    {
+      "name": "FSC",
+      "logo": "/img/accreditation/fsc.png",
+      "light": false
+    },
+    {
+      "name": "Intertek",
+      "logo": "/img/accreditation/intertek.png",
+      "light": false
+    },
+    {
+      "name": "UAF",
+      "logo": "/img/accreditation/uaf.png",
+      "light": false
+    },
+    {
+      "name": "Americo",
+      "logo": "/img/accreditation/americo.png",
+      "light": false
+    },
+    {
+      "name": "IAF",
+      "logo": "/img/accreditation/iaf.png",
+      "light": false
+    },
+    {
+      "name": "Control Union",
+      "logo": "/img/accreditation/control-union.png",
+      "light": false
+    }
+  ]
 }

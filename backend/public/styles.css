@@ -1058,3 +1058,7 @@ body.lb-open{overflow:hidden;}
 .gal-filters .sel select:focus-visible{outline:none;box-shadow:0 0 0 3px var(--gold-soft);border-color:var(--gold);}
 .gal-filters .sel select option{background:var(--card);color:var(--ink);}
 .gal-filters .sel select:not([value=""]){}
+
+.acc-chip.acc-logo.light{background:#fff;border-color:rgba(255,255,255,.6);}
+.acc-chip.acc-logo.light img{filter:none;}
+.foot-accredited[hidden]{display:none;}

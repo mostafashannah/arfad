@@ -16,5 +16,5 @@ files = sorted(f for f in (os.path.basename(p) for p in glob.glob(os.path.join(R
 pages_c.sitemap_and_llms(files)
 import json
 with open(os.path.join(ROOT, "..", "backend", "db", "site-defaults.json"), "w") as fh:
-    json.dump({"nav": [dict(i, active=True) for i in SITE_DEFAULTS["nav"]], "footer": SITE_DEFAULTS["footer"]}, fh, ensure_ascii=False, indent=2)
+    json.dump({"nav": [dict(i, active=True) for i in SITE_DEFAULTS["nav"]], "footer": SITE_DEFAULTS["footer"], "accreditations": SITE_DEFAULTS["accreditations"]}, fh, ensure_ascii=False, indent=2)
 print("done", len(files), "pages")
