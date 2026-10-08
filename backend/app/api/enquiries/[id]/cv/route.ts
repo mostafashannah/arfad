@@ -5,6 +5,7 @@ import { NextResponse } from "next/server";
 import { db } from "@/db/client";
 import { enquiries } from "@/db/schema";
 import { requireSession } from "@/lib/require-session";
+import { DATA_DIR } from "@/lib/data-dir";
 
 export const dynamic = "force-dynamic";
 
@@ -22,7 +23,7 @@ export async function GET(_req: Request, { params }: { params: { id: string } })
   const row = await db.select().from(enquiries).where(eq(enquiries.id, id)).get();
   if (!row?.cvFile) return new NextResponse("Not found", { status: 404 });
   try {
-    const file = path.join(process.cwd(), "data", "cv", path.basename(row.cvFile));
+    const file = path.join(DATA_DIR, "cv", path.basename(row.cvFile));
     const data = await readFile(file);
     const name = (row.cvName || row.cvFile).replace(/"/g, "");
     return new NextResponse(data, {

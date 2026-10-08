@@ -9,8 +9,9 @@
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 import crypto from "crypto";
+import { DATA_DIR } from "@/lib/data-dir";
 
-const UPLOAD_ROOT = path.join(process.cwd(), "public", "uploads");
+const UPLOAD_ROOT = path.join(DATA_DIR, "uploads");
 
 export async function saveUpload(file: File, folder = "uploads"): Promise<{ url: string; filename: string }> {
   const bytes = await file.arrayBuffer();

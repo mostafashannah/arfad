@@ -141,3 +141,20 @@ export const clients = sqliteTable("clients", {
     .notNull()
     .default(sql`(unixepoch())`),
 });
+
+export const navItems = sqliteTable("nav_items", {
+  id: id(),
+  parentId: text("parent_id"),
+  label: text("label").notNull(),
+  href: text("href").notNull(),
+  order: integer("order").notNull().default(0),
+  active: integer("active", { mode: "boolean" }).notNull().default(true),
+});
+
+export const siteBlocks = sqliteTable("site_blocks", {
+  key: text("key").primaryKey(),
+  value: text("value").notNull(),
+  updatedAt: integer("updated_at", { mode: "timestamp" })
+    .notNull()
+    .default(sql`(unixepoch())`),
+});

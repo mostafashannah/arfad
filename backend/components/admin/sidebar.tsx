@@ -17,6 +17,8 @@ import {
   BarChart3,
   Inbox,
   FileText,
+  PanelTop,
+  PanelBottom,
 } from "lucide-react";
 
 const links = [
@@ -29,6 +31,8 @@ const links = [
   { href: "/admin/media", label: "Media Library", icon: Images },
   { href: "/admin/clients", label: "Clients", icon: Handshake },
   { href: "/admin/profile", label: "Company Profile", icon: FileText },
+  { href: "/admin/menu", label: "Menu", icon: PanelTop },
+  { href: "/admin/footer", label: "Footer", icon: PanelBottom },
   { href: "/admin/users", label: "Team", icon: Users },
 ];
 

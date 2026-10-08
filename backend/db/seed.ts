@@ -3,9 +3,10 @@ import bcrypt from "bcryptjs";
 import { db } from "./client";
 import { existsSync } from "fs";
 import path from "path";
-import { users, services, projects, settings, clients } from "./schema";
+import { users, services, projects, settings, clients, navItems, siteBlocks } from "./schema";
 import { eq, and } from "drizzle-orm";
 import { slugify } from "../lib/slugify";
+import { resetFooter, resetNav } from "../lib/site-content";
 
 const servicesData = [
   { anchor: "doors", title: "Wooden Doors", summary: "Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and X-ray protected doors.", image: "/img/svc-doors.jpg", features: ["Wooden Internal Doors", "Wooden External Doors", "Fire-Rated Doors", "Flush Doors"] },
@@ -111,6 +112,11 @@ export async function runSeed() {
     await db.insert(clients).values({ name, slug, logoUrl, order: i }).run();
   }
   console.log(`Seeded clients`);
+
+  // Insert-if-missing only: admin edits to the menu and footer must survive redeploys.
+  if (!(await db.select({ id: navItems.id }).from(navItems).get())) await resetNav();
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "footer")).get())) await resetFooter();
+  console.log(`Seeded menu and footer`);
 
   for (const s of settingsData) {
     const existingSetting = await db

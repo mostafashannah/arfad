@@ -3,6 +3,7 @@ import { services, projects, mediaAssets, settings, enquiries } from "@/db/schem
 import { count, desc } from "drizzle-orm";
 import Link from "next/link";
 import { PageHeader } from "@/components/admin/page-header";
+import { StorageNotice } from "@/components/admin/storage-notice";
 import { cn } from "@/lib/utils";
 
 export const dynamic = "force-dynamic";
@@ -30,6 +31,7 @@ export default async function AdminOverview() {
   return (
     <div>
       <PageHeader title="Content overview" subtitle="Everything editable on arfad.com.sa, in one place." />
+      <StorageNotice />
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
         {stats.map((s) => (

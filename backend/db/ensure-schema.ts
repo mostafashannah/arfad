@@ -98,6 +98,19 @@ const STATEMENTS = [
     active INTEGER NOT NULL DEFAULT 1,
     created_at INTEGER NOT NULL DEFAULT (unixepoch())
   )`,
+  `CREATE TABLE IF NOT EXISTS nav_items (
+    id TEXT PRIMARY KEY NOT NULL,
+    parent_id TEXT,
+    label TEXT NOT NULL,
+    href TEXT NOT NULL,
+    "order" INTEGER NOT NULL DEFAULT 0,
+    active INTEGER NOT NULL DEFAULT 1
+  )`,
+  `CREATE TABLE IF NOT EXISTS site_blocks (
+    key TEXT PRIMARY KEY NOT NULL,
+    value TEXT NOT NULL,
+    updated_at INTEGER NOT NULL DEFAULT (unixepoch())
+  )`,
 ];
 
 let ensured: Promise<void> | null = null;

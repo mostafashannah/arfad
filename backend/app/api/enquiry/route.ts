@@ -7,6 +7,7 @@ import path from "path";
 import crypto from "crypto";
 import { db } from "@/db/client";
 import { enquiries } from "@/db/schema";
+import { DATA_DIR } from "@/lib/data-dir";
 
 export const runtime = "nodejs";
 
@@ -54,7 +55,7 @@ const esc = (s: string) =>
 type Enquiry = z.infer<typeof schema>;
 type Cv = { name: string; file: string; fullPath: string } | null;
 
-const CV_DIR = path.join(process.cwd(), "data", "cv");
+const CV_DIR = path.join(DATA_DIR, "cv");
 const CV_MAX = 5 * 1024 * 1024;
 const CV_TYPES: Record<string, (b: Buffer) => boolean> = {
   ".pdf": (b) => b.subarray(0, 4).toString() === "%PDF",
