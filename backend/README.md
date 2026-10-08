@@ -102,3 +102,30 @@ change** before deploying there:
 - The upload endpoint restricts to image MIME types and 10MB per file, but add
   virus/content scanning before accepting public uploads if this is ever opened
   beyond your own team.
+
+## Website enquiry form
+
+The static site posts enquiries to `POST /api/enquiry` (JSON:
+`name, email, phone, subject, enquiryType, message, page, website, t`).
+Each enquiry is saved to the `enquiries` table first (visible under
+**Enquiries** in the admin), then emailed to `MAIL_TO` with `Reply-To` set to
+the visitor. If sending fails the enquiry is still kept and the visitor still
+sees success; the admin list shows the email status (sent / failed / not
+configured). `website` is a honeypot and `t` the form render time in ms
+(submits under 3 seconds are ignored); a single IP is limited to 5 enquiries
+per 10 minutes.
+
+Set these environment variables on the server to enable email:
+
+| Variable | Default | Notes |
+| --- | --- | --- |
+| `SMTP_HOST` | - | required |
+| `SMTP_PORT` | `465` | |
+| `SMTP_SECURE` | `true` if port is 465 | `false` for STARTTLS (587) |
+| `SMTP_USER` | - | required |
+| `SMTP_PASS` | - | required |
+| `MAIL_FROM` | `SMTP_USER` | |
+| `MAIL_TO` | `info@arfad.com.sa` | |
+
+Without `SMTP_HOST`, `SMTP_USER` and `SMTP_PASS`, enquiries are stored with
+status `not_configured` and no email is attempted.

@@ -2,142 +2,257 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.arfad.com.sa/about.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/careers.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/certificates.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/contact.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/factory.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/hse-policy.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/index.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.arfad.com.sa/projects.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <loc>https://www.arfad.com.sa/machinery.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.arfad.com.sa/quality.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <loc>https://www.arfad.com.sa/media.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/mission.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/our-clients.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-el-eissa.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-kafd.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-karan.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-marafiq.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-ministry-of-defense.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-misk.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-movenpick.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-neom.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-primer-steak-house.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/project-redsea-amaala.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/project-royal-commission.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-saudi-aramco.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-neom.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-redsea-amaala.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-kafd.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-karan.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-marafiq.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-ministry-of-defense.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-misk.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-movenpick.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-primer-steak-house.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/project-el-eissa.html</loc>
-    <lastmod>2026-09-22</lastmod>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.arfad.com.sa/service-cabinets.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.arfad.com.sa/service-cladding.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <loc>https://www.arfad.com.sa/project-saudi-aramco.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/projects-commercial.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/projects-education.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/projects-healthcare.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/projects-hospitality.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/projects-industrial.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/projects-residential.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/projects-specialized.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/projects.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/quality-policy.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/registered-vendors.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/service-ceilings.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/service-countertops.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/service-doors.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/service-exterior.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/service-flooring.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/service-furniture.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.arfad.com.sa/service-joinery.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <loc>https://www.arfad.com.sa/service-kitchens.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.arfad.com.sa/service-thermowood.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <loc>https://www.arfad.com.sa/service-reception-counters.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/service-traditional.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.arfad.com.sa/service-wpc.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <loc>https://www.arfad.com.sa/service-vanities.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/service-wall-cladding.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/service-wardrobes.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/service-workflow.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.arfad.com.sa/services.html</loc>
-    <lastmod>2026-09-21</lastmod>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/sustainability.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/values.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/vision.html</loc>
+    <lastmod>2026-10-08</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/why-arfad.html</loc>
+    <lastmod>2026-10-08</lastmod>
     <priority>0.7</priority>
   </url>
 </urlset>

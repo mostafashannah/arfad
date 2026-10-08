@@ -74,6 +74,20 @@ const STATEMENTS = [
   )`,
   `CREATE INDEX IF NOT EXISTS page_views_created_at_idx ON page_views (created_at)`,
   `CREATE INDEX IF NOT EXISTS page_views_path_idx ON page_views (path)`,
+  `CREATE TABLE IF NOT EXISTS enquiries (
+    id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+    name TEXT NOT NULL,
+    email TEXT NOT NULL,
+    phone TEXT,
+    subject TEXT,
+    enquiry_type TEXT,
+    message TEXT NOT NULL,
+    page TEXT,
+    ip TEXT,
+    email_status TEXT NOT NULL DEFAULT 'pending',
+    email_error TEXT,
+    created_at INTEGER NOT NULL DEFAULT (unixepoch())
+  )`,
 ];
 
 let ensured: Promise<void> | null = null;

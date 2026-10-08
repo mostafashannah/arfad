@@ -1,5 +1,5 @@
 import { db } from "@/db/client";
-import { services, projects, mediaAssets, settings } from "@/db/schema";
+import { services, projects, mediaAssets, settings, enquiries } from "@/db/schema";
 import { count, desc } from "drizzle-orm";
 import Link from "next/link";
 import { PageHeader } from "@/components/admin/page-header";
@@ -8,12 +8,13 @@ import { cn } from "@/lib/utils";
 export const dynamic = "force-dynamic";
 
 export default async function AdminOverview() {
-  const [[{ n: serviceCount }], [{ n: projectCount }], [{ n: mediaCount }], [{ n: settingCount }], recentProjects, recentServices] =
+  const [[{ n: serviceCount }], [{ n: projectCount }], [{ n: mediaCount }], [{ n: settingCount }], [{ n: enquiryCount }], recentProjects, recentServices] =
     await Promise.all([
       db.select({ n: count() }).from(services).all(),
       db.select({ n: count() }).from(projects).all(),
       db.select({ n: count() }).from(mediaAssets).all(),
       db.select({ n: count() }).from(settings).all(),
+      db.select({ n: count() }).from(enquiries).all(),
       db.select().from(projects).orderBy(desc(projects.updatedAt)).limit(5).all(),
       db.select().from(services).orderBy(desc(services.updatedAt)).limit(5).all(),
     ]);
@@ -23,6 +24,7 @@ export default async function AdminOverview() {
     { title: "Projects", value: projectCount, href: "/admin/projects" },
     { title: "Media assets", value: mediaCount, href: "/admin/media" },
     { title: "Site text fields", value: settingCount, href: "/admin/settings" },
+    { title: "Enquiries", value: enquiryCount, href: "/admin/enquiries" },
   ];
 
   return (

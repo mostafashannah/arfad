@@ -107,3 +107,22 @@ export const pageViews = sqliteTable("page_views", {
     .notNull()
     .default(sql`(unixepoch())`),
 });
+
+export const enquiries = sqliteTable("enquiries", {
+  id: integer("id").primaryKey({ autoIncrement: true }),
+  name: text("name").notNull(),
+  email: text("email").notNull(),
+  phone: text("phone"),
+  subject: text("subject"),
+  enquiryType: text("enquiry_type"),
+  message: text("message").notNull(),
+  page: text("page"),
+  ip: text("ip"),
+  emailStatus: text("email_status", { enum: ["pending", "sent", "failed", "not_configured"] })
+    .notNull()
+    .default("pending"),
+  emailError: text("email_error"),
+  createdAt: integer("created_at", { mode: "timestamp" })
+    .notNull()
+    .default(sql`(unixepoch())`),
+});

@@ -1,20 +1,41 @@
 # ARFAD International Industrial Co.
 
-> Architectural woodwork manufacturer based in Jubail Industrial City, Saudi Arabia, operating since 2004. ISO 9001:2015, ISO 14001:2015, ISO 45001:2018 and FSC Chain-of-Custody certified. Approved vendor for Saudi Aramco, the Royal Commission for Jubail & Yanbu, and Red Sea Global.
+> Architectural woodwork manufacturer based in Jubail Industrial City, Saudi Arabia, operating since 2004. ISO 9001:2015, ISO 14001:2015, ISO 45001:2018 and FSC Chain-of-Custody certified. Registered vendor for Saudi Aramco, the Royal Commission for Jubail & Yanbu, and Red Sea Global.
 
-ARFAD manufactures custom architectural wood works, interior furnishing and wooden furniture from a 20,000 m² factory in Jubail Industrial City, KSA. Core services: doors (including Intertek fire-rated doors), joinery, cabinets & millwork, wall cladding, thermowood, furniture manufacturing, countertops, traditional woodworks and WPC (wood-plastic composite).
+Luxury Wooden Works is Our Professional Identity. ARFAD manufactures architectural wood works, interior furnishing and wooden furniture from a 20,000 m² factory in Jubail Industrial City, KSA.
 
 ## Key pages
-- [Home](https://www.arfad.com.sa/index.html): overview, key stats, service teaser, featured projects.
-- [Who We Are](https://www.arfad.com.sa/about.html): company story, vision, mission, process.
-- [Services](https://www.arfad.com.sa/services.html): all nine service lines with dedicated detail pages (service-doors.html, service-joinery.html, service-cabinets.html, service-cladding.html, service-thermowood.html, service-furniture.html, service-countertops.html, service-traditional.html, service-wpc.html).
-- [Factory & Technology](https://www.arfad.com.sa/factory.html): production zones, in-house capability, CNC machinery fleet.
-- [Quality & Certifications](https://www.arfad.com.sa/quality.html): ISO 9001, ISO 14001, ISO 45001, FSC CoC, Intertek fire-door certification.
-- [Projects](https://www.arfad.com.sa/projects.html): portfolio including Royal Commission, Saudi Aramco, Red Sea Global, AMAALA, NEOM, SABIC, MA'ADEN.
-- [Contact](https://www.arfad.com.sa/contact.html): phone, WhatsApp, email, address.
+- [Home](https://www.arfad.com.sa/index.html)
+- [Who We Are](https://www.arfad.com.sa/about.html): About Us, Vision, Mission, Our Values, Why ARFAD
+- [Services](https://www.arfad.com.sa/services.html):
+  - [Wooden Doors](https://www.arfad.com.sa/service-doors.html)
+  - [Wooden Wall Claddings](https://www.arfad.com.sa/service-wall-cladding.html)
+  - [Wooden Ceilings](https://www.arfad.com.sa/service-ceilings.html)
+  - [Wooden Floorings](https://www.arfad.com.sa/service-flooring.html)
+  - [Kitchens & Cabinets](https://www.arfad.com.sa/service-kitchens.html)
+  - [Wardrobes & Closets](https://www.arfad.com.sa/service-wardrobes.html)
+  - [Vanities & Storage Systems](https://www.arfad.com.sa/service-vanities.html)
+  - [Reception Counters](https://www.arfad.com.sa/service-reception-counters.html)
+  - [Interior Furniture & Decors](https://www.arfad.com.sa/service-furniture.html)
+  - [Exterior Woodworks](https://www.arfad.com.sa/service-exterior.html)
+  - [Counter Tops & Solid Surfaces](https://www.arfad.com.sa/service-countertops.html)
+  - [Traditional Woodworks](https://www.arfad.com.sa/service-traditional.html)
+- [Projects](https://www.arfad.com.sa/projects.html), by sector:
+  - [Industrial & Infrastructure](https://www.arfad.com.sa/projects-industrial.html)
+  - [Hospitality & Luxury Development](https://www.arfad.com.sa/projects-hospitality.html)
+  - [Residential and F&B](https://www.arfad.com.sa/projects-residential.html)
+  - [Commercial & Government](https://www.arfad.com.sa/projects-commercial.html)
+  - [Healthcare](https://www.arfad.com.sa/projects-healthcare.html)
+  - [Education](https://www.arfad.com.sa/projects-education.html)
+  - [Specialized Projects](https://www.arfad.com.sa/projects-specialized.html)
+- [Factory](https://www.arfad.com.sa/factory.html): Machineries, Service Workflow, Quality Policy, HSE Policy, Registered Vendors, Our Clients, Certificates & Awards
+- [Sustainability](https://www.arfad.com.sa/sustainability.html)
+- [Careers](https://www.arfad.com.sa/careers.html)
+- [Media](https://www.arfad.com.sa/media.html)
+- [Contact](https://www.arfad.com.sa/contact.html)
 
 ## Contact
 - Phone: +966 13 341 7773
-- WhatsApp: +966 56 121 0469
+- Mobile / WhatsApp: +966 56 916 4017
 - Email: info@arfad.com.sa
-- Address: Support Industrial, Jubail Industrial City, Saudi Arabia
+- Address: Support Industrial, Jubail Industrial City, KSA

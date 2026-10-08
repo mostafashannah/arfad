@@ -69,14 +69,16 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       <img class="brand-mark" src="img/logo.png" alt="ARFAD logo">
       <span class="brand-name"><img src="img/wordmark.png" alt="ARFAD" style="height:15px;width:auto;display:block;"></span>
     </a>
-    <nav class="links" id="primary-nav">
-      <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">Who We Are</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="factory.html">Factory</a>
-      <a href="quality.html">Quality</a>
-      <a href="contact.html">Contact</a>
+    <nav class="links" id="primary-nav" aria-label="Main">
+      <div class="nav-item is-current"><a class="nav-link" href="index.html" aria-current="page">Home</a></div>
+      <div class="nav-item has-sub"><a class="nav-link" href="about.html">Who We Are</a><button type="button" class="sub-toggle" aria-label="Toggle Who We Are menu" aria-expanded="false"></button><div class="submenu"><a href="about.html">About Us</a><a href="vision.html">Vision</a><a href="mission.html">Mission</a><a href="values.html">Our Values</a><a href="why-arfad.html">Why ARFAD</a></div></div>
+      <div class="nav-item has-sub"><a class="nav-link" href="services.html">Services</a><button type="button" class="sub-toggle" aria-label="Toggle Services menu" aria-expanded="false"></button><div class="submenu cols-2"><a href="service-doors.html">Wooden Doors</a><a href="service-wall-cladding.html">Wooden Wall Claddings</a><a href="service-ceilings.html">Wooden Ceilings</a><a href="service-flooring.html">Wooden Floorings</a><a href="service-kitchens.html">Kitchens &amp; Cabinets</a><a href="service-wardrobes.html">Wardrobes &amp; Closets</a><a href="service-vanities.html">Vanities &amp; Storage Systems</a><a href="service-reception-counters.html">Reception Counters</a><a href="service-furniture.html">Interior Furniture &amp; Decors</a><a href="service-exterior.html">Exterior Woodworks</a><a href="service-countertops.html">Counter Tops &amp; Solid Surfaces</a><a href="service-traditional.html">Traditional Woodworks</a></div></div>
+      <div class="nav-item has-sub"><a class="nav-link" href="projects.html">Projects</a><button type="button" class="sub-toggle" aria-label="Toggle Projects menu" aria-expanded="false"></button><div class="submenu"><a href="projects-industrial.html">Industrial &amp; Infrastructure</a><a href="projects-hospitality.html">Hospitality &amp; Luxury Development</a><a href="projects-residential.html">Residential and F&amp;B</a><a href="projects-commercial.html">Commercial &amp; Government</a><a href="projects-healthcare.html">Healthcare</a><a href="projects-education.html">Education</a><a href="projects-specialized.html">Specialized Projects</a></div></div>
+      <div class="nav-item has-sub"><a class="nav-link" href="factory.html">Factory</a><button type="button" class="sub-toggle" aria-label="Toggle Factory menu" aria-expanded="false"></button><div class="submenu"><a href="machinery.html">Machineries</a><a href="service-workflow.html">Service Workflow</a><a href="quality-policy.html">Quality Policy</a><a href="hse-policy.html">HSE Policy</a><a href="registered-vendors.html">Registered Vendors</a><a href="our-clients.html">Our Clients</a><a href="certificates.html">Certificates &amp; Awards</a></div></div>
+      <div class="nav-item"><a class="nav-link" href="sustainability.html">Sustainability</a></div>
+      <div class="nav-item"><a class="nav-link" href="careers.html">Careers</a></div>
+      <div class="nav-item"><a class="nav-link" href="media.html">Media</a></div>
+      <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
     </nav>
     <a class="btn solid cta-desktop" href="contact.html">Request a Quote</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
@@ -86,43 +88,39 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
 </header>
 <main id="top">
   <section class="hero-slider hero-full">
-    <div class="slide video-slide" style="background-image:url('img/svc-doors.jpg');">
-      <video autoplay muted loop playsinline preload="auto" poster="img/svc-doors.jpg">
-        <source src="img/hero-door.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="slide" style="background-image:url('img/svc-cladding.jpg');"></div>
-    <div class="slide" style="background-image:url('img/svc-thermowood.jpg');"></div>
+    <div class="slide" style="background-image:url('img/factory.jpg');"></div>
+    <div class="slide" style="background-image:url('img/proj-aramco.jpg');"></div>
+    <div class="slide" style="background-image:url('img/proj-rc.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-dots"></div>
     <div class="wrap hero-full-inner">
       <div class="hero-caption-track">
         <div class="hero-caption">
-          <p class="eyebrow">01 Wooden Doors</p>
-          <h1>Two decades of mastery <em>in wood.</em></h1>
-          <p class="hero-lede">Architectural wood works, interior furnishing and wooden furniture manufacturing, engineered and produced from a 20,000&nbsp;m&sup2; factory in Jubail Industrial City trusted across the Kingdom's most demanding projects since 2004.</p>
+          <p class="eyebrow">Est. 2004 &middot; Jubail, KSA</p>
+          <h1>Two Decades of Mastery <em>in WOODWORKS.</em></h1>
+          <p class="hero-lede">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.</p>
         </div>
         <div class="hero-caption">
-          <p class="eyebrow">02 Cladding &amp; Ceilings</p>
-          <h1>Architectural cladding, <em>engineered to last.</em></h1>
-          <p class="hero-lede">Internal and external wall cladding, decorative and slatted ceilings finished to withstand the Kingdom's climate.</p>
+          <p class="eyebrow">Mass Production</p>
+          <h1>Built for Scale. <em>Equipped for Excellence.</em></h1>
+          <p class="hero-lede">A 20,000&nbsp;m&sup2; factory with 200+ production employees and a comprehensive range of specialized woodworking machinery, supporting precision production at industrial scale.</p>
         </div>
         <div class="hero-caption">
-          <p class="eyebrow">03 Thermowood &amp; WPC</p>
-          <h1>Outdoor finishes built <em>for extremes.</em></h1>
-          <p class="hero-lede">Thermally modified timber and WPC decking, cladding and pergolas engineered for heat, humidity and weather resistance.</p>
+          <p class="eyebrow">Our Projects</p>
+          <h1>A 20-Year Portfolio <em>You Can Rely On.</em></h1>
+          <p class="hero-lede">Housing communities, giga-projects, hotels, schools and government buildings delivered across the Kingdom since 2004.</p>
         </div>
       </div>
       <div class="hero-cta">
-        <a class="btn solid" href="contact.html">Start a Project</a>
+        <a class="btn solid flash" href="contact.html">Start a Project</a>
         <a class="btn" href="projects.html">View Our Work</a>
       </div>
     </div>
     <div class="hero-full-facts">
       <div class="hf-item"><span class="num">237,000+</span><span class="lbl">Wooden doors installed</span></div>
-      <div class="hf-item"><span class="num">347,000 m&sup2;</span><span class="lbl">Kitchens &amp; wardrobes fitted</span></div>
-      <div class="hf-item"><span class="num">20,000 m&sup2;</span><span class="lbl">Factory in Jubail</span></div>
-      <div class="hf-item"><span class="num">200+</span><span class="lbl">Production employees</span></div>
+      <div class="hf-item"><span class="num">161,500+ m&sup2;</span><span class="lbl">Cladding, ceiling &amp; flooring works delivered</span></div>
+      <div class="hf-item"><span class="num">347,000+ m&sup2;</span><span class="lbl">Kitchens &amp; wardrobes fitted</span></div>
+      <div class="hf-item"><span class="num">20,000 m&sup2;</span><span class="lbl">Total built-up factory area</span></div>
     </div>
     <div class="hero-scroll-cue"><span></span></div>
   </section>
@@ -131,170 +129,109 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     <div class="wrap about-grid">
       <div>
         <p class="eyebrow">01 Who We Are</p>
-        <h2 style="margin-top:10px;">Built in Jubail.<br>Trusted across the Kingdom.</h2>
-        <p style="margin-top:20px;font-size:1.02rem;">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City serving residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
-        <p style="margin-top:16px;font-size:1.02rem;">Every project is engineered and produced in-house, from raw timber to finished installation, giving clients a single accountable partner from design through delivery. Two decades of certifications, vendor registrations and repeat business stand behind that promise.</p>
-        <div class="hero-cta" style="margin-top:26px;">
-          <a class="btn solid" href="about.html">Read Our Story</a>
-        </div>
+        <h2 style="margin-top:10px;">Built in Jubail.<br>Trusted Across the Kingdom.</h2>
+        <p style="margin-top:20px;font-size:1.02rem;">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.</p>
+        <p style="margin-top:16px;font-size:1.02rem;">Specializing in Wooden Doors, Kitchen Cabinets, Wardrobes, Cladding, Ceilings, Wooden Floorings, Timber &amp; WPC Decking, Countertops, Vanities, all types of Joineries and Custom Interior and Exterior Solutions. ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
+        <div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="about.html">Read Our Story</a><a class="btn" href="why-arfad.html">Why ARFAD</a></div>
       </div>
-      <div style="border-radius:16px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:16/11;background:url('img/who-we-are.jpg') center/cover;"></div>
+      <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/who-we-are.jpg');"></div>
     </div>
   </section>
 
-  <div class="img-divider" style="background-image:url('img/svc-joinery.jpg');"></div>
+  <section class="section photo-band on-navy" style="background-image:linear-gradient(180deg,rgba(7,19,32,0.9),rgba(10,37,64,0.9500000000000001)),url('img/factory.jpg');">
+    <div class="wrap">
+
+      <p class="eyebrow">02 Mass Production</p>
+      <h2 style="margin-top:10px;max-width:28ch;">Built for Scale. Equipped for Excellence.</h2>
+      <p class="band-lede">A comprehensive range of specialized woodworking machinery supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.</p>
+      <div class="stat-grid fx-stats">
+        <div class="stat-cell flash"><div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21V10l6 4v-4l6 4V6h3v15z"/><path d="M7 21v-3M12 21v-3"/></svg></div><div class="num">20,000 m&sup2;</div><div class="lbl">Total built-up factory area</div></div>
+        <div class="stat-cell flash"><div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.5 3-6 6-6s6 2.5 6 6"/><circle cx="17" cy="9" r="2.4"/><path d="M16 14c3 0 5 2 5 5"/></svg></div><div class="num">200+</div><div class="lbl">Production employees</div></div>
+        <div class="stat-cell flash"><div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8l8-4 8 4-8 4z"/><path d="M4 8v8l8 4 8-4V8M12 12v8"/></svg></div><div class="num">237,000+</div><div class="lbl">Wooden doors installed</div></div>
+        <div class="stat-cell flash"><div class="ico-wrap"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/></svg></div><div class="num">20+</div><div class="lbl">Years of excellence in woodwork</div></div>
+      </div>
+      <div style="margin-top:32px;" class="hero-cta"><a class="btn" href="factory.html">Explore the Factory</a><a class="btn" href="machinery.html">Machineries</a></div>
+    </div>
+  </section>
 
   <section class="section on-alt">
     <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">02 What We Deliver</p>
-        <h2>A full scope of architectural woodwork.</h2>
-        <p class="ink-soft">Nine disciplines, one factory from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.</p>
-      </div>
-      <div class="svc-grid teaser">
-        <a class="svc-card" href="service-doors.html">
-          <div class="thumb" style="background-image:url('img/mod-doors-teaser.jpg');"></div>
-          <div class="body"><span class="idx">01</span><h3>Wooden Doors</h3><p>Fire-rated to X-ray protected, certified up to 120 minutes.</p></div>
-        </a>
-        <a class="svc-card" href="service-joinery.html">
-          <div class="thumb" style="background-image:url('img/svc-joinery.jpg');"></div>
-          <div class="body"><span class="idx">02</span><h3>Joinery</h3><p>Custom joints, timber framing and architectural moldings.</p></div>
-        </a>
-        <a class="svc-card" href="service-cabinets.html">
-          <div class="thumb" style="background-image:url('img/svc-interior.jpg');"></div>
-          <div class="body"><span class="idx">03</span><h3>Interior Woodworks</h3><p>Kitchen cabinets, wardrobes, vanities and storage systems.</p></div>
-        </a>
-        <a class="svc-card" href="service-cladding.html">
-          <div class="thumb" style="background-image:url('img/svc-cladding.jpg');"></div>
-          <div class="body"><span class="idx">04</span><h3>Cladding &amp; Ceilings</h3><p>Internal and external wall cladding, decorative and slatted ceilings.</p></div>
-        </a>
-        <a class="svc-card" href="service-thermowood.html">
-          <div class="thumb" style="background-image:url('img/svc-thermowood.jpg');"></div>
-          <div class="body"><span class="idx">05</span><h3>Thermowood</h3><p>Exterior cladding, decking, pergolas, louvers and canopies.</p></div>
-        </a>
-        <a class="svc-card" href="service-furniture.html">
-          <div class="thumb" style="background-image:url('img/svc-furniture.jpg');"></div>
-          <div class="body"><span class="idx">06</span><h3>Furniture &amp; Interiors</h3><p>Loose, hotel, restaurant and office furniture, custom pieces.</p></div>
-        </a>
-        <a class="svc-card" href="service-countertops.html">
-          <div class="thumb" style="background-image:url('img/svc-countertops-reception.jpg');"></div>
-          <div class="body"><span class="idx">07</span><h3>Countertops &amp; Surfaces</h3><p>Natural stone, engineered stone and quartz, fabricated in-house.</p></div>
-        </a>
-        <a class="svc-card" href="service-traditional.html">
-          <div class="thumb" style="background-image:url('img/svc-traditional.jpg');"></div>
-          <div class="body"><span class="idx">08</span><h3>Traditional Woodworks</h3><p>Hand-carved panels, mashrabiya screens, Islamic-patterned doors.</p></div>
-        </a>
-        <a class="svc-card" href="service-wpc.html">
-          <div class="thumb" style="background-image:url('img/svc-wpc.jpg');"></div>
-          <div class="body"><span class="idx">09</span><h3>WPC Works</h3><p>Wood-look decking, cladding and pergolas built for weather resistance.</p></div>
-        </a>
-      </div>
-      <div style="margin-top:32px;"><a class="btn" href="services.html">View All 9 Services</a></div>
+      <div class="head"><p class="eyebrow">03 What We Deliver</p><h2>A full scope of architectural woodwork.</h2><p class="ink-soft">From certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.</p></div>
+      <div class="svc-grid teaser"><a class="svc-card flash on-light" href="service-doors.html"><div class="thumb" style="background-image:url('img/svc-doors.jpg');"></div><div class="body"><span class="idx">01</span><h3>Wooden Doors</h3><p>Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and X-ray protected doors.</p></div></a><a class="svc-card flash on-light" href="service-wall-cladding.html"><div class="thumb" style="background-image:url('img/svc-cladding.jpg');"></div><div class="body"><span class="idx">02</span><h3>Wooden Wall Claddings</h3><p>Internal, external, thermowood, decorative and slatted wall cladding.</p></div></a><a class="svc-card flash on-light" href="service-ceilings.html"><div class="thumb" style="background-image:url('img/svc-interior.jpg');"></div><div class="body"><span class="idx">03</span><h3>Wooden Ceilings</h3><p>Wooden, decorative and slatted wooden ceilings.</p></div></a><a class="svc-card flash on-light" href="service-flooring.html"><div class="thumb" style="background-image:url('img/svc-furniture.jpg');"></div><div class="body"><span class="idx">04</span><h3>Wooden Floorings</h3><p>Wooden flooring supplied and installed as part of complete woodwork packages.</p></div></a><a class="svc-card flash on-light" href="service-kitchens.html"><div class="thumb" style="background-image:url('img/svc-cabinets.jpg');"></div><div class="body"><span class="idx">05</span><h3>Kitchens &amp; Cabinets</h3><p>Kitchen cabinets with countertops, delivered at housing-development scale.</p></div></a><a class="svc-card flash on-light" href="service-wardrobes.html"><div class="thumb" style="background-image:url('img/svc-cabinets.jpg');"></div><div class="body"><span class="idx">06</span><h3>Wardrobes &amp; Closets</h3><p>Wardrobes and closets supplied and installed across villas and apartment buildings.</p></div></a><a class="svc-card flash on-light" href="service-vanities.html"><div class="thumb" style="background-image:url('img/svc-countertops.jpg');"></div><div class="body"><span class="idx">07</span><h3>Vanities &amp; Storage Systems</h3><p>Vanity units, vanity tops and storage systems.</p></div></a><a class="svc-card flash on-light" href="service-reception-counters.html"><div class="thumb" style="background-image:url('img/svc-joinery.jpg');"></div><div class="body"><span class="idx">08</span><h3>Reception Counters</h3><p>Reception counters and bespoke joinery built to spec.</p></div></a><a class="svc-card flash on-light" href="service-furniture.html"><div class="thumb" style="background-image:url('img/svc-furniture.jpg');"></div><div class="body"><span class="idx">09</span><h3>Interior Furniture &amp; Decors</h3><p>Custom furniture and interior woodworks for hospitality, residential, commercial and public spaces.</p></div></a><a class="svc-card flash on-light" href="service-exterior.html"><div class="thumb" style="background-image:url('img/svc-thermowood.jpg');"></div><div class="body"><span class="idx">10</span><h3>Exterior Woodworks</h3><p>Thermowood and WPC decking, cladding, pergolas, louvers, screens and canopies.</p></div></a><a class="svc-card flash on-light" href="service-countertops.html"><div class="thumb" style="background-image:url('img/svc-countertops-reception.jpg');"></div><div class="body"><span class="idx">11</span><h3>Counter Tops &amp; Solid Surfaces</h3><p>Natural stone, engineered stone, quartz and travertine tops, fabricated and finished in-house.</p></div></a><a class="svc-card flash on-light" href="service-traditional.html"><div class="thumb" style="background-image:url('img/svc-traditional.jpg');"></div><div class="body"><span class="idx">12</span><h3>Traditional Woodworks</h3><p>Hand-carved panels, mashrabiya screens, Islamic-patterned doors and majlis furniture.</p></div></a></div>
+      <div style="margin-top:32px;"><a class="btn" href="services.html">View All Services</a></div>
     </div>
   </section>
-
-  <section class="section on-navy" style="background:linear-gradient(180deg, rgba(10,37,64,.93), rgba(10,37,64,.97)), url('img/factory.jpg') center/cover;">
-    <div class="wrap">
-      <p class="eyebrow">03 Factory &amp; Technology</p>
-      <h2 style="margin-top:10px;max-width:26ch;">Built for scale. Equipped for excellence.</h2>
-      <div class="stat-grid">
-        <div class="stat-cell"><div class="num">20,000 m&sup2;</div><div class="lbl">Total built-up factory area</div></div>
-        <div class="stat-cell"><div class="num">200+</div><div class="lbl">Production employees</div></div>
-        <div class="stat-cell"><div class="num">30+</div><div class="lbl">CNC &amp; precision machines</div></div>
-        <div class="stat-cell"><div class="num">2004</div><div class="lbl">Operating since</div></div>
-      </div>
-      <div style="margin-top:32px;"><a class="btn" href="factory.html">Explore the Factory</a></div>
-    </div>
-  </section>
-
-  <div class="img-divider" style="background-image:url('img/svc-furniture.jpg');"></div>
 
   <section class="section">
     <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">04 Our Projects</p>
-        <h2>Trusted by the Kingdom's leading organisations.</h2>
-        <p class="ink-soft">A twenty-year portfolio spanning royal commissions, national giga-projects and the Kingdom's leading developers.</p>
-      </div>
-      <div class="feature-grid">
-        <a class="feature-card" href="project-royal-commission.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-rc.jpg') center/cover;">
-          <p class="eyebrow">Royal Commission &middot; Jubail &amp; Yanbu</p>
-          <h4>Registered Vendor No. 14902</h4>
-          <p>7 housing &amp; school phases across Jubail.</p>
-        </a>
-        <a class="feature-card" href="project-saudi-aramco.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-aramco.jpg') center/cover;">
-          <p class="eyebrow">Saudi Aramco</p>
-          <h4>Registered Vendor No. 10064085</h4>
-          <p>Al Mutrafiah, SDHOP, SATORP &amp; King Salman Maritime Complex.</p>
-        </a>
-        <a class="feature-card" href="project-redsea-amaala.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-rsg.jpg') center/cover;">
-          <p class="eyebrow">Red Sea Global &amp; AMAALA</p>
-          <h4>Registered Vendor No. S10357393</h4>
-          <p>4,758+ doors across staff villages and luxury resorts.</p>
-        </a>
-        <a class="feature-card" href="project-neom.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-neom.jpg') center/cover;">
-          <p class="eyebrow">NEOM</p>
-          <h4>Multipurpose Hall, Auditorium &amp; VIP Lounge</h4>
-          <p>100 doors, 1,700 m&sup2; cladding, bespoke joinery and premium VIP-grade finishes.</p>
-        </a>
-        <a class="feature-card" href="project-ministry-of-defense.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-mod.jpg') center/cover;">
-          <p class="eyebrow">Ministry of Defense</p>
-          <h4>Supporting Buildings &middot; Al Qassim</h4>
-          <p>Doors for 100 flats, 1,500 m&sup2; wall cladding and 250 m&sup2; ceiling works.</p>
-        </a>
-        <a class="feature-card" href="projects.html" style="background:linear-gradient(180deg,rgba(10,37,64,.55),rgba(10,37,64,.93)), url('img/proj-hospitality.jpg') center/cover;">
-          <p class="eyebrow">Hospitality &amp; Commercial</p>
-          <h4>Movenpick, KARAN, MISK, KAFD</h4>
-          <p>5-star hotel joinery, school campuses and premium woodworks across Riyadh's financial district.</p>
-        </a>
-      </div>
-      <div style="margin-top:32px;"><a class="btn solid" href="projects.html">View Full Project Portfolio</a></div>
+      <div class="head"><p class="eyebrow">04 Our Projects</p><h2>Every project we deliver is a physical reflection of our standards.</h2><p class="ink-soft">A 20-Year Portfolio You Can Rely On.</p></div>
+      <div class="feature-grid sector-grid" style="margin-top:0;"><a class="gallery-card flash" href="projects-industrial.html" style="background-image:url('img/proj-aramco.jpg');"><div class="gc-body"><p class="eyebrow">Project Sector</p><h4>Industrial &amp; Infrastructure</h4></div></a><a class="gallery-card flash" href="projects-hospitality.html" style="background-image:url('img/proj-rsg.jpg');"><div class="gc-body"><p class="eyebrow">Project Sector</p><h4>Hospitality &amp; Luxury Development</h4></div></a><a class="gallery-card flash" href="projects-residential.html" style="background-image:url('img/proj-rc.jpg');"><div class="gc-body"><p class="eyebrow">Project Sector</p><h4>Residential and F&amp;B</h4></div></a><a class="gallery-card flash" href="projects-commercial.html" style="background-image:url('img/proj-mod.jpg');"><div class="gc-body"><p class="eyebrow">Project Sector</p><h4>Commercial &amp; Government</h4></div></a><a class="gallery-card flash" href="projects-healthcare.html" style="background-image:url('img/proj-hospitality.jpg');"><div class="gc-body"><p class="eyebrow">Project Sector</p><h4>Healthcare</h4></div></a><a class="gallery-card flash" href="projects-education.html" style="background-image:url('img/proj-hospitality.jpg');"><div class="gc-body"><p class="eyebrow">Project Sector</p><h4>Education</h4></div></a><a class="gallery-card flash" href="projects-specialized.html" style="background-image:url('img/proj-neom.jpg');"><div class="gc-body"><p class="eyebrow">Project Sector</p><h4>Specialized Projects</h4></div></a></div>
+      <div style="margin-top:32px;"><a class="btn solid flash" href="projects.html">View Full Project Portfolio</a></div>
+      <div style="margin-top:56px;"><div class="divider-label"><span class="eyebrow" style="margin:0;">Trusted By</span></div><div class="client-marquee"><div class="client-marquee-track"><span class="chip logo-chip flash on-light">Royal Commission for Jubail &amp; Yanbu</span><span class="chip logo-chip flash on-light">Saudi Aramco</span><span class="chip logo-chip flash on-light">SATORP</span><span class="chip logo-chip flash on-light">YASREF</span><span class="chip logo-chip flash on-light">MA&#x27;ADEN</span><span class="chip logo-chip flash on-light">SABIC</span><span class="chip logo-chip flash on-light">MARAFIQ</span><span class="chip logo-chip flash on-light">Red Sea Global</span><span class="chip logo-chip flash on-light">The Red Sea Development Company</span><span class="chip logo-chip flash on-light">AMAALA</span><span class="chip logo-chip flash on-light">NEOM</span><span class="chip logo-chip flash on-light">Misk Schools</span><span class="chip logo-chip flash on-light">MISK Foundation</span><span class="chip logo-chip flash on-light">KAFD</span><span class="chip logo-chip flash on-light">Six Senses</span><span class="chip logo-chip flash on-light">Movenpick</span><span class="chip logo-chip flash on-light">Saudi Arabian Baytur</span><span class="chip logo-chip flash on-light">BEC Arabia</span><span class="chip logo-chip flash on-light">Astra</span><span class="chip logo-chip flash on-light">Azmeel Contracting</span><span class="chip logo-chip flash on-light">Khonaini International Co. Ltd</span><span class="chip logo-chip flash on-light">Saudi Arabia Railways</span><span class="chip logo-chip flash on-light">Hassan Allam</span><span class="chip logo-chip flash on-light">Samama</span><span class="chip logo-chip flash on-light">Aleisa Residence</span><span class="chip logo-chip flash on-light">ZAC International</span><span class="chip logo-chip flash on-light">Marco</span><span class="chip logo-chip flash on-light">Haif Company</span><span class="chip logo-chip flash on-light">ICAD</span><span class="chip logo-chip flash on-light">SIAC Construction</span><span class="chip logo-chip flash on-light">National Blue Company Ltd</span><span class="chip logo-chip flash on-light">Ewan</span><span class="chip logo-chip flash on-light">Thabat</span><span class="chip logo-chip flash on-light">Retal Residence</span><span class="chip logo-chip flash on-light">Nesma &amp; Partners</span><span class="chip logo-chip flash on-light">TMG</span><span class="chip logo-chip flash on-light">Imam Abdulrahman Bin Faisal University</span><span class="chip logo-chip flash on-light">Zakat, Tax and Customs Authority</span><span class="chip logo-chip flash on-light">GACA</span><span class="chip logo-chip flash on-light">Dar Al-Arkan</span><span class="chip logo-chip flash on-light">Technical Development for Contracting</span><span class="chip logo-chip flash on-light">Royal Commission for Jubail &amp; Yanbu</span><span class="chip logo-chip flash on-light">Saudi Aramco</span><span class="chip logo-chip flash on-light">SATORP</span><span class="chip logo-chip flash on-light">YASREF</span><span class="chip logo-chip flash on-light">MA&#x27;ADEN</span><span class="chip logo-chip flash on-light">SABIC</span><span class="chip logo-chip flash on-light">MARAFIQ</span><span class="chip logo-chip flash on-light">Red Sea Global</span><span class="chip logo-chip flash on-light">The Red Sea Development Company</span><span class="chip logo-chip flash on-light">AMAALA</span><span class="chip logo-chip flash on-light">NEOM</span><span class="chip logo-chip flash on-light">Misk Schools</span><span class="chip logo-chip flash on-light">MISK Foundation</span><span class="chip logo-chip flash on-light">KAFD</span><span class="chip logo-chip flash on-light">Six Senses</span><span class="chip logo-chip flash on-light">Movenpick</span><span class="chip logo-chip flash on-light">Saudi Arabian Baytur</span><span class="chip logo-chip flash on-light">BEC Arabia</span><span class="chip logo-chip flash on-light">Astra</span><span class="chip logo-chip flash on-light">Azmeel Contracting</span><span class="chip logo-chip flash on-light">Khonaini International Co. Ltd</span><span class="chip logo-chip flash on-light">Saudi Arabia Railways</span><span class="chip logo-chip flash on-light">Hassan Allam</span><span class="chip logo-chip flash on-light">Samama</span><span class="chip logo-chip flash on-light">Aleisa Residence</span><span class="chip logo-chip flash on-light">ZAC International</span><span class="chip logo-chip flash on-light">Marco</span><span class="chip logo-chip flash on-light">Haif Company</span><span class="chip logo-chip flash on-light">ICAD</span><span class="chip logo-chip flash on-light">SIAC Construction</span><span class="chip logo-chip flash on-light">National Blue Company Ltd</span><span class="chip logo-chip flash on-light">Ewan</span><span class="chip logo-chip flash on-light">Thabat</span><span class="chip logo-chip flash on-light">Retal Residence</span><span class="chip logo-chip flash on-light">Nesma &amp; Partners</span><span class="chip logo-chip flash on-light">TMG</span><span class="chip logo-chip flash on-light">Imam Abdulrahman Bin Faisal University</span><span class="chip logo-chip flash on-light">Zakat, Tax and Customs Authority</span><span class="chip logo-chip flash on-light">GACA</span><span class="chip logo-chip flash on-light">Dar Al-Arkan</span><span class="chip logo-chip flash on-light">Technical Development for Contracting</span></div></div></div>
     </div>
   </section>
-
-  <div class="img-divider" style="background-image:url('img/svc-thermowood.jpg');"></div>
 
   <section class="section cta-band">
     <div class="wrap" style="text-align:center;">
       <p class="eyebrow" style="justify-content:center;">Get in touch</p>
-      <h2 style="margin-top:14px;font-size:clamp(1.9rem,4vw,2.8rem);max-width:22ch;margin-inline:auto;">Let's build something that lasts twenty years.</h2>
-      <div class="hero-cta" style="justify-content:center;margin-top:30px;">
-        <a class="btn cta-band-btn" href="contact.html">Request a Quote</a>
-        <a class="btn cta-band-btn-outline" href="mailto:info@arfad.com.sa">Email Us</a>
-      </div>
+      <h2 style="margin-top:14px;font-size:clamp(1.9rem,4vw,2.8rem);max-width:26ch;margin-inline:auto;">Let's build something that lasts twenty years.</h2>
+      <div class="hero-cta" style="justify-content:center;margin-top:30px;"><a class="btn cta-band-btn flash" href="contact.html">Request a Quote</a><a class="btn cta-band-btn-outline" href="mailto:info@arfad.com.sa">Email Us</a></div>
     </div>
   </section>
 </main>
-<footer id="contact">
+<footer id="contact" class="site-foot">
+  <div class="foot-glow" aria-hidden="true"></div>
+  <div class="wrap foot-accredited">
+    <p class="foot-label">Accredited By</p>
+    <div class="acc-marquee"><div class="acc-track"><span class="acc-chip">ISO</span><span class="acc-chip">FSC</span><span class="acc-chip">Intertek</span><span class="acc-chip">UAF</span><span class="acc-chip">Americo</span><span class="acc-chip">Control Union</span><span class="acc-chip">IAF</span><span class="acc-chip">ISO</span><span class="acc-chip">FSC</span><span class="acc-chip">Intertek</span><span class="acc-chip">UAF</span><span class="acc-chip">Americo</span><span class="acc-chip">Control Union</span><span class="acc-chip">IAF</span><span class="acc-chip">ISO</span><span class="acc-chip">FSC</span><span class="acc-chip">Intertek</span><span class="acc-chip">UAF</span><span class="acc-chip">Americo</span><span class="acc-chip">Control Union</span><span class="acc-chip">IAF</span><span class="acc-chip">ISO</span><span class="acc-chip">FSC</span><span class="acc-chip">Intertek</span><span class="acc-chip">UAF</span><span class="acc-chip">Americo</span><span class="acc-chip">Control Union</span><span class="acc-chip">IAF</span></div></div>
+  </div>
   <div class="wrap foot-grid">
-    <div>
+    <div class="foot-brand">
       <img class="brand-mark lg" src="img/logo.png" alt="ARFAD logo" style="margin-bottom:14px;">
       <img src="img/wordmark.png" alt="ARFAD" style="height:22px;width:auto;display:block;margin-bottom:14px;">
       <h4 style="text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--paper-on-navy);">ARFAD International Industrial Co.</h4>
-      <p style="margin-top:8px;max-width:34ch;">Crafting excellence in wood since 2004. Luxury wooden works is our professional identity.</p>
+      <p class="ar-name" lang="ar" dir="rtl">شركة أرفاد الدولية للصناعة</p>
+      <p style="margin-top:8px;max-width:34ch;">Crafting Excellence in Woodwork Since 2004. Luxury Wooden Works is Our Professional Identity.</p>
+      <a class="btn flash dl-btn" href="files/ARFAD-Company-Profile.pdf" download>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg>
+        Download Profile</a>
+      <div class="foot-badges">
+        <span class="foot-badge">Saudi Made</span>
+        <span class="foot-badge">Local Content Certified</span>
+      </div>
     </div>
-    <div class="foot-col-offset">
-      <h4>Address</h4>
-      <p>Support Industrial<br>Jubail Industrial City, KSA</p>
+    <div>
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="about.html">Who We Are</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="factory.html">Factory</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="careers.html">Careers</a>
+      <a href="media.html">Media</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <div class="foot-col-offset">
+    <div>
+      <h4>Services</h4>
+      <a href="service-doors.html">Wooden Doors</a><a href="service-wall-cladding.html">Wooden Wall Claddings</a><a href="service-ceilings.html">Wooden Ceilings</a><a href="service-flooring.html">Wooden Floorings</a><a href="service-kitchens.html">Kitchens &amp; Cabinets</a><a href="service-wardrobes.html">Wardrobes &amp; Closets</a><a href="service-vanities.html">Vanities &amp; Storage Systems</a><a href="service-reception-counters.html">Reception Counters</a><a href="service-furniture.html">Interior Furniture &amp; Decors</a><a href="service-exterior.html">Exterior Woodworks</a><a href="service-countertops.html">Counter Tops &amp; Solid Surfaces</a><a href="service-traditional.html">Traditional Woodworks</a>
+    </div>
+    <div>
       <h4>Contact</h4>
+      <p>Support Industrial<br>Jubail Industrial City, KSA</p>
       <a href="tel:+966133417773">+966 13 341 7773</a>
-      <a href="https://wa.me/966561210469">WhatsApp +966 56 121 0469</a>
+      <a href="https://wa.me/966569164017">WhatsApp +966 56 916 4017</a>
       <a href="mailto:info@arfad.com.sa">info@arfad.com.sa</a>
-    </div>
-    <div class="foot-col-offset">
-      <h4>Credentials</h4>
+      <h4 style="margin-top:18px;">Credentials</h4>
       <p>ISO 9001:2015 &middot; ISO 14001:2015<br>ISO 45001:2018 &middot; FSC&reg; CoC Certified</p>
-      <p style="margin-top:8px;">Aramco Vendor 10064085<br>Royal Commission Vendor 14902<br>Red Sea Global Vendor S10357393</p>
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. Est. 2004</span>
-    <span class="doc-tag">20+ Years of Excellence in Woodwork</span>
+    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &middot; Est. 2004</span>
+    <span class="doc-tag">ARFAD, 20+ Years of Excellence in Woodwork</span>
   </div>
 </footer>
-<a class="whatsapp-fab" href="https://wa.me/966561210469" target="_blank" rel="noopener" aria-label="Chat with ARFAD on WhatsApp">
+<a class="whatsapp-fab" href="https://wa.me/966569164017" target="_blank" rel="noopener" aria-label="Chat with ARFAD on WhatsApp">
   <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.699 4.606 1.902 6.47L4 29l7.72-1.865A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.6a9.57 9.57 0 0 1-4.885-1.34l-.35-.207-4.58 1.106 1.223-4.463-.228-.365A9.56 9.56 0 0 1 5.6 15c0-5.735 4.668-10.4 10.404-10.4C21.738 4.6 26.4 9.265 26.4 15s-4.662 10.4-10.396 10.4Zm5.71-7.79c-.313-.157-1.85-.913-2.137-1.017-.287-.104-.496-.157-.705.157-.208.313-.808 1.017-.99 1.226-.183.209-.365.235-.678.078-.313-.157-1.322-.487-2.518-1.552-.93-.83-1.559-1.855-1.741-2.168-.183-.313-.02-.482.137-.638.14-.14.313-.365.47-.548.157-.183.209-.313.313-.522.104-.209.052-.391-.026-.548-.078-.157-.705-1.7-.966-2.328-.254-.61-.512-.527-.705-.537l-.6-.011c-.209 0-.548.078-.835.391-.287.313-1.096 1.07-1.096 2.612s1.122 3.03 1.278 3.239c.157.209 2.208 3.372 5.35 4.728.747.323 1.33.516 1.784.66.749.238 1.431.204 1.97.124.601-.09 1.85-.756 2.11-1.487.261-.73.261-1.356.183-1.487-.078-.13-.287-.209-.6-.365Z"/></svg>
 </a>
 <div class="theme-switch" id="themeSwitch" role="group" aria-label="Color theme">
@@ -307,7 +244,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
 </div>
 <script>
 (function(){
-  var sel = ".head,.svc-card,.cert-card,.cert-photo-card,.feature-card,.stat-cell,.contact-card,.vm-item,.process-step,.table-wrap,.about-grid>div,.qual-cols>*,.detail-hero .wrap>*,.img-divider,.thumb-grid>*,.why-item,.client-band,.client-marquee,.foot-grid>*";
+  var sel = ".head,.svc-card,.cert-card,.cert-photo-card,.feature-card,.stat-cell,.contact-card,.vm-item,.process-step,.table-wrap,.about-grid>div,.qual-cols>*,.detail-hero .wrap>*,.img-divider,.thumb-grid>*,.why-item,.client-band,.client-marquee,.foot-grid>*,.rv";
   var els = document.querySelectorAll(sel);
   if(!("IntersectionObserver" in window)){
     els.forEach(function(e){ e.classList.add("reveal-in"); });
@@ -360,7 +297,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
 
 /* count-up effect for stat numbers (hero facts band + factory/quality stat grids) */
 (function(){
-  var nums = document.querySelectorAll(".hf-item .num, .stat-cell .num");
+  var nums = document.querySelectorAll(".hf-item .num, .stat-cell .num, .fx-num");
   if(!nums.length) return;
   var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -444,21 +381,67 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   });
 })();
 
-/* mobile nav toggle */
+/* mobile nav toggle + dropdown sub-menus */
 (function(){
   var toggle = document.querySelector(".nav-toggle");
   var nav = document.getElementById("primary-nav");
   if(!toggle || !nav) return;
+  function closeAll(){
+    document.body.classList.remove("nav-open");
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Open menu");
+  }
   toggle.addEventListener("click", function(){
     var open = document.body.classList.toggle("nav-open");
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   });
-  nav.querySelectorAll("a").forEach(function(a){
-    a.addEventListener("click", function(){
-      document.body.classList.remove("nav-open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.setAttribute("aria-label", "Open menu");
+  nav.querySelectorAll(".sub-toggle").forEach(function(b){
+    b.addEventListener("click", function(e){
+      e.preventDefault();
+      var item = b.parentNode;
+      var open = item.classList.toggle("open");
+      b.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  });
+  nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeAll); });
+  document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeAll(); });
+})();
+
+/* enquiry / careers forms: post to the site backend */
+(function(){
+  document.querySelectorAll("form[data-enquiry]").forEach(function(form){
+    var started = Date.now();
+    var status = form.querySelector(".form-status");
+    var btn = form.querySelector("button[type=submit]");
+    form.addEventListener("submit", function(e){
+      e.preventDefault();
+      var fd = new FormData(form);
+      var body = {
+        name: fd.get("name"), email: fd.get("email"), phone: fd.get("phone") || "",
+        subject: fd.get("subject") || "", enquiryType: fd.get("enquiryType") || "",
+        message: fd.get("message"), page: location.pathname, website: fd.get("website") || "", t: started
+      };
+      status.className = "form-status";
+      status.textContent = "Sending...";
+      btn.disabled = true;
+      fetch("/api/enquiry", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)})
+        .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); })
+        .then(function(j){
+          if(j && j.ok){
+            status.className = "form-status ok";
+            status.textContent = "Thank you. Your message has been sent and our team will reply shortly.";
+            form.reset(); started = Date.now();
+          } else {
+            status.className = "form-status err";
+            status.textContent = (j && j.error) || "We could not send your message. Please email info@arfad.com.sa or call us.";
+          }
+        })
+        .catch(function(){
+          status.className = "form-status err";
+          status.textContent = "We could not send your message. Please email info@arfad.com.sa or call us.";
+        })
+        .then(function(){ btn.disabled = false; });
     });
   });
 })();
