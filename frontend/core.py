@@ -18,6 +18,33 @@ NAV = [
     ("Contact", "contact.html", []),
 ]
 
+NAV_DEFAULT = [{"label": l, "href": h, "children": [{"label": cl, "href": ch} for cl, ch in kids]} for l, h, kids in NAV]
+
+FOOTER_DEFAULT = {
+    "brand": {
+        "title": "ARFAD International Industrial Co.",
+        "arabicName": AR_NAME,
+        "tagline": f"Crafting Excellence in Woodwork Since 2004. {TAGLINE}.",
+        "downloadLabel": "Download Profile",
+        "badges": ["Saudi Made", "Local Content Certified"],
+    },
+    "columns": [
+        {"title": "Quick Links", "links": [{"label": l, "href": h} for l, h in
+            [("Home","index.html"),("Who We Are","about.html"),("Services","services.html"),("Projects","projects.html"),("Factory","factory.html"),
+             ("Sustainability","sustainability.html"),("Careers","careers.html"),("Media","media.html"),("Contact","contact.html")]]},
+        {"title": "Services", "links": [{"label": s["title"], "href": f"service-{s['slug']}.html"} for s in SERVICES]},
+    ],
+    "contact": {
+        "title": "Contact",
+        "addressLines": ADDRESS_LINES,
+        "phone": PHONE_LAND, "mobile": PHONE_MOBILE, "mobileWhatsApp": PHONE_MOBILE_WA, "email": EMAIL,
+        "credentialsTitle": "Credentials",
+        "credentials": ["ISO 9001:2015 \u00b7 ISO 14001:2015", "ISO 45001:2018 \u00b7 FSC\u00ae CoC Certified"],
+    },
+    "accreditedLabel": "Accredited By",
+    "bottom": {"left": "\u00a9 2026 ARFAD International Industrial Co. \u00b7 Est. 2004", "right": "ARFAD, 20+ Years of Excellence in Woodwork"},
+}
+
 def esc(s):
     return html.escape(s, quote=True)
 
@@ -61,61 +88,47 @@ def _accredited_track():
         for n, f, dark in ACCREDITED)
     return chips * 3
 
-_foot_services = "".join(f'<a href="service-{s["slug"]}.html">{esc(s["title"])}</a>' for s in SERVICES[:6])
-_foot_services2 = "".join(f'<a href="service-{s["slug"]}.html">{esc(s["title"])}</a>' for s in SERVICES[6:])
-
-FOOTER = f'''<footer id="contact" class="site-foot">
+def render_footer(f):
+    b, ct = f["brand"], f["contact"]
+    cols = "".join('<div data-foot-col><h4>%s</h4>%s</div>' % (esc(col["title"]), "".join('<a href="%s">%s</a>' % (esc(l["href"]), esc(l["label"])) for l in col["links"])) for col in f["columns"])
+    badges = "".join('<span class="foot-badge">%s</span>' % esc(x) for x in b["badges"])
+    creds = "<br>".join(esc(x) for x in ct["credentials"])
+    return (f'''<footer id="contact" class="site-foot">
   <div class="foot-glow" aria-hidden="true"></div>
   <div class="wrap foot-accredited">
-    <p class="foot-label">Accredited By</p>
+    <p class="foot-label" data-foot="accreditedLabel">{esc(f["accreditedLabel"])}</p>
     <div class="acc-marquee"><div class="acc-track">{_accredited_track()}</div></div>
   </div>
   <div class="wrap foot-grid">
     <div class="foot-brand">
       <img class="brand-mark lg" src="img/logo.png" alt="ARFAD logo" style="margin-bottom:14px;">
       <img src="img/wordmark.png" alt="ARFAD" style="height:22px;width:auto;display:block;margin-bottom:14px;">
-      <h4 style="text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--paper-on-navy);">ARFAD International Industrial Co.</h4>
-      <p class="ar-name" lang="ar" dir="rtl">{AR_NAME}</p>
-      <p style="margin-top:8px;max-width:34ch;">Crafting Excellence in Woodwork Since 2004. {TAGLINE}.</p>
+      <h4 data-foot="brandTitle" style="text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--paper-on-navy);">{esc(b["title"])}</h4>
+      <p class="ar-name" data-foot="arabicName" lang="ar" dir="rtl">{esc(b["arabicName"])}</p>
+      <p data-foot="tagline" style="margin-top:8px;max-width:34ch;">{esc(b["tagline"])}</p>
       <a class="btn flash dl-btn" href="/download/company-profile" download="ARFAD-Company-Profile.pdf">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg>
-        Download Profile</a>
-      <div class="foot-badges">
-        <span class="foot-badge">Saudi Made</span>
-        <span class="foot-badge">Local Content Certified</span>
-      </div>
+        <span data-foot="downloadLabel">{esc(b["downloadLabel"])}</span></a>
+      <div class="foot-badges" data-foot="badges">{badges}</div>
     </div>
-    <div>
-      <h4>Quick Links</h4>
-      <a href="index.html">Home</a>
-      <a href="about.html">Who We Are</a>
-      <a href="services.html">Services</a>
-      <a href="projects.html">Projects</a>
-      <a href="factory.html">Factory</a>
-      <a href="sustainability.html">Sustainability</a>
-      <a href="careers.html">Careers</a>
-      <a href="media.html">Media</a>
-      <a href="contact.html">Contact</a>
-    </div>
-    <div>
-      <h4>Services</h4>
-      {_foot_services}{_foot_services2}
-    </div>
-    <div>
-      <h4>Contact</h4>
-      <p>{"<br>".join(ADDRESS_LINES)}</p>
-      <a href="tel:{PHONE_LAND_TEL}">{PHONE_LAND}</a>
-      <a href="https://wa.me/{PHONE_MOBILE_WA}">WhatsApp {PHONE_MOBILE}</a>
-      <a href="mailto:{EMAIL}">{EMAIL}</a>
-      <h4 style="margin-top:18px;">Credentials</h4>
-      <p>ISO 9001:2015 &middot; ISO 14001:2015<br>ISO 45001:2018 &middot; FSC&reg; CoC Certified</p>
+    <div class="foot-cols" data-foot="cols">{cols}</div>
+    <div class="foot-contact" data-foot="contact">
+      <h4>{esc(ct["title"])}</h4>
+      <p>{"<br>".join(esc(x) for x in ct["addressLines"])}</p>
+      <a href="tel:{esc(ct["phone"].replace(" ", ""))}">{esc(ct["phone"])}</a>
+      <a href="https://wa.me/{esc(ct["mobileWhatsApp"])}">WhatsApp {esc(ct["mobile"])}</a>
+      <a href="mailto:{esc(ct["email"])}">{esc(ct["email"])}</a>
+      <h4 style="margin-top:18px;">{esc(ct["credentialsTitle"])}</h4>
+      <p>{creds}</p>
     </div>
   </div>
   <div class="wrap foot-bottom">
-    <span class="doc-tag">&copy; 2026 ARFAD International Industrial Co. &middot; Est. 2004</span>
-    <span class="doc-tag">ARFAD, 20+ Years of Excellence in Woodwork</span>
+    <span class="doc-tag" data-foot="bottomLeft">{esc(f["bottom"]["left"])}</span>
+    <span class="doc-tag" data-foot="bottomRight">{esc(f["bottom"]["right"])}</span>
   </div>
-</footer>'''
+</footer>''')
+
+FOOTER = render_footer(FOOTER_DEFAULT)
 
 WHATSAPP_FAB = '''<a class="whatsapp-fab" href="https://wa.me/966569164017" target="_blank" rel="noopener" aria-label="Chat with ARFAD on WhatsApp">
   <svg viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true"><path d="M16.004 3C9.377 3 4 8.373 4 15c0 2.386.699 4.606 1.902 6.47L4 29l7.72-1.865A11.94 11.94 0 0 0 16.004 27C22.63 27 28 21.627 28 15S22.63 3 16.004 3Zm0 21.6a9.57 9.57 0 0 1-4.885-1.34l-.35-.207-4.58 1.106 1.223-4.463-.228-.365A9.56 9.56 0 0 1 5.6 15c0-5.735 4.668-10.4 10.404-10.4C21.738 4.6 26.4 9.265 26.4 15s-4.662 10.4-10.396 10.4Zm5.71-7.79c-.313-.157-1.85-.913-2.137-1.017-.287-.104-.496-.157-.705.157-.208.313-.808 1.017-.99 1.226-.183.209-.365.235-.678.078-.313-.157-1.322-.487-2.518-1.552-.93-.83-1.559-1.855-1.741-2.168-.183-.313-.02-.482.137-.638.14-.14.313-.365.47-.548.157-.183.209-.313.313-.522.104-.209.052-.391-.026-.548-.078-.157-.705-1.7-.966-2.328-.254-.61-.512-.527-.705-.537l-.6-.011c-.209 0-.548.078-.835.391-.287.313-1.096 1.07-1.096 2.612s1.122 3.03 1.278 3.239c.157.209 2.208 3.372 5.35 4.728.747.323 1.33.516 1.784.66.749.238 1.431.204 1.97.124.601-.09 1.85-.756 2.11-1.487.261-.73.261-1.356.183-1.487-.078-.13-.287-.209-.6-.365Z"/></svg>
@@ -415,16 +428,95 @@ JS_REVEAL_OBSERVER = '''<script>
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
   });
-  nav.querySelectorAll(".sub-toggle").forEach(function(b){
-    b.addEventListener("click", function(e){
-      e.preventDefault();
-      var item = b.parentNode;
-      var open = item.classList.toggle("open");
-      b.setAttribute("aria-expanded", open ? "true" : "false");
+  function bind(){
+    nav.querySelectorAll(".sub-toggle").forEach(function(b){
+      b.addEventListener("click", function(e){
+        e.preventDefault();
+        var item = b.parentNode;
+        var open = item.classList.toggle("open");
+        b.setAttribute("aria-expanded", open ? "true" : "false");
+      });
     });
-  });
-  nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeAll); });
+    nav.querySelectorAll("a").forEach(function(a){ a.addEventListener("click", closeAll); });
+  }
+  bind();
+  window.__arfadNavBind = bind;
   document.addEventListener("keydown", function(e){ if(e.key === "Escape") closeAll(); });
+})();
+
+/* header menu + footer: pick up changes made in the admin (the baked-in markup is the fallback) */
+(function(){
+  var tag = document.getElementById("site-defaults");
+  var nav = document.getElementById("primary-nav");
+  if(!tag) return;
+  var baked; try{ baked = JSON.parse(tag.textContent); }catch(e){ return; }
+  function norm(o){
+    return JSON.stringify(o, function(k, v){
+      if(v && typeof v === "object" && !Array.isArray(v)){ return Object.keys(v).sort().reduce(function(a, key){ a[key] = v[key]; return a; }, {}); }
+      return v;
+    });
+  }
+  function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+  function safe(h){ h = String(h || "").trim(); return /^(javascript|data|vbscript):/i.test(h) ? "#" : h; }
+  function link(href, text, cls){ var a = el("a", cls, text); a.setAttribute("href", safe(href)); return a; }
+  function currentFile(){
+    var f = location.pathname.split("/").pop() || "index.html";
+    return f.indexOf("project-") === 0 ? "projects.html" : f;
+  }
+  function renderNav(items){
+    if(!nav) return;
+    var cur = currentFile();
+    nav.textContent = "";
+    items.forEach(function(it){
+      var kids = it.children || [];
+      var isCur = it.href === cur || kids.some(function(k){ return k.href === cur; });
+      var wrap = el("div", "nav-item" + (kids.length ? " has-sub" : "") + (isCur ? " is-current" : ""));
+      var a = link(it.href, it.label, "nav-link"); if(isCur) a.setAttribute("aria-current", "page");
+      wrap.appendChild(a);
+      if(kids.length){
+        var b = el("button", "sub-toggle"); b.type = "button"; b.setAttribute("aria-label", "Toggle " + it.label + " menu"); b.setAttribute("aria-expanded", "false");
+        wrap.appendChild(b);
+        var sub = el("div", "submenu" + (kids.length > 8 ? " cols-2" : ""));
+        kids.forEach(function(k){ var ka = link(k.href, k.label); if(k.href === cur) ka.setAttribute("aria-current", "page"); sub.appendChild(ka); });
+        wrap.appendChild(sub);
+      }
+      nav.appendChild(wrap);
+    });
+    if(window.__arfadNavBind) window.__arfadNavBind();
+  }
+  function setText(key, val){ var n = document.querySelector('[data-foot="' + key + '"]'); if(n && val != null) n.textContent = val; }
+  function renderFooter(f){
+    var b = f.brand || {}, ct = f.contact || {};
+    setText("accreditedLabel", f.accreditedLabel); setText("brandTitle", b.title); setText("arabicName", b.arabicName);
+    setText("tagline", b.tagline); setText("downloadLabel", b.downloadLabel);
+    setText("bottomLeft", (f.bottom || {}).left); setText("bottomRight", (f.bottom || {}).right);
+    var badges = document.querySelector('[data-foot="badges"]');
+    if(badges){ badges.textContent = ""; (b.badges || []).forEach(function(x){ badges.appendChild(el("span", "foot-badge", x)); }); }
+    var cols = document.querySelector('[data-foot="cols"]');
+    if(cols){
+      cols.textContent = "";
+      (f.columns || []).forEach(function(col){
+        var d = el("div"); d.setAttribute("data-foot-col", "");
+        d.appendChild(el("h4", null, col.title));
+        (col.links || []).forEach(function(l){ d.appendChild(link(l.href, l.label)); });
+        cols.appendChild(d);
+      });
+    }
+    var box = document.querySelector('[data-foot="contact"]');
+    if(box){
+      box.textContent = "";
+      box.appendChild(el("h4", null, ct.title));
+      var p = el("p"); (ct.addressLines || []).forEach(function(line, i){ if(i) p.appendChild(document.createElement("br")); p.appendChild(document.createTextNode(line)); }); box.appendChild(p);
+      if(ct.phone) box.appendChild(link("tel:" + String(ct.phone).replace(/\\s+/g, ""), ct.phone));
+      if(ct.mobile) box.appendChild(link("https://wa.me/" + String(ct.mobileWhatsApp || "").replace(/\\D/g, ""), "WhatsApp " + ct.mobile));
+      if(ct.email) box.appendChild(link("mailto:" + ct.email, ct.email));
+      var h = el("h4", null, ct.credentialsTitle); h.style.marginTop = "18px"; box.appendChild(h);
+      var cp = el("p"); (ct.credentials || []).forEach(function(line, i){ if(i) cp.appendChild(document.createElement("br")); cp.appendChild(document.createTextNode(line)); }); box.appendChild(cp);
+    }
+  }
+  function get(u){ return fetch(u, {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); }
+  get("/api/navigation").then(function(j){ if(j && j.items && j.items.length && norm(j.items) !== norm(baked.nav)) renderNav(j.items); });
+  get("/api/footer").then(function(j){ if(j && j.footer && norm(j.footer) !== norm(baked.footer)) renderFooter(j.footer); });
 })();
 
 /* enquiry / careers forms: post to the site backend */
@@ -510,6 +602,10 @@ def _strip_tags(s):
     import re
     return re.sub(r"&\w+;", "", re.sub(r"<[^>]+>", "", s))
 
+import json as _json
+SITE_DEFAULTS = {"nav": NAV_DEFAULT, "footer": FOOTER_DEFAULT}
+SITE_DEFAULTS_TAG = '<script type="application/json" id="site-defaults">' + _json.dumps(SITE_DEFAULTS, ensure_ascii=False).replace("</", "<\\/") + '</script>'
+
 def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     canonical_path = path or active
     canonical = f"{SITE_URL}/{canonical_path}"
@@ -518,7 +614,7 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     head += "\n" + ORG_SCHEMA
     if extra_head:
         head += "\n" + extra_head
-    content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER + "\n" + WHATSAPP_FAB + "\n" + THEME_SWITCH + "\n" + JS_REVEAL_OBSERVER + "\n" + TRACK_SCRIPT
+    content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER + "\n" + SITE_DEFAULTS_TAG + "\n" + WHATSAPP_FAB + "\n" + THEME_SWITCH + "\n" + JS_REVEAL_OBSERVER + "\n" + TRACK_SCRIPT
     if wrap:
         # standalone page (served as-is, not auto-wrapped by the Artifact skeleton)
         return DOCTYPE_OPEN.format(head=head) + content + DOCTYPE_CLOSE

@@ -146,6 +146,6 @@ def enquiry_form(types, submit="Send Message", kind="Enquiry", cv=False):
         <label>Your Message<textarea name="message" rows="6" required maxlength="5000"></textarea></label>
         {cv_field}
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
-        <button class="btn solid flash" type="submit">{submit}</button>
         <p class="form-status" role="status" aria-live="polite"></p>
+        <button class="btn solid flash" type="submit">{submit}</button>
       </form>'''

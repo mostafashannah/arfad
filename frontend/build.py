@@ -14,4 +14,7 @@ pages_c.redirects()
 redirect_files = set(pages_c.REDIRECTS)
 files = sorted(f for f in (os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "*.html"))) if f not in redirect_files)
 pages_c.sitemap_and_llms(files)
+import json
+with open(os.path.join(ROOT, "..", "backend", "db", "site-defaults.json"), "w") as fh:
+    json.dump({"nav": [dict(i, active=True) for i in SITE_DEFAULTS["nav"]], "footer": SITE_DEFAULTS["footer"]}, fh, ensure_ascii=False, indent=2)
 print("done", len(files), "pages")
