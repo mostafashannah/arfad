@@ -129,3 +129,18 @@ Set these environment variables on the server to enable email:
 
 Without `SMTP_HOST`, `SMTP_USER` and `SMTP_PASS`, enquiries are stored with
 status `not_configured` and no email is attempted.
+
+## Clients
+
+**Clients** in the admin manages the client logos shown on the public site
+(add, rename, reorder with the arrow buttons, hide with the Active switch,
+delete, and upload/replace a logo; uploads go through `/api/media` into
+`public/uploads/clients/`). The static site reads `GET /api/clients` (no auth,
+cached 60s) which returns `{ clients: [{ name, slug, logo, website }] }` for
+active clients in order, so changes show up without a rebuild. Admin writes:
+`POST /api/clients` (`{name, logoUrl?, website?, active?}`),
+`PATCH|DELETE /api/clients/[id]` (`name, logoUrl, website, active, order`) and
+`POST /api/clients/reorder` (`{ids: [...]}` in the desired order).
+
+The 42 seeded clients are inserted by slug only if missing, so admin edits
+survive redeploys (slugs stay fixed on rename, so the seed never re-adds a renamed client; unlike services/projects, which are upserted).

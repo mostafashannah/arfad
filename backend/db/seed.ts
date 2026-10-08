@@ -1,8 +1,11 @@
 import "dotenv/config";
 import bcrypt from "bcryptjs";
 import { db } from "./client";
-import { users, services, projects, settings } from "./schema";
+import { existsSync } from "fs";
+import path from "path";
+import { users, services, projects, settings, clients } from "./schema";
 import { eq, and } from "drizzle-orm";
+import { slugify } from "../lib/slugify";
 
 const servicesData = [
   { anchor: "doors", title: "Wooden Doors", summary: "Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and X-ray protected doors.", image: "/img/svc-doors.jpg", features: ["Wooden Internal Doors", "Wooden External Doors", "Fire-Rated Doors", "Flush Doors"] },
@@ -33,6 +36,8 @@ const projectsData = [
   { slug: "el-eissa", title: "Al Eissa Compound Project, ZAC", client: "Al Eissa Compound", location: "", scope: "Supply and installation of external doors, internal doors, roof canopies, and shade pavili", description: "Supply and installation of external doors, internal doors, roof canopies, and shade pavilions.", featured: false, images: ["/img/projects/el-eissa-1.jpg", "/img/projects/el-eissa-2.jpg", "/img/projects/el-eissa-3.jpg"] },
   { slug: "primer-steak-house", title: "PRIMER Steak House & Lounge, Riyadh", client: "PRIMER Steak House", location: "Riyadh", scope: "Full interior fit-out, including custom dining furniture, bar joinery, and feature woodwor", description: "Full interior fit-out, including custom dining furniture, bar joinery, and feature woodworks.", featured: false, images: ["/img/projects/primer-steak-house-1.jpg", "/img/projects/primer-steak-house-2.jpg", "/img/projects/primer-steak-house-3.jpg"] },
 ];
+
+const clientsData = ["Royal Commission for Jubail & Yanbu", "Saudi Aramco", "SATORP", "YASREF", "MA'ADEN", "SABIC", "MARAFIQ", "Red Sea Global", "The Red Sea Development Company", "AMAALA", "NEOM", "Misk Schools", "MISK Foundation", "KAFD", "Six Senses", "Movenpick", "Saudi Arabian Baytur", "BEC Arabia", "Astra", "Azmeel Contracting", "Khonaini International Co. Ltd", "Saudi Arabia Railways", "Hassan Allam", "Samama", "Aleisa Residence", "ZAC International", "Marco", "Haif Company", "ICAD", "SIAC Construction", "National Blue Company Ltd", "Ewan", "Thabat", "Retal Residence", "Nesma & Partners", "TMG", "Jabal Technical Institute", "Imam Abdulrahman Bin Faisal University", "Zakat, Tax and Customs Authority", "GACA", "Dar Al-Arkan", "Technical Development for Contracting"];
 
 const settingsData: { section: string; key: string; label: string; value: string; type?: string }[] = [
   { section: "hero", key: "eyebrow", label: "Hero eyebrow", value: "Est. 2004 · Jubail, KSA" },
@@ -95,6 +100,17 @@ export async function runSeed() {
     }
   }
   console.log(`Seeded projects`);
+
+  // Insert-if-missing only: admin edits to clients must survive redeploys.
+  for (const [i, name] of clientsData.entries()) {
+    const slug = slugify(name);
+    const existingClient = await db.select().from(clients).where(eq(clients.slug, slug)).get();
+    if (existingClient) continue;
+    const logoPath = `/img/clients/${slug}.png`;
+    const logoUrl = existsSync(path.join(process.cwd(), "public", logoPath)) ? logoPath : null;
+    await db.insert(clients).values({ name, slug, logoUrl, order: i }).run();
+  }
+  console.log(`Seeded clients`);
 
   for (const s of settingsData) {
     const existingSetting = await db

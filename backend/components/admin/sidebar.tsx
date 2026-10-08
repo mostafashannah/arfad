@@ -10,6 +10,7 @@ import {
   Building2,
   Settings2,
   Images,
+  Handshake,
   Users,
   LogOut,
   ExternalLink,
@@ -25,6 +26,7 @@ const links = [
   { href: "/admin/projects", label: "Projects", icon: Building2 },
   { href: "/admin/settings", label: "Site Settings", icon: Settings2 },
   { href: "/admin/media", label: "Media Library", icon: Images },
+  { href: "/admin/clients", label: "Clients", icon: Handshake },
   { href: "/admin/users", label: "Team", icon: Users },
 ];
 

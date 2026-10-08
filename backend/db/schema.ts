@@ -126,3 +126,16 @@ export const enquiries = sqliteTable("enquiries", {
     .notNull()
     .default(sql`(unixepoch())`),
 });
+
+export const clients = sqliteTable("clients", {
+  id: id(),
+  name: text("name").notNull(),
+  slug: text("slug").notNull().unique(),
+  logoUrl: text("logo_url"),
+  website: text("website"),
+  order: integer("order").notNull().default(0),
+  active: integer("active", { mode: "boolean" }).notNull().default(true),
+  createdAt: integer("created_at", { mode: "timestamp" })
+    .notNull()
+    .default(sql`(unixepoch())`),
+});
