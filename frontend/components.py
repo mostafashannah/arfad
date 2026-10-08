@@ -96,8 +96,9 @@ def logo_tile(name, delay=0.0):
 
 def _chip(n):
     src = client_logo(n)
-    img = '<img src="%s" alt="">' % src if src else ""
-    return '<span class="chip logo-chip flash on-light">%s%s</span>' % (img, esc(n))
+    if src:
+        return '<span class="chip logo-chip has-logo flash on-light" title="%s"><img src="%s" alt="%s" loading="lazy"></span>' % (esc(n), src, esc(n))
+    return '<span class="chip logo-chip flash on-light">%s</span>' % esc(n)
 
 def clients_marquee(names=None, label="Trusted By"):
     names = names or CLIENTS

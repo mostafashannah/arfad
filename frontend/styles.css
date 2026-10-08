@@ -933,3 +933,11 @@ header.nav.nav-scrolled .brand-name img{filter:brightness(0);}
 @media (max-width:760px){ .company-block .proj-table{table-layout:auto;min-width:560px;} }
 .submenu.cols-2{min-width:560px;}
 .hero-slider .eyebrow,.detail-hero .eyebrow{color:rgba(255,255,255,.88);}
+
+/* client logos */
+.logo-chip.has-logo{padding:12px 24px;background:#fff;}
+.logo-chip img{height:38px;width:auto;max-width:150px;object-fit:contain;}
+.logo-tile img{max-height:58px;}
+.vendor-logo{display:flex;align-items:center;height:64px;margin-bottom:14px;}
+.vendor-logo img{max-height:56px;max-width:180px;object-fit:contain;}
+.vendor-card{background:var(--card);}

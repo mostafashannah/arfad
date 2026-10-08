@@ -31,6 +31,12 @@ def pending_card(title, sub):
     return (f'<div class="cert-photo-card pending rv"><div class="cert-thumb pending-thumb">{icon("doc")}<span>Document to be provided</span></div>'
             f'<div class="cert-cap"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div></div>')
 
+def vendor_mark(v):
+    src = client_logo(v["name"])
+    if src:
+        return '<span class="vendor-logo"><img src="%s" alt="%s"></span>' % (src, esc(v["name"]))
+    return '<span class="vendor-ico">%s</span>' % v["ico"]
+
 def factory_pages():
     # ---- Factory main
     fcards = "".join(f'<a class="feature-card flash" href="{h}" style="background:linear-gradient(180deg,rgba(10,37,64,.62),rgba(10,37,64,.95)),url(img/factory.jpg) center/cover;"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p><span class="view-link">Open &rarr;</span></a>' for t, h, ic, d in FACTORY_ITEMS)
@@ -123,7 +129,7 @@ def factory_pages():
     write("hse-policy.html", page("HSE Policy ARFAD", "ARFAD is committed to a safe and healthy working environment and to minimizing environmental impact, in compliance with applicable KSA regulations.", "hse-policy.html", body))
 
     # ---- Registered vendors
-    vcards = "".join(f'<div class="vendor-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s"><span class="vendor-ico">{v["ico"]}</span><h4>{esc(v["name"])}</h4><p class="vendor-no"><small>Registered Vendor No.</small>{esc(v["no"])}</p><p>{esc(v["note"])}</p></div>' for i, v in enumerate(VENDORS))
+    vcards = "".join(f'<div class="vendor-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s">{vendor_mark(v)}<h4>{esc(v["name"])}</h4><p class="vendor-no"><small>Registered Vendor No.</small>{esc(v["no"])}</p><p>{esc(v["note"])}</p></div>' for i, v in enumerate(VENDORS))
     acards = "".join(cert_card(*c, i=i) for i, c in enumerate(CERTS_ARAMCO))
     body = f'''<main>
   {subhero([("Factory","factory.html"),("Registered Vendors",None)],"Registered Vendors","Registered. Compliant.<br>Recognized.","ARFAD is registered with the Kingdom's leading clients and authorities.","proj-aramco.jpg")}

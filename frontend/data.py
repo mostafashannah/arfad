@@ -284,7 +284,7 @@ VENDORS = [
 CLIENTS = ["Royal Commission for Jubail & Yanbu","Saudi Aramco","SATORP","YASREF","MA'ADEN","SABIC","MARAFIQ","Red Sea Global","The Red Sea Development Company","AMAALA",
  "NEOM","Misk Schools","MISK Foundation","KAFD","Six Senses","Movenpick","Saudi Arabian Baytur","BEC Arabia","Astra","Azmeel Contracting","Khonaini International Co. Ltd",
  "Saudi Arabia Railways","Hassan Allam","Samama","Aleisa Residence","ZAC International","Marco","Haif Company","ICAD","SIAC Construction","National Blue Company Ltd",
- "Ewan","Thabat","Retal Residence","Nesma & Partners","TMG","Imam Abdulrahman Bin Faisal University","Zakat, Tax and Customs Authority","GACA","Dar Al-Arkan","Technical Development for Contracting"]
+ "Ewan","Thabat","Retal Residence","Nesma & Partners","TMG","Jabal Technical Institute","Imam Abdulrahman Bin Faisal University","Zakat, Tax and Customs Authority","GACA","Dar Al-Arkan","Technical Development for Contracting"]
 
 ACCREDITED = ["ISO","FSC","Intertek","UAF","Americo","Control Union","IAF"]
 
