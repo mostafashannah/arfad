@@ -56,8 +56,10 @@ def nav(active):
 </header>'''
 
 def _accredited_track():
-    chips = "".join(f'<span class="acc-chip">{esc(a)}</span>' for a in ACCREDITED)
-    return chips * 4
+    chips = "".join(
+        '<span class="acc-chip acc-logo%s" title="%s"><img src="img/accreditation/%s" alt="%s" loading="lazy"></span>' % (" dark" if dark else "", esc(n), f, esc(n))
+        for n, f, dark in ACCREDITED)
+    return chips * 3
 
 _foot_services = "".join(f'<a href="service-{s["slug"]}.html">{esc(s["title"])}</a>' for s in SERVICES[:6])
 _foot_services2 = "".join(f'<a href="service-{s["slug"]}.html">{esc(s["title"])}</a>' for s in SERVICES[6:])

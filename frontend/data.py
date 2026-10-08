@@ -286,7 +286,10 @@ CLIENTS = ["Royal Commission for Jubail & Yanbu","Saudi Aramco","SATORP","YASREF
  "Saudi Arabia Railways","Hassan Allam","Samama","Aleisa Residence","ZAC International","Marco","Haif Company","ICAD","SIAC Construction","National Blue Company Ltd",
  "Ewan","Thabat","Retal Residence","Nesma & Partners","TMG","Jabal Technical Institute","Imam Abdulrahman Bin Faisal University","Zakat, Tax and Customs Authority","GACA","Dar Al-Arkan","Technical Development for Contracting"]
 
-ACCREDITED = ["ISO","FSC","Intertek","UAF","Americo","Control Union","IAF"]
+# (name, file in img/accreditation, dark card for white-on-transparent logos)
+ACCREDITED = [("ISO 9001:2015","iso-9001.png",True),("ISO 14001:2015","iso-14001.png",True),("ISO 45001:2018","iso-45001.png",True),
+              ("FSC","fsc.png",True),("Intertek","intertek.png",False),("UAF","uaf.png",False),("Americo","americo.png",False),
+              ("IAF","iaf.png",False),("Control Union","control-union.png",False)]
 
 CERTS_FIRE = [
  ("cert-intertek-warmsprings.jpg","Fire-Rate Certificate for Warm Springs","Intertek Certificate of Compliance WHI18-28731422"),
