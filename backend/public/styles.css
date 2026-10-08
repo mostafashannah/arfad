@@ -1005,3 +1005,7 @@ header.nav.nav-scrolled .brand-name img{filter:brightness(0);}
 .contact-grid .form-card .enq-form button{margin-top:auto;align-self:flex-start;}
 .contact-grid .form-card .enq-form textarea{flex:1;min-height:150px;}
 .form-status:empty{display:none;}
+
+/* accreditation cards: one dark glass style for every logo */
+.acc-chip.acc-logo,.acc-chip.acc-logo.dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);padding:10px 16px;}
+.acc-chip.acc-logo img{filter:drop-shadow(0 0 8px rgba(255,255,255,.2)) brightness(1.2);}

@@ -288,8 +288,8 @@ CLIENTS = ["Royal Commission for Jubail & Yanbu","Saudi Aramco","SATORP","YASREF
 
 # (name, file in img/accreditation, dark card for white-on-transparent logos)
 ACCREDITED = [("ISO 9001:2015","iso-9001.png",True),("ISO 14001:2015","iso-14001.png",True),("ISO 45001:2018","iso-45001.png",True),
-              ("FSC","fsc.png",True),("Intertek","intertek.png",False),("UAF","uaf.png",False),("Americo","americo.png",False),
-              ("IAF","iaf.png",False),("Control Union","control-union.png",False)]
+              ("FSC","fsc.png",True),("Intertek","intertek.png",True),("UAF","uaf.png",True),("Americo","americo.png",True),
+              ("IAF","iaf.png",True),("Control Union","control-union.png",True)]
 
 CERTS_FIRE = [
  ("cert-intertek-warmsprings.jpg","Fire-Rate Certificate for Warm Springs","Intertek Certificate of Compliance WHI18-28731422"),
