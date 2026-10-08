@@ -355,7 +355,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   img.addEventListener("load", function(){ img.classList.add("in"); });
   function open(a){
     var grid = a.closest(".thumb-grid") || document;
-    group = Array.prototype.slice.call(grid.querySelectorAll("a[data-lightbox]"));
+    group = Array.prototype.slice.call(grid.querySelectorAll("a[data-lightbox]:not([hidden])"));
     last = a; show(group.indexOf(a));
     box.hidden = false; document.body.classList.add("lb-open"); box.querySelector(".lb-close").focus();
   }
@@ -379,6 +379,27 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     if(x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null;
     if(Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
   }, {passive:true});
+})();
+
+/* gallery filters (Media page): by project and by service */
+(function(){
+  var sel = document.querySelectorAll("[data-gf]");
+  var grid = document.querySelector("[data-gallery]");
+  if(!sel.length || !grid) return;
+  var items = Array.prototype.slice.call(grid.querySelectorAll("a[data-project]"));
+  var projectSel = document.querySelector('[data-gf="project"]'), serviceSel = document.querySelector('[data-gf="service"]');
+  var count = document.querySelector("[data-gf-count]"), empty = document.querySelector("[data-gf-empty]");
+  function apply(){
+    var p = projectSel.value, s = serviceSel.value, n = 0;
+    items.forEach(function(a){
+      var ok = (!p || a.getAttribute("data-project") === p) && (!s || (" " + a.getAttribute("data-services") + " ").indexOf(" " + s + " ") > -1);
+      a.hidden = !ok; if(ok){ n++; a.classList.add("reveal-in"); }
+    });
+    count.textContent = n + (n === 1 ? " photo" : " photos");
+    empty.hidden = n > 0;
+  }
+  sel.forEach(function(x){ x.addEventListener("change", apply); });
+  document.querySelector("[data-gf-reset]").addEventListener("click", function(){ projectSel.value = ""; serviceSel.value = ""; apply(); });
 })();
 
 /* light/dark mode switcher */

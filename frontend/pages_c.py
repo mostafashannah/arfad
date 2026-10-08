@@ -234,7 +234,7 @@ def other_pages():
     allp = sorted(f for f in os.listdir(os.path.join(ROOT, "img", "projects")) if f.endswith(".jpg"))
     order = [s for s in ["neom","redsea-amaala","royal-commission","saudi-aramco","kafd","marafiq","ministry-of-defense","misk","movenpick","karan","primer-steak-house","el-eissa"]]
     allp.sort(key=lambda f: (order.index(re.sub(r"-\d+\.\w+$", "", f)) if re.sub(r"-\d+\.\w+$", "", f) in order else 99, int(re.sub(r"\D", "", f.rsplit("-",1)[-1]) or 0)))
-    gal = gallery(allp)
+    gal = gallery_filters(allp) + gallery(allp, meta=True) + '<p class="gal-empty" data-gf-empty hidden>No photos match this filter. Try another project or service.</p>'
     body = f'''<main>
   {subhero([("Media",None)],"Media","Events, Exhibitions<br>&amp; News.","Company events, exhibitions, news and announcements.","factory.jpg")}
   <section class="section"><div class="wrap">

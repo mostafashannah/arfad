@@ -137,12 +137,36 @@ def _photo_caption(im):
     p = PROJECT_PAGES.get(slug)
     return p["client"] if p else ""
 
-def gallery(images, base="img/projects/"):
+def _project_services():
+    m = {}
+    for s in SERVICES:
+        for p in s.get("projects", []):
+            m.setdefault(p, []).append(s["slug"])
+    return m
+
+def gallery(images, base="img/projects/", meta=False):
+    ps = _project_services() if meta else {}
     out = []
     for i, im in enumerate(images):
         cap = esc(_photo_caption(im))
-        out.append('<a class="thumb-photo rv" href="%s%s" data-lightbox data-caption="%s" style="--d:%.2fs"><img src="%s%s" alt="%s" loading="lazy"></a>' % (base, im, cap, (i % 3) * .08, base, im, cap or "Project photo"))
-    return '<div class="thumb-grid">' + "".join(out) + "</div>"
+        slug = re.sub(r"-\d+\.\w+$", "", im)
+        extra = (' data-project="%s" data-services="%s"' % (slug, " ".join(ps.get(slug, [])))) if meta else ""
+        out.append('<a class="thumb-photo rv" href="%s%s" data-lightbox data-caption="%s"%s style="--d:%.2fs"><img src="%s%s" alt="%s" loading="lazy"></a>' % (base, im, cap, extra, (i % 3) * .08, base, im, cap or "Project photo"))
+    return '<div class="thumb-grid" data-gallery>' + "".join(out) + "</div>"
+
+def gallery_filters(images):
+    ps = _project_services()
+    counts = {}
+    for im in images:
+        slug = re.sub(r"-\d+\.\w+$", "", im); counts[slug] = counts.get(slug, 0) + 1
+    proj = "".join('<option value="%s">%s (%d)</option>' % (s, esc(PROJECT_PAGES[s]["client"]), n) for s, n in counts.items() if s in PROJECT_PAGES)
+    scount = {}
+    for slug, n in counts.items():
+        for sv in ps.get(slug, []): scount[sv] = scount.get(sv, 0) + n
+    svc = "".join('<option value="%s">%s (%d)</option>' % (s["slug"], esc(s["title"]), scount[s["slug"]]) for s in SERVICES if s["slug"] in scount)
+    return (f'<div class="gal-filters"><label>Project<select data-gf="project"><option value="">All projects ({len(images)})</option>{proj}</select></label>'
+            f'<label>Service<select data-gf="service"><option value="">All services</option>{svc}</select></label>'
+            f'<button type="button" class="btn gal-reset" data-gf-reset>Reset</button><span class="gal-count" data-gf-count aria-live="polite">{len(images)} photos</span></div>')
 
 def enquiry_form(types, submit="Send Message", kind="Enquiry", cv=False):
     opts = "".join(f"<option>{t}</option>" for t in types)
