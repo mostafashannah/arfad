@@ -1,0 +1,315 @@
+{
+  "nav": [
+    {
+      "label": "Home",
+      "href": "index.html",
+      "children": [],
+      "active": true
+    },
+    {
+      "label": "Who We Are",
+      "href": "about.html",
+      "children": [
+        {
+          "label": "About Us",
+          "href": "about.html"
+        },
+        {
+          "label": "Vision",
+          "href": "vision.html"
+        },
+        {
+          "label": "Mission",
+          "href": "mission.html"
+        },
+        {
+          "label": "Our Values",
+          "href": "values.html"
+        },
+        {
+          "label": "Why ARFAD",
+          "href": "why-arfad.html"
+        }
+      ],
+      "active": true
+    },
+    {
+      "label": "Services",
+      "href": "services.html",
+      "children": [
+        {
+          "label": "Wooden Doors",
+          "href": "service-doors.html"
+        },
+        {
+          "label": "Wooden Wall Claddings",
+          "href": "service-wall-cladding.html"
+        },
+        {
+          "label": "Wooden Ceilings",
+          "href": "service-ceilings.html"
+        },
+        {
+          "label": "Wooden Floorings",
+          "href": "service-flooring.html"
+        },
+        {
+          "label": "Kitchens & Cabinets",
+          "href": "service-kitchens.html"
+        },
+        {
+          "label": "Wardrobes & Closets",
+          "href": "service-wardrobes.html"
+        },
+        {
+          "label": "Vanities & Storage Systems",
+          "href": "service-vanities.html"
+        },
+        {
+          "label": "Reception Counters",
+          "href": "service-reception-counters.html"
+        },
+        {
+          "label": "Interior Furniture & Decors",
+          "href": "service-furniture.html"
+        },
+        {
+          "label": "Exterior Woodworks",
+          "href": "service-exterior.html"
+        },
+        {
+          "label": "Counter Tops & Solid Surfaces",
+          "href": "service-countertops.html"
+        },
+        {
+          "label": "Traditional Woodworks",
+          "href": "service-traditional.html"
+        }
+      ],
+      "active": true
+    },
+    {
+      "label": "Projects",
+      "href": "projects.html",
+      "children": [
+        {
+          "label": "Industrial & Infrastructure",
+          "href": "projects-industrial.html"
+        },
+        {
+          "label": "Hospitality & Luxury Development",
+          "href": "projects-hospitality.html"
+        },
+        {
+          "label": "Residential and F&B",
+          "href": "projects-residential.html"
+        },
+        {
+          "label": "Commercial & Government",
+          "href": "projects-commercial.html"
+        },
+        {
+          "label": "Healthcare",
+          "href": "projects-healthcare.html"
+        },
+        {
+          "label": "Education",
+          "href": "projects-education.html"
+        },
+        {
+          "label": "Specialized Projects",
+          "href": "projects-specialized.html"
+        }
+      ],
+      "active": true
+    },
+    {
+      "label": "Factory",
+      "href": "factory.html",
+      "children": [
+        {
+          "label": "Machineries",
+          "href": "machinery.html"
+        },
+        {
+          "label": "Service Workflow",
+          "href": "service-workflow.html"
+        },
+        {
+          "label": "Quality Policy",
+          "href": "quality-policy.html"
+        },
+        {
+          "label": "HSE Policy",
+          "href": "hse-policy.html"
+        },
+        {
+          "label": "Registered Vendors",
+          "href": "registered-vendors.html"
+        },
+        {
+          "label": "Our Clients",
+          "href": "our-clients.html"
+        },
+        {
+          "label": "Certificates & Awards",
+          "href": "certificates.html"
+        }
+      ],
+      "active": true
+    },
+    {
+      "label": "Sustainability",
+      "href": "sustainability.html",
+      "children": [],
+      "active": true
+    },
+    {
+      "label": "Careers",
+      "href": "careers.html",
+      "children": [],
+      "active": true
+    },
+    {
+      "label": "Media",
+      "href": "media.html",
+      "children": [],
+      "active": true
+    },
+    {
+      "label": "Contact",
+      "href": "contact.html",
+      "children": [],
+      "active": true
+    }
+  ],
+  "footer": {
+    "brand": {
+      "title": "ARFAD International Industrial Co.",
+      "arabicName": "شركة أرفاد الدولية للصناعة",
+      "tagline": "Crafting Excellence in Woodwork Since 2004. Luxury Wooden Works is Our Professional Identity.",
+      "downloadLabel": "Download Profile",
+      "badges": [
+        "Saudi Made",
+        "Local Content Certified"
+      ]
+    },
+    "columns": [
+      {
+        "title": "Quick Links",
+        "links": [
+          {
+            "label": "Home",
+            "href": "index.html"
+          },
+          {
+            "label": "Who We Are",
+            "href": "about.html"
+          },
+          {
+            "label": "Services",
+            "href": "services.html"
+          },
+          {
+            "label": "Projects",
+            "href": "projects.html"
+          },
+          {
+            "label": "Factory",
+            "href": "factory.html"
+          },
+          {
+            "label": "Sustainability",
+            "href": "sustainability.html"
+          },
+          {
+            "label": "Careers",
+            "href": "careers.html"
+          },
+          {
+            "label": "Media",
+            "href": "media.html"
+          },
+          {
+            "label": "Contact",
+            "href": "contact.html"
+          }
+        ]
+      },
+      {
+        "title": "Services",
+        "links": [
+          {
+            "label": "Wooden Doors",
+            "href": "service-doors.html"
+          },
+          {
+            "label": "Wooden Wall Claddings",
+            "href": "service-wall-cladding.html"
+          },
+          {
+            "label": "Wooden Ceilings",
+            "href": "service-ceilings.html"
+          },
+          {
+            "label": "Wooden Floorings",
+            "href": "service-flooring.html"
+          },
+          {
+            "label": "Kitchens & Cabinets",
+            "href": "service-kitchens.html"
+          },
+          {
+            "label": "Wardrobes & Closets",
+            "href": "service-wardrobes.html"
+          },
+          {
+            "label": "Vanities & Storage Systems",
+            "href": "service-vanities.html"
+          },
+          {
+            "label": "Reception Counters",
+            "href": "service-reception-counters.html"
+          },
+          {
+            "label": "Interior Furniture & Decors",
+            "href": "service-furniture.html"
+          },
+          {
+            "label": "Exterior Woodworks",
+            "href": "service-exterior.html"
+          },
+          {
+            "label": "Counter Tops & Solid Surfaces",
+            "href": "service-countertops.html"
+          },
+          {
+            "label": "Traditional Woodworks",
+            "href": "service-traditional.html"
+          }
+        ]
+      }
+    ],
+    "contact": {
+      "title": "Contact",
+      "addressLines": [
+        "Support Industrial",
+        "Jubail Industrial City, KSA"
+      ],
+      "phone": "+966 13 341 7773",
+      "mobile": "+966 56 916 4017",
+      "mobileWhatsApp": "966569164017",
+      "email": "info@arfad.com.sa",
+      "credentialsTitle": "Credentials",
+      "credentials": [
+        "ISO 9001:2015 · ISO 14001:2015",
+        "ISO 45001:2018 · FSC® CoC Certified"
+      ]
+    },
+    "accreditedLabel": "Accredited By",
+    "bottom": {
+      "left": "© 2026 ARFAD International Industrial Co. · Est. 2004",
+      "right": "ARFAD, 20+ Years of Excellence in Woodwork"
+    }
+  }
+}
