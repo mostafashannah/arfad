@@ -1009,3 +1009,26 @@ header.nav.nav-scrolled .brand-name img{filter:brightness(0);}
 /* accreditation cards: one dark glass style for every logo */
 .acc-chip.acc-logo,.acc-chip.acc-logo.dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);padding:10px 16px;}
 .acc-chip.acc-logo img{filter:drop-shadow(0 0 8px rgba(255,255,255,.2)) brightness(1.2);}
+
+/* gallery photos + lightbox */
+.thumb-photo{display:block;overflow:hidden;cursor:zoom-in;position:relative;}
+.thumb-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s;}
+.thumb-photo:hover img{transform:scale(1.06);}
+.thumb-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(7,19,32,.45));opacity:0;transition:opacity .25s;pointer-events:none;}
+.thumb-photo:hover::after{opacity:1;}
+.thumb-photo:focus-visible{outline:3px solid var(--gold);outline-offset:3px;}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(5,12,20,.94);display:flex;align-items:center;justify-content:center;padding:56px 76px;animation:lbIn .2s ease;}
+.lb[hidden]{display:none;}
+@keyframes lbIn{from{opacity:0;}to{opacity:1;}}
+body.lb-open{overflow:hidden;}
+.lb-fig{margin:0;max-width:100%;max-height:100%;display:flex;flex-direction:column;align-items:center;gap:14px;}
+.lb-fig img{max-width:100%;max-height:calc(100vh - 150px);border-radius:12px;box-shadow:0 30px 80px rgba(0,0,0,.6);opacity:0;transform:scale(.97);transition:opacity .25s,transform .25s;object-fit:contain;}
+.lb-fig img.in{opacity:1;transform:none;}
+.lb-fig figcaption{color:rgba(255,255,255,.85);font-family:"Montserrat",sans-serif;font-size:.85rem;letter-spacing:.06em;text-align:center;min-height:1.2em;}
+.lb-close,.lb-nav{position:absolute;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+.lb-close:hover,.lb-nav:hover{background:rgba(255,255,255,.25);}
+.lb-close{top:18px;right:20px;width:46px;height:46px;border-radius:50%;font-size:1.8rem;line-height:1;}
+.lb-nav{top:50%;width:52px;height:52px;margin-top:-26px;border-radius:50%;font-size:2.2rem;line-height:1;padding-bottom:4px;}
+.lb-prev{left:16px;} .lb-next{right:16px;}
+.lb.single .lb-nav{display:none;}
+@media (max-width:700px){ .lb{padding:64px 10px 56px;} .lb-nav{top:auto;bottom:10px;margin-top:0;width:46px;height:46px;} .lb-prev{left:calc(50% - 58px);} .lb-next{right:calc(50% - 58px);} .lb-close{top:10px;right:10px;} }

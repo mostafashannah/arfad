@@ -1,3 +1,4 @@
+import re
 from core import *
 
 ICONS = {
@@ -131,8 +132,17 @@ def project_card(slug, i=0):
     return (f'<a class="gallery-card flash" href="project-{slug}.html" style="background-image:url(\'img/projects/{p["img"]}\');">'
             f'<div class="gc-body"><p class="eyebrow">{esc(p["client"])}</p><h4>{esc(p["title"])}</h4>{loc}</div></a>')
 
+def _photo_caption(im):
+    slug = re.sub(r"-\d+\.\w+$", "", im)
+    p = PROJECT_PAGES.get(slug)
+    return p["client"] if p else ""
+
 def gallery(images, base="img/projects/"):
-    return '<div class="thumb-grid">' + "".join(f'<div class="thumb-photo rv" style="--d:{(i%3)*.08:.2f}s;background-image:url(\'{base}{im}\');"></div>' for i, im in enumerate(images)) + "</div>"
+    out = []
+    for i, im in enumerate(images):
+        cap = esc(_photo_caption(im))
+        out.append('<a class="thumb-photo rv" href="%s%s" data-lightbox data-caption="%s" style="--d:%.2fs"><img src="%s%s" alt="%s" loading="lazy"></a>' % (base, im, cap, (i % 3) * .08, base, im, cap or "Project photo"))
+    return '<div class="thumb-grid">' + "".join(out) + "</div>"
 
 def enquiry_form(types, submit="Send Message", kind="Enquiry", cv=False):
     opts = "".join(f"<option>{t}</option>" for t in types)

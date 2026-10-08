@@ -1,3 +1,4 @@
+import re
 from components import *
 import datetime
 
@@ -230,7 +231,10 @@ def other_pages():
     # ---- Media
     cats = [("camera","Events","Company events and site visits."),("flag","Exhibitions","Exhibitions and trade fairs ARFAD takes part in."),("news","News","Company announcements and project news.")]
     ccards = "".join(f'<div class="media-card rv flash on-light" style="--d:{i*.1:.2f}s"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p><span class="soon">Updates will be posted here</span></div>' for i, (ic, t, d) in enumerate(cats))
-    gal = gallery(["marafiq-1.jpg","neom-1.jpg","redsea-amaala-1.jpg","kafd-1.jpg","misk-1.jpg","karan-1.jpg"])
+    allp = sorted(f for f in os.listdir(os.path.join(ROOT, "img", "projects")) if f.endswith(".jpg"))
+    order = [s for s in ["neom","redsea-amaala","royal-commission","saudi-aramco","kafd","marafiq","ministry-of-defense","misk","movenpick","karan","primer-steak-house","el-eissa"]]
+    allp.sort(key=lambda f: (order.index(re.sub(r"-\d+\.\w+$", "", f)) if re.sub(r"-\d+\.\w+$", "", f) in order else 99, int(re.sub(r"\D", "", f.rsplit("-",1)[-1]) or 0)))
+    gal = gallery(allp)
     body = f'''<main>
   {subhero([("Media",None)],"Media","Events, Exhibitions<br>&amp; News.","Company events, exhibitions, news and announcements.","factory.jpg")}
   <section class="section"><div class="wrap">
