@@ -7,7 +7,7 @@ import { FileText, Loader2, RotateCcw, Upload } from "lucide-react";
 
 type Info = { custom: boolean; size: number; updatedAt: string | null };
 
-const MAX = 50 * 1024 * 1024;
+const MAX = 100 * 1024 * 1024;
 
 function mb(n: number) {
   return `${(n / 1024 / 1024).toFixed(1)} MB`;
@@ -22,7 +22,7 @@ export function ProfileManager({ initial }: { initial: Info }) {
   async function upload(file: File) {
     setMsg(null);
     if (!file.name.toLowerCase().endsWith(".pdf")) return setMsg({ ok: false, text: "The profile must be a PDF file." });
-    if (file.size > MAX) return setMsg({ ok: false, text: "File is too large (max 50 MB)." });
+    if (file.size > MAX) return setMsg({ ok: false, text: "File is too large (max 100 MB)." });
     setBusy(true);
     try {
       const fd = new FormData();
@@ -102,7 +102,7 @@ export function ProfileManager({ initial }: { initial: Info }) {
         </div>
         {msg && <p className={msg.ok ? "text-sm text-emerald-500" : "text-sm text-red-500"}>{msg.text}</p>}
         <p className="text-xs text-muted-foreground">
-          PDF only, up to 50 MB. Changes show on the website within about 5 minutes (browsers may cache the previous file briefly).
+          PDF only, up to 100 MB. Changes show on the website within about 5 minutes (browsers may cache the previous file briefly).
         </p>
       </CardContent>
     </Card>

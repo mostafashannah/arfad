@@ -19,7 +19,7 @@ export async function POST(req: NextRequest) {
   const file = fd?.get("file");
   if (!file || typeof file === "string") return NextResponse.json({ error: "Choose a PDF file." }, { status: 400 });
   if (!file.name.toLowerCase().endsWith(".pdf")) return NextResponse.json({ error: "The profile must be a PDF file." }, { status: 400 });
-  if (file.size > PROFILE_MAX_BYTES) return NextResponse.json({ error: "File is too large (max 50 MB)." }, { status: 400 });
+  if (file.size > PROFILE_MAX_BYTES) return NextResponse.json({ error: "File is too large (max 100 MB)." }, { status: 400 });
   const buf = Buffer.from(await file.arrayBuffer());
   if (buf.subarray(0, 4).toString() !== "%PDF") return NextResponse.json({ error: "That file is not a valid PDF." }, { status: 400 });
   await mkdir(PROFILE_DIR, { recursive: true });

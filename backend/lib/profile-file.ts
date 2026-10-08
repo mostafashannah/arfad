@@ -4,7 +4,7 @@ import path from "path";
 export const PROFILE_DIR = path.join(process.cwd(), "data", "profile");
 export const CUSTOM_PROFILE = path.join(PROFILE_DIR, "ARFAD-Company-Profile.pdf");
 export const DEFAULT_PROFILE = path.join(process.cwd(), "public", "files", "ARFAD-Company-Profile.pdf");
-export const PROFILE_MAX_BYTES = 50 * 1024 * 1024;
+export const PROFILE_MAX_BYTES = 100 * 1024 * 1024;
 
 export async function profileInfo() {
   try {
