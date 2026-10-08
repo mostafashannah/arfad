@@ -98,6 +98,28 @@ const STATEMENTS = [
     active INTEGER NOT NULL DEFAULT 1,
     created_at INTEGER NOT NULL DEFAULT (unixepoch())
   )`,
+  `CREATE TABLE IF NOT EXISTS accreditations (
+    id TEXT PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    logo_url TEXT NOT NULL,
+    light INTEGER NOT NULL DEFAULT 0,
+    "order" INTEGER NOT NULL DEFAULT 0,
+    active INTEGER NOT NULL DEFAULT 1,
+    created_at INTEGER NOT NULL DEFAULT (unixepoch())
+  )`,
+  `CREATE TABLE IF NOT EXISTS posts (
+    id TEXT PRIMARY KEY NOT NULL,
+    slug TEXT NOT NULL UNIQUE,
+    title TEXT NOT NULL,
+    category TEXT NOT NULL,
+    excerpt TEXT NOT NULL,
+    body TEXT NOT NULL,
+    cover_url TEXT,
+    published_at TEXT NOT NULL,
+    published INTEGER NOT NULL DEFAULT 1,
+    created_at INTEGER NOT NULL DEFAULT (unixepoch()),
+    updated_at INTEGER NOT NULL DEFAULT (unixepoch())
+  )`,
   `CREATE TABLE IF NOT EXISTS nav_items (
     id TEXT PRIMARY KEY NOT NULL,
     parent_id TEXT,

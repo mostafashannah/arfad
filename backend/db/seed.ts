@@ -3,9 +3,10 @@ import bcrypt from "bcryptjs";
 import { db } from "./client";
 import { existsSync } from "fs";
 import path from "path";
-import { users, services, projects, settings, clients, navItems, siteBlocks } from "./schema";
+import { users, services, projects, settings, clients, accreditations, navItems, siteBlocks, posts } from "./schema";
 import { eq, and } from "drizzle-orm";
 import { slugify } from "../lib/slugify";
+import defaults from "./site-defaults.json";
 import { resetFooter, resetNav } from "../lib/site-content";
 
 const servicesData = [
@@ -113,10 +114,31 @@ export async function runSeed() {
   }
   console.log(`Seeded clients`);
 
+  // Only when empty: admin edits and deletions of accreditations must survive redeploys.
+  if (!(await db.select({ id: accreditations.id }).from(accreditations).get())) {
+    for (const [i, a] of defaults.accreditations.entries()) {
+      await db.insert(accreditations).values({ name: a.name, logoUrl: a.logo, light: a.light, order: i, active: true }).run();
+    }
+  }
+  console.log(`Seeded accreditations`);
+
   // Insert-if-missing only: admin edits to the menu and footer must survive redeploys.
   if (!(await db.select({ id: navItems.id }).from(navItems).get())) await resetNav();
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "footer")).get())) await resetFooter();
   console.log(`Seeded menu and footer`);
+
+  // Once only: the marker row keeps deleted posts from reappearing after a restart.
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "posts_seeded")).get())) {
+    for (const p of defaults.posts) {
+      await db
+        .insert(posts)
+        .values({ slug: p.slug, title: p.title, category: p.category as "events" | "exhibitions" | "news", excerpt: p.excerpt, body: p.body, coverUrl: p.cover || null, publishedAt: p.date, published: true })
+        .onConflictDoNothing()
+        .run();
+    }
+    await db.insert(siteBlocks).values({ key: "posts_seeded", value: "1" }).run();
+  }
+  console.log(`Seeded posts`);
 
   for (const s of settingsData) {
     const existingSetting = await db

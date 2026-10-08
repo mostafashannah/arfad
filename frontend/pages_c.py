@@ -191,7 +191,24 @@ def factory_pages():
 </main>'''
     write("certificates.html", page("Certificates & Awards ARFAD", "ARFAD certificates and awards: Intertek fire-rated door certificates, ISO 9001, ISO 14001, ISO 45001 and FSC Chain of Custody.", "certificates.html", body))
 
+def post_page():
+    body = f'''<main>
+  {subhero([("Media","media.html"),("Post",None)],"Media","<span data-post-title>News</span>","","factory.jpg")}
+  <section class="section"><div class="wrap">
+    <article class="post-article" data-post-article>
+      <div class="post-article-meta"><span class="post-cat" data-post-cat></span><time data-post-date></time></div>
+      <div class="post-article-cover" data-post-cover hidden></div>
+      <div class="post-article-body" data-post-body></div>
+      <p class="post-missing" data-post-missing hidden>This post could not be found. It may have been removed.</p>
+      <div class="hero-cta" style="margin-top:34px;"><a class="btn solid flash" href="media.html">&larr; Back to Media</a><a class="btn" href="contact.html">Contact Us</a></div>
+    </article>
+  </div></section>
+  {cta_band()}
+</main>'''
+    write("post.html", page("Media ARFAD", "News, events and exhibitions from ARFAD International Industrial Co.", "media.html", body, path="post.html"))
+
 def other_pages():
+    post_page()
     # ---- Sustainability
     pts = ["FSC Chain of Custody Certified","Certified Wood Product Traceability","Responsible Wood Sourcing","Controlled Chain of Custody Procedures","Support for Sustainability-Focused Projects"]
     body = f'''<main>
@@ -229,8 +246,6 @@ def other_pages():
     write("careers.html", page("Careers ARFAD", "Careers at ARFAD International Industrial Co. in Jubail Industrial City, Saudi Arabia.", "careers.html", body))
 
     # ---- Media
-    cats = [("camera","Events","Company events and site visits."),("flag","Exhibitions","Exhibitions and trade fairs ARFAD takes part in."),("news","News","Company announcements and project news.")]
-    ccards = "".join(f'<div class="media-card rv flash on-light" style="--d:{i*.1:.2f}s"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p><span class="soon">Updates will be posted here</span></div>' for i, (ic, t, d) in enumerate(cats))
     allp = sorted(f for f in os.listdir(os.path.join(ROOT, "img", "projects")) if f.endswith(".jpg"))
     order = [s for s in ["neom","redsea-amaala","royal-commission","saudi-aramco","kafd","marafiq","ministry-of-defense","misk","movenpick","karan","primer-steak-house","el-eissa"]]
     allp.sort(key=lambda f: (order.index(re.sub(r"-\d+\.\w+$", "", f)) if re.sub(r"-\d+\.\w+$", "", f) in order else 99, int(re.sub(r"\D", "", f.rsplit("-",1)[-1]) or 0)))
@@ -239,7 +254,9 @@ def other_pages():
   {subhero([("Media",None)],"Media","Events, Exhibitions<br>&amp; News.","Company events, exhibitions, news and announcements.","factory.jpg")}
   <section class="section"><div class="wrap">
     {head("Latest from ARFAD","Events, exhibitions and news.")}
-    <div class="value-grid">{ccards}</div>
+    {post_filters()}
+    {posts_grid()}
+    <p class="gal-empty" data-posts-empty hidden>No posts in this category yet.</p>
   </div></section>
   <section class="section on-alt"><div class="wrap">{head("Photo gallery","From our projects.")}{gal}</div></section>
   {cta_band()}

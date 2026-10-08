@@ -183,3 +183,27 @@ def enquiry_form(types, submit="Send Message", kind="Enquiry", cv=False):
         <p class="form-status" role="status" aria-live="polite"></p>
         <button class="btn solid flash" type="submit">{submit}</button>
       </form>'''
+
+
+import datetime as _dt
+def fmt_date(d):
+    return _dt.date.fromisoformat(d).strftime("%-d %b %Y")
+
+CAT_LABEL = dict(POST_CATEGORIES)
+
+def post_card(p):
+    cover = p["cover"]
+    bg = f' style="background-image:url(\'{esc(cover)}\')"' if cover else ""
+    return (f'<a class="post-card flash on-light" href="post.html?s={esc(p["slug"])}" data-cat="{esc(p["category"])}">'
+            f'<div class="post-cover"{bg}></div><div class="post-body"><span class="post-meta"><span class="post-cat">{esc(CAT_LABEL.get(p["category"], p["category"]))}</span><time>{fmt_date(p["date"])}</time></span>'
+            f'<h3>{esc(p["title"])}</h3><p>{esc(p["excerpt"])}</p><span class="view-link">Read more &rarr;</span></div></a>')
+
+def posts_grid(limit=None):
+    posts = sorted(POSTS_DEFAULT, key=lambda p: p["date"], reverse=True)
+    if limit: posts = posts[:limit]
+    lim = f' data-limit="{limit}"' if limit else ""
+    return f'<div class="post-grid" data-posts{lim}>' + "".join(post_card(p) for p in posts) + "</div>"
+
+def post_filters():
+    pills = '<button type="button" class="pill active" data-cat="">All</button>' + "".join(f'<button type="button" class="pill" data-cat="{k}">{v}</button>' for k, v in POST_CATEGORIES)
+    return f'<div class="post-filters" data-posts-filters>{pills}</div>'

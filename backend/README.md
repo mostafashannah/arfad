@@ -145,6 +145,10 @@ active clients in order, so changes show up without a rebuild. Admin writes:
 The 42 seeded clients are inserted by slug only if missing, so admin edits
 survive redeploys (slugs stay fixed on rename, so the seed never re-adds a renamed client; unlike services/projects, which are upserted).
 
+## Accreditations
+
+**Accreditations** (`/admin/accreditations`) controls the logos in the website footer's "Accredited By" strip: add, remove, replace the logo, rename, reorder, hide, and pick a white card (for logos with dark text) or the default dark card. The site reads `GET /api/accreditations` (no auth, cached 60s) which returns `{ items: [{ name, logo, light }] }` for active rows in order. Admin writes: `GET|POST /api/accreditations/admin`, `PATCH|DELETE /api/accreditations/admin/[id]` (`name, logoUrl, light, active, order`) and `POST /api/accreditations/admin/reorder` (`{ids}`). Uploads go to `public/uploads/accreditations/`. The 9 defaults from `db/site-defaults.json` are seeded only when the table is empty, so edits and deletions survive redeploys.
+
 ## Menu and footer
 
 Admin pages **Menu** (`/admin/menu`) and **Footer** (`/admin/footer`) control the website header tabs (top tabs and sub tabs) and the whole footer. The public site fetches:
@@ -166,3 +170,12 @@ Set the `DATA_DIR` environment variable to an absolute folder **outside** the de
 With `DATA_DIR` set the database is `DATA_DIR/arfad.db` (unless `DATABASE_URL` is set), uploads go to
 `DATA_DIR/uploads`, CVs to `DATA_DIR/cv` and the profile PDF to `DATA_DIR/profile`. Until it is set, the admin
 shows a warning banner on the Overview and Company Profile pages.
+
+## Posts
+
+**Posts** (`/admin/posts`) is the blog behind the website Media page (categories Events, Exhibitions, News): create, edit, publish/unpublish (draft) and delete posts, with a cover image uploaded through `/api/media` into `public/uploads/posts/`. The body is plain text: a blank line starts a new paragraph and a line starting with `## ` is a sub-heading. The slug is generated from the title (`-2`, `-3` added if taken) and stays fixed unless edited explicitly. The static site reads, with no auth and cached 60s:
+
+- `GET /api/posts` returns `{ posts: [{ slug, title, category, excerpt, cover, date }] }` (published only, newest `date` first, no body); optional `?category=news`.
+- `GET /api/posts/[slug]` returns `{ post: { slug, title, category, excerpt, body, cover, date } }`, or 404 `{ error }` if missing or a draft.
+
+Admin writes (login required): `GET|POST /api/posts/admin` and `PATCH|DELETE /api/posts/admin/[id]` (`title, category, excerpt, body, coverUrl, publishedAt, published, slug`). The 6 demo posts from `db/site-defaults.json` are seeded once, guarded by a `posts_seeded` row in `site_blocks`, so deleting them in the admin keeps them gone across restarts and redeploys.

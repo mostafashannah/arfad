@@ -11,6 +11,7 @@ import {
   Settings2,
   Images,
   Handshake,
+  BadgeCheck,
   Users,
   LogOut,
   ExternalLink,
@@ -19,6 +20,7 @@ import {
   FileText,
   PanelTop,
   PanelBottom,
+  Newspaper,
 } from "lucide-react";
 
 const links = [
@@ -30,7 +32,9 @@ const links = [
   { href: "/admin/settings", label: "Site Settings", icon: Settings2 },
   { href: "/admin/media", label: "Media Library", icon: Images },
   { href: "/admin/clients", label: "Clients", icon: Handshake },
+  { href: "/admin/accreditations", label: "Accreditations", icon: BadgeCheck },
   { href: "/admin/profile", label: "Company Profile", icon: FileText },
+  { href: "/admin/posts", label: "Posts", icon: Newspaper },
   { href: "/admin/menu", label: "Menu", icon: PanelTop },
   { href: "/admin/footer", label: "Footer", icon: PanelBottom },
   { href: "/admin/users", label: "Team", icon: Users },

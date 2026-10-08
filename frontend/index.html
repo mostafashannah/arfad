@@ -171,6 +171,14 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     </div>
   </section>
 
+  <section class="section on-alt">
+    <div class="wrap">
+      <div class="head"><p class="eyebrow">05 Media</p><h2>Latest from ARFAD.</h2><p class="ink-soft">Events, exhibitions and news.</p></div>
+      <div class="post-grid" data-posts data-limit="3"><a class="post-card flash on-light" href="post.html?s=4758-doors-amaala-red-sea" data-cat="news"><div class="post-cover" style="background-image:url('/img/projects/redsea-amaala-1.jpg')"></div><div class="post-body"><span class="post-meta"><span class="post-cat">News</span><time>28 Sep 2026</time></span><h3>4,758+ doors installed across AMAALA and the Red Sea</h3><p>From staff villages to luxury resorts, ARFAD has supplied and installed more than 4,758 doors across the Red Sea Global and AMAALA developments.</p><span class="view-link">Read more &rarr;</span></div></a><a class="post-card flash on-light" href="post.html?s=neom-multipurpose-hall-auditorium-vip-lounge" data-cat="news"><div class="post-cover" style="background-image:url('/img/projects/neom-1.jpg')"></div><div class="post-body"><span class="post-meta"><span class="post-cat">News</span><time>14 Sep 2026</time></span><h3>NEOM: multipurpose hall, auditorium and VIP lounge</h3><p>100 doors, 1,700 m² of cladding, 500 m² of ceiling, 100 m² of flooring and 10 reception counters for the NEOM multipurpose hall, plus joinery for the auditorium and VIP lounge.</p><span class="view-link">Read more &rarr;</span></div></a><a class="post-card flash on-light" href="post.html?s=intertek-certified-fire-rated-doors" data-cat="news"><div class="post-cover" style="background-image:url('/img/svc-doors.jpg')"></div><div class="post-body"><span class="post-meta"><span class="post-cat">News</span><time>30 Aug 2026</time></span><h3>Intertek-certified fire-rated doors, up to 120 minutes</h3><p>ARFAD manufactures certified fire-rated wooden doors engineered to contain fire, protect lives and meet demanding international requirements.</p><span class="view-link">Read more &rarr;</span></div></a></div>
+      <div style="margin-top:32px;"><a class="btn" href="media.html">View All Posts</a></div>
+    </div>
+  </section>
+
   <section class="section cta-band">
     <div class="wrap" style="text-align:center;">
       <p class="eyebrow" style="justify-content:center;">Get in touch</p>
@@ -452,6 +460,83 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   }
   sel.forEach(function(x){ x.addEventListener("change", apply); });
   document.querySelector("[data-gf-reset]").addEventListener("click", function(){ projectSel.value = ""; serviceSel.value = ""; apply(); });
+})();
+
+/* media posts: blog grid, category filter, home teaser and the single post page */
+(function(){
+  var tag = document.getElementById("site-defaults");
+  var baked = []; try{ baked = (JSON.parse(tag.textContent).posts) || []; }catch(e){}
+  var LABEL = {events:"Events", exhibitions:"Exhibitions", news:"News"};
+  function el(t, cls, text){ var e = document.createElement(t); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
+  function fmt(d){ var x = new Date(d + "T00:00:00"); return isNaN(x) ? d : x.toLocaleDateString("en-GB", {day:"numeric", month:"short", year:"numeric"}); }
+  function safeUrl(u){ u = String(u || "").trim(); return /^(javascript|data|vbscript):/i.test(u) ? "" : u; }
+  function sorted(list){ return list.slice().sort(function(a, b){ return a.date < b.date ? 1 : a.date > b.date ? -1 : 0; }); }
+  function key(list){ return JSON.stringify(sorted(list).map(function(p){ return [p.slug, p.title, p.category, p.excerpt, p.cover || null, p.date]; })); }
+
+  var grids = document.querySelectorAll("[data-posts]");
+  var current = baked;
+  function card(p){
+    var a = el("a", "post-card flash on-light rv reveal-in"); a.href = "post.html?s=" + encodeURIComponent(p.slug); a.setAttribute("data-cat", p.category);
+    var cv = el("div", "post-cover"); var u = safeUrl(p.cover); if(u) cv.style.backgroundImage = "url('" + u.replace(/'/g, "%27") + "')"; a.appendChild(cv);
+    var b = el("div", "post-body"), m = el("span", "post-meta");
+    m.appendChild(el("span", "post-cat", LABEL[p.category] || p.category)); m.appendChild(el("time", null, fmt(p.date)));
+    b.appendChild(m); b.appendChild(el("h3", null, p.title)); b.appendChild(el("p", null, p.excerpt)); b.appendChild(el("span", "view-link", "Read more →"));
+    a.appendChild(b); return a;
+  }
+  var activeCat = "";
+  function renderGrids(){
+    grids.forEach(function(g){
+      var lim = parseInt(g.getAttribute("data-limit") || "0", 10);
+      var list = sorted(current).filter(function(p){ return !activeCat || p.category === activeCat; });
+      if(lim) list = list.slice(0, lim);
+      g.textContent = ""; list.forEach(function(p){ g.appendChild(card(p)); });
+      if(!lim){ var empty = document.querySelector("[data-posts-empty]"); if(empty) empty.hidden = list.length > 0; }
+    });
+  }
+  if(grids.length){
+    var pills = document.querySelectorAll("[data-posts-filters] .pill");
+    pills.forEach(function(p){ p.addEventListener("click", function(){
+      activeCat = p.getAttribute("data-cat") || ""; pills.forEach(function(x){ x.classList.toggle("active", x === p); }); renderGrids();
+    }); });
+    fetch("/api/posts", {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+      if(!j || !Array.isArray(j.posts)) return;
+      if(key(j.posts) !== key(baked)){ current = j.posts; renderGrids(); }
+    }).catch(function(){});
+  }
+
+  var art = document.querySelector("[data-post-article]");
+  if(art){
+    var slug = new URLSearchParams(location.search).get("s") || "";
+    function showPost(p){
+      document.title = p.title + " | ARFAD";
+      var h = document.querySelector("[data-post-title]"); if(h) h.textContent = p.title;
+      art.querySelector("[data-post-cat]").textContent = LABEL[p.category] || p.category;
+      art.querySelector("[data-post-date]").textContent = fmt(p.date);
+      var cov = art.querySelector("[data-post-cover]"), u = safeUrl(p.cover);
+      if(u){ cov.hidden = false; cov.style.backgroundImage = "url('" + u.replace(/'/g, "%27") + "')"; }
+      var body = art.querySelector("[data-post-body]"); body.textContent = "";
+      String(p.body || "").split(/\n\s*\n/).forEach(function(block){
+        var lines = block.split("\n");
+        var node;
+        if(/^##\s+/.test(lines[0])){
+          body.appendChild(el("h2", null, lines[0].replace(/^##\s+/, "")));
+          lines = lines.slice(1); if(!lines.length) return;
+        }
+        node = el("p");
+        lines.forEach(function(l, i){ if(i) node.appendChild(document.createElement("br")); node.appendChild(document.createTextNode(l)); });
+        body.appendChild(node);
+      });
+    }
+    function missing(){ art.querySelector("[data-post-missing]").hidden = false; var h = document.querySelector("[data-post-title]"); if(h) h.textContent = "Post not found"; }
+    fetch("/api/posts/" + encodeURIComponent(slug), {headers:{Accept:"application/json"}})
+      .then(function(r){ return r.ok ? r.json() : null; })
+      .then(function(j){
+        if(j && j.post) return showPost(j.post);
+        var f = baked.filter(function(p){ return p.slug === slug; })[0];
+        f ? showPost(f) : missing();
+      })
+      .catch(function(){ var f = baked.filter(function(p){ return p.slug === slug; })[0]; f ? showPost(f) : missing(); });
+  }
 })();
 
 /* light/dark mode switcher */

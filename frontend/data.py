@@ -316,3 +316,32 @@ def client_logo(name):
         if has_file(f"img/clients/{slug}.{ext}"):
             return f"img/clients/{slug}.{ext}"
     return None
+
+# ---------------------------------------------------------------- media posts (demo content; editable in the admin Posts section)
+POST_CATEGORIES = [("events", "Events"), ("exhibitions", "Exhibitions"), ("news", "News")]
+POSTS_DEFAULT = [
+ dict(slug="4758-doors-amaala-red-sea", category="news", date="2026-09-28", cover="/img/projects/redsea-amaala-1.jpg",
+  title="4,758+ doors installed across AMAALA and the Red Sea",
+  excerpt="From staff villages to luxury resorts, ARFAD has supplied and installed more than 4,758 doors across the Red Sea Global and AMAALA developments.",
+  body="ARFAD's work for Red Sea Global and AMAALA spans staff villages, resorts and hotels, with a total of 4,758+ doors installed.\n\n## What we delivered\nAMAALA Staff Village, Package 1: 3,192 wooden doors.\nStaff Village, Zones 1, 2 and 7: 1,566 doors, plus hotel, villa, police and fire station joinery.\nSix Senses Resort, Triple Bay: full luxury resort joinery.\nSouthern Dunes Hotel: 250 doors, 3,000 m² of cladding and 1,000 m² of ceilings.\nSecondary infrastructure: thermowood exterior cladding.\n\nEvery package was engineered and produced in our Jubail factory and installed to the approved specification."),
+ dict(slug="neom-multipurpose-hall-auditorium-vip-lounge", category="news", date="2026-09-14", cover="/img/projects/neom-1.jpg",
+  title="NEOM: multipurpose hall, auditorium and VIP lounge",
+  excerpt="100 doors, 1,700 m² of cladding, 500 m² of ceiling, 100 m² of flooring and 10 reception counters for the NEOM multipurpose hall, plus joinery for the auditorium and VIP lounge.",
+  body="ARFAD delivered the woodwork for three spaces at NEOM.\n\n## Multipurpose hall\n100 doors, 1,700 m² of cladding, 500 m² of ceiling, 100 m² of flooring and 10 reception counters.\n\n## Auditorium\nHigh-end joinery and wall cladding.\n\n## VIP lounge\nBespoke joinery, custom panelling and premium VIP finishes.\n\nThe project shows how one factory can supply doors, cladding, ceilings, flooring and custom joinery as a single package."),
+ dict(slug="intertek-certified-fire-rated-doors", category="news", date="2026-08-30", cover="/img/svc-doors.jpg",
+  title="Intertek-certified fire-rated doors, up to 120 minutes",
+  excerpt="ARFAD manufactures certified fire-rated wooden doors engineered to contain fire, protect lives and meet demanding international requirements.",
+  body="Where natural warmth meets certified fire protection. ARFAD manufactures fire-rated wooden doors that comply with the most demanding international project requirements, without compromising aesthetics or finishing quality.\n\n## Certification\nARFAD is an Intertek certified fire-rated door manufacturer, certified up to 120 minutes of fire resistance. Our fire-rated doors are certified by Intertek for compliance with both American and British standards.\n\nThe compliance certificates for Warm Springs, Halspan and Streboard are available on our Certificates and Awards page."),
+ dict(slug="fsc-chain-of-custody-responsible-sourcing", category="news", date="2026-08-12", cover="/img/quality.jpg",
+  title="FSC Chain of Custody: responsible wood sourcing",
+  excerpt="ARFAD is FSC Chain of Custody certified, supporting traceable, responsibly sourced wood across the supply chain.",
+  body="ARFAD is FSC Chain of Custody certified, demonstrating its commitment to responsible wood sourcing and the traceability of certified wood products throughout the supply chain.\n\n## Our commitment\nOur FSC Chain of Custody certification ensures that the wood and wood-based materials we use are sourced from responsibly managed forests, supporting biodiversity, environmental protection and the well-being of communities worldwide.\n\nThis enables ARFAD to support projects with sustainability and responsible sourcing requirements."),
+ dict(slug="visit-our-jubail-factory", category="events", date="2026-07-20", cover="/img/factory.jpg",
+  title="Visit our 20,000 m² factory in Jubail",
+  excerpt="Clients, consultants and project teams are welcome to see our production zones, machinery and finishing facilities first-hand.",
+  body="Seeing the factory is the best way to understand how ARFAD works. Our 20,000 m² facility in Jubail Industrial City brings together an in-house design studio, CNC machining, edge banding, assembly, finishing and quality control, with professional spray booths and dedicated warehousing.\n\n## Arrange a visit\nTo arrange a factory visit, email info@arfad.com.sa or call +966 13 341 7773.\n\nThis is a sample post. Replace it with your own event announcements from the admin."),
+ dict(slug="meet-arfad-at-upcoming-exhibitions", category="exhibitions", date="2026-06-15", cover="/img/who-we-are.jpg",
+  title="Meet ARFAD at upcoming exhibitions",
+  excerpt="Exhibition dates, stand details and highlights will be announced here as they are confirmed.",
+  body="ARFAD takes part in exhibitions and trade fairs across the Kingdom to meet architects, consultants and developers.\n\n## Stay informed\nStand locations, dates and what we are showing will be posted in this section as soon as they are confirmed.\n\nThis is a sample post. Replace it with your own exhibition announcements from the admin."),
+]

@@ -86,6 +86,14 @@ def home():
     </div>
   </section>
 
+  <section class="section on-alt">
+    <div class="wrap">
+      {head("05 Media","Latest from ARFAD.","Events, exhibitions and news.")}
+      {posts_grid(3)}
+      <div style="margin-top:32px;"><a class="btn" href="media.html">View All Posts</a></div>
+    </div>
+  </section>
+
   {cta_band()}
 </main>'''
     write("index.html", page("ARFAD International Industrial Co.",

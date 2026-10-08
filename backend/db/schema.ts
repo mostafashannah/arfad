@@ -142,6 +142,36 @@ export const clients = sqliteTable("clients", {
     .default(sql`(unixepoch())`),
 });
 
+export const accreditations = sqliteTable("accreditations", {
+  id: id(),
+  name: text("name").notNull(),
+  logoUrl: text("logo_url").notNull(),
+  light: integer("light", { mode: "boolean" }).notNull().default(false),
+  order: integer("order").notNull().default(0),
+  active: integer("active", { mode: "boolean" }).notNull().default(true),
+  createdAt: integer("created_at", { mode: "timestamp" })
+    .notNull()
+    .default(sql`(unixepoch())`),
+});
+
+export const posts = sqliteTable("posts", {
+  id: id(),
+  slug: text("slug").notNull().unique(),
+  title: text("title").notNull(),
+  category: text("category", { enum: ["events", "exhibitions", "news"] }).notNull(),
+  excerpt: text("excerpt").notNull(),
+  body: text("body").notNull(),
+  coverUrl: text("cover_url"),
+  publishedAt: text("published_at").notNull(),
+  published: integer("published", { mode: "boolean" }).notNull().default(true),
+  createdAt: integer("created_at", { mode: "timestamp" })
+    .notNull()
+    .default(sql`(unixepoch())`),
+  updatedAt: integer("updated_at", { mode: "timestamp" })
+    .notNull()
+    .default(sql`(unixepoch())`),
+});
+
 export const navItems = sqliteTable("nav_items", {
   id: id(),
   parentId: text("parent_id"),
