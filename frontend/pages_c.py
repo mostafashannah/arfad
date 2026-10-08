@@ -17,6 +17,8 @@ def make_pdf(jpg, name):
     out = os.path.join(ROOT, "files", "certificates")
     os.makedirs(out, exist_ok=True)
     dst = os.path.join(out, name + ".pdf")
+    if os.path.exists(dst):
+        return f"files/certificates/{name}.pdf"
     im = Image.open(os.path.join(ROOT, "img", "certs", jpg)).convert("RGB")
     im.save(dst, "PDF", resolution=150.0)
     return f"files/certificates/{name}.pdf"
