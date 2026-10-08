@@ -255,20 +255,20 @@ def other_pages():
     body = f'''<main>
   {subhero([("Contact",None)],"Get in Touch","Let's build something<br>that lasts twenty years.","Reach out for a quote, a site visit, or a conversation about your next project.","factory.jpg")}
   <section class="section"><div class="wrap contact-grid">
-    <div class="contact-col">
       <div class="contact-card contact-info">
         <h3>Contact Details</h3>
         <div class="ci-list">{rows}</div>
         <div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="mailto:{EMAIL}">Email Us</a><a class="btn" href="https://wa.me/{PHONE_MOBILE_WA}">WhatsApp Us</a></div>
       </div>
-      <div class="map-box" style="padding:0;overflow:hidden;position:relative;aspect-ratio:16/9;">
-        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=49.5967%2C26.9846%2C49.6767%2C27.0246&layer=mapnik&marker=27.0046%2C49.6367" width="100%" height="100%" style="border:0;position:absolute;inset:0;filter:saturate(.85) brightness(.95);" loading="lazy" title="ARFAD location map Jubail Industrial City"></iframe>
-        <a href="https://www.google.com/maps/search/?api=1&query=ARFAD+International+Industrial+Co%2C+Jubail+Industrial+City%2C+Saudi+Arabia" target="_blank" rel="noopener" class="btn solid" style="position:absolute;left:16px;bottom:16px;z-index:2;">Open in Google Maps</a>
-      </div>
-    </div>
     <div class="contact-card form-card">
       <h3 style="margin-bottom:18px;">Enquiry</h3>
       {enquiry_form(["Quotation Request","General Enquiry","Project Enquiry","Supplier / Vendor","Careers","Other"], "Send Message")}
+    </div>
+  </div></section>
+  <section class="section" style="padding-top:0;"><div class="wrap">
+    <div class="map-box" style="padding:0;overflow:hidden;position:relative;aspect-ratio:21/9;">
+        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=49.5967%2C26.9846%2C49.6767%2C27.0246&layer=mapnik&marker=27.0046%2C49.6367" width="100%" height="100%" style="border:0;position:absolute;inset:0;filter:saturate(.85) brightness(.95);" loading="lazy" title="ARFAD location map Jubail Industrial City"></iframe>
+        <a href="https://www.google.com/maps/search/?api=1&query=ARFAD+International+Industrial+Co%2C+Jubail+Industrial+City%2C+Saudi+Arabia" target="_blank" rel="noopener" class="btn solid" style="position:absolute;left:16px;bottom:16px;z-index:2;">Open in Google Maps</a>
     </div>
   </div></section>
 </main>'''

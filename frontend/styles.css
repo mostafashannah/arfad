@@ -975,7 +975,7 @@ header.nav.nav-scrolled .brand-name img{filter:brightness(0);}
 .ci-v{font-size:1.08rem;font-weight:600;line-height:1.45;}
 .ci-v a{text-decoration:none;}
 .ci-v a:hover{color:var(--gold);}
-.contact-grid{align-items:start;}
+.contact-grid{align-items:stretch;}
 @media (max-width:480px){ .ci-row{grid-template-columns:42px 1fr;gap:14px;} .ci-ico{width:42px;height:42px;} .ci-v{font-size:1rem;word-break:break-word;} }
 
 /* accreditation logos in the footer strip */
@@ -983,3 +983,10 @@ header.nav.nav-scrolled .brand-name img{filter:brightness(0);}
 .acc-chip.acc-logo.dark{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.25);}
 .acc-chip.acc-logo img{width:100%;height:100%;object-fit:contain;}
 .acc-track{align-items:center;gap:18px;}
+
+/* contact: both boxes always the same height, map full width below */
+.contact-info{display:flex;flex-direction:column;}
+.contact-info .ci-list{flex:1;align-content:space-between;}
+.contact-info .hero-cta{margin-top:auto!important;padding-top:26px;}
+.contact-grid .form-card{display:flex;flex-direction:column;}
+.contact-grid .form-card .enq-form{flex:1;align-content:start;}
