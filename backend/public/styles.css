@@ -1043,3 +1043,18 @@ body.lb-open{overflow:hidden;}
 .gal-count{margin-left:auto;font-family:"Montserrat",sans-serif;font-size:.85rem;font-weight:600;color:var(--ink-soft);padding-bottom:12px;}
 .gal-empty{margin-top:24px;text-align:center;color:var(--ink-soft);}
 @media (max-width:560px){ .gal-count{margin-left:0;width:100%;padding-bottom:0;} }
+
+/* pill dropdowns that match the outline buttons */
+.sel{position:relative;display:block;color:var(--accent-text);}
+.sel::after{content:"";position:absolute;right:22px;top:50%;width:8px;height:8px;margin-top:-6px;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg);pointer-events:none;transition:transform .2s;}
+.sel:hover{color:var(--bg);}
+.gal-filters .sel select{
+  -webkit-appearance:none;appearance:none;height:47px;padding:0 50px 0 24px;
+  border:1.5px solid var(--accent-text);border-radius:100px;background:transparent;color:inherit;
+  font-family:"Montserrat",sans-serif;font-size:.78rem;font-weight:600;letter-spacing:.04em;text-transform:none;cursor:pointer;
+  transition:background .15s,color .15s,transform .15s;
+}
+.gal-filters .sel:hover select{background:var(--accent-text);transform:translateY(-1px);}
+.gal-filters .sel select:focus-visible{outline:none;box-shadow:0 0 0 3px var(--gold-soft);border-color:var(--gold);}
+.gal-filters .sel select option{background:var(--card);color:var(--ink);}
+.gal-filters .sel select:not([value=""]){}

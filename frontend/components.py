@@ -164,8 +164,8 @@ def gallery_filters(images):
     for slug, n in counts.items():
         for sv in ps.get(slug, []): scount[sv] = scount.get(sv, 0) + n
     svc = "".join('<option value="%s">%s (%d)</option>' % (s["slug"], esc(s["title"]), scount[s["slug"]]) for s in SERVICES if s["slug"] in scount)
-    return (f'<div class="gal-filters"><label>Project<select data-gf="project"><option value="">All projects ({len(images)})</option>{proj}</select></label>'
-            f'<label>Service<select data-gf="service"><option value="">All services</option>{svc}</select></label>'
+    return (f'<div class="gal-filters"><label>Project<span class="sel"><select data-gf="project"><option value="">All projects ({len(images)})</option>{proj}</select></span></label>'
+            f'<label>Service<span class="sel"><select data-gf="service"><option value="">All services</option>{svc}</select></span></label>'
             f'<button type="button" class="btn gal-reset" data-gf-reset>Reset</button><span class="gal-count" data-gf-count aria-live="polite">{len(images)} photos</span></div>')
 
 def enquiry_form(types, submit="Send Message", kind="Enquiry", cv=False):
