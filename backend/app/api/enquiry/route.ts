@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import nodemailer from "nodemailer";
 import { eq } from "drizzle-orm";
+import { mkdir, writeFile } from "fs/promises";
+import path from "path";
+import crypto from "crypto";
 import { db } from "@/db/client";
 import { enquiries } from "@/db/schema";
 
@@ -49,8 +52,17 @@ const esc = (s: string) =>
   s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
 
 type Enquiry = z.infer<typeof schema>;
+type Cv = { name: string; file: string; fullPath: string } | null;
 
-async function sendMail(e: Enquiry, ip: string | null): Promise<"sent" | "not_configured"> {
+const CV_DIR = path.join(process.cwd(), "data", "cv");
+const CV_MAX = 5 * 1024 * 1024;
+const CV_TYPES: Record<string, (b: Buffer) => boolean> = {
+  ".pdf": (b) => b.subarray(0, 4).toString() === "%PDF",
+  ".docx": (b) => b[0] === 0x50 && b[1] === 0x4b,
+  ".doc": (b) => b[0] === 0xd0 && b[1] === 0xcf,
+};
+
+async function sendMail(e: Enquiry, ip: string | null, cv: Cv): Promise<"sent" | "not_configured"> {
   const host = process.env.SMTP_HOST;
   const user = process.env.SMTP_USER;
   const pass = process.env.SMTP_PASS;
@@ -74,6 +86,7 @@ async function sendMail(e: Enquiry, ip: string | null): Promise<"sent" | "not_co
     ["Phone", e.phone || "-"],
     ["Type", e.enquiryType || "-"],
     ["Subject", e.subject || "-"],
+    ["CV", cv ? cv.name : "-"],
     ["Page", e.page || "-"],
     ["IP", ip || "-"],
   ];
@@ -87,6 +100,7 @@ async function sendMail(e: Enquiry, ip: string | null): Promise<"sent" | "not_co
     from: process.env.MAIL_FROM || user,
     to: process.env.MAIL_TO || "info@arfad.com.sa",
     replyTo: e.email,
+    attachments: cv ? [{ filename: cv.name, path: cv.fullPath }] : undefined,
     subject: `[Website enquiry] ${(e.subject || e.enquiryType || "New message").replace(/[\r\n]+/g, " ")}`,
     text,
     html,
@@ -97,44 +111,59 @@ async function sendMail(e: Enquiry, ip: string | null): Promise<"sent" | "not_co
 // Public, unauthenticated: called by the website's enquiry form.
 export async function POST(req: NextRequest) {
   const ok = () => NextResponse.json({ ok: true });
+  const bad = (error: string, status = 400) => NextResponse.json({ ok: false, error }, { status });
   try {
-    const body = await req.json().catch(() => null);
-    if (!body || typeof body !== "object") {
-      return NextResponse.json({ ok: false, error: "Invalid request." }, { status: 400 });
+    let body: Record<string, unknown> | null = null;
+    let upload: File | null = null;
+    if ((req.headers.get("content-type") || "").includes("multipart/form-data")) {
+      const fd = await req.formData().catch(() => null);
+      if (!fd) return bad("Invalid request.");
+      body = {};
+      for (const [k, v] of fd.entries()) {
+        if (typeof v === "string") body[k] = v;
+        else if (k === "cv" && v.size > 0) upload = v;
+      }
+    } else {
+      body = await req.json().catch(() => null);
     }
+    if (!body || typeof body !== "object") return bad("Invalid request.");
 
     if (typeof body.website === "string" && body.website.trim() !== "") return ok();
     const t = Number(body.t);
     if (Number.isFinite(t) && t > 0 && Date.now() - t < 3000) return ok();
 
     const parsed = schema.safeParse(body);
-    if (!parsed.success) {
-      return NextResponse.json(
-        { ok: false, error: parsed.error.issues[0]?.message || "Please check the form and try again." },
-        { status: 400 }
-      );
-    }
+    if (!parsed.success) return bad(parsed.error.issues[0]?.message || "Please check the form and try again.");
 
     const forwardedFor = req.headers.get("x-forwarded-for");
     const ip = (forwardedFor ? forwardedFor.split(",")[0].trim() : null) || req.headers.get("x-real-ip");
-    if (rateLimited(ip || "unknown")) {
-      return NextResponse.json(
-        { ok: false, error: "Too many enquiries. Please try again later." },
-        { status: 429 }
-      );
+    if (rateLimited(ip || "unknown")) return bad("Too many enquiries. Please try again later.", 429);
+
+    let cv: Cv = null;
+    if (upload) {
+      const ext = path.extname(upload.name).toLowerCase();
+      if (!CV_TYPES[ext]) return bad("Please attach your CV as a PDF or Word document (.pdf, .doc, .docx).");
+      if (upload.size > CV_MAX) return bad("Your CV is larger than 5 MB. Please attach a smaller file.");
+      const buf = Buffer.from(await upload.arrayBuffer());
+      if (!CV_TYPES[ext](buf)) return bad("That file does not look like a valid PDF or Word document.");
+      const file = `${crypto.randomUUID()}${ext}`;
+      await mkdir(CV_DIR, { recursive: true });
+      await writeFile(path.join(CV_DIR, file), buf);
+      const name = path.basename(upload.name).replace(/[^\w.\- ()]+/g, "_").slice(0, 120) || `cv${ext}`;
+      cv = { name, file, fullPath: path.join(CV_DIR, file) };
     }
 
     const e = parsed.data;
     const row = await db
       .insert(enquiries)
-      .values({ ...e, ip })
+      .values({ ...e, ip, cvName: cv?.name ?? null, cvFile: cv?.file ?? null })
       .returning({ id: enquiries.id })
       .get();
 
     let status: "sent" | "failed" | "not_configured" = "failed";
     let error: string | null = null;
     try {
-      status = await sendMail(e, ip);
+      status = await sendMail(e, ip, cv);
     } catch (err) {
       error = (err instanceof Error ? err.message : String(err)).slice(0, 500);
     }
@@ -147,6 +176,6 @@ export async function POST(req: NextRequest) {
 
     return ok();
   } catch {
-    return NextResponse.json({ ok: false, error: "Something went wrong. Please try again later." }, { status: 500 });
+    return bad("Something went wrong. Please try again later.", 500);
   }
 }

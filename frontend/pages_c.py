@@ -218,7 +218,7 @@ def other_pages():
     </div>
     <div class="contact-card form-card">
       <h3 style="margin-bottom:18px;">Send us your details</h3>
-      {enquiry_form(["Engineering & Design","Production & CNC","Finishing & Spray","Quality & HSE","Site Installation","Administration","Other"], "Send Application", "Area of Interest")}
+      {enquiry_form(["Engineering & Design","Production & CNC","Finishing & Spray","Quality & HSE","Site Installation","Administration","Other"], "Send Application", "Area of Interest", cv=True)}
     </div>
   </div></section>
   {cta_band("Questions about working at ARFAD?")}

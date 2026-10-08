@@ -108,6 +108,10 @@ export function ensureSchema(): Promise<void> {
       for (const sql of STATEMENTS) {
         await sqlite.execute(sql);
       }
+      const cols = await sqlite.execute(`PRAGMA table_info(enquiries)`);
+      const have = new Set(cols.rows.map((r) => String(r.name)));
+      if (!have.has("cv_name")) await sqlite.execute(`ALTER TABLE enquiries ADD COLUMN cv_name TEXT`);
+      if (!have.has("cv_file")) await sqlite.execute(`ALTER TABLE enquiries ADD COLUMN cv_file TEXT`);
     })();
   }
   return ensured;

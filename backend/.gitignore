@@ -6,3 +6,4 @@ out
 *.db-journal
 public/uploads/*
 !public/uploads/.gitkeep
+data/

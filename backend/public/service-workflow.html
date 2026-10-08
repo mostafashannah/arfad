@@ -391,26 +391,45 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
 (function(){
   document.querySelectorAll("form[data-enquiry]").forEach(function(form){
     var started = Date.now();
+    var picker = form.querySelector('input[type=file]');
+    if(picker){ picker.addEventListener("change", function(){ var n = form.querySelector(".file-name"); if(n) n.textContent = picker.files && picker.files[0] ? picker.files[0].name : "No file chosen"; }); }
     var status = form.querySelector(".form-status");
     var btn = form.querySelector("button[type=submit]");
     form.addEventListener("submit", function(e){
       e.preventDefault();
       var fd = new FormData(form);
-      var body = {
-        name: fd.get("name"), email: fd.get("email"), phone: fd.get("phone") || "",
-        subject: fd.get("subject") || "", enquiryType: fd.get("enquiryType") || "",
-        message: fd.get("message"), page: location.pathname, website: fd.get("website") || "", t: started
-      };
+      var fileInput = form.querySelector('input[type=file]');
+      var file = fileInput && fileInput.files && fileInput.files[0];
       status.className = "form-status";
-      status.textContent = "Sending...";
+      if(file){
+        var okType = /\.(pdf|docx?)$/i.test(file.name);
+        if(!okType){ status.className = "form-status err"; status.textContent = "Please attach your CV as a PDF or Word document (.pdf, .doc, .docx)."; return; }
+        if(file.size > 5 * 1024 * 1024){ status.className = "form-status err"; status.textContent = "Your CV is larger than 5 MB. Please attach a smaller file."; return; }
+      }
+      var req;
+      if(file){
+        fd.append("page", location.pathname);
+        fd.append("t", String(started));
+        req = {method:"POST", body: fd};
+      } else {
+        fd.delete("cv");
+        var body = {
+          name: fd.get("name"), email: fd.get("email"), phone: fd.get("phone") || "",
+          subject: fd.get("subject") || "", enquiryType: fd.get("enquiryType") || "",
+          message: fd.get("message"), page: location.pathname, website: fd.get("website") || "", t: started
+        };
+        req = {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)};
+      }
+      status.textContent = file ? "Uploading your CV..." : "Sending...";
       btn.disabled = true;
-      fetch("/api/enquiry", {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)})
+      fetch("/api/enquiry", req)
         .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); })
         .then(function(j){
           if(j && j.ok){
             status.className = "form-status ok";
             status.textContent = "Thank you. Your message has been sent and our team will reply shortly.";
             form.reset(); started = Date.now();
+            var fn = form.querySelector(".file-name"); if(fn) fn.textContent = "No file chosen";
           } else {
             status.className = "form-status err";
             status.textContent = (j && j.error) || "We could not send your message. Please email info@arfad.com.sa or call us.";

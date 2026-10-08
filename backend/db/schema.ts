@@ -122,6 +122,8 @@ export const enquiries = sqliteTable("enquiries", {
     .notNull()
     .default("pending"),
   emailError: text("email_error"),
+  cvName: text("cv_name"),
+  cvFile: text("cv_file"),
   createdAt: integer("created_at", { mode: "timestamp" })
     .notNull()
     .default(sql`(unixepoch())`),

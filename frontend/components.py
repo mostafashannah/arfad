@@ -134,8 +134,9 @@ def project_card(slug, i=0):
 def gallery(images, base="img/projects/"):
     return '<div class="thumb-grid">' + "".join(f'<div class="thumb-photo rv" style="--d:{(i%3)*.08:.2f}s;background-image:url(\'{base}{im}\');"></div>' for i, im in enumerate(images)) + "</div>"
 
-def enquiry_form(types, submit="Send Message", kind="Enquiry"):
+def enquiry_form(types, submit="Send Message", kind="Enquiry", cv=False):
     opts = "".join(f"<option>{t}</option>" for t in types)
+    cv_field = ('<label class="file-field">Attach Your CV (PDF or Word, max 5 MB)<span class="file-drop"><input name="cv" type="file" accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"></span></label>' if cv else "")
     return f'''<form class="enq-form" data-enquiry novalidate>
         <div class="enq-row"><label>Your Name<input name="name" required maxlength="120" autocomplete="name"></label>
           <label>Your Email<input name="email" type="email" required maxlength="200" autocomplete="email"></label></div>
@@ -143,6 +144,7 @@ def enquiry_form(types, submit="Send Message", kind="Enquiry"):
           <label>Subject<input name="subject" maxlength="200"></label></div>
         <label>{kind} Type<select name="enquiryType"><option value="">Select...</option>{opts}</select></label>
         <label>Your Message<textarea name="message" rows="6" required maxlength="5000"></textarea></label>
+        {cv_field}
         <input class="hp" type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
         <button class="btn solid flash" type="submit">{submit}</button>
         <p class="form-status" role="status" aria-live="polite"></p>

@@ -58,13 +58,14 @@ export default async function EnquiriesPage() {
                 <TableHead>Type</TableHead>
                 <TableHead>Subject</TableHead>
                 <TableHead>Message</TableHead>
+                <TableHead>CV</TableHead>
                 <TableHead>Email status</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {rows.length === 0 && (
                 <TableRow>
-                  <TableCell colSpan={8} className="text-center text-muted-foreground">
+                  <TableCell colSpan={9} className="text-center text-muted-foreground">
                     No enquiries yet.
                   </TableCell>
                 </TableRow>
@@ -85,6 +86,15 @@ export default async function EnquiriesPage() {
                   <TableCell>{r.subject || "-"}</TableCell>
                   <TableCell className="max-w-xs" title={r.message}>
                     {r.message.length > 120 ? `${r.message.slice(0, 120)}…` : r.message}
+                  </TableCell>
+                  <TableCell className="whitespace-nowrap">
+                    {r.cvFile ? (
+                      <a href={`/api/enquiries/${r.id}/cv`} className="underline-offset-2 hover:underline" title={r.cvName ?? "CV"}>
+                        Download CV
+                      </a>
+                    ) : (
+                      <span className="text-muted-foreground">-</span>
+                    )}
                   </TableCell>
                   <TableCell>
                     <span
