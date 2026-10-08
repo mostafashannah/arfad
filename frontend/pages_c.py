@@ -34,7 +34,7 @@ def pending_card(title, sub):
 def vendor_mark(v):
     src = client_logo(v["name"])
     if src:
-        return '<span class="vendor-logo"><img src="%s" alt="%s"></span>' % (src, esc(v["name"]))
+        return '<span class="vendor-logo" data-client-logo="%s"><img src="%s" alt="%s"></span>' % (esc(v["name"]), src, esc(v["name"]))
     return '<span class="vendor-ico">%s</span>' % v["ico"]
 
 def factory_pages():
@@ -153,7 +153,7 @@ def factory_pages():
   {subhero([("Factory","factory.html"),("Our Clients",None)],"Clients &amp; Partners","Trusted by the Kingdom's<br>Leading Organizations.","","proj-rc.jpg")}
   <section class="section"><div class="wrap">
     {head("Our Clients","Clients and partners.","A 20-year portfolio spanning royal commissions, national giga-projects and the Kingdom's leading developers.")}
-    <div class="logo-grid">{tiles}</div>
+    <div class="logo-grid" data-clients="grid">{tiles}</div>
   </div></section>
   <section class="section on-alt"><div class="wrap">{clients_marquee()}</div></section>
   {cta_band()}

@@ -104,7 +104,7 @@ def clients_marquee(names=None, label="Trusted By"):
     names = names or CLIENTS
     chips = "".join(_chip(n) for n in names)
     return (f'<div class="divider-label"><span class="eyebrow" style="margin:0;">{label}</span></div>'
-            f'<div class="client-marquee"><div class="client-marquee-track">{chips}{chips}</div></div>')
+            f'<div class="client-marquee"><div class="client-marquee-track" data-clients="marquee">{chips}{chips}</div></div>')
 
 def other_services(exclude=None, n=4):
     pool = [s for s in SERVICES if s["slug"] != exclude]

@@ -330,6 +330,49 @@ JS_REVEAL_OBSERVER = '''<script>
   parsed.forEach(function(p){ io2.observe(p.el); });
 })();
 
+/* client logos: pick up changes made in the admin Clients section (static markup stays as the fallback) */
+(function(){
+  var grid = document.querySelector('[data-clients="grid"]');
+  var tracks = document.querySelectorAll('[data-clients="marquee"]');
+  var vend = document.querySelectorAll('[data-client-logo]');
+  if(!grid && !tracks.length && !vend.length) return;
+  fetch("/api/clients", {headers:{Accept:"application/json"}})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(j){
+      if(!j || !j.clients || !j.clients.length) return;
+      var list = j.clients;
+      function mono(n){ return n.replace(/&/g," ").split(/\\s+/).filter(Boolean).slice(0,2).map(function(w){return w[0];}).join("").toUpperCase(); }
+      function el(tag, cls, text){ var e = document.createElement(tag); if(cls) e.className = cls; if(text) e.textContent = text; return e; }
+      function logo(c, h){ var i = el("img"); i.src = c.logo; i.alt = c.name; i.loading = "lazy"; return i; }
+      if(grid){
+        grid.textContent = "";
+        list.forEach(function(c, k){
+          var t = el("div", "logo-tile flash on-light rv reveal-in");
+          t.appendChild(c.logo ? logo(c) : el("span", "logo-mono", mono(c.name)));
+          t.appendChild(el("span", "logo-name", c.name));
+          grid.appendChild(t);
+        });
+      }
+      tracks.forEach(function(track){
+        track.textContent = "";
+        for(var pass = 0; pass < 2; pass++){
+          list.forEach(function(c){
+            var s = el("span", "chip logo-chip flash on-light" + (c.logo ? " has-logo" : ""));
+            if(c.logo){ s.title = c.name; s.appendChild(logo(c)); } else { s.textContent = c.name; }
+            track.appendChild(s);
+          });
+        }
+      });
+      var byName = {};
+      list.forEach(function(c){ byName[c.name.toLowerCase()] = c; });
+      vend.forEach(function(v){
+        var c = byName[(v.getAttribute("data-client-logo") || "").toLowerCase()];
+        if(c && c.logo){ var i = v.querySelector("img"); if(i) i.src = c.logo; }
+      });
+    })
+    .catch(function(){});
+})();
+
 /* light/dark mode switcher */
 (function(){
   var group = document.getElementById("themeSwitch");
