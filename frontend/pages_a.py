@@ -4,7 +4,7 @@ def home():
     cards = "".join(svc_card(s, i) for i, s in enumerate(SERVICES))
     sec_cards = "".join(
         f'<a class="gallery-card flash" href="projects-{s["slug"]}.html" style="background-image:url(\'img/{s["img"] if has_file("img/"+s["img"]) else "projects/"+s["img"]}\');">'
-        f'<div class="gc-body"><p class="eyebrow">Project Sector</p><h4>{esc(s["title"])}</h4></div></a>' for s in SECTORS)
+        f'<div class="gc-body"><h4>{esc(s["title"])}</h4></div></a>' for s in SECTORS)
     body = f'''<main id="top">
   <section class="hero-slider hero-full">
     <div class="slide" style="background-image:url('img/factory.jpg');"></div>

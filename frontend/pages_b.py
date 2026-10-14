@@ -37,7 +37,7 @@ def projects_pages():
     # ---- overview
     sector_cards = "".join(
         f'<a class="gallery-card flash" href="projects-{s["slug"]}.html" style="background-image:url(\'img/{sector_img(s)}\');">'
-        f'<div class="gc-body"><p class="eyebrow">Project Sector</p><h4>{esc(s["title"])}</h4><p>{s["intro"][:78].rsplit(" ",1)[0]}&hellip;</p></div></a>' for s in SECTORS)
+        f'<div class="gc-body"><h4>{esc(s["title"])}</h4><p>{s["intro"][:78].rsplit(" ",1)[0]}&hellip;</p></div></a>' for s in SECTORS)
     blocks = "".join(company_block(n, r, i) for i, (n, r) in enumerate(group_rows(ROWS).items()))
     body = f'''<main>
   {subhero([("Projects",None)],"01 Our Projects","Every project we deliver is a<br>physical reflection of our standards.","A 20-Year Portfolio You Can Rely On.","proj-rc.jpg")}
