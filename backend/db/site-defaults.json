@@ -42,48 +42,36 @@
           "href": "service-doors.html"
         },
         {
-          "label": "Wooden Wall Claddings",
-          "href": "service-wall-cladding.html"
+          "label": "Joinery",
+          "href": "service-joinery.html"
         },
         {
-          "label": "Wooden Ceilings",
-          "href": "service-ceilings.html"
+          "label": "Interior Woodworks",
+          "href": "service-cabinets.html"
         },
         {
-          "label": "Wooden Floorings",
-          "href": "service-flooring.html"
+          "label": "Cladding & Ceilings",
+          "href": "service-cladding.html"
         },
         {
-          "label": "Kitchens & Cabinets",
-          "href": "service-kitchens.html"
+          "label": "Thermowood",
+          "href": "service-thermowood.html"
         },
         {
-          "label": "Wardrobes & Closets",
-          "href": "service-wardrobes.html"
-        },
-        {
-          "label": "Vanities & Storage Systems",
-          "href": "service-vanities.html"
-        },
-        {
-          "label": "Reception Counters",
-          "href": "service-reception-counters.html"
-        },
-        {
-          "label": "Interior Furniture & Decors",
+          "label": "Furniture & Interiors",
           "href": "service-furniture.html"
         },
         {
-          "label": "Exterior Woodworks",
-          "href": "service-exterior.html"
-        },
-        {
-          "label": "Counter Tops & Solid Surfaces",
+          "label": "Countertops & Surfaces",
           "href": "service-countertops.html"
         },
         {
           "label": "Traditional Woodworks",
           "href": "service-traditional.html"
+        },
+        {
+          "label": "WPC Works",
+          "href": "service-wpc.html"
         }
       ],
       "active": true
@@ -244,48 +232,36 @@
             "href": "service-doors.html"
           },
           {
-            "label": "Wooden Wall Claddings",
-            "href": "service-wall-cladding.html"
+            "label": "Joinery",
+            "href": "service-joinery.html"
           },
           {
-            "label": "Wooden Ceilings",
-            "href": "service-ceilings.html"
+            "label": "Interior Woodworks",
+            "href": "service-cabinets.html"
           },
           {
-            "label": "Wooden Floorings",
-            "href": "service-flooring.html"
+            "label": "Cladding & Ceilings",
+            "href": "service-cladding.html"
           },
           {
-            "label": "Kitchens & Cabinets",
-            "href": "service-kitchens.html"
+            "label": "Thermowood",
+            "href": "service-thermowood.html"
           },
           {
-            "label": "Wardrobes & Closets",
-            "href": "service-wardrobes.html"
-          },
-          {
-            "label": "Vanities & Storage Systems",
-            "href": "service-vanities.html"
-          },
-          {
-            "label": "Reception Counters",
-            "href": "service-reception-counters.html"
-          },
-          {
-            "label": "Interior Furniture & Decors",
+            "label": "Furniture & Interiors",
             "href": "service-furniture.html"
           },
           {
-            "label": "Exterior Woodworks",
-            "href": "service-exterior.html"
-          },
-          {
-            "label": "Counter Tops & Solid Surfaces",
+            "label": "Countertops & Surfaces",
             "href": "service-countertops.html"
           },
           {
             "label": "Traditional Woodworks",
             "href": "service-traditional.html"
+          },
+          {
+            "label": "WPC Works",
+            "href": "service-wpc.html"
           }
         ]
       }

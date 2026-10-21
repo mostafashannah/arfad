@@ -295,8 +295,10 @@ def other_pages():
 </main>'''
     write("contact.html", page("Contact ARFAD", "Get in touch with ARFAD International Industrial Co. in Jubail Industrial City, Saudi Arabia.", "contact.html", body))
 
-REDIRECTS = {"quality.html":"quality-policy.html","service-cladding.html":"service-wall-cladding.html","service-cabinets.html":"service-kitchens.html",
-             "service-joinery.html":"service-reception-counters.html","service-thermowood.html":"service-exterior.html","service-wpc.html":"service-exterior.html"}
+REDIRECTS = {"quality.html":"quality-policy.html",
+             "service-wall-cladding.html":"service-cladding.html","service-ceilings.html":"service-cladding.html","service-flooring.html":"service-cladding.html",
+             "service-kitchens.html":"service-cabinets.html","service-wardrobes.html":"service-cabinets.html","service-vanities.html":"service-cabinets.html",
+             "service-reception-counters.html":"service-joinery.html","service-exterior.html":"service-thermowood.html"}
 
 def redirects():
     for old, new in REDIRECTS.items():

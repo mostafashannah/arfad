@@ -7,21 +7,18 @@ import { users, services, projects, settings, clients, accreditations, navItems,
 import { eq, and } from "drizzle-orm";
 import { slugify } from "../lib/slugify";
 import defaults from "./site-defaults.json";
-import { resetFooter, resetNav } from "../lib/site-content";
+import { getFooter, getNavTree, resetFooter, resetNav, saveFooter, saveNav } from "../lib/site-content";
 
 const servicesData = [
-  { anchor: "doors", title: "Wooden Doors", summary: "Fire-rated, non-fire rated, solid, flush, louver, sliding, pocket and X-ray protected doors.", image: "/img/svc-doors.jpg", features: ["Wooden Internal Doors", "Wooden External Doors", "Fire-Rated Doors", "Flush Doors"] },
-  { anchor: "wall-cladding", title: "Wooden Wall Claddings", summary: "Internal, external, thermowood, decorative and slatted wall cladding.", image: "/img/svc-cladding.jpg", features: ["Internal Wooden Wall Cladding", "External Wooden Cladding", "Thermowood Exterior Cladding", "Decorative Wooden Panels"] },
-  { anchor: "ceilings", title: "Wooden Ceilings", summary: "Wooden, decorative and slatted wooden ceilings.", image: "/img/svc-interior.jpg", features: ["Wooden Ceilings", "Decorative Ceiling Panels", "Slatted Wooden Ceilings"] },
-  { anchor: "flooring", title: "Wooden Floorings", summary: "Wooden flooring supplied and installed as part of complete woodwork packages.", image: "/img/svc-furniture.jpg", features: ["Wooden Floorings", "Thermowood Decking", "WPC Decking", "Timber Decking"] },
-  { anchor: "kitchens", title: "Kitchens & Cabinets", summary: "Kitchen cabinets with countertops, delivered at housing-development scale.", image: "/img/svc-cabinets.jpg", features: ["Kitchen Cabinets", "Kitchen Countertops", "Cabinets with Countertops", "Storage"] },
-  { anchor: "wardrobes", title: "Wardrobes & Closets", summary: "Wardrobes and closets supplied and installed across villas and apartment buildings.", image: "/img/svc-cabinets.jpg", features: ["Wardrobes", "Closets", "Full wardrobe supply and installation", "Storage"] },
-  { anchor: "vanities", title: "Vanities & Storage Systems", summary: "Vanity units, vanity tops and storage systems.", image: "/img/svc-countertops.jpg", features: ["Vanities", "Vanity Tops", "Vanity Shelves", "Laundry Shelves"] },
-  { anchor: "reception-counters", title: "Reception Counters", summary: "Reception counters and bespoke joinery built to spec.", image: "/img/svc-joinery.jpg", features: ["Reception Counters", "Feature Panels", "Hotel Joinery", "Restaurant Joinery"] },
-  { anchor: "furniture", title: "Interior Furniture & Decors", summary: "Custom furniture and interior woodworks for hospitality, residential, commercial and public spaces.", image: "/img/svc-furniture.jpg", features: ["Loose Furniture", "Hotel Furniture", "Restaurant Furniture", "Office Furniture"] },
-  { anchor: "exterior", title: "Exterior Woodworks", summary: "Thermowood and WPC decking, cladding, pergolas, louvers, screens and canopies.", image: "/img/svc-thermowood.jpg", features: ["Thermowood Exterior Cladding", "Thermowood Decking", "Pergolas and Architectural Louvers", "Screens & Privacy Panels"] },
-  { anchor: "countertops", title: "Counter Tops & Solid Surfaces", summary: "Natural stone, engineered stone, quartz and travertine tops, fabricated and finished in-house.", image: "/img/svc-countertops-reception.jpg", features: ["Natural Stone Countertops", "Engineered Stone Countertops", "Quartz Countertops", "Kitchen Countertops"] },
-  { anchor: "traditional", title: "Traditional Woodworks", summary: "Hand-carved panels, mashrabiya screens, Islamic-patterned doors and majlis furniture.", image: "/img/svc-traditional.jpg", features: ["Hand-Carved Decorative Panels", "Geometric Mashrabiya Screens", "Islamic-Patterned Wooden Doors", "Traditional Wooden Screens"] },
+  { anchor: "doors", title: "Wooden Doors", summary: "Engineered doors from fire-rated to X-ray protected, built to full specification.", image: "/img/mod-doors-teaser.jpg", features: ["Wooden Internal Doors", "Wooden External Doors", "Fire-Rated Doors", "Flush Doors"] },
+  { anchor: "joinery", title: "Joinery", summary: "Custom joints, timber framing and architectural fit-outs, built to spec.", image: "/img/svc-joinery.jpg", features: ["Reception Counters", "Feature Panels", "Hotel Joinery", "Restaurant Joinery"] },
+  { anchor: "cabinets", title: "Interior Woodworks", summary: "Complete interior solutions, cabinets, wardrobes, staircases and handrails.", image: "/img/svc-interior-woodwork.jpg", features: ["Wooden Partitions", "Decorative Wood Screens", "Wooden Skirting", "Wooden Staircases"] },
+  { anchor: "cladding", title: "Cladding & Ceilings", summary: "Architectural wall cladding and ceilings, from decorative to slatted finishes.", image: "/img/svc-cladding.jpg", features: ["Internal Wooden Wall Cladding", "External Wooden Cladding", "Thermowood Exterior Cladding", "Decorative Wooden Panels"] },
+  { anchor: "thermowood", title: "Thermowood", summary: "Heat-treated timber cladding, decking and pergolas for lasting exterior use.", image: "/img/svc-thermowood.jpg", features: ["Thermowood Exterior Cladding", "Thermowood Decking", "Pergolas", "Architectural Louvers"] },
+  { anchor: "furniture", title: "Furniture & Interiors", summary: "Custom furniture for hotels, restaurants, offices and residential interiors.", image: "/img/svc-furniture.jpg", features: ["Loose Furniture", "Hotel Furniture", "Restaurant Furniture", "Office Furniture"] },
+  { anchor: "countertops", title: "Countertops & Surfaces", summary: "In-house fabricated natural stone, quartz and engineered stone surfaces.", image: "/img/svc-countertops-reception.jpg", features: ["Natural Stone Countertops", "Engineered Stone Countertops", "Quartz Countertops", "Kitchen Countertops"] },
+  { anchor: "traditional", title: "Traditional Woodworks", summary: "Hand-carved panels, mashrabiya screens and heritage Islamic craftsmanship.", image: "/img/svc-traditional.jpg", features: ["Hand-Carved Decorative Panels", "Geometric Mashrabiya Screens", "Islamic-Patterned Wooden Doors", "Traditional Wooden Screens"] },
+  { anchor: "wpc", title: "WPC Works", summary: "Wood-look composite decking and cladding built for weather resistance.", image: "/img/svc-wpc.jpg", features: ["WPC Decking", "Exterior Wall Cladding", "Façade Applications", "Pergolas"] },
 ];
 
 const projectsData = [
@@ -86,7 +83,7 @@ export async function runSeed() {
       await db.insert(services).values(values).run();
     }
   }
-  const retiredAnchors = ["joinery", "cabinets", "cladding", "thermowood", "wpc"];
+  const retiredAnchors = ["wall-cladding", "ceilings", "flooring", "kitchens", "wardrobes", "vanities", "reception-counters", "exterior"];
   for (const anchor of retiredAnchors) {
     await db.delete(services).where(eq(services.anchor, anchor)).run();
   }
@@ -126,6 +123,25 @@ export async function runSeed() {
   if (!(await db.select({ id: navItems.id }).from(navItems).get())) await resetNav();
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "footer")).get())) await resetFooter();
   console.log(`Seeded menu and footer`);
+
+  // Once only: move an existing menu and footer from the 12-service structure to the 9 services.
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "services_9_migrated")).get())) {
+    const oldHrefs = new Set(["service-wall-cladding.html", "service-ceilings.html", "service-flooring.html", "service-kitchens.html", "service-wardrobes.html", "service-vanities.html", "service-reception-counters.html", "service-exterior.html"]);
+    const newServices = defaults.nav.find((n) => n.href === "services.html")?.children ?? [];
+    const tree = await getNavTree();
+    const svc = tree.find((n) => n.href === "services.html");
+    if (svc && svc.children.some((c) => oldHrefs.has(c.href))) {
+      svc.children = newServices.map((c, i) => ({ id: `n${i}`, label: c.label, href: c.href, active: true }));
+      await saveNav(tree.map((n) => ({ label: n.label, href: n.href, active: n.active, children: n.children.map((c) => ({ label: c.label, href: c.href, active: c.active })) })));
+    }
+    const footer = await getFooter();
+    const col = footer.columns.find((c) => c.links.some((l) => oldHrefs.has(l.href)));
+    if (col) {
+      col.links = newServices.map((c) => ({ label: c.label, href: c.href }));
+      await saveFooter(footer);
+    }
+    await db.insert(siteBlocks).values({ key: "services_9_migrated", value: "1" }).run();
+  }
 
   // Once only: the marker row keeps deleted posts from reappearing after a restart.
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "posts_seeded")).get())) {
