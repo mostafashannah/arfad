@@ -2,6 +2,10 @@
 const nextConfig = {
   images: { unoptimized: true },
   experimental: {
+    // Hostinger's build container limits threads; keep the build to one worker.
+    cpus: 1,
+    workerThreads: false,
+    webpackBuildWorker: false,
     instrumentationHook: true,
     serverComponentsExternalPackages: ["geoip-country"],
   },

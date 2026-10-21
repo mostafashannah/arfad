@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "RAYON_NUM_THREADS=1 UV_THREADPOOL_SIZE=2 next build",
     "start": "next start",
     "db:push": "drizzle-kit push",
     "seed": "tsx db/seed.ts",
