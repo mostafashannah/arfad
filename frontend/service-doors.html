@@ -236,25 +236,26 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       value: value,
       prefix: text.slice(0, m.index),
       suffix: text.slice(m.index + raw.length),
+      group: raw.indexOf(",") > -1,
       decimals: raw.indexOf(".") > -1 ? raw.split(".")[1].length : 0
     };
   }
 
-  function format(n, decimals){
-    return n.toLocaleString("en-US", {minimumFractionDigits: decimals, maximumFractionDigits: decimals});
+  function format(n, decimals, group){
+    return n.toLocaleString("en-US", {useGrouping: group, minimumFractionDigits: decimals, maximumFractionDigits: decimals});
   }
 
   function animate(el, target){
-    if(reduceMotion){ el.textContent = target.prefix + format(target.value, target.decimals) + target.suffix; return; }
+    if(reduceMotion){ el.textContent = target.prefix + format(target.value, target.decimals, target.group) + target.suffix; return; }
     var duration = 1700, start = null;
     function ease(t){ return 1 - Math.pow(1 - t, 3); }
     function step(ts){
       if(start === null) start = ts;
       var p = Math.min((ts - start) / duration, 1);
       var current = target.value * ease(p);
-      el.textContent = target.prefix + format(current, target.decimals) + target.suffix;
+      el.textContent = target.prefix + format(current, target.decimals, target.group) + target.suffix;
       if(p < 1) requestAnimationFrame(step);
-      else el.textContent = target.prefix + format(target.value, target.decimals) + target.suffix;
+      else el.textContent = target.prefix + format(target.value, target.decimals, target.group) + target.suffix;
     }
     requestAnimationFrame(step);
   }
@@ -262,7 +263,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   var parsed = [];
   nums.forEach(function(el){
     var t = parseTarget(el.textContent);
-    if(t){ parsed.push({el: el, target: t}); el.textContent = t.prefix + format(0, t.decimals) + t.suffix; }
+    if(t){ parsed.push({el: el, target: t}); el.textContent = t.prefix + format(0, t.decimals, t.group) + t.suffix; }
   });
 
   if(!("IntersectionObserver" in window)){
