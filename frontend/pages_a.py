@@ -226,7 +226,8 @@ def services_pages():
         scope_html = head("Scope & subdivisions", esc(s["scope_title"])) + scope_grid(s["scope"])
         if s.get("scope2"):
             scope_html += f'<div style="margin-top:56px;">{head("", esc(s["scope2_title"]))}{scope_grid(s["scope2"], "wood")}</div>'
-        blocks.append(f'<section class="section on-alt"><div class="wrap">{scope_html}</div></section>')
+        if s["scope"]:
+            blocks.append(f'<section class="section on-alt"><div class="wrap">{scope_html}</div></section>')
         if extra and extra["kind"] == "fire":
             blocks.append(photo_band("svc-doors.jpg", f"""
       <p class="eyebrow">{extra["eyebrow"]}</p>
