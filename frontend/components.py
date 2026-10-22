@@ -81,6 +81,7 @@ def scope_grid(items, ico="check"):
 
 def split(eyebrow, title, paras, img, reverse=False, extra="", ratio="16/11"):
     ptxt = "".join((f'<ul class="qual-list" style="margin-top:16px;">' + "".join(f"<li>{t}</li>" for t in p) + "</ul>") if isinstance(p, list)
+                   else f'<h3 style="margin-top:28px;">{p[3:]}</h3>' if p.startswith("## ")
                    else f'<p style="margin-top:{20 if i==0 else 16}px;font-size:1.02rem;">{p}</p>' for i, p in enumerate(paras))
     text = f'<div><p class="eyebrow">{eyebrow}</p><h2 style="margin-top:10px;">{title}</h2>{ptxt}{extra}</div>'
     pic = f'<div class="split-img" style="aspect-ratio:{ratio};background-image:url(\'img/{img}\');"></div>'
