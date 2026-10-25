@@ -176,7 +176,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.arfad.com.sa/service-cladding.html</loc>
+    <loc>https://www.arfad.com.sa/service-ceilings.html</loc>
     <lastmod>2026-10-25</lastmod>
     <priority>0.7</priority>
   </url>
@@ -207,6 +207,11 @@
   </url>
   <url>
     <loc>https://www.arfad.com.sa/service-traditional.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.arfad.com.sa/service-wall-cladding.html</loc>
     <lastmod>2026-10-25</lastmod>
     <priority>0.7</priority>
   </url>

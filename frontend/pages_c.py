@@ -40,24 +40,69 @@ def vendor_mark(v):
         return '<span class="vendor-logo" data-client-logo="%s"><img src="%s" alt="%s"></span>' % (esc(v["name"]), src, esc(v["name"]))
     return '<span class="vendor-ico">%s</span>' % v["ico"]
 
+CERT_TABS = [
+ ("fire", "Fire-Rated", "Intertek Fire-Rated Door Compliance Certificates",
+  "ARFAD fire-rated doors are certified by Intertek for compliance with both American and British standards, ensuring tested performance, reliability, and safety.",
+  [("Category B, Doors", [CERTS_FIRE[1]]), ("Category C, Proprietary Frames", [CERTS_FIRE[0]]), ("Category D, Door/Frame Assemblies", [CERTS_FIRE[2]])]),
+ ("iso", "ISO", "Committed to Standards, Driven by Excellence",
+  "ARFAD is certified to international ISO standards, reflecting our commitment to quality management, environmental responsibility, and the health &amp; safety of our people.",
+  [("ISO Management System Certificates", CERTS_ISO)]),
+ ("fsc", "FSC", "FSC® Chain of Custody Certificate",
+  "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks.",
+  [("FSC® Certificates", CERTS_FSC)]),
+ ("leed", "LEED", "LEED Certificates", "LEED documentation supports projects with green-building requirements.", [("LEED Certificates", [])]),
+ ("legal", "Legal", "Legal Certificates", "Commercial registration and legal documentation.", [("Legal Certificates", [])]),
+ ("aramco", "Aramco Approvals", "Saudi Aramco Approvals &amp; Appreciations",
+  "ARFAD is a registered Saudi Aramco Manufacturer &amp; Service Provider, supported by recognized compliance credentials and a proven record of successful project delivery. Saudi Aramco Vendor Code: 10064085.",
+  [("Approvals &amp; Appreciations", CERTS_ARAMCO)]),
+]
+
+def cert_row(jpg, title, sub, i=0):
+    pdf = make_pdf(jpg, jpg.rsplit(".", 1)[0])
+    dl = f'<a class="cert-btn dl" href="{pdf}" download>Download <span aria-hidden="true">&darr;</span></a>' if pdf else ""
+    return (f'<div class="cert-row rv" style="--d:{i*.07:.2f}s"><a class="cert-row-th" href="img/certs/{jpg}" target="_blank" rel="noopener" style="background-image:url(\'img/certs/{jpg}\');" aria-label="View {esc(title)}"></a>'
+            f'<div class="cert-row-t"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div>'
+            f'<a class="cert-btn view" href="img/certs/{jpg}" target="_blank" rel="noopener">View <span aria-hidden="true">&rarr;</span></a>{dl}</div>')
+
+def cert_tab_panel(key, title, lede, groups):
+    inner = ""
+    for gname, items in groups:
+        rows = "".join(cert_row(*c, i=i) for i, c in enumerate(items)) or \
+            f'<div class="cert-row pending"><div class="cert-row-t"><h4>Document to be provided</h4><p>This certificate will be added here as soon as it is received.</p></div></div>'
+        if len(groups) > 1:
+            inner += f'<details class="cert-cat" open><summary><span>{gname}</span><i aria-hidden="true"></i></summary><div class="cert-rows">{rows}</div></details>'
+        else:
+            inner += f'<div class="cert-rows">{rows}</div>'
+    return f'<div class="cert-panel" id="{key}" role="tabpanel" hidden><div class="head"><p class="eyebrow">{esc(title) if False else ""}</p><h2>{title}</h2><p class="lede">{lede}</p></div>{inner}</div>'
+
+FACTORY_IMG = ["machine-biesse-skipper-cnc.jpg","machine-reciprocating-spray.jpg","machine-wide-belt-sanding.jpg","machine-spray-booth-2.jpg","proj-aramco.jpg","proj-rc.jpg","mod-doors-teaser.jpg"]
+
+def workflow_path():
+    ic = ["doc","ruler","wood","check","pen","gear","truck"]
+    pos = [(1,1),(1,2),(1,3),(1,4),(2,1),(2,2),(2,3)]
+    nodes = ""
+    for i, (t, ar) in enumerate(PROCESS):
+        r, c = pos[i]
+        nodes += (f'<li class="wf-node" style="grid-row:{r};grid-column:{c};--d:{.5+i*.28:.2f}s"><span class="wf-circle">{icon(ic[i])}</span>'
+                  f'<h4>{esc(t)}</h4><span class="wf-num">{i+1}</span><p dir="rtl" lang="ar">{ar}</p></li>')
+    nodes += f'<li class="wf-node wf-done" style="grid-row:2;grid-column:4;--d:{.5+7*.28:.2f}s"><span class="wf-circle">COMPLETE<br>{icon("check")}</span></li>'
+    svg = ('<svg class="wf-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M125 130 H875 C985 130 985 260 875 260 H150 C25 260 25 390 150 390 H875" />'
+           '<path class="wf-flow" pathLength="1" d="M125 130 H875 C985 130 985 260 875 260 H150 C25 260 25 390 150 390 H875" /></svg>')
+    return f'<div class="wf-wrap rv">{svg}<ol class="wf-grid">{nodes}</ol></div>'
+
 def factory_pages():
     # ---- Factory main
-    fcards = "".join(f'<a class="feature-card flash" href="{h}" style="background:linear-gradient(180deg,rgba(10,37,64,.62),rgba(10,37,64,.95)),url(img/factory.jpg) center/cover;"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p><span class="view-link">Open &rarr;</span></a>' for t, h, ic, d in FACTORY_ITEMS)
+    fcards = "".join(f'<a class="feature-card bright flash rv" style="--d:{k*.07:.2f}s;background-image:linear-gradient(160deg,rgba(10,37,64,.55),rgba(10,37,64,.88)),url(img/{FACTORY_IMG[k]});" href="{h}"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p><span class="view-link">Open &rarr;</span></a>' for k, (t, h, ic, d) in enumerate(FACTORY_ITEMS))
     inhouse = [("pen","In-house Design Studio","Engineers and draftsmen working in direct coordination with production and project teams."),
                ("spray","In-house Painting Spray Booths","Professional spray booths for lacquer, stain, and paint finishing."),
                ("truck","Storage and Logistics","Dedicated warehousing and transportation capabilities supporting project deliveries across KSA.")]
     icards = "".join(f'<div class="value-card rv flash on-light" style="--d:{k*.08:.2f}s"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p></div>' for k, (ic, t, d) in enumerate(inhouse))
     body = f'''<main>
-  {subhero([("Factory",None)],"01 Factory &amp; Technology","Built in Jubail.<br>Trusted Across the Kingdom.","Built for Scale. Equipped for Excellence.","why-arfad.jpg")}
-  {photo_band("factory.jpg", f"""
+  {subhero([("Factory",None)],"01 Factory &amp; Technology","Built in Jubail.<br>Trusted Across the Kingdom.","Built for Scale. Equipped for Excellence.","machine-sektar-panel-saw-2.jpg")}
+  {photo_band("factory-aerial.jpg", f"""
     <p class="eyebrow">Factory Overview</p>
     <h2 style="margin-top:10px;max-width:24ch;">Built for Scale. Equipped for Excellence.</h2>
-    <div class="stat-grid fx-stats gold">
-      <div class="stat-cell flash"><div class="ico-wrap">{icon("factory")}</div><div class="num">20,000 m&sup2;</div><div class="lbl">Total built-up factory area</div></div>
-      <div class="stat-cell flash"><div class="ico-wrap">{icon("users")}</div><div class="num">200+</div><div class="lbl">Production employees</div></div>
-      <div class="stat-cell flash"><div class="ico-wrap">{icon("wood")}</div><div class="num">237,000+</div><div class="lbl">Wooden doors installed</div></div>
-      <div class="stat-cell flash"><div class="ico-wrap">{icon("star")}</div><div class="num">20+</div><div class="lbl">Years of excellence in woodwork</div></div>
-    </div>""", cls="on-navy theme-gold")}
+    <p class="band-lede" style="max-width:62ch;">A 20,000&nbsp;m&sup2; facility in Jubail Industrial City, with dedicated production zones from raw material storage to quality control.</p>""", cls="on-navy theme-gold", overlay=.5)}
   <section class="section"><div class="wrap">
     {head("In-House Capability","Everything under one roof.","ARFAD Wood Factory is equipped with a comprehensive range of specialized woodworking machinery, supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.")}
     <div class="value-grid">{icards}</div>
@@ -71,46 +116,48 @@ def factory_pages():
     write("factory.html", page("Factory & Technology ARFAD", "Inside ARFAD's 20,000 m² factory in Jubail Industrial City: in-house capability, machinery, service workflow, policies and certificates.", "factory.html", body))
 
     # ---- Machinery
-    photos = "".join(f'<figure class="machine-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s"><div class="machine-img" style="background-image:url(\'img/{im}\');"></div><figcaption>{esc(n)}</figcaption></figure>' for i, (im, n) in enumerate(MACHINE_PHOTOS))
+    photos = "".join(f'<figure class="machine-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s"><div class="machine-img" style="background-image:url(\'img/{im}\');animation-delay:-{i*1.3:.1f}s"></div><figcaption>{esc(n)}</figcaption></figure>' for i, (im, n) in enumerate(MACHINE_PHOTOS))
     mlist = "".join(f'<li class="rv" style="--d:{(i%12)*.04:.2f}s"><span class="mn">{i+1:02d}</span>{esc(m)}</li>' for i, m in enumerate(MACHINE_LIST))
     body = f'''<main>
-  {subhero([("Factory","factory.html"),("Machineries",None)],"Machinery &amp; Technology","Machinery &amp; Modern Technology","Advanced Machinery. Precise Output. Every Time.","machine-sektar-panel-saw.jpg")}
+  {subhero([("Factory","factory.html"),("Machineries",None)],"Machinery &amp; Technology","Machinery &amp; Modern Technology","Advanced Machinery. Precise Output. Every Time.","machine-hot-cold-presser.jpg")}
   <section class="section"><div class="wrap">
     {head("Machinery & Technology","Advanced machinery. Precise output. Every time.","ARFAD Wood Factory is equipped with a comprehensive range of specialized woodworking machinery, supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.")}
     <div class="machine-grid">{photos}</div>
   </div></section>
-  {photo_band("machine-cefla-drying.jpg", f"""
+  {photo_band("machine-edge-banding.jpg", f"""
     <p class="eyebrow">Machine List</p>
-    <h2 style="margin-top:10px;max-width:24ch;">The ARFAD machine fleet.</h2>
-    <ol class="machine-ol">{mlist}</ol>""", overlay=.9)}
+    <h2 style="margin-top:10px;max-width:24ch;">The ARFAD Machine Fleet.</h2>
+    <ol class="machine-ol">{mlist}</ol>""", overlay=.82)}
   {cta_band()}
 </main>'''
     write("machinery.html", page("Machineries ARFAD", "Advanced woodworking machinery at ARFAD's Jubail factory: wide belt sanding, CEFLA drying, panel saws, presses, edge banding, CNC boring and six side molding.", "machinery.html", body))
 
     # ---- Service workflow
-    ic = ["doc","pen","wood","gear","shield","truck"]
-    steps = "".join(f'<li class="tl-step rv flash on-light" style="--d:{i*.1:.2f}s"><span class="tl-n">{i+1:02d}</span><div class="ico-wrap">{icon(ic[i])}</div><h4>{esc(t)}</h4></li>' for i, t in enumerate(PROCESS))
     body = f'''<main>
-  {subhero([("Factory","factory.html"),("Service Workflow",None)],"02 Our Process","From Drawing to Delivery","Six controlled stages carry every project from brief to handover.","from-drawing-to-delivery.jpg")}
+  {subhero([("Factory","factory.html"),("Service Workflow",None)],"02 Our Process","From Drawing to Delivery","Seven controlled stages carry every project from client requirements to handover.","machine-reciprocating-spray.jpg")}
   <section class="section"><div class="wrap">
     {head("Service Workflow","From drawing to delivery.")}
-    <ol class="timeline">{steps}</ol>
+    {workflow_path()}
   </div></section>
-  {photo_band("from-drawing-to-delivery.jpg", '<div style="text-align:center;"><p class="eyebrow" style="justify-content:center;">Quality Control &amp; Inspection</p><h2 style="margin-top:12px;max-width:26ch;margin-inline:auto;">Every stage is reviewed, from the first brief to final handover.</h2><div class="hero-cta" style="justify-content:center;margin-top:26px;"><a class="btn" href="quality-policy.html">Our Quality Policy</a></div></div>', overlay=.86)}
+  {photo_band("proj-mod.jpg", '<div style="text-align:center;"><p class="eyebrow" style="justify-content:center;">Quality Control &amp; Inspection</p><h2 style="margin-top:12px;max-width:26ch;margin-inline:auto;">Every stage is reviewed, from the first brief to final handover.</h2><div class="hero-cta" style="justify-content:center;margin-top:26px;"><a class="btn" href="quality-policy.html">Our Quality Policy</a></div></div>', overlay=.6)}
   {cta_band()}
 </main>'''
-    write("service-workflow.html", page("Service Workflow ARFAD", "From drawing to delivery: client brief, design and engineering, material selection, factory production and CNC machining, quality control, site installation and handover.", "service-workflow.html", body))
+    write("service-workflow.html", page("Service Workflow ARFAD", "From drawing to delivery: client requirements, site dimension as built, designs and materials, client validation, 2D plans, production, and delivery and installing.", "service-workflow.html", body))
 
     # ---- Quality Policy
     fw = ["Approved Shop Drawings & Specifications","Material Certificates & Submittal Review","Incoming Material Inspection","In-Process Factory Inspection","Final Product Inspection","Site Installation Inspection","Inspection Records & Quality Documentation"]
     body = f'''<main>
-  {subhero([("Factory","factory.html"),("Quality Policy",None)],"Quality Management","Quality Management","Quality Built Into Every Stage.","quality.jpg")}
+  {subhero([("Factory","factory.html"),("Quality Policy",None)],"Quality Management","Quality Management","Quality Built Into Every Stage.","machine-wide-belt-sanding.jpg")}
   <section class="section"><div class="wrap">
-    {split("Quality Built Into Every Stage.","Quality management",["Quality at ARFAD is managed through documented procedures, approved specifications, material control, production checks, and site supervision. Every stage is reviewed to ensure that the final output meets the required technical, functional, and finishing standards."],"quality.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="certificates.html">View ISO Certificates</a></div>')}
+    {split("Quality Built Into Every Stage.","Quality management",["Quality at ARFAD is managed through documented procedures, approved specifications, material control, production checks, and site supervision. Every stage is reviewed to ensure that the final output meets the required technical, functional, and finishing standards."],"machine-edge-banding.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="#policy-doc">View Quality Policy</a></div>')}
   </div></section>
   <section class="section on-alt"><div class="wrap">
     {head("Quality Framework","ISO 9001:2015 Certified Quality Management System")}
     {scope_grid(fw, "check")}
+  </div></section>
+  <section class="section" id="policy-doc"><div class="wrap">
+    {head("Documented Policy","Quality Policy document.","The documented Quality Policy will be published here as soon as it is received.")}
+    <div class="cert-rows"><div class="cert-row pending rv"><div class="cert-row-t"><h4>Quality Policy</h4><p>Document to be provided</p></div></div></div>
   </div></section>
   {cta_band()}
 </main>'''
@@ -119,81 +166,69 @@ def factory_pages():
     # ---- HSE Policy
     ehs = ["Occupational Health & Safety","Factory & Site Safety Procedures","Employee & Subcontractor Safety Awareness","Hazard Identification & Emergency Response","Responsible Material Usage","Waste Management & Controlled Disposal"]
     body = f'''<main>
-  {subhero([("Factory","factory.html"),("HSE Policy",None)],"Safety &amp; Environmental Responsibility","Safety &amp; Environmental<br>Responsibility","Safe Workplaces. Responsible Operations.","factory.jpg")}
+  {subhero([("Factory","factory.html"),("HSE Policy",None)],"Health, Safety &amp; Environmental Responsibility","Health, Safety &amp; Environmental<br>Responsibility","Safe Workplaces. Responsible Operations.","machine-spray-booth-2.jpg")}
   <section class="section"><div class="wrap">
-    {split("Safe Workplaces. Responsible Operations.","HSE Policy",["ARFAD is committed to maintaining a safe and healthy working environment while minimizing environmental impact through controlled procedures, employee awareness, responsible practices, and compliance with applicable KSA regulations."],"factory.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="certificates.html">View ISO 14001 &amp; 45001</a></div>')}
+    {split("Safe Workplaces. Responsible Operations.","HSE Policy",["ARFAD is committed to maintaining a safe and healthy working environment while minimizing environmental impact through controlled procedures, employee awareness, responsible practices, and compliance with applicable KSA regulations."],"machine-cefla-drying.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="#policy-doc">View HSE Policy</a></div>')}
   </div></section>
-  {photo_band("factory.jpg", f"""
+  <section class="section on-alt focus-light"><div class="wrap">
     <p class="eyebrow">EHS Focus Areas</p>
     <h2 style="margin-top:10px;max-width:22ch;">Six focus areas, one standard.</h2>
-    <div class="focus-grid">{"".join(f'<div class="focus-item rv flash" style="--d:{k*.07:.2f}s">{icon("flame" if k in (0,1,3) else "leaf")}<span>{esc(t)}</span></div>' for k, t in enumerate(ehs))}</div>""", overlay=.88)}
+    <div class="focus-grid">{"".join(f'<div class="focus-item rv flash on-light" style="--d:{k*.07:.2f}s">{icon("flame" if k in (0,1,3) else "leaf")}<span>{esc(t)}</span></div>' for k, t in enumerate(ehs))}</div>
+  </div></section>
+  <section class="section" id="policy-doc"><div class="wrap">
+    {head("Documented Policy","HSE Policy document.","The documented HSE Policy will be published here as soon as it is received.")}
+    <div class="cert-rows"><div class="cert-row pending rv"><div class="cert-row-t"><h4>HSE Policy</h4><p>Document to be provided</p></div></div></div>
+  </div></section>
   {cta_band()}
 </main>'''
     write("hse-policy.html", page("HSE Policy ARFAD", "ARFAD is committed to a safe and healthy working environment and to minimizing environmental impact, in compliance with applicable KSA regulations.", "hse-policy.html", body))
 
     # ---- Registered vendors
-    vcards = "".join(f'<div class="vendor-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s">{vendor_mark(v)}<h4>{esc(v["name"])}</h4><p class="vendor-no"><small>Registered Vendor No.</small>{esc(v["no"])}</p><p>{esc(v["note"])}</p></div>' for i, v in enumerate(VENDORS))
-    acards = "".join(cert_card(*c, i=i) for i, c in enumerate(CERTS_ARAMCO))
+    def vmark(name, logo):
+        src = client_logo(logo) if logo else None
+        if src:
+            return f'<span class="vendor-logo big"><img src="{src}" alt="{esc(name)}"></span>'
+        return f'<span class="vendor-logo big mono">{esc("".join(w[0] for w in re.sub(r"[^A-Za-z ]", " ", name).split()[:2]).upper())}</span>'
+    vcards = "".join(f'<div class="vendor-row rv flash on-light" style="--d:{(i%3)*.08:.2f}s">{vmark(n, lg)}<div><h4>{esc(n)}</h4><p class="vid">ID - {esc(no)}</p></div></div>' for i, (n, no, lg) in enumerate(VENDORS))
     body = f'''<main>
   {subhero([("Factory","factory.html"),("Registered Vendors",None)],"Registered Vendors","Registered. Compliant.<br>Recognized.","ARFAD is registered with the Kingdom's leading clients and authorities.","proj-aramco.jpg")}
   <section class="section"><div class="wrap">
-    {head("Registered Vendor Details","Vendor registrations.")}
-    <div class="vendor-grid">{vcards}</div>
+    {head("Registered Vendor Details","Registered with the Kingdom&rsquo;s leading clients.")}
+    <div class="vendor-grid-2">{vcards}</div>
   </div></section>
-  <section class="section on-alt"><div class="wrap">
-    {head("Saudi Aramco Approvals & Appreciations","Recognized. Compliant. Trusted.","ARFAD is a registered Saudi Aramco Manufacturer & Service Provider, supported by recognized compliance credentials and a proven record of successful project delivery. Saudi Aramco Vendor Code: 10064085.")}
-    <div class="cert-photo-grid two">{acards}</div>
-    <p class="total-line">Registered, Compliant, Recognized</p>
-  </div></section>
-  <section class="section"><div class="wrap">{clients_marquee()}</div></section>
   {cta_band()}
 </main>'''
-    write("registered-vendors.html", page("Registered Vendors ARFAD", "ARFAD registered vendor numbers: Saudi Aramco 10064085, Royal Commission 14902, Red Sea Global S10357393, SABIC 11047241 and MA'ADEN 40665.", "registered-vendors.html", body))
+    write("registered-vendors.html", page("Registered Vendors ARFAD", "ARFAD registered vendor numbers: Saudi Aramco 10064085, SABIC 11047241, Royal Commission 14902, Ma'aden 40665, The Red Sea Co. S10357393, NEOM 10625781 and more.", "registered-vendors.html", body))
 
     # ---- Our clients
     tiles = "".join(logo_tile(n, (i % 6) * .05) for i, n in enumerate(CLIENTS))
     body = f'''<main>
-  {subhero([("Factory","factory.html"),("Our Clients",None)],"Clients &amp; Partners","Trusted by the Kingdom's<br>Leading Organizations.","","proj-rc.jpg")}
+  {subhero([("Factory","factory.html"),("Our Clients",None)],"Clients &amp; Partners","Trusted by the Kingdom's<br>Leading Organizations.","","projects/redsea-amaala-3.jpg")}
   <section class="section"><div class="wrap">
     {head("Our Clients","Clients and partners.","A 20-year portfolio spanning royal commissions, national giga-projects and the Kingdom's leading developers.")}
-    <div class="logo-grid" data-clients="grid">{tiles}</div>
+    <div class="logo-grid big" data-clients="grid">{tiles}</div>
   </div></section>
-  <section class="section on-alt"><div class="wrap">{clients_marquee()}</div></section>
   {cta_band()}
 </main>'''
     write("our-clients.html", page("Our Clients ARFAD", "Clients and partners of ARFAD: Royal Commission for Jubail & Yanbu, Saudi Aramco, SATORP, YASREF, SABIC, MA'ADEN, Red Sea Global, NEOM, AMAALA and more.", "our-clients.html", body))
 
     # ---- Certificates & Awards
-    fire = "".join(cert_card(*c, i=i) for i, c in enumerate(CERTS_FIRE))
-    iso = "".join(cert_card(*c, i=i) for i, c in enumerate(CERTS_ISO))
-    fsc = "".join(cert_card(*c, i=i) for i, c in enumerate(CERTS_FSC)) + pending_card("LEED Certificates", "To be added") + pending_card("Legal Certificates", "To be added")
+    tabs = "".join(f'<button type="button" role="tab" class="cert-tab" data-tab="{k}" aria-controls="{k}">{lbl}</button>' for k, lbl, *_ in CERT_TABS)
+    panels = "".join(cert_tab_panel(k, t, l, g) for k, lbl, t, l, g in CERT_TABS)
     body = f'''<main>
-  {subhero([("Factory","factory.html"),("Certificates & Awards",None)],"Certifications &amp; Approvals","Certificates &amp; Awards","Certified. Approved. Compliant.","quality.jpg")}
-  <section class="section"><div class="wrap">
-    {head("Quality, Safety, Environment, Compliance, Trust","Certified. Approved. Compliant.","Our certifications and approvals reflect ARFAD's commitment to quality, safety, compliance, and industry standards.")}
-    <div class="pill-links"><a href="#fire">Fire-Rated Certificates</a><a href="#iso">ISO Certifications</a><a href="#fsc">FSC, LEED &amp; Legal Certificates</a></div>
-  </div></section>
-  <section class="section cert-sec fire" id="fire"><div class="wrap">
-    {head("Intertek Certifications","Fire-Rated Door Compliance Certificates","ARFAD fire-rated doors are certified by Intertek for compliance with both American and British standards, ensuring tested performance, reliability, and safety.")}
-    <div class="cert-photo-grid">{fire}</div>
-    <p class="total-line">Tested Performance, Fire Safety, International Standards, Reliable Quality, Trusted Compliance</p>
-  </div></section>
-  <section class="section on-alt cert-sec iso" id="iso"><div class="wrap">
-    {head("ISO Certifications","Committed to Standards, Driven by Excellence","ARFAD is certified to international ISO standards, reflecting our commitment to quality management, environmental responsibility, and the health &amp; safety of our people. These certifications demonstrate our dedication to continuous improvement and sustainable business practices.")}
-    <div class="cert-photo-grid">{iso}</div>
-    <div class="pill-links" style="margin-top:28px;"><span>Americo</span><span>IAF</span><span>UAF</span></div>
-  </div></section>
-  <section class="section cert-sec fsc" id="fsc"><div class="wrap">
-    {head("Sustainability & FSC® Certification","FSC, LEED & Legal Certificates","Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks.")}
-    <div class="cert-photo-grid">{fsc}</div>
+  {subhero([("Factory","factory.html"),("Certificates & Awards",None)],"Certifications &amp; Approvals","Certificates &amp; Awards","Certified. Approved. Compliant.","mod-doors-teaser.jpg")}
+  <section class="section cert-hub"><div class="wrap">
+    {head("Quality, Safety, Environment, Compliance, Trust","Certified. Approved. Compliant.","Choose a category to view and download each certificate separately.")}
+    <div class="cert-tabs" role="tablist">{tabs}</div>
+    {panels}
   </div></section>
   {cta_band()}
 </main>'''
-    write("certificates.html", page("Certificates & Awards ARFAD", "ARFAD certificates and awards: Intertek fire-rated door certificates, ISO 9001, ISO 14001, ISO 45001 and FSC Chain of Custody.", "certificates.html", body))
+    write("certificates.html", page("Certificates & Awards ARFAD", "ARFAD certificates and awards: Intertek fire-rated door certificates, ISO 9001, ISO 14001, ISO 45001, FSC Chain of Custody and Saudi Aramco approvals.", "certificates.html", body))
 
 def post_page():
     body = f'''<main>
-  {subhero([("Media","media.html"),("Post",None)],"Media","<span data-post-title>News</span>","","factory.jpg")}
+  {subhero([("Media","media.html"),("Post",None)],"Media","<span data-post-title>News</span>","","projects/redsea-amaala-1.jpg")}
   <section class="section"><div class="wrap">
     <article class="post-article" data-post-article>
       <div class="post-article-meta"><span class="post-cat" data-post-cat></span><time data-post-date></time></div>
@@ -212,14 +247,31 @@ def other_pages():
     # ---- Sustainability
     pts = ["FSC Chain of Custody Certified","Certified Wood Product Traceability","Responsible Wood Sourcing","Controlled Chain of Custody Procedures","Support for Sustainability-Focused Projects"]
     body = f'''<main>
-  {subhero([("Sustainability",None)],"FSC® Certification &amp; Sustainability","FSC® Certification &amp;<br>Sustainability","Responsible Wood Sourcing. Certified Chain of Custody.","svc-wpc.jpg")}
+  {subhero([("Sustainability",None)],"FSC® Certification &amp; Sustainability","FSC® Certification &amp;<br>Sustainability","Responsible Wood Sourcing. Certified Chain of Custody.","projects/el-eissa-1.jpg")}
   <section class="section"><div class="wrap">
     {split("Committed to Responsible Forestry","Sustainability &amp; FSC® Certification",
       ["ARFAD is FSC Chain of Custody certified, demonstrating its commitment to responsible wood sourcing and the traceability of certified wood products throughout the supply chain. This certification enables ARFAD to support projects with sustainability and responsible sourcing requirements.",
        "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks."],
-      "quality.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="certificates.html#fsc">View FSC Certificate</a></div>')}
+      "projects/el-eissa-3.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="certificates.html#fsc">View FSC Certificate</a></div>')}
+  </div></section>
+  <section class="section sus-impact"><div class="wrap about-grid">
+    <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/svc-wpc.jpg');"></div>
+    <div>
+      <p class="eyebrow">Sustainability</p>
+      <h2 style="margin-top:10px;">Making a Positive Impact on the Environment.</h2>
+      <p style="margin-top:20px;font-size:1.02rem;">Sustainability is our strategic approach to building a legacy for future generations, we understand the profound impact that the Woodwork industry can have on our natural resources and the environment. As a result, we prioritize integrating sustainable practices into all facets of our operations, ensuring that our activities, policies, and procedures align with environmentally responsible principles.</p>
+      <div class="sus-logos"><img src="img/accreditation/fsc.png" alt="FSC"></div>
+    </div>
   </div></section>
   <section class="section on-alt"><div class="wrap">
+    {head("Our Process","How we build responsibly.")}
+    <ol class="sus-process">
+      <li class="rv"><span class="sp-ico">{icon("wood")}</span><h4>Sustainable Materials</h4><p>We use only environmentally friendly and sustainable materials in our projects to reduce our environmental impact while creating long-lasting and durable structures.</p></li>
+      <li class="rv" style="--d:.1s"><span class="sp-ico">{icon("gear")}</span><h4>Smart &amp; Digital Solutions</h4><p>Our team utilizes the latest technology and innovative digital solutions to deliver efficient and cost-effective projects while minimizing our environmental footprint.</p></li>
+      <li class="rv" style="--d:.2s"><span class="sp-ico">{icon("leaf")}</span><h4>Maximizing Resource Utilization</h4><p>We maximize the utilization of resources to reduce waste and promote sustainability. Our team is trained to be resourceful and efficient, ensuring that every material and resource is used to its fullest potential.</p></li>
+    </ol>
+  </div></section>
+  <section class="section"><div class="wrap">
     {head("Our Commitment","Our FSC® Chain of Custody certification.","Our FSC Chain of Custody certification ensures that the wood and wood-based materials we use are sourced from responsibly managed forests, supporting biodiversity, environmental protection, and the well-being of communities worldwide.")}
     {scope_grid(pts, "leaf")}
   </div></section>
@@ -229,7 +281,7 @@ def other_pages():
 
     # ---- Careers [DRAFT]
     body = f'''<main>
-  {subhero([("Careers",None)],"Careers","Build Your Career<br>with ARFAD.","Join a team of 200+ production professionals building the Kingdom's architectural woodwork.","who-we-are.jpg")}
+  {subhero([("Careers",None)],"Careers","Build Your Career<br>with ARFAD.","Join a team of 200+ production professionals building the Kingdom's architectural woodwork.","svc-furniture.jpg")}
   <section class="section"><div class="wrap contact-grid">
     <div>
       {head("Join our team","Careers at ARFAD.","ARFAD's factory brings together engineers and draftsmen, CNC and machine operators, finishers, quality inspectors and site installation teams, all working to one standard from drawing to delivery.")}
@@ -251,7 +303,7 @@ def other_pages():
     allp.sort(key=lambda f: (order.index(re.sub(r"-\d+\.\w+$", "", f)) if re.sub(r"-\d+\.\w+$", "", f) in order else 99, int(re.sub(r"\D", "", f.rsplit("-",1)[-1]) or 0)))
     gal = gallery_filters(allp) + gallery(allp, meta=True) + '<p class="gal-empty" data-gf-empty hidden>No photos match this filter. Try another project or service.</p>'
     body = f'''<main>
-  {subhero([("Media",None)],"Media","Events, Exhibitions<br>&amp; News.","Company events, exhibitions, news and announcements.","factory.jpg")}
+  {subhero([("Media",None)],"Media","Events, Exhibitions<br>&amp; News.","Company events, exhibitions, news and announcements.","projects/redsea-amaala-1.jpg")}
   <section class="section"><div class="wrap">
     {head("Latest from ARFAD","Events, exhibitions and news.")}
     {post_filters()}
@@ -274,7 +326,7 @@ def other_pages():
         crow("flag", "Website", '<a href="https://www.arfad.com.sa">www.arfad.com.sa</a>'),
     ])
     body = f'''<main>
-  {subhero([("Contact",None)],"Get in Touch","Let's build something<br>that lasts twenty years.","Reach out for a quote, a site visit, or a conversation about your next project.","factory.jpg")}
+  {subhero([("Contact",None)],"Get in Touch","Let's build something<br>that lasts twenty years.","Reach out for a quote, a site visit, or a conversation about your next project.","projects/neom-4.jpg")}
   <section class="section"><div class="wrap contact-grid">
       <div class="contact-card contact-info">
         <h3>Contact Details</h3>
@@ -296,9 +348,9 @@ def other_pages():
     write("contact.html", page("Contact ARFAD", "Get in touch with ARFAD International Industrial Co. in Jubail Industrial City, Saudi Arabia.", "contact.html", body))
 
 REDIRECTS = {"quality.html":"quality-policy.html",
-             "service-wall-cladding.html":"service-cladding.html","service-ceilings.html":"service-cladding.html","service-flooring.html":"service-cladding.html",
-             "service-kitchens.html":"service-cabinets.html","service-wardrobes.html":"service-cabinets.html","service-vanities.html":"service-cabinets.html",
-             "service-reception-counters.html":"service-joinery.html","service-exterior.html":"service-thermowood.html"}
+             "service-cladding.html":"service-wall-cladding.html","service-flooring.html":"service-cabinets.html#sub-floorings",
+             "service-kitchens.html":"service-cabinets.html#sub-kitchens","service-wardrobes.html":"service-cabinets.html#sub-wardrobes","service-vanities.html":"service-cabinets.html#sub-vanities",
+             "service-reception-counters.html":"service-joinery.html#sub-reception","service-exterior.html":"service-thermowood.html#sub-exterior"}
 
 def redirects():
     for old, new in REDIRECTS.items():

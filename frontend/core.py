@@ -7,7 +7,7 @@ SITE_URL = "https://www.arfad.com.sa"
 NAV = [
     ("Home", "index.html", []),
     ("Who We Are", "about.html", [("About Us","about.html"),("Vision","vision.html"),("Mission","mission.html"),("Our Values","values.html"),("Why ARFAD","why-arfad.html")]),
-    ("Services", "services.html", [(s["title"], f"service-{s['slug']}.html") for s in SERVICES]),
+    ("Services", "services.html", SERVICE_MENU),
     ("Projects", "projects.html", [(s["title"], f"projects-{s['slug']}.html") for s in SECTORS]),
     ("Factory", "factory.html", [("Machineries","machinery.html"),("Service Workflow","service-workflow.html"),("Quality Policy","quality-policy.html"),
                                   ("HSE Policy","hse-policy.html"),("Registered Vendors","registered-vendors.html"),("Our Clients","our-clients.html"),
@@ -51,11 +51,11 @@ def esc(s):
 def nav(active):
     items = []
     for label, href, kids in NAV:
-        is_cur = (active == href) or any(active == k for _, k in kids)
+        is_cur = (active == href) or any(active == k.split("#")[0] for _, k in kids)
         cur = ' aria-current="page"' if is_cur else ""
         if kids:
             CUR = ' aria-current="page"'
-            sub = "".join(f'<a href="{k}"{CUR if k == active else ""}>{esc(t)}</a>' for t, k in kids)
+            sub = "".join(f'<a href="{k}"{CUR if k.split("#")[0] == active and "#" not in k else ""}>{esc(t)}</a>' for t, k in kids)
             cols = " cols-2" if len(kids) > 8 else ""
             items.append(
                 f'<div class="nav-item has-sub{" is-current" if is_cur else ""}"><a class="nav-link" href="{href}"{cur}>{esc(label)}</a>'
@@ -257,7 +257,7 @@ JS_REVEAL_OBSERVER = '''<script>
   var bar = document.createElement("div"); bar.className = "scroll-progress"; document.body.appendChild(bar);
 
   /* extra reveal targets, with direction + stagger by sibling index */
-  var extra = document.querySelectorAll("main .section .wrap > *:not(.rv):not(.head):not(.about-grid), .post-card, .gallery-card, .scope-item, .logo-tile, .vendor-card, .chip-dark, .tl-item, .process-step, .why-item, .photo-note, .badge-line, .hero-cta, .photo-band p, .photo-band h2");
+  var extra = document.querySelectorAll("main .section .wrap > *:not(.rv):not(.head):not(.about-grid), .post-card, .gallery-card, .scope-item, .logo-tile, .vendor-card, .chip-dark, .tl-item, .process-step, .why-item, .photo-note, .badge-line, .qual-list li, .vendor-row, .cert-row, .sus-process li, .hero-cta, .photo-band p, .photo-band h2");
   var seen = new Set();
   extra.forEach(function(el){
     if(seen.has(el) || el.closest(".hero-slider") || el.closest("header") || el.closest("footer")) return;
@@ -289,6 +289,16 @@ JS_REVEAL_OBSERVER = '''<script>
   }
   window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
 
+  /* gallery cards: image follows the pointer */
+  document.querySelectorAll(".gallery-card").forEach(function(c){
+    c.addEventListener("pointermove", function(e){
+      var r = c.getBoundingClientRect();
+      c.style.setProperty("--mx", ((e.clientX - r.left) / r.width - .5) * -2);
+      c.style.setProperty("--my", ((e.clientY - r.top) / r.height - .5) * -2);
+    });
+    c.addEventListener("pointerleave", function(){ c.style.setProperty("--mx", 0); c.style.setProperty("--my", 0); });
+  });
+
   /* pointer tilt on cards (fine pointers only) */
   if(window.matchMedia("(hover:hover) and (pointer:fine)").matches){
     document.querySelectorAll(".svc-card, .gallery-card, .feature-card, .vendor-card, .cert-card, .logo-tile, .stat-cell").forEach(function(c){
@@ -310,6 +320,22 @@ JS_REVEAL_OBSERVER = '''<script>
     setTimeout(function(){ location.href = u; }, 230);
   });
   window.addEventListener("pageshow", function(){ document.body.classList.remove("leaving"); });
+})();
+
+
+/* certificates hub: category tabs */
+(function(){
+  var tabs = document.querySelectorAll(".cert-tab");
+  if(!tabs.length) return;
+  var panels = document.querySelectorAll(".cert-panel");
+  function show(k){
+    tabs.forEach(function(t){ t.setAttribute("aria-selected", t.getAttribute("data-tab") === k ? "true" : "false"); });
+    panels.forEach(function(p){ p.hidden = p.id !== k; });
+    panels.forEach(function(p){ if(!p.hidden) p.querySelectorAll(".rv").forEach(function(e){ e.classList.add("reveal-in"); }); });
+  }
+  tabs.forEach(function(t){ t.addEventListener("click", function(){ show(t.getAttribute("data-tab")); history.replaceState(null, "", "#" + t.getAttribute("data-tab")); }); });
+  var h = location.hash.replace("#", "");
+  show(document.getElementById(h) && document.getElementById(h).classList.contains("cert-panel") ? h : tabs[0].getAttribute("data-tab"));
 })();
 
 /* hero slider: dot navigation + auto-advance (replaces the pure-CSS crossfade so slides, captions and dots stay in sync) */
@@ -837,6 +863,37 @@ SITE_DEFAULTS = {"nav": NAV_DEFAULT, "footer": FOOTER_DEFAULT, "accreditations":
 POSTS_JSON = [dict(slug=p["slug"], title=p["title"], category=p["category"], excerpt=p["excerpt"], body=p["body"], cover=p["cover"], date=p["date"]) for p in POSTS_DEFAULT]
 SITE_DEFAULTS_TAG = '<script type="application/json" id="site-defaults">' + _json.dumps(SITE_DEFAULTS, ensure_ascii=False).replace("</", "<\\/") + '</script>'
 
+
+import re as _re
+_SMALL = {"a","an","the","and","but","or","nor","for","of","in","on","at","to","by","with","from","as","into","is"}
+def _tc_text(t):
+    words = _re.split(r"(\s+)", t); out = []; first = True
+    ws = [w for w in words if w.strip()]
+    n = 0
+    for w in words:
+        if not w.strip(): out.append(w); continue
+        n += 1
+        core = _re.sub(r"^[^A-Za-z]*", "", w)
+        if not core or w.startswith("&") and ";" in w[:7] and not _re.search(r"[A-Za-z]{2}", core[:1]): out.append(w); continue
+        low = _re.sub(r"[^A-Za-z]", "", w).lower()
+        if any(ch.isupper() for ch in core[1:]) or _re.search(r"\d", core):
+            out.append(w); continue
+        if n > 1 and low in _SMALL and not _re.search(r"[.:!?]$", out_prev(out)):
+            out.append(w.lower()); continue
+        out.append(w[:len(w)-len(core)] + core[0].upper() + core[1:])
+    return "".join(out)
+def out_prev(out):
+    for w in reversed(out):
+        if w.strip(): return w
+    return ""
+def title_case_headings(html_s):
+    def fix(m):
+        inner = m.group(3)
+        if "data-" in m.group(2): return m.group(0)
+        parts = _re.split(r"(<[^>]+>)", inner)
+        return "<%s%s>%s</%s>" % (m.group(1), m.group(2), "".join(p if p.startswith("<") else _tc_text(p) for p in parts), m.group(1))
+    return _re.sub(r"<(h[1-4])([^>]*)>(.*?)</\1>", fix, html_s, flags=_re.S)
+
 def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     canonical_path = path or active
     canonical = f"{SITE_URL}/{canonical_path}"
@@ -845,6 +902,7 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     head += "\n" + ORG_SCHEMA
     if extra_head:
         head += "\n" + extra_head
+    body = title_case_headings(body)
     content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER + "\n" + SITE_DEFAULTS_TAG + "\n" + WHATSAPP_FAB + "\n" + THEME_SWITCH + "\n" + JS_REVEAL_OBSERVER + "\n" + TRACK_SCRIPT
     if wrap:
         # standalone page (served as-is, not auto-wrapped by the Artifact skeleton)

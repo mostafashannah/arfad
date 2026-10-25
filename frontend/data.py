@@ -16,7 +16,7 @@ AR_NAME = "شركة أرفاد الدولية للصناعة"
 # ---------------------------------------------------------------- services
 # slug, nav title, image, short card text, tagline, intro, scope heading, scope list, related project slugs
 SERVICES = [
- dict(slug="doors", title="Wooden Doors", img="mod-doors-teaser.jpg",
+ dict(slug="doors", title="Wooden Doors", img="svc-doors.jpg", card_img="mod-doors-teaser.jpg",
   card="Engineered doors from fire-rated to X-ray protected, built to full specification.",
   tagline="Doors Engineered for Specification and Finished to Perfection",
   intro=["ARFAD manufactures wooden doors tailored to the technical, functional, and architectural requirements of residential, hospitality, government, and large-scale development projects.",
@@ -36,6 +36,7 @@ SERVICES = [
          ["Reception Counters","Feature Panels","Hotel Joinery","Restaurant Joinery","Customized Joinery","Wall Units","Built-in Elements","Office Joinery","Retail Joinery","Heritage Joinery"]],
   scope_title="Joinery scope",
   scope=[],
+  subs=[('Reception Counters', 'reception')],
   projects=["neom","marafiq","kafd","karan"]),
  dict(slug="cabinets", title="Interior Woodworks", img="svc-interior-woodwork.jpg",
   card="Complete interior solutions, cabinets, wardrobes, staircases and handrails.",
@@ -45,17 +46,24 @@ SERVICES = [
          ["Wooden Partitions","Decorative Wood Screens","Wooden Skirting","Wooden Staircases","Wooden Handrails","Wooden Balustrades","Architectural Wood Features"]],
   scope_title="The company's interior wood works scope includes",
   scope=[],
+  subs=[('Wooden Floorings', 'floorings'), ('Kitchens & Cabinets', 'kitchens'), ('Wardrobes & Closets', 'wardrobes'), ('Vanities & Storage Systems', 'vanities')],
   projects=["saudi-aramco","royal-commission","movenpick","karan"]),
- dict(slug="cladding", title="Cladding & Ceilings", img="svc-cladding.jpg",
-  card="Architectural wall cladding and ceilings, from decorative to slatted finishes.",
+ dict(slug="wall-cladding", title="Wooden Wall Claddings", img="svc-cladding.jpg",
+  card="Architectural wall cladding, from decorative panels to slatted finishes.",
   tagline="Architectural Wood Surfaces Engineered for Precision and Performance",
-  intro=["ARFAD delivers architectural wood cladding and ceiling systems tailored to each project's design intent, technical requirements, and approved specifications.",
-         "The company\u2019s cladding and ceiling scope includes:",
-         "## Wall Cladding",
-         ["Internal Wooden Wall Cladding","External Wooden Cladding","Thermowood Exterior Cladding","Decorative Wooden Panels","Slatted Wood Cladding"],
-         "## Ceiling",
-         ["Wooden Ceilings","Decorative Ceiling Panels","Slatted Wooden Ceilings"]],
+  intro=["ARFAD delivers architectural wood cladding systems tailored to each project's design intent, technical requirements, and approved specifications.",
+         "The company\u2019s wall cladding scope includes:",
+         ["Internal Wooden Wall Cladding","External Wooden Cladding","Thermowood Exterior Cladding","Decorative Wooden Panels","Slatted Wood Cladding"]],
   scope_title="Wall Cladding",
+  scope=[],
+  projects=["neom","misk","ministry-of-defense","movenpick","redsea-amaala"]),
+ dict(slug="ceilings", title="Wooden Ceilings", img="projects/neom-1.jpg",
+  card="Wooden ceilings, from decorative panels to slatted finishes.",
+  tagline="Architectural Wood Ceilings Engineered for Precision and Performance",
+  intro=["ARFAD delivers architectural wood ceiling systems tailored to each project's design intent, technical requirements, and approved specifications.",
+         "The company\u2019s ceiling scope includes:",
+         ["Wooden Ceilings","Decorative Ceiling Panels","Slatted Wooden Ceilings"]],
+  scope_title="Ceiling",
   scope=[],
   projects=["neom","misk","ministry-of-defense","movenpick","redsea-amaala"]),
  dict(slug="thermowood", title="Thermowood", img="svc-thermowood.jpg",
@@ -70,6 +78,7 @@ SERVICES = [
              text="ARFAD applies Thermowood solutions across demanding architectural environments where durability, dimensional stability, weather resistance, and natural aesthetics are essential.",
              items=["Hospitality Exteriors","Resort & Hotel Walkways","Villa Terraces","Outdoor Seating Areas","Poolside Decking","Façade Applications","Landscape Structures"],
              note="Thermowood Works by ARFAD, AMAALA Staff Village, Zone 02"),
+  subs=[('Exterior Woodworks', 'exterior')],
   projects=["redsea-amaala","el-eissa"]),
  dict(slug="furniture", title="Furniture & Interiors", img="svc-furniture.jpg",
   card="Custom furniture for hotels, restaurants, offices and residential interiors.",
@@ -79,6 +88,7 @@ SERVICES = [
          ["Loose Furniture","Hotel Furniture","Restaurant Furniture","Office Furniture","Custom Seating","Tables & Side Tables","Decorative Wooden Pieces","Bespoke Furniture"]],
   scope_title="The scope includes",
   scope=[],
+  subs=[('Interior Furniture & Decors', 'interior-furniture')],
   projects=["primer-steak-house","karan","movenpick","misk"]),
  dict(slug="countertops", title="Countertops & Surfaces", img="svc-countertops-reception.jpg",
   card="In-house fabricated natural stone, quartz and engineered stone surfaces.",
@@ -109,6 +119,15 @@ SERVICES = [
   projects=["redsea-amaala","el-eissa"]),
 ]
 SERVICE_BY_SLUG = {s["slug"]: s for s in SERVICES}
+# client's Services menu (REV-01), each item points at the page that covers it
+SERVICE_MENU = [("Wooden Doors","service-doors.html"),("Wooden Wall Claddings","service-wall-cladding.html"),("Wooden Ceilings","service-ceilings.html"),
+ ("Wooden Floorings","service-cabinets.html#sub-floorings"),("Kitchens & Cabinets","service-cabinets.html#sub-kitchens"),("Wardrobes & Closets","service-cabinets.html#sub-wardrobes"),
+ ("Vanities & Storage Systems","service-cabinets.html#sub-vanities"),("Reception Counters","service-joinery.html#sub-reception"),("Interior Furniture & Decors","service-furniture.html#sub-interior-furniture"),
+ ("Exterior Woodworks","service-thermowood.html#sub-exterior"),("Counter Tops & Solid Surfaces","service-countertops.html"),("Traditional Woodworks","service-traditional.html"),
+ ("Joinery","service-joinery.html"),("Interior Woodworks","service-cabinets.html"),("Thermowood","service-thermowood.html"),("WPC Works","service-wpc.html")]
+SERVICE_HERO = {"doors":"mod-doors-teaser.jpg","joinery":"projects/kafd-2.jpg","cabinets":"svc-cabinets.jpg","wall-cladding":"projects/movenpick-1.jpg","ceilings":"svc-countertops-reception.jpg",
+ "thermowood":"projects/el-eissa-2.jpg","furniture":"projects/primer-steak-house-1.jpg","countertops":"projects/kafd-1.jpg","traditional":"projects/karan-1.jpg","wpc":"projects/redsea-amaala-5.jpg"}
+DOOR_PHOTOS = ["mod-doors-teaser.jpg","svc-doors.jpg","projects/marafiq-1.jpg"]
 
 # ---------------------------------------------------------------- projects
 # detail pages (photos exist in img/projects)
@@ -264,14 +283,15 @@ MACHINE_LIST = ["Circular Table Saw Machine","Surface Planer Machine","Shaper Ma
  "Head Router Machine","Frame Press Machine","Table Presser Machine","Biesse Skipper 100 CNC Boring Machine","Six Side Molding Machine",
  "Sektar 430 Panel Saw Machine","Single Side Edge Banding Machine","CEFLA Hot & Cold Presser Machine"]
 
-PROCESS = ["Client Brief & Requirements","Design & Engineering","Material Selection & Procurement","Factory Production & CNC Machining","Quality Control & Inspection","Site Installation & Handover"]
+PROCESS = [("Client Requirements","متطلبات العميل"),("Site Dimension As Built","رفع مقاسات الموقع"),("Designs & Materials","التصاميم و الخامات"),("Client Validation","اعتماد العميل"),
+ ("2D Plans And Basing With Site Dimension","المخططات التفصيلية و مطابقتها مع المقاسات"),("Production","التصنيع"),("Delivery & Installing","التوصيل و التركيب")]
 
 VENDORS = [
- dict(name="Saudi Aramco", no="10064085", note="Manufacturer + Service Provider, Saudi Aramco E-Reference No. 0005893", ico="AR"),
- dict(name="Royal Commission for Jubail & Yanbu", no="14902", note="Registered Vendor", ico="RC"),
- dict(name="Red Sea Global", no="S10357393", note="Registered Vendor", ico="RSG"),
- dict(name="SABIC", no="11047241", note="Registered Vendor", ico="SB"),
- dict(name="MA'ADEN", no="40665", note="Registered Vendor", ico="MD"),
+ ("Saudi Aramco (Manufacturer + Service Provider)","10064085","Saudi Aramco"),("SABIC","11047241","SABIC"),("Royal Commission (RC)","14902","Royal Commission for Jubail & Yanbu"),
+ ("Nesma & Partners","CL03845 / LS-004960","Nesma & Partners"),("Ma'aden","40665","MA'ADEN"),("NWC, National Water Company","13328811",""),
+ ("The Red Sea Co.","S10357393","Red Sea Global"),("NEOM","10625781","NEOM"),("Al-Kifah Holding","4000006073",""),("Rua Al Madinah Holding","10384",""),
+ ("El Seif Engineering Contracting Co.","21751",""),("NHC, National Housing Company","14841",""),("SEVEN, Saudi Entertainment Venture","S10350542",""),
+ ("Qiddiya Investment Co.","ID to be confirmed",""),
 ]
 
 # client names from the CP "Clients & Partners" page. Logos: drop files into img/clients/<slug>.png|svg|jpg|webp and rebuild.
@@ -314,22 +334,6 @@ def client_logo(name):
 # ---------------------------------------------------------------- media posts (demo content; editable in the admin Posts section)
 POST_CATEGORIES = [("events", "Events"), ("exhibitions", "Exhibitions"), ("news", "News")]
 POSTS_DEFAULT = [
- dict(slug="4758-doors-amaala-red-sea", category="news", date="2026-09-28", cover="/img/projects/redsea-amaala-1.jpg",
-  title="4,758+ doors installed across AMAALA and the Red Sea",
-  excerpt="From staff villages to luxury resorts, ARFAD has supplied and installed more than 4,758 doors across the Red Sea Global and AMAALA developments.",
-  body="ARFAD's work for Red Sea Global and AMAALA spans staff villages, resorts and hotels, with a total of 4,758+ doors installed.\n\n## What we delivered\nAMAALA Staff Village, Package 1: 3,192 wooden doors.\nStaff Village, Zones 1, 2 and 7: 1,566 doors, plus hotel, villa, police and fire station joinery.\nSix Senses Resort, Triple Bay: full luxury resort joinery.\nSouthern Dunes Hotel: 250 doors, 3,000 m² of cladding and 1,000 m² of ceilings.\nSecondary infrastructure: thermowood exterior cladding.\n\nEvery package was engineered and produced in our Jubail factory and installed to the approved specification."),
- dict(slug="neom-multipurpose-hall-auditorium-vip-lounge", category="news", date="2026-09-14", cover="/img/projects/neom-1.jpg",
-  title="NEOM: multipurpose hall, auditorium and VIP lounge",
-  excerpt="100 doors, 1,700 m² of cladding, 500 m² of ceiling, 100 m² of flooring and 10 reception counters for the NEOM multipurpose hall, plus joinery for the auditorium and VIP lounge.",
-  body="ARFAD delivered the woodwork for three spaces at NEOM.\n\n## Multipurpose hall\n100 doors, 1,700 m² of cladding, 500 m² of ceiling, 100 m² of flooring and 10 reception counters.\n\n## Auditorium\nHigh-end joinery and wall cladding.\n\n## VIP lounge\nBespoke joinery, custom panelling and premium VIP finishes.\n\nThe project shows how one factory can supply doors, cladding, ceilings, flooring and custom joinery as a single package."),
- dict(slug="intertek-certified-fire-rated-doors", category="news", date="2026-08-30", cover="/img/svc-doors.jpg",
-  title="Intertek-certified fire-rated doors, up to 120 minutes",
-  excerpt="ARFAD manufactures certified fire-rated wooden doors engineered to contain fire, protect lives and meet demanding international requirements.",
-  body="Where natural warmth meets certified fire protection. ARFAD manufactures fire-rated wooden doors that comply with the most demanding international project requirements, without compromising aesthetics or finishing quality.\n\n## Certification\nARFAD is an Intertek certified fire-rated door manufacturer, certified up to 120 minutes of fire resistance. Our fire-rated doors are certified by Intertek for compliance with both American and British standards.\n\nThe compliance certificates for Warm Springs, Halspan and Streboard are available on our Certificates and Awards page."),
- dict(slug="fsc-chain-of-custody-responsible-sourcing", category="news", date="2026-08-12", cover="/img/quality.jpg",
-  title="FSC Chain of Custody: responsible wood sourcing",
-  excerpt="ARFAD is FSC Chain of Custody certified, supporting traceable, responsibly sourced wood across the supply chain.",
-  body="ARFAD is FSC Chain of Custody certified, demonstrating its commitment to responsible wood sourcing and the traceability of certified wood products throughout the supply chain.\n\n## Our commitment\nOur FSC Chain of Custody certification ensures that the wood and wood-based materials we use are sourced from responsibly managed forests, supporting biodiversity, environmental protection and the well-being of communities worldwide.\n\nThis enables ARFAD to support projects with sustainability and responsible sourcing requirements."),
  dict(slug="visit-our-jubail-factory", category="events", date="2026-07-20", cover="/img/factory.jpg",
   title="Visit our 20,000 m² factory in Jubail",
   excerpt="Clients, consultants and project teams are welcome to see our production zones, machinery and finishing facilities first-hand.",

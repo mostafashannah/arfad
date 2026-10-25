@@ -116,7 +116,7 @@ def other_services(exclude=None, n=4):
 
 def svc_card(s, i=0):
     return (f'<a class="svc-card flash on-light" href="service-{s["slug"]}.html">'
-            f'<div class="thumb" style="background-image:url(\'img/{s["img"]}\');"></div>'
+            f'<div class="thumb" style="background-image:url(\'img/{s.get("card_img", s["img"])}\');"></div>'
             f'<div class="body"><span class="idx">{i+1:02d}</span><h3>{esc(s["title"])}</h3><p>{s["card"]}</p></div></a>')
 
 def cta_band(title="Let's build something that lasts twenty years.", eyebrow="Get in touch"):
@@ -131,8 +131,9 @@ def cta_band(title="Let's build something that lasts twenty years.", eyebrow="Ge
 def project_card(slug, i=0):
     p = PROJECT_PAGES[slug]
     loc = f"<p>{esc(p['loc'])}</p>" if p["loc"].strip() else ""
+    eb = "" if p["client"].lower().split(" (")[0] in p["title"].lower() else f'<p class="eyebrow">{esc(p["client"])}</p>'
     return (f'<a class="gallery-card flash" href="project-{slug}.html" style="background-image:url(\'img/projects/{p["img"]}\');">'
-            f'<div class="gc-body"><p class="eyebrow">{esc(p["client"])}</p><h4>{esc(p["title"])}</h4>{loc}</div></a>')
+            f'<div class="gc-body">{eb}<h4>{esc(p["title"])}</h4>{loc}</div></a>')
 
 def _photo_caption(im):
     slug = re.sub(r"-\d+\.\w+$", "", im)

@@ -48,9 +48,8 @@ def home():
     <div class="wrap about-grid">
       <div>
         <p class="eyebrow">01 Who We Are</p>
-        <h2 style="margin-top:10px;">Built in Jubail.<br>Trusted Across the Kingdom.</h2>
-        <p style="margin-top:20px;font-size:1.02rem;">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.</p>
-        <p style="margin-top:16px;font-size:1.02rem;">Specializing in Wooden Doors, Kitchen Cabinets, Wardrobes, Cladding, Ceilings, Wooden Floorings, Timber &amp; WPC Decking, Countertops, Vanities, all types of Joineries and Custom Interior and Exterior Solutions. ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
+        <h2 style="margin-top:10px;">Woodwork engineered for the Kingdom&rsquo;s largest projects.</h2>
+        <p style="margin-top:20px;font-size:1.02rem;">One 20,000&nbsp;m&sup2; factory in Jubail Industrial City delivers doors, joinery, cladding, ceilings and furniture to residential, hospitality, government and mega-project clients.</p>
         <div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="about.html">Read Our Story</a><a class="btn" href="why-arfad.html">Why ARFAD</a></div>
       </div>
       <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/machine-six-side-molding.jpg');"></div>
@@ -98,15 +97,15 @@ def who_pages():
         for t, h, i, d in _ex)
     explore_block = section(head("Explore", "More about ARFAD") + '<div class="feature-grid" style="margin-top:0;">' + _ex_cards + '</div>', "on-alt")
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("About Us",None)],"01 Who We Are","Built in Jubail.<br>Trusted Across the Kingdom.","Luxury Wooden Works is Our Professional Identity.","who-we-are.jpg")}
+  {subhero([("Who We Are","about.html"),("About Us",None)],"01 Who We Are","Built in Jubail.<br>Trusted Across the Kingdom.","Luxury Wooden Works is Our Professional Identity.","hero.jpg")}
   {subnav(WHO_ITEMS,"about.html")}
   <section class="section"><div class="wrap">
-    {split("About Us","Built in Jubail. Trusted Across the Kingdom.",
+    {split("About Us","ARFAD at a glance.",
       ["Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.",
        "Specializing in Wooden Doors, Kitchen Cabinets, Wardrobes, Cladding, Ceilings, Wooden Floorings, Timber &amp; WPC Decking, Countertops, Vanities, all types of Joineries and Custom Interior and Exterior Solutions. ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom."],
-      "who-we-are.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="factory.html">Explore the Factory</a><a class="btn" href="projects.html">Our Projects</a></div>')}
+      "factory-aerial.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="factory.html">Explore the Factory</a><a class="btn" href="projects.html">Our Projects</a></div>')}
   </div></section>
-  {photo_band("why-arfad.jpg", f"""
+  {photo_band("proj-hospitality.jpg", f"""
     <div class="stat-grid fx-stats">
       <div class="stat-cell flash"><div class="ico-wrap">{icon("flag")}</div><div class="num">2004</div><div class="lbl">Established in Jubail Industrial City</div></div>
       <div class="stat-cell flash"><div class="ico-wrap">{icon("factory")}</div><div class="num">20,000 m&sup2;</div><div class="lbl">Total built-up factory area</div></div>
@@ -120,7 +119,7 @@ def who_pages():
 
     # Vision
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("Vision",None)],"Philosophy","Our Vision","Where ARFAD is heading.","why-arfad.jpg")}
+  {subhero([("Who We Are","about.html"),("Vision",None)],"Philosophy","Our Vision","Where ARFAD is heading.","proj-rsg.jpg")}
   {subnav(WHO_ITEMS,"vision.html")}
   <section class="section"><div class="wrap">
     <div class="statement rv"><span class="statement-mark">{icon("target")}</span>
@@ -138,7 +137,7 @@ def who_pages():
 
     # Mission
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("Mission",None)],"Philosophy","Our Mission","What ARFAD does, every day.","who-we-are.jpg")}
+  {subhero([("Who We Are","about.html"),("Mission",None)],"Philosophy","Our Mission","What ARFAD does, every day.","proj-neom.jpg")}
   {subnav(WHO_ITEMS,"mission.html")}
   <section class="section"><div class="wrap">
     <div class="statement rv"><span class="statement-mark">{icon("flag")}</span>
@@ -164,7 +163,7 @@ def who_pages():
             ("leaf","Responsibility","Responsible wood sourcing through FSC Chain of Custody certification.")]
     cells = "".join(f'<div class="value-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p></div>' for i,(ic,t,d) in enumerate(vals))
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("Our Values",None)],"Philosophy","Our Values","The principles behind every ARFAD project.","svc-joinery.jpg")}
+  {subhero([("Who We Are","about.html"),("Our Values",None)],"Philosophy","Our Values","The principles behind every ARFAD project.","projects/misk-1.jpg")}
   {subnav(WHO_ITEMS,"values.html")}
   <section class="section"><div class="wrap">
     {head("What guides us","Precision, integrity and consistent delivery.","Drawn from our vision, our quality framework and our commitment to safety and responsible sourcing.")}
@@ -183,7 +182,7 @@ def who_pages():
            ("star","Guaranteed Excellence","Twenty-plus years of delivery for the Kingdom's leading developers and authorities.")]
     cells = "".join(f'<div class="value-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p></div>' for i,(ic,t,d) in enumerate(why))
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("Why ARFAD",None)],"Why ARFAD","A System Built for<br>Demanding Projects.","Controlled manufacturing, technical execution, scalable production, project readiness, unyielding quality control and guaranteed excellence.","why-arfad.jpg")}
+  {subhero([("Who We Are","about.html"),("Why ARFAD",None)],"Why ARFAD","A System Built for<br>Demanding Projects.","Controlled manufacturing, technical execution, scalable production, project readiness, unyielding quality control and guaranteed excellence.","machine-biesse-skipper-cnc.jpg")}
   {subnav(WHO_ITEMS,"why-arfad.html")}
   <section class="section"><div class="wrap">
     {head("The ARFAD system","Six reasons clients trust ARFAD.")}
@@ -196,7 +195,7 @@ def who_pages():
 def services_pages():
     cards = "".join(svc_card(s, i) for i, s in enumerate(SERVICES))
     body = f'''<main>
-  {subhero([("Services",None)],"01 What We Deliver","A full scope of<br>architectural woodwork.","One factory, from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.","svc-doors.jpg")}
+  {subhero([("Services",None)],"01 What We Deliver","A full scope of<br>architectural woodwork.","One factory, from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.","svc-interior-woodwork.jpg")}
   <section class="section"><div class="wrap">
     <div class="svc-grid">{cards}</div>
   </div></section>
@@ -214,8 +213,11 @@ def services_pages():
             scope_html += f'<div style="margin-top:56px;">{head("", esc(s["scope2_title"]))}{scope_grid(s["scope2"], "wood")}</div>'
         if s["scope"]:
             blocks.append(f'<section class="section on-alt"><div class="wrap">{scope_html}</div></section>')
+        if s.get("subs"):
+            chips = "".join(f'<div class="scope-item rv flash on-light zoom" id="sub-{k}" style="--d:{j*.06:.2f}s">{icon("check")}<span>{esc(t)}</span></div>' for j, (t, k) in enumerate(s["subs"]))
+            blocks.append(f'<section class="section on-alt"><div class="wrap">{head("Also included", "Related offerings under " + esc(s["title"]) + ".")}<div class="scope-grid">{chips}</div></div></section>')
         if extra and extra["kind"] == "fire":
-            blocks.append(photo_band("svc-doors.jpg", f"""
+            blocks.append(photo_band("projects/ministry-of-defense-1.jpg", f"""
       <p class="eyebrow">{extra["eyebrow"]}</p>
       <h2 style="margin-top:10px;max-width:22ch;">{extra["title"]}</h2>
       <p class="band-lede" style="max-width:60ch;">{extra["lead"]}</p>
@@ -236,13 +238,15 @@ def services_pages():
         parts = ""
         if rel:
             parts += head("Where we have delivered", "Related projects") + '<div class="feature-grid" style="margin-top:0;">' + "".join(project_card(p) for p in rel[:3]) + "</div>"
-        if imgs:
-            parts += f'<div style="margin-top:56px;">{head("Photo gallery", esc(s["title"]) + ", on site")}{gallery(imgs[:9])}</div>'
+        if s["slug"] == "doors":
+            parts += f'<div style="margin-top:56px;">{head("Photo gallery", esc(s["title"]))}{gallery(DOOR_PHOTOS, base="img/")}</div>'
+        elif imgs:
+            parts += f'<div style="margin-top:56px;">{head("Photo gallery", esc(s["title"]))}{gallery(imgs[:9])}</div>'
         if parts:
-            blocks.append(f'<section class="section"><div class="wrap">{parts}</div></section>')
+            blocks.append(f'<section class="section related-sec"><div class="wrap">{parts}</div></section>')
         blocks.append(f'<section class="section on-alt"><div class="wrap">{head("Explore","Other services from ARFAD.")}{other_services(s["slug"])}</div></section>')
         body = f'''<main>
-  {subhero([("Services","services.html"),(esc(s["title"]),None)],f"{i+1:02d} Our Services", esc(s["title"]), s["tagline"], s["img"])}
+  {subhero([("Services","services.html"),(esc(s["title"]),None)],f"{i+1:02d} Our Services", esc(s["title"]), "", SERVICE_HERO.get(s["slug"], s["img"]))}
   {chr(10).join(blocks)}
   {cta_band(f"Ready to start your {esc(s['title']).lower()} project?")}
 </main>'''
