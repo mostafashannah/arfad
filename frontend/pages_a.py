@@ -61,7 +61,7 @@ def home():
       <p class="eyebrow">02 Mass Production</p>
       <h2 style="margin-top:10px;max-width:28ch;">Built for Scale. Equipped for Excellence.</h2>
       <p class="band-lede">A comprehensive range of specialized woodworking machinery supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.</p>
-      <div style="margin-top:32px;" class="hero-cta"><a class="btn" href="factory.html">Explore the Factory</a><a class="btn" href="machinery.html">Machineries</a></div>""")}
+      <div style="margin-top:32px;" class="hero-cta"><a class="btn" href="factory.html">Explore the Factory</a><a class="btn" href="machinery.html">Machineries</a></div>""", overlay=.55)}
 
   <section class="section on-alt">
     <div class="wrap">
