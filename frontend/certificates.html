@@ -186,6 +186,71 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   els.forEach(function(e){ io.observe(e); });
 })();
 
+
+/* motion layer: auto reveal variants, staggering, image wipes, parallax, tilt, progress bar, page transitions */
+(function(){
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(reduce || !("IntersectionObserver" in window)) return;
+
+  /* scroll progress bar */
+  var bar = document.createElement("div"); bar.className = "scroll-progress"; document.body.appendChild(bar);
+
+  /* extra reveal targets, with direction + stagger by sibling index */
+  var extra = document.querySelectorAll("main .section .wrap > *:not(.rv):not(.head):not(.about-grid), .post-card, .gallery-card, .scope-item, .logo-tile, .vendor-card, .chip-dark, .tl-item, .process-step, .why-item, .photo-note, .badge-line, .hero-cta, .photo-band p, .photo-band h2");
+  var seen = new Set();
+  extra.forEach(function(el){
+    if(seen.has(el) || el.closest(".hero-slider") || el.closest("header") || el.closest("footer")) return;
+    seen.add(el);
+    var sibs = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+    el.style.setProperty("--d", Math.min(sibs, 8) * 0.07 + "s");
+    el.classList.add("rv");
+    if(el.matches(".scope-item,.logo-tile,.chip-dark")) el.classList.add("zoom");
+  });
+  document.querySelectorAll(".about-grid > div:first-child").forEach(function(e){ e.classList.add("rv","from-left"); });
+  document.querySelectorAll(".about-grid > div:last-child").forEach(function(e){ e.classList.add("rv","from-right"); });
+  document.querySelectorAll(".split-img, .gallery-card, .svc-card .thumb, .post-cover").forEach(function(e){ e.classList.add("img-rv"); });
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add("reveal-in"); io.unobserve(en.target); } });
+  }, {threshold:.1, rootMargin:"0px 0px -40px 0px"});
+  document.querySelectorAll(".rv:not(.reveal-in), .img-rv, .head").forEach(function(e){ io.observe(e); });
+
+  /* scroll: progress bar + gentle parallax on hero image and split images */
+  var par = Array.prototype.slice.call(document.querySelectorAll(".hero-slider .slide, .detail-hero .hero-bg"));
+  var ticking = false;
+  function onScroll(){
+    if(ticking) return; ticking = true;
+    requestAnimationFrame(function(){
+      var y = window.scrollY, h = document.documentElement.scrollHeight - window.innerHeight;
+      bar.style.transform = "scaleX(" + (h > 0 ? y / h : 0) + ")";
+      if(y < window.innerHeight * 1.2) par.forEach(function(p){ p.style.translate = "0 " + (y * 0.18) + "px"; });
+      ticking = false;
+    });
+  }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* pointer tilt on cards (fine pointers only) */
+  if(window.matchMedia("(hover:hover) and (pointer:fine)").matches){
+    document.querySelectorAll(".svc-card, .gallery-card, .feature-card, .vendor-card, .cert-card, .logo-tile, .stat-cell").forEach(function(c){
+      c.addEventListener("pointermove", function(e){
+        var r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        c.style.transform = "perspective(800px) rotateX(" + (-y * 5) + "deg) rotateY(" + (x * 6) + "deg) translateY(-4px)";
+      });
+      c.addEventListener("pointerleave", function(){ c.style.transform = ""; });
+    });
+  }
+
+  /* page transition on internal links */
+  document.addEventListener("click", function(e){
+    var a = e.target.closest && e.target.closest("a[href]");
+    if(!a || e.defaultPrevented || e.metaKey || e.ctrlKey || e.shiftKey || a.target || a.hasAttribute("download")) return;
+    var u = a.getAttribute("href");
+    if(!u || u.charAt(0) === "#" || /^(https?:|mailto:|tel:|javascript:)/.test(u)) return;
+    e.preventDefault(); document.body.classList.add("leaving");
+    setTimeout(function(){ location.href = u; }, 230);
+  });
+  window.addEventListener("pageshow", function(){ document.body.classList.remove("leaving"); });
+})();
+
 /* hero slider: dot navigation + auto-advance (replaces the pure-CSS crossfade so slides, captions and dots stay in sync) */
 (function(){
   document.querySelectorAll(".hero-slider").forEach(function(hero){

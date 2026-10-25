@@ -7,8 +7,8 @@ def home():
         f'<div class="gc-body"><h4>{esc(s["title"])}</h4></div></a>' for s in SECTORS)
     body = f'''<main id="top">
   <section class="hero-slider hero-full">
-    <div class="slide" style="background-image:url('img/factory.jpg');"></div>
-    <div class="slide" style="background-image:url('img/proj-aramco.jpg');"></div>
+    <div class="slide" style="background-image:url('img/factory-aerial.jpg');"></div>
+    <div class="slide" style="background-image:url('img/machine-cefla-drying.jpg');"></div>
     <div class="slide" style="background-image:url('img/proj-rc.jpg');"></div>
     <div class="hero-overlay"></div>
     <div class="hero-dots"></div>
@@ -53,20 +53,14 @@ def home():
         <p style="margin-top:16px;font-size:1.02rem;">Specializing in Wooden Doors, Kitchen Cabinets, Wardrobes, Cladding, Ceilings, Wooden Floorings, Timber &amp; WPC Decking, Countertops, Vanities, all types of Joineries and Custom Interior and Exterior Solutions. ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
         <div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="about.html">Read Our Story</a><a class="btn" href="why-arfad.html">Why ARFAD</a></div>
       </div>
-      <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/who-we-are.jpg');"></div>
+      <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/machine-six-side-molding.jpg');"></div>
     </div>
   </section>
 
-  {photo_band("factory.jpg", f"""
+  {photo_band("machine-biesse-skipper-cnc.jpg", f"""
       <p class="eyebrow">02 Mass Production</p>
       <h2 style="margin-top:10px;max-width:28ch;">Built for Scale. Equipped for Excellence.</h2>
       <p class="band-lede">A comprehensive range of specialized woodworking machinery supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.</p>
-      <div class="stat-grid fx-stats">
-        <div class="stat-cell flash"><div class="ico-wrap">{icon("factory")}</div><div class="num">20,000 m&sup2;</div><div class="lbl">Total built-up factory area</div></div>
-        <div class="stat-cell flash"><div class="ico-wrap">{icon("users")}</div><div class="num">200+</div><div class="lbl">Production employees</div></div>
-        <div class="stat-cell flash"><div class="ico-wrap">{icon("wood")}</div><div class="num">237,000+</div><div class="lbl">Wooden doors installed</div></div>
-        <div class="stat-cell flash"><div class="ico-wrap">{icon("star")}</div><div class="num">20+</div><div class="lbl">Years of excellence in woodwork</div></div>
-      </div>
       <div style="margin-top:32px;" class="hero-cta"><a class="btn" href="factory.html">Explore the Factory</a><a class="btn" href="machinery.html">Machineries</a></div>""")}
 
   <section class="section on-alt">
@@ -83,14 +77,6 @@ def home():
       <div class="feature-grid sector-grid" style="margin-top:0;">{sec_cards}</div>
       <div style="margin-top:32px;"><a class="btn solid flash" href="projects.html">View Full Project Portfolio</a></div>
       <div style="margin-top:56px;">{clients_marquee()}</div>
-    </div>
-  </section>
-
-  <section class="section on-alt">
-    <div class="wrap">
-      {head("05 Media","Latest from ARFAD.","Events, exhibitions and news.")}
-      {posts_grid(3)}
-      <div style="margin-top:32px;"><a class="btn" href="media.html">View All Posts</a></div>
     </div>
   </section>
 

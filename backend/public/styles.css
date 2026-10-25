@@ -1088,3 +1088,63 @@ body.lb-open{overflow:hidden;}
 .post-article-body h2{font-size:1.45rem;margin:34px 0 12px;}
 .post-article-body p{font-size:1.08rem;line-height:1.85;margin-bottom:18px;}
 .post-missing{padding:30px;border:1px dashed var(--line);border-radius:16px;text-align:center;color:var(--ink-soft);}
+
+/* ===== motion layer (REV-01): whole-site animation, brighter feel ===== */
+/* page fade-in / fade-out */
+.has-js body{animation:pageIn .7s ease both;}
+.has-js body.leaving{opacity:0;transition:opacity .25s ease;}
+@keyframes pageIn{from{opacity:0;}to{opacity:1;}}
+/* scroll progress */
+.scroll-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:9999;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--gold),#fff3d6,var(--gold));pointer-events:none;}
+/* richer reveal variants */
+.has-js .rv.from-left{transform:translateX(-44px);}
+.has-js .rv.from-right{transform:translateX(44px);}
+.has-js .rv.zoom{transform:scale(.94);}
+/* image wipe + settle */
+.has-js .img-rv{opacity:0;transform:scale(1.07) translateY(20px);filter:blur(8px);transition:opacity 1s ease,transform 1.3s cubic-bezier(.16,.8,.24,1),filter 1s ease;}
+.has-js .img-rv.reveal-in{opacity:1!important;transform:none!important;filter:none;}
+/* headings: gold underline draws in */
+.head h2,.section h2{position:relative;}
+.head h2::after{content:"";display:block;height:3px;width:0;margin-top:14px;border-radius:3px;background:linear-gradient(90deg,var(--gold),transparent);transition:width 1s cubic-bezier(.16,.8,.24,1) .25s;}
+.head.reveal-in h2::after{width:72px;}
+/* abstract drifting colour blobs behind light sections */
+.section{position:relative;isolation:isolate;}
+.section:not(.photo-band):not(.on-navy)::before,.section:not(.photo-band):not(.on-navy)::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.5;pointer-events:none;}
+.section:not(.photo-band):not(.on-navy)::before{width:420px;height:420px;top:-120px;right:-100px;background:radial-gradient(circle,rgba(201,166,107,.38),transparent 70%);animation:blobA 16s ease-in-out infinite alternate;}
+.section:not(.photo-band):not(.on-navy)::after{width:360px;height:360px;bottom:-120px;left:-80px;background:radial-gradient(circle,rgba(70,130,200,.22),transparent 70%);animation:blobB 19s ease-in-out infinite alternate;}
+@keyframes blobA{to{transform:translate(-70px,50px) scale(1.2);}}
+@keyframes blobB{to{transform:translate(80px,-40px) scale(1.15);}}
+/* interactive cards: lift, glow, image zoom */
+.svc-card,.gallery-card,.feature-card,.stat-cell,.scope-item,.post-card,.logo-tile,.vendor-card,.cert-card,.contact-card,.vm-item{transition:transform .35s cubic-bezier(.16,.8,.24,1),box-shadow .35s ease;will-change:transform;}
+.svc-card:hover,.gallery-card:hover,.feature-card:hover,.scope-item:hover,.post-card:hover,.logo-tile:hover,.vendor-card:hover,.cert-card:hover,.vm-item:hover{box-shadow:0 26px 50px -22px rgba(10,37,64,.45),0 0 0 1px rgba(201,166,107,.45);}
+.gallery-card{background-size:100%;transition:transform .35s cubic-bezier(.16,.8,.24,1),box-shadow .35s ease,background-size .8s ease;}
+.gallery-card:hover{background-size:112%;}
+.split-img{transition:transform .6s ease;}
+.split-img:hover{transform:scale(1.02);}
+/* buttons: soft pulse on the primary CTA */
+.btn.solid{position:relative;}
+.btn.solid:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(10,37,64,.55);}
+.hero-cta .btn.solid{animation:ctaPulse 3.2s ease-in-out infinite;}
+@keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(201,166,107,.45);}50%{box-shadow:0 0 0 12px rgba(201,166,107,0);}}
+/* lighter, livelier hero */
+.hero-overlay{background:
+  radial-gradient(1100px 480px at 82% -10%, rgba(201,166,107,.16), transparent 60%),
+  linear-gradient(180deg, rgba(7,19,32,.40) 0%, rgba(10,37,64,.26) 45%, rgba(7,19,32,.62) 100%);}
+.hero-slider .hero-caption h1{background-size:200% 100%;}
+/* floating parallax layer for hero images */
+.hero-slider .slide{will-change:transform;}
+/* section number eyebrows slide in */
+.has-js .eyebrow{display:inline-block;}
+@media (prefers-reduced-motion:reduce){
+  .has-js body{animation:none;}
+  .scroll-progress{display:none;}
+  .has-js .img-rv{opacity:1;filter:none;transform:none;transition:none;}
+  .section::before,.section::after,.hero-cta .btn.solid{animation:none!important;}
+  .head h2::after{width:72px;transition:none;}
+}
+
+/* hero legibility over bright photography */
+.hero-overlay{background:
+  linear-gradient(90deg, rgba(7,19,32,.72) 0%, rgba(7,19,32,.45) 42%, rgba(7,19,32,.08) 78%),
+  linear-gradient(180deg, rgba(7,19,32,.35) 0%, rgba(7,19,32,0) 30%, rgba(7,19,32,.68) 100%);}
+.hero-slider .hero-caption h1,.hero-slider .hero-lede{text-shadow:0 2px 18px rgba(0,0,0,.45);}
