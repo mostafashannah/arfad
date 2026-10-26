@@ -1125,11 +1125,9 @@ body.lb-open{overflow:hidden;}
 /* buttons: soft pulse on the primary CTA */
 .btn.solid{position:relative;}
 
-/* one shared pulse drives every dark button, so they all glow in sync */
-@property --btn-pulse{syntax:"<number>";inherits:true;initial-value:0;}
-:root{animation:btnPulse 3.2s ease-out infinite;}
-@keyframes btnPulse{from{--btn-pulse:0;}to{--btn-pulse:1;}}
-.btn.solid:not(:hover),header.nav .btn:not(:hover){box-shadow:0 0 0 calc(var(--btn-pulse) * 12px) rgba(201,166,107,calc(.45 * (1 - var(--btn-pulse))));}
+/* one pulse for every dark button (same keyframes + timing, so they glow together) */
+@keyframes btnPulse{0%{box-shadow:0 0 0 0 rgba(201,166,107,.45);}75%,100%{box-shadow:0 0 0 12px rgba(201,166,107,0);}}
+.btn.solid:not(:hover),header.nav .btn:not(:hover){animation:btnPulse 3.2s ease-out infinite;}
 /* lighter, livelier hero */
 .hero-overlay{background:
   radial-gradient(1100px 480px at 82% -10%, rgba(201,166,107,.16), transparent 60%),
@@ -1143,7 +1141,7 @@ body.lb-open{overflow:hidden;}
   .has-js body{animation:none;}
   .scroll-progress{display:none;}
   .has-js .img-rv{opacity:1;filter:none;transform:none;transition:none;}
-  .section::before,.section::after,:root{animation:none!important;}
+  .section::before,.section::after,.btn.solid,header.nav .btn{animation:none!important;}
   .head h2::after{width:72px;transition:none;}
 }
 
