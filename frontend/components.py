@@ -69,6 +69,9 @@ def section(inner, cls="", style=""):
     return f'<section class="section {cls}"{st}>\n    <div class="wrap">\n{inner}\n    </div>\n  </section>'
 
 def photo_band(img, inner, cls="on-navy", overlay=.9):
+    if img is None:
+        return (f'<section class="section photo-band {cls}" style="background:linear-gradient(135deg,#0a2540,#123258 55%,#1d4a7a);">\n'
+                f'    <div class="wrap">\n{inner}\n    </div>\n  </section>')
     return (f'<section class="section photo-band {cls}" style="background-image:linear-gradient(180deg,rgba(7,19,32,{overlay}),rgba(10,37,64,{min(overlay+.05,.98)})),url(\'img/{img}\');">\n'
             f'    <div class="wrap">\n{inner}\n    </div>\n  </section>')
 

@@ -16,7 +16,7 @@ AR_NAME = "شركة أرفاد الدولية للصناعة"
 # ---------------------------------------------------------------- services
 # slug, nav title, image, short card text, tagline, intro, scope heading, scope list, related project slugs
 SERVICES = [
- dict(slug="doors", title="Wooden Doors", img="svc-doors.jpg", card_img="mod-doors-teaser.jpg",
+ dict(slug="doors", title="Wooden Doors", img="projects/ministry-of-defense-2.jpg", card_img="mod-doors-teaser.jpg",
   card="Engineered doors from fire-rated to X-ray protected, built to full specification.",
   tagline="Doors Engineered for Specification and Finished to Perfection",
   intro=["ARFAD manufactures wooden doors tailored to the technical, functional, and architectural requirements of residential, hospitality, government, and large-scale development projects.",
@@ -57,7 +57,7 @@ SERVICES = [
   scope_title="Wall Cladding",
   scope=[],
   projects=["neom","misk","ministry-of-defense","movenpick","redsea-amaala"]),
- dict(slug="ceilings", title="Wooden Ceilings", img="projects/neom-1.jpg",
+ dict(slug="ceilings", title="Wooden Ceilings", img="projects/primer-steak-house-3.jpg",
   card="Wooden ceilings, from decorative panels to slatted finishes.",
   tagline="Architectural Wood Ceilings Engineered for Precision and Performance",
   intro=["ARFAD delivers architectural wood ceiling systems tailored to each project's design intent, technical requirements, and approved specifications.",
@@ -125,9 +125,9 @@ SERVICE_MENU = [("Wooden Doors","service-doors.html"),("Wooden Wall Claddings","
  ("Vanities & Storage Systems","service-cabinets.html#sub-vanities"),("Reception Counters","service-joinery.html#sub-reception"),("Interior Furniture & Decors","service-furniture.html#sub-interior-furniture"),
  ("Exterior Woodworks","service-thermowood.html#sub-exterior"),("Counter Tops & Solid Surfaces","service-countertops.html"),("Traditional Woodworks","service-traditional.html"),
  ("Joinery","service-joinery.html"),("Interior Woodworks","service-cabinets.html"),("Thermowood","service-thermowood.html"),("WPC Works","service-wpc.html")]
-SERVICE_HERO = {"doors":"mod-doors-teaser.jpg","joinery":"projects/kafd-2.jpg","cabinets":"svc-cabinets.jpg","wall-cladding":"projects/movenpick-1.jpg","ceilings":"svc-countertops-reception.jpg",
- "thermowood":"projects/el-eissa-2.jpg","furniture":"projects/primer-steak-house-1.jpg","countertops":"projects/kafd-1.jpg","traditional":"projects/karan-1.jpg","wpc":"projects/redsea-amaala-5.jpg"}
-DOOR_PHOTOS = ["mod-doors-teaser.jpg","svc-doors.jpg","projects/marafiq-1.jpg"]
+SERVICE_HERO = {"doors":"svc-doors.jpg","joinery":"projects/kafd-2.jpg","cabinets":"svc-cabinets.jpg","wall-cladding":"projects/kafd-3.jpg","ceilings":"projects/movenpick-2.jpg",
+ "thermowood":"projects/el-eissa-3.jpg","furniture":"projects/karan-3.jpg","countertops":"projects/movenpick-3.jpg","traditional":"projects/neom-6.jpg","wpc":"projects/redsea-amaala-5.jpg"}
+DOOR_PHOTOS = ["mod-doors-teaser.jpg","projects/ministry-of-defense-3.jpg","projects/marafiq-1.jpg"]
 
 # ---------------------------------------------------------------- projects
 # detail pages (photos exist in img/projects)
@@ -249,13 +249,13 @@ SECTORS = [
   intro="Housing, airport, railway and industrial-city developments delivered for the Kingdom's major industrial and infrastructure clients."),
  dict(slug="hospitality", title="Hospitality & Luxury Development", img="proj-rsg.jpg",
   intro="Giga-project resorts, five-star hotels and luxury developments across NEOM, AMAALA, the Red Sea and the Kingdom."),
- dict(slug="residential", title="Residential and F&B", img="proj-rc.jpg",
+ dict(slug="residential", title="Residential and F&B", img="projects/primer-steak-house-1.jpg",
   intro="Villas, apartment buildings, compounds and restaurant fit-outs, from large housing phases to bespoke dining interiors."),
  dict(slug="commercial", title="Commercial & Government", img="proj-mod.jpg",
   intro="Government supporting buildings, headquarters and financial-district developments."),
- dict(slug="healthcare", title="Healthcare", img="proj-hospitality.jpg",
+ dict(slug="healthcare", title="Healthcare", img="projects/redsea-amaala-9.jpg",
   intro="Wooden doors, wall cladding, joinery and custom casework for hospital areas."),
- dict(slug="education", title="Education", img="misk-2.jpg" if False else "proj-hospitality.jpg",
+ dict(slug="education", title="Education", img="projects/misk-3.jpg",
   intro="School campuses and educational complexes, from doors and joinery to cladding and ceiling works."),
  dict(slug="specialized", title="Specialized Projects", img="proj-neom.jpg",
   intro="Mosques, airport joinery, thermowood infrastructure and custom architectural structures."),

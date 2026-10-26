@@ -40,7 +40,7 @@ def projects_pages():
         f'<div class="gc-body"><h4>{esc(s["title"])}</h4><p>{s["intro"][:78].rsplit(" ",1)[0]}&hellip;</p></div></a>' for s in SECTORS)
     blocks = "".join(company_block(n, r, i) for i, (n, r) in enumerate(group_rows(ROWS).items()))
     body = f'''<main>
-  {subhero([("Projects",None)],"01 Our Projects","Every project we deliver is a<br>physical reflection of our standards.","A 20-Year Portfolio You Can Rely On.","proj-rc.jpg")}
+  {subhero([("Projects",None)],"01 Our Projects","Every project we deliver is a<br>physical reflection of our standards.","A 20-Year Portfolio You Can Rely On.","proj-hospitality.jpg")}
   <section class="section"><div class="wrap">
     {head("Project Sectors","Explore our work by sector.","The featured projects on this website represent highlights, but ARFAD's track record spans hundreds of completed contracts across KSA since 2004.")}
     <div class="feature-grid sector-grid" style="margin-top:0;">{sector_cards}</div>

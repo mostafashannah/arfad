@@ -57,7 +57,7 @@ def home():
     </div>
   </section>
 
-  {photo_band("machine-biesse-skipper-cnc.jpg", f"""
+  {photo_band("machine-cabinet-presser.jpg", f"""
       <p class="eyebrow">02 Mass Production</p>
       <h2 style="margin-top:10px;max-width:28ch;">Built for Scale. Equipped for Excellence.</h2>
       <p class="band-lede">A comprehensive range of specialized woodworking machinery supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.</p>
@@ -90,11 +90,11 @@ WHO_ITEMS = [("About Us","about.html"),("Vision","vision.html"),("Mission","miss
 
 def who_pages():
     # About Us
-    _ex = [("Vision","vision.html","why-arfad.jpg","A regional standard in architectural wood works."),
-           ("Mission","mission.html","who-we-are.jpg","High-quality wood works that deliver long-term value."),
-           ("Why ARFAD","why-arfad.html","svc-joinery.jpg","A system built for demanding projects.")]
+    _ex = [("Vision","vision.html","","A regional standard in architectural wood works."),
+           ("Mission","mission.html","","High-quality wood works that deliver long-term value."),
+           ("Why ARFAD","why-arfad.html","","A system built for demanding projects.")]
     _ex_cards = "".join(
-        '<a class="feature-card flash" href="%s" style="background:linear-gradient(180deg,rgba(10,37,64,.6),rgba(10,37,64,.94)),url(img/%s) center/cover;"><p class="eyebrow">Who We Are</p><h4>%s</h4><p>%s</p><span class="view-link">Read more &rarr;</span></a>' % (h, i, t, d)
+        '<a class="feature-card flash" href="%s" style="background:linear-gradient(180deg,rgba(10,37,64,.6),rgba(10,37,64,.94)),linear-gradient(135deg,#123258,#1d4a7a);"><p class="eyebrow">Who We Are</p><h4>%s</h4><p>%s</p><span class="view-link">Read more &rarr;</span></a>' % (h, t, d)
         for t, h, i, d in _ex)
     explore_block = section(head("Explore", "More about ARFAD") + '<div class="feature-grid" style="margin-top:0;">' + _ex_cards + '</div>', "on-alt")
     body = f'''<main>
@@ -104,9 +104,9 @@ def who_pages():
     {split("About Us","ARFAD at a glance.",
       ["Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.",
        "Specializing in Wooden Doors, Kitchen Cabinets, Wardrobes, Cladding, Ceilings, Wooden Floorings, Timber &amp; WPC Decking, Countertops, Vanities, all types of Joineries and Custom Interior and Exterior Solutions. ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom."],
-      "factory-aerial.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="factory.html">Explore the Factory</a><a class="btn" href="projects.html">Our Projects</a></div>')}
+      "quality.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="factory.html">Explore the Factory</a><a class="btn" href="projects.html">Our Projects</a></div>')}
   </div></section>
-  {photo_band("proj-hospitality.jpg", f"""
+  {photo_band(None, f"""
     <div class="stat-grid fx-stats">
       <div class="stat-cell flash"><div class="ico-wrap">{icon("flag")}</div><div class="num">2004</div><div class="lbl">Established in Jubail Industrial City</div></div>
       <div class="stat-cell flash"><div class="ico-wrap">{icon("factory")}</div><div class="num">20,000 m&sup2;</div><div class="lbl">Total built-up factory area</div></div>
@@ -120,7 +120,7 @@ def who_pages():
 
     # Vision
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("Vision",None)],"Philosophy","Our Vision","Where ARFAD is heading.","proj-rsg.jpg")}
+  {subhero([("Who We Are","about.html"),("Vision",None)],"Philosophy","Our Vision","Where ARFAD is heading.","projects/redsea-amaala-2.jpg")}
   {subnav(WHO_ITEMS,"vision.html")}
   <section class="section"><div class="wrap">
     <div class="statement rv"><span class="statement-mark">{icon("target")}</span>
@@ -138,7 +138,7 @@ def who_pages():
 
     # Mission
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("Mission",None)],"Philosophy","Our Mission","What ARFAD does, every day.","proj-neom.jpg")}
+  {subhero([("Who We Are","about.html"),("Mission",None)],"Philosophy","Our Mission","What ARFAD does, every day.","projects/neom-2.jpg")}
   {subnav(WHO_ITEMS,"mission.html")}
   <section class="section"><div class="wrap">
     <div class="statement rv"><span class="statement-mark">{icon("flag")}</span>
@@ -164,7 +164,7 @@ def who_pages():
             ("leaf","Responsibility","Responsible wood sourcing through FSC Chain of Custody certification.")]
     cells = "".join(f'<div class="value-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p></div>' for i,(ic,t,d) in enumerate(vals))
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("Our Values",None)],"Philosophy","Our Values","The principles behind every ARFAD project.","projects/misk-1.jpg")}
+  {subhero([("Who We Are","about.html"),("Our Values",None)],"Philosophy","Our Values","The principles behind every ARFAD project.","projects/karan-2.jpg")}
   {subnav(WHO_ITEMS,"values.html")}
   <section class="section"><div class="wrap">
     {head("What guides us","Precision, integrity and consistent delivery.","Drawn from our vision, our quality framework and our commitment to safety and responsible sourcing.")}
@@ -183,7 +183,7 @@ def who_pages():
            ("star","Guaranteed Excellence","Twenty-plus years of delivery for the Kingdom's leading developers and authorities.")]
     cells = "".join(f'<div class="value-card rv flash on-light" style="--d:{(i%3)*.08:.2f}s"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p></div>' for i,(ic,t,d) in enumerate(why))
     body = f'''<main>
-  {subhero([("Who We Are","about.html"),("Why ARFAD",None)],"Why ARFAD","A System Built for<br>Demanding Projects.","Controlled manufacturing, technical execution, scalable production, project readiness, unyielding quality control and guaranteed excellence.","machine-biesse-skipper-cnc.jpg")}
+  {subhero([("Who We Are","about.html"),("Why ARFAD",None)],"Why ARFAD","A System Built for<br>Demanding Projects.","Controlled manufacturing, technical execution, scalable production, project readiness, unyielding quality control and guaranteed excellence.","machine-sektar-panel-saw.jpg")}
   {subnav(WHO_ITEMS,"why-arfad.html")}
   <section class="section"><div class="wrap">
     {head("The ARFAD system","Six reasons clients trust ARFAD.")}
@@ -196,7 +196,7 @@ def who_pages():
 def services_pages():
     cards = "".join(svc_card(s, i) for i, s in enumerate(SERVICES))
     body = f'''<main>
-  {subhero([("Services",None)],"01 What We Deliver","A full scope of<br>architectural woodwork.","One factory, from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.","svc-interior-woodwork.jpg")}
+  {subhero([("Services",None)],"01 What We Deliver","A full scope of<br>architectural woodwork.","One factory, from certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking.","projects/redsea-amaala-3.jpg")}
   <section class="section"><div class="wrap">
     <div class="svc-grid">{cards}</div>
   </div></section>
@@ -218,7 +218,7 @@ def services_pages():
             chips = "".join(f'<div class="scope-item rv flash on-light zoom" id="sub-{k}" style="--d:{j*.06:.2f}s">{icon("check")}<span>{esc(t)}</span></div>' for j, (t, k) in enumerate(s["subs"]))
             blocks.append(f'<section class="section on-alt"><div class="wrap">{head("Also included", "Related offerings under " + esc(s["title"]) + ".")}<div class="scope-grid">{chips}</div></div></section>')
         if extra and extra["kind"] == "fire":
-            blocks.append(photo_band("projects/ministry-of-defense-1.jpg", f"""
+            blocks.append(photo_band(None, f"""
       <p class="eyebrow">{extra["eyebrow"]}</p>
       <h2 style="margin-top:10px;max-width:22ch;">{extra["title"]}</h2>
       <p class="band-lede" style="max-width:60ch;">{extra["lead"]}</p>
@@ -226,7 +226,7 @@ def services_pages():
       <div class="badge-line"><span>{icon("shield")}{extra["badge"]}</span><span>{icon("flame")}{extra["badge2"]}</span></div>
       <div style="margin-top:26px;" class="hero-cta"><a class="btn" href="certificates.html">View Fire-Rated Certificates</a></div>""", overlay=.82))
         if extra and extra["kind"] == "apps":
-            blocks.append(photo_band("svc-wpc.jpg", f"""
+            blocks.append(photo_band(None, f"""
       <p class="eyebrow">{extra["eyebrow"]}</p>
       <h2 style="margin-top:10px;max-width:24ch;">{extra["title"]}</h2>
       <p class="band-lede" style="max-width:62ch;">{extra["text"]}</p>
