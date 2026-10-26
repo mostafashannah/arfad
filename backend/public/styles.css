@@ -1124,8 +1124,11 @@ body.lb-open{overflow:hidden;}
 /* buttons: soft pulse on the primary CTA */
 .btn.solid{position:relative;}
 .btn.solid:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(10,37,64,.55);}
-.hero-cta .btn.solid{animation:ctaPulse 3.2s ease-in-out infinite;}
-@keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(201,166,107,.45);}50%{box-shadow:0 0 0 12px rgba(201,166,107,0);}}
+/* one shared pulse drives every dark button, so they all glow in sync */
+@property --btn-pulse{syntax:"<number>";inherits:true;initial-value:0;}
+:root{animation:btnPulse 3.2s ease-out infinite;}
+@keyframes btnPulse{from{--btn-pulse:0;}to{--btn-pulse:1;}}
+.btn.solid:not(:hover),header.nav .btn:not(:hover){box-shadow:0 0 0 calc(var(--btn-pulse) * 12px) rgba(201,166,107,calc(.45 * (1 - var(--btn-pulse))));}
 /* lighter, livelier hero */
 .hero-overlay{background:
   radial-gradient(1100px 480px at 82% -10%, rgba(201,166,107,.16), transparent 60%),
@@ -1139,7 +1142,7 @@ body.lb-open{overflow:hidden;}
   .has-js body{animation:none;}
   .scroll-progress{display:none;}
   .has-js .img-rv{opacity:1;filter:none;transform:none;transition:none;}
-  .section::before,.section::after,.hero-cta .btn.solid{animation:none!important;}
+  .section::before,.section::after,:root{animation:none!important;}
   .head h2::after{width:72px;transition:none;}
 }
 
