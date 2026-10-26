@@ -1262,3 +1262,5 @@ body.lb-open{overflow:hidden;}
 .qual-list li:hover::before{transform:scale(1.5);}
 .section{overflow-x:clip;}
 html,body{overflow-x:clip;}
+/* the reveal layer was clipping the bottom border of buttons at fractional pixel sizes */
+.rv:has(> .btn),.hero-cta.rv,.cta-btns.rv{padding-block:3px;}
