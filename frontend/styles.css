@@ -244,7 +244,7 @@ header.nav.nav-scrolled .nav-toggle span{background:var(--ink);box-shadow:none;}
   border:1.5px solid var(--accent-text);color:var(--accent-text);
   transition:background .15s,color .15s,transform .15s;
 }
-.btn:hover{background:var(--accent-text);color:var(--bg);transform:translateY(-1px);}
+.btn:hover{background:var(--accent-text);color:var(--bg);}
 .btn.solid{background:var(--solid-bg);border-color:var(--solid-bg);color:var(--solid-text);position:relative;overflow:hidden;}
 .btn.solid:hover{background:var(--solid-bg);border-color:var(--solid-bg);color:var(--solid-text);}
 .btn.solid::after{
@@ -1124,7 +1124,12 @@ body.lb-open{overflow:hidden;}
 .split-img:hover{transform:scale(1.02);}
 /* buttons: soft pulse on the primary CTA */
 .btn.solid{position:relative;}
-.btn.solid:hover{transform:translateY(-2px);box-shadow:0 14px 28px -12px rgba(10,37,64,.55);}
+
+/* one shared pulse drives every dark button, so they all glow in sync */
+@property --btn-pulse{syntax:"<number>";inherits:true;initial-value:0;}
+:root{animation:btnPulse 3.2s ease-out infinite;}
+@keyframes btnPulse{from{--btn-pulse:0;}to{--btn-pulse:1;}}
+.btn.solid:not(:hover),header.nav .btn:not(:hover){box-shadow:0 0 0 calc(var(--btn-pulse) * 12px) rgba(201,166,107,calc(.45 * (1 - var(--btn-pulse))));}
 /* lighter, livelier hero */
 .hero-overlay{background:
   radial-gradient(1100px 480px at 82% -10%, rgba(201,166,107,.16), transparent 60%),
