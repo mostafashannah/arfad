@@ -48,7 +48,7 @@ def home():
     <div class="wrap about-grid">
       <div>
         <p class="eyebrow">01 Who We Are</p>
-        <h2 style="margin-top:10px;">Built in Jubail.<br>Trusted Across the Kingdom.</h2>
+        <h2 style="margin-top:10px;">Woodwork Engineered for the Kingdom&rsquo;s Largest Projects.</h2>
         <p style="margin-top:20px;font-size:1.02rem;">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.</p>
         <p style="margin-top:16px;font-size:1.02rem;">Specializing in Wooden Doors, Kitchen Cabinets, Wardrobes, Cladding, Ceilings, Wooden Floorings, Timber &amp; WPC Decking, Countertops, Vanities, all types of Joineries and Custom Interior and Exterior Solutions. ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
         <div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="about.html">Read Our Story</a><a class="btn" href="why-arfad.html">Why ARFAD</a></div>
