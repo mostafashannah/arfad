@@ -99,7 +99,7 @@ def factory_pages():
                ("truck","Storage and Logistics","Dedicated warehousing and transportation capabilities supporting project deliveries across KSA.")]
     icards = "".join(f'<div class="value-card rv flash on-light" style="--d:{k*.08:.2f}s"><div class="ico-wrap">{icon(ic)}</div><h4>{t}</h4><p>{d}</p></div>' for k, (ic, t, d) in enumerate(inhouse))
     body = f'''<main>
-  {subhero([("Factory",None)],"01 Factory &amp; Technology","Built in Jubail.<br>Trusted Across the Kingdom.","Built for Scale. Equipped for Excellence.","machine-edge-banding.jpg")}
+  {subhero_slides([("Factory",None)],"01 Factory &amp; Technology","Built in Jubail.<br>Trusted Across the Kingdom.","Built for Scale. Equipped for Excellence.",["factory-hero-1.jpg","factory-hero-2.jpg","factory-hero-3.jpg"])}
   {photo_band(None, f"""
     <p class="eyebrow">Factory Overview</p>
     <h2 style="margin-top:10px;max-width:24ch;">Built for Scale. Equipped for Excellence.</h2>

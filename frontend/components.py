@@ -59,6 +59,21 @@ def subhero(parts, eyebrow, title, lede="", img="factory.jpg", btns=""):
     </div>
   </section>'''
 
+def subhero_slides(parts, eyebrow, title, lede, imgs):
+    slides = "".join(f'<div class="slide" style="background-image:url(\'img/{i}\');"></div>' for i in imgs)
+    lede_html = f'<p class="hero-lede">{lede}</p>' if lede else ""
+    return f'''<section class="detail-hero hero-slider compact">
+    {slides}
+    <div class="hero-overlay"></div>
+    <div class="hero-dots"></div>
+    <div class="wrap">
+      {crumbs(parts)}
+      <p class="eyebrow">{eyebrow}</p>
+      <h1>{title}</h1>
+      {lede_html}
+    </div>
+  </section>'''
+
 def head(eyebrow, title, lede="", center=False):
     cls = "head center" if center else "head"
     lede_html = f'<p class="ink-soft">{lede}</p>' if lede else ""
