@@ -283,8 +283,7 @@ MACHINE_LIST = ["Circular Table Saw Machine","Surface Planer Machine","Shaper Ma
  "Head Router Machine","Frame Press Machine","Table Presser Machine","Biesse Skipper 100 CNC Boring Machine","Six Side Molding Machine",
  "Sektar 430 Panel Saw Machine","Single Side Edge Banding Machine","CEFLA Hot & Cold Presser Machine"]
 
-PROCESS = [("Client Requirements","متطلبات العميل"),("Site Dimension As Built","رفع مقاسات الموقع"),("Designs & Materials","التصاميم و الخامات"),("Client Validation","اعتماد العميل"),
- ("2D Plans And Basing With Site Dimension","المخططات التفصيلية و مطابقتها مع المقاسات"),("Production","التصنيع"),("Delivery & Installing","التوصيل و التركيب")]
+PROCESS = ["Client Brief & Requirements","Design & Engineering","Material Selection & Procurement","Factory Production & CNC Machining","Quality Control & Inspection","Site Installation & Handover"]
 
 VENDORS = [
  ("Saudi Aramco (Manufacturer + Service Provider)","10064085","Saudi Aramco"),("SABIC","11047241","SABIC"),("Royal Commission (RC)","14902","Royal Commission for Jubail & Yanbu"),

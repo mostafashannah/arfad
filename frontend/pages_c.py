@@ -79,16 +79,17 @@ FACTORY_GRAD = [("#0f3a66","#1d6fa5"),("#5a3d1e","#b0834a"),("#123a3a","#2f8a7a"
 FACTORY_IMG = ["machine-biesse-skipper-cnc.jpg","machine-reciprocating-spray.jpg","machine-wide-belt-sanding.jpg","machine-spray-booth-2.jpg","proj-aramco.jpg","proj-rc.jpg","mod-doors-teaser.jpg"]
 
 def workflow_path():
-    ic = ["doc","ruler","wood","check","pen","gear","truck"]
-    pos = [(1,1),(1,2),(1,3),(1,4),(2,1),(2,2),(2,3)]
+    ic = ["doc","pen","wood","gear","shield","truck"]
+    pos = [(1,1),(1,2),(1,3),(1,4),(2,1),(2,2)]
     nodes = ""
-    for i, (t, ar) in enumerate(PROCESS):
+    for i, t in enumerate(PROCESS):
         r, c = pos[i]
         nodes += (f'<li class="wf-node" style="grid-row:{r};grid-column:{c};--d:{.5+i*.28:.2f}s"><span class="wf-circle">{icon(ic[i])}</span>'
-                  f'<h4>{esc(t)}</h4><span class="wf-num">{i+1}</span><p dir="rtl" lang="ar">{ar}</p></li>')
-    nodes += f'<li class="wf-node wf-done" style="grid-row:2;grid-column:4;--d:{.5+7*.28:.2f}s"><span class="wf-circle">COMPLETE<br>{icon("check")}</span></li>'
-    svg = ('<svg class="wf-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M125 130 H875 C985 130 985 260 875 260 H150 C25 260 25 390 150 390 H875" />'
-           '<path class="wf-flow" pathLength="1" d="M125 130 H875 C985 130 985 260 875 260 H150 C25 260 25 390 150 390 H875" /></svg>')
+                  f'<h4>{esc(t)}</h4><span class="wf-num">{i+1}</span></li>')
+    nodes += f'<li class="wf-node wf-done" style="grid-row:2;grid-column:3;--d:{.5+6*.28:.2f}s"><span class="wf-circle">COMPLETE<br>{icon("check")}</span></li>'
+    p = "M125 130 H875 C985 130 985 260 875 260 H150 C25 260 25 390 150 390 H625"
+    svg = (f'<svg class="wf-svg" viewBox="0 0 1000 520" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="{p}" />'
+           f'<path class="wf-flow" pathLength="1" d="{p}" /></svg>')
     return f'<div class="wf-wrap rv">{svg}<ol class="wf-grid">{nodes}</ol></div>'
 
 def factory_pages():
@@ -135,7 +136,7 @@ def factory_pages():
 
     # ---- Service workflow
     body = f'''<main>
-  {subhero([("Factory","factory.html"),("Service Workflow",None)],"02 Our Process","From Drawing to Delivery","Seven controlled stages carry every project from client requirements to handover.","machine-reciprocating-spray.jpg")}
+  {subhero([("Factory","factory.html"),("Service Workflow",None)],"02 Our Process","From Drawing to Delivery","Six controlled stages carry every project from brief to handover.","machine-reciprocating-spray.jpg")}
   <section class="section"><div class="wrap">
     {head("Service Workflow","From drawing to delivery.")}
     {workflow_path()}
@@ -143,7 +144,7 @@ def factory_pages():
   {photo_band(None, '<div style="text-align:center;"><p class="eyebrow" style="justify-content:center;">Quality Control &amp; Inspection</p><h2 style="margin-top:12px;max-width:26ch;margin-inline:auto;">Every stage is reviewed, from the first brief to final handover.</h2><div class="hero-cta" style="justify-content:center;margin-top:26px;"><a class="btn" href="quality-policy.html">Our Quality Policy</a></div></div>', overlay=.6)}
   {cta_band()}
 </main>'''
-    write("service-workflow.html", page("Service Workflow ARFAD", "From drawing to delivery: client requirements, site dimension as built, designs and materials, client validation, 2D plans, production, and delivery and installing.", "service-workflow.html", body))
+    write("service-workflow.html", page("Service Workflow ARFAD", "From drawing to delivery: client brief and requirements, design and engineering, material selection and procurement, factory production and CNC machining, quality control and inspection, site installation and handover.", "service-workflow.html", body))
 
     # ---- Quality Policy
     fw = ["Approved Shop Drawings & Specifications","Material Certificates & Submittal Review","Incoming Material Inspection","In-Process Factory Inspection","Final Product Inspection","Site Installation Inspection","Inspection Records & Quality Documentation"]
