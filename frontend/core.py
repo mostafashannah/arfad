@@ -587,7 +587,11 @@ JS_REVEAL_OBSERVER = '''<script>
     a.appendChild(b); return a;
   }
   var activeCat = "";
+  function syncSections(){
+    document.querySelectorAll("[data-posts-section]").forEach(function(s){ s.hidden = current.length === 0; });
+  }
   function renderGrids(){
+    syncSections();
     grids.forEach(function(g){
       var lim = parseInt(g.getAttribute("data-limit") || "0", 10);
       var list = sorted(current).filter(function(p){ return !activeCat || p.category === activeCat; });
@@ -603,7 +607,7 @@ JS_REVEAL_OBSERVER = '''<script>
     }); });
     fetch("/api/posts", {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
       if(!j || !Array.isArray(j.posts)) return;
-      if(key(j.posts) !== key(baked)){ current = j.posts; renderGrids(); }
+      current = j.posts; renderGrids();
     }).catch(function(){});
   }
 
@@ -873,7 +877,7 @@ def _strip_tags(s):
 import json as _json
 ACCREDITATIONS_DEFAULT = [{"name": n, "logo": "/img/accreditation/" + f, "light": not dark} for n, f, dark in ACCREDITED]
 SITE_DEFAULTS = {"nav": NAV_DEFAULT, "footer": FOOTER_DEFAULT, "accreditations": ACCREDITATIONS_DEFAULT}
-POSTS_JSON = [dict(slug=p["slug"], title=p["title"], category=p["category"], excerpt=p["excerpt"], body=p["body"], cover=p["cover"], date=p["date"]) for p in POSTS_DEFAULT]
+POSTS_JSON = [dict(slug=p["slug"], title=p["title"], category=p["category"], excerpt=p["excerpt"], body=p["body"], cover=p["cover"], date=p["date"], published=p.get("published", True)) for p in POSTS_DEFAULT]
 SITE_DEFAULTS_TAG = '<script type="application/json" id="site-defaults">' + _json.dumps(SITE_DEFAULTS, ensure_ascii=False).replace("</", "<\\/") + '</script>'
 
 

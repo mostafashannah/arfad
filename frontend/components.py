@@ -220,7 +220,7 @@ def post_card(p):
             f'<h3>{esc(p["title"])}</h3><p>{esc(p["excerpt"])}</p><span class="view-link">Read more &rarr;</span></div></a>')
 
 def posts_grid(limit=None):
-    posts = sorted(POSTS_DEFAULT, key=lambda p: p["date"], reverse=True)
+    posts = sorted([p for p in POSTS_DEFAULT if p.get("published", True)], key=lambda p: p["date"], reverse=True)
     if limit: posts = posts[:limit]
     lim = f' data-limit="{limit}"' if limit else ""
     return f'<div class="post-grid" data-posts{lim}>' + "".join(post_card(p) for p in posts) + "</div>"

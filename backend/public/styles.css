@@ -1273,3 +1273,5 @@ body.lb-open{overflow:hidden;}
 html,body{overflow-x:clip;}
 /* the reveal layer was clipping the bottom border of buttons at fractional pixel sizes */
 .rv:has(> .btn),.hero-cta.rv,.cta-btns.rv{padding-block:3px;}
+
+[data-posts-section][hidden]{display:none!important;}

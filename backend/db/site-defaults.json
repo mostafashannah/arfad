@@ -375,7 +375,8 @@
       "excerpt": "Clients, consultants and project teams are welcome to see our production zones, machinery and finishing facilities first-hand.",
       "body": "Seeing the factory is the best way to understand how ARFAD works. Our 20,000 m² facility in Jubail Industrial City brings together an in-house design studio, CNC machining, edge banding, assembly, finishing and quality control, with professional spray booths and dedicated warehousing.\n\n## Arrange a visit\nTo arrange a factory visit, email info@arfad.com.sa or call +966 13 341 7773.\n\nThis is a sample post. Replace it with your own event announcements from the admin.",
       "cover": "/img/factory.jpg",
-      "date": "2026-07-20"
+      "date": "2026-07-20",
+      "published": false
     },
     {
       "slug": "meet-arfad-at-upcoming-exhibitions",
@@ -384,7 +385,8 @@
       "excerpt": "Exhibition dates, stand details and highlights will be announced here as they are confirmed.",
       "body": "ARFAD takes part in exhibitions and trade fairs across the Kingdom to meet architects, consultants and developers.\n\n## Stay informed\nStand locations, dates and what we are showing will be posted in this section as soon as they are confirmed.\n\nThis is a sample post. Replace it with your own exhibition announcements from the admin.",
       "cover": "/img/who-we-are.jpg",
-      "date": "2026-06-15"
+      "date": "2026-06-15",
+      "published": false
     }
   ]
 }

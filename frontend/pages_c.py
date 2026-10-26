@@ -306,7 +306,7 @@ def other_pages():
     gal = gallery_filters(allp) + gallery(allp, meta=True) + '<p class="gal-empty" data-gf-empty hidden>No photos match this filter. Try another project or service.</p>'
     body = f'''<main>
   {subhero([("Media",None)],"Media","Events, Exhibitions<br>&amp; News.","Company events, exhibitions, news and announcements.","projects/redsea-amaala-4.jpg")}
-  <section class="section"><div class="wrap">
+  <section class="section" data-posts-section{"" if any(p.get("published", True) for p in POSTS_DEFAULT) else " hidden"}><div class="wrap">
     {head("Latest from ARFAD","Events, exhibitions and news.")}
     {post_filters()}
     {posts_grid()}

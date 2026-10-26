@@ -333,11 +333,11 @@ def client_logo(name):
 # ---------------------------------------------------------------- media posts (demo content; editable in the admin Posts section)
 POST_CATEGORIES = [("events", "Events"), ("exhibitions", "Exhibitions"), ("news", "News")]
 POSTS_DEFAULT = [
- dict(slug="visit-our-jubail-factory", category="events", date="2026-07-20", cover="/img/factory.jpg",
+ dict(slug="visit-our-jubail-factory", published=False, category="events", date="2026-07-20", cover="/img/factory.jpg",
   title="Visit our 20,000 m² factory in Jubail",
   excerpt="Clients, consultants and project teams are welcome to see our production zones, machinery and finishing facilities first-hand.",
   body="Seeing the factory is the best way to understand how ARFAD works. Our 20,000 m² facility in Jubail Industrial City brings together an in-house design studio, CNC machining, edge banding, assembly, finishing and quality control, with professional spray booths and dedicated warehousing.\n\n## Arrange a visit\nTo arrange a factory visit, email info@arfad.com.sa or call +966 13 341 7773.\n\nThis is a sample post. Replace it with your own event announcements from the admin."),
- dict(slug="meet-arfad-at-upcoming-exhibitions", category="exhibitions", date="2026-06-15", cover="/img/who-we-are.jpg",
+ dict(slug="meet-arfad-at-upcoming-exhibitions", published=False, category="exhibitions", date="2026-06-15", cover="/img/who-we-are.jpg",
   title="Meet ARFAD at upcoming exhibitions",
   excerpt="Exhibition dates, stand details and highlights will be announced here as they are confirmed.",
   body="ARFAD takes part in exhibitions and trade fairs across the Kingdom to meet architects, consultants and developers.\n\n## Stay informed\nStand locations, dates and what we are showing will be posted in this section as soon as they are confirmed.\n\nThis is a sample post. Replace it with your own exhibition announcements from the admin."),

@@ -513,7 +513,11 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     a.appendChild(b); return a;
   }
   var activeCat = "";
+  function syncSections(){
+    document.querySelectorAll("[data-posts-section]").forEach(function(s){ s.hidden = current.length === 0; });
+  }
   function renderGrids(){
+    syncSections();
     grids.forEach(function(g){
       var lim = parseInt(g.getAttribute("data-limit") || "0", 10);
       var list = sorted(current).filter(function(p){ return !activeCat || p.category === activeCat; });
@@ -529,7 +533,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     }); });
     fetch("/api/posts", {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
       if(!j || !Array.isArray(j.posts)) return;
-      if(key(j.posts) !== key(baked)){ current = j.posts; renderGrids(); }
+      current = j.posts; renderGrids();
     }).catch(function(){});
   }
 

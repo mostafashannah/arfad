@@ -148,11 +148,18 @@ export async function runSeed() {
     for (const p of defaults.posts) {
       await db
         .insert(posts)
-        .values({ slug: p.slug, title: p.title, category: p.category as "events" | "exhibitions" | "news", excerpt: p.excerpt, body: p.body, coverUrl: p.cover || null, publishedAt: p.date, published: true })
+        .values({ slug: p.slug, title: p.title, category: p.category as "events" | "exhibitions" | "news", excerpt: p.excerpt, body: p.body, coverUrl: p.cover || null, publishedAt: p.date, published: (p as { published?: boolean }).published !== false })
         .onConflictDoNothing()
         .run();
     }
     await db.insert(siteBlocks).values({ key: "posts_seeded", value: "1" }).run();
+  }
+  // Once only: the two sample posts start unpublished (switch them on from Admin > Posts).
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "sample_posts_unpublished")).get())) {
+    for (const slug of ["visit-our-jubail-factory", "meet-arfad-at-upcoming-exhibitions", "4758-doors-amaala-red-sea", "neom-multipurpose-hall-auditorium-vip-lounge", "intertek-certified-fire-rated-doors", "fsc-chain-of-custody-responsible-sourcing"]) {
+      await db.update(posts).set({ published: false }).where(eq(posts.slug, slug)).run();
+    }
+    await db.insert(siteBlocks).values({ key: "sample_posts_unpublished", value: "1" }).run();
   }
   console.log(`Seeded posts`);
 
