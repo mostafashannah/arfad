@@ -202,6 +202,19 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     el.classList.add("rv");
     if(el.matches(".scope-item,.logo-tile,.chip-dark")) el.classList.add("zoom");
   });
+  /* cards slide in from the left or right depending on where they sit in their row */
+  var cardSel = ".svc-card, .gallery-card, .feature-card, .value-card, .vm-item, .vendor-row, .logo-tile, .post-card, .stat-cell, .machine-card, .scope-item, .sus-process li, .cert-photo-card, .focus-item, .chip-dark";
+  document.querySelectorAll(cardSel).forEach(function(c, idx){
+    if(c.closest(".hero-slider") || c.closest("header") || c.closest("footer")) return;
+    var p = c.parentElement, pr = p.getBoundingClientRect(), r = c.getBoundingClientRect();
+    var cx = (r.left + r.width / 2 - pr.left) / (pr.width || 1);
+    c.classList.add("rv");
+    c.classList.remove("zoom", "from-left", "from-right");
+    if(r.width > pr.width * .6){ c.classList.add(Array.prototype.indexOf.call(p.children, c) % 2 ? "from-right" : "from-left"); }
+    else if(cx < .45) c.classList.add("from-left");
+    else if(cx > .55) c.classList.add("from-right");
+    else c.classList.add("from-left", "from-right-mid");
+  });
   document.querySelectorAll(".about-grid > div:first-child").forEach(function(e){ e.classList.add("rv","from-left"); });
   document.querySelectorAll(".about-grid > div:last-child").forEach(function(e){ e.classList.add("rv","from-right"); });
   document.querySelectorAll(".split-img, .gallery-card, .svc-card .thumb, .post-cover").forEach(function(e){ e.classList.add("img-rv"); });

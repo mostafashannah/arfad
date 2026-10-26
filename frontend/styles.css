@@ -1097,8 +1097,9 @@ body.lb-open{overflow:hidden;}
 /* scroll progress */
 .scroll-progress{position:fixed;top:0;left:0;height:3px;width:100%;z-index:9999;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--gold),#fff3d6,var(--gold));pointer-events:none;}
 /* richer reveal variants */
-.has-js .rv.from-left{transform:translateX(-44px);}
-.has-js .rv.from-right{transform:translateX(44px);}
+.has-js .rv.from-left{transform:translateX(-80px);}
+.has-js .rv.from-right{transform:translateX(80px);}
+.has-js .rv.from-left.from-right-mid{transform:translateY(50px);}
 .has-js .rv.zoom{transform:scale(.94);}
 /* image wipe + settle */
 .has-js .img-rv{opacity:0;transform:scale(1.07) translateY(20px);filter:blur(8px);transition:opacity 1s ease,transform 1.3s cubic-bezier(.16,.8,.24,1),filter 1s ease;}
