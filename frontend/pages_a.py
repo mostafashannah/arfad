@@ -53,7 +53,7 @@ def home():
         <p style="margin-top:16px;font-size:1.02rem;">Specializing in Wooden Doors, Kitchen Cabinets, Wardrobes, Cladding, Ceilings, Wooden Floorings, Timber &amp; WPC Decking, Countertops, Vanities, all types of Joineries and Custom Interior and Exterior Solutions. ARFAD serves residential, hospitality, government, industrial, and mega-project sectors across the Kingdom.</p>
         <div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="about.html">Read Our Story</a><a class="btn" href="why-arfad.html">Why ARFAD</a></div>
       </div>
-      <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/who-we-are.jpg');"></div>
+      <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/projects/misk-2.jpg');"></div>
     </div>
   </section>
 
