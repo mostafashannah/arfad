@@ -1125,9 +1125,17 @@ body.lb-open{overflow:hidden;}
 /* buttons: soft pulse on the primary CTA */
 .btn.solid{position:relative;}
 
-/* one pulse for every dark button (same keyframes + timing, so they glow together) */
-@keyframes btnPulse{0%{box-shadow:0 0 0 0 rgba(201,166,107,.45);}75%,100%{box-shadow:0 0 0 12px rgba(201,166,107,0);}}
-.btn.solid:not(:hover),header.nav .btn:not(:hover){animation:btnPulse 3.2s ease-out infinite;}
+/* one pulse for every dark button: a ring that only scales + fades (GPU-composited, no repaint, no jitter).
+   The hover shine lives on ::after clipped to the pill, so the button itself no longer needs overflow:hidden. */
+.btn.solid,header.nav .btn.solid{overflow:visible;position:relative;}
+.btn.solid::before{content:"";position:absolute;inset:0;border-radius:inherit;border:2px solid rgba(201,166,107,.6);pointer-events:none;
+  animation:btnRing 3.2s ease-out infinite;will-change:transform,opacity;}
+@keyframes btnRing{0%{transform:scale(1);opacity:.75;}75%,100%{transform:scale(1.12,1.55);opacity:0;}}
+.btn.solid::after,.btn.solid.flash::after{content:"";position:absolute;inset:0;left:0!important;top:0;width:100%!important;height:100%;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(110deg,transparent 38%,rgba(255,255,255,.38) 50%,transparent 62%);background-size:260% 100%;background-position:100% 0;background-repeat:no-repeat;
+  transform:none!important;transition:background-position .7s ease;animation:none!important;}
+.btn.solid:hover::after{background-position:0% 0;}
+.btn.solid:hover::before{animation:none;opacity:0;}
 /* lighter, livelier hero */
 .hero-overlay{background:
   radial-gradient(1100px 480px at 82% -10%, rgba(201,166,107,.16), transparent 60%),
@@ -1141,7 +1149,8 @@ body.lb-open{overflow:hidden;}
   .has-js body{animation:none;}
   .scroll-progress{display:none;}
   .has-js .img-rv{opacity:1;filter:none;transform:none;transition:none;}
-  .section::before,.section::after,.btn.solid,header.nav .btn{animation:none!important;}
+  .section::before,.section::after{animation:none!important;}
+  .btn.solid::before{display:none;}
   .head h2::after{width:72px;transition:none;}
 }
 
