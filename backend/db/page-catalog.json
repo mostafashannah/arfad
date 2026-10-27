@@ -396,66 +396,717 @@
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "i-d0e55a5",
+    "key": "i-4dbcd21",
     "kind": "image",
     "tag": "a",
-    "url": "img/certs/cert-intertek-halspan.jpg"
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_85159_90716.jpg"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-7c08c8a",
+    "key": "t-4c5f75b",
     "kind": "text",
     "tag": "h4",
-    "text": "Fire-Rate Certificate for Halspan"
+    "text": "Halspan - Halspan AFS Single and Double Leaf Door Assemblies"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-feeb37d",
+    "key": "t-dd951e0",
     "kind": "text",
     "tag": "p",
-    "text": "Intertek Certificate of Compliance WHI18-28731426"
+    "text": "Certificate WHI26-28731469 · Spec ID 85159 · 1 Hour Fire Rating · Valid to December 31, 2026"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "i-d8dc92f",
+    "key": "i-a96317d",
     "kind": "image",
     "tag": "a",
-    "url": "img/certs/cert-intertek-warmsprings.jpg"
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_67819_83715.jpg"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-33b6037",
+    "key": "t-46e9786",
     "kind": "text",
     "tag": "h4",
-    "text": "Fire-Rate Certificate for Warm Springs"
+    "text": "Halspan - Halspan Mineral Frame (Model Halspan Universal 60 Composite Frame Range)"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-a36b406",
+    "key": "t-ed9a866",
     "kind": "text",
     "tag": "p",
-    "text": "Intertek Certificate of Compliance WHI18-28731422"
+    "text": "Certificate WHI25-28731462 · Spec ID 67819 · 60 Min PP Category C Proprietary Frame · Valid to December 31, 2026"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "i-edc64bc",
+    "key": "i-fc7acc4",
     "kind": "image",
     "tag": "a",
-    "url": "img/certs/cert-intertek-streboard.jpg"
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_67820_83716.jpg"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-eba3fbc",
+    "key": "t-b399397",
     "kind": "text",
     "tag": "h4",
-    "text": "Fire-Rate Certificate for Streboard"
+    "text": "Halspan - Halspan Universal 90 Min 45Mm Standard Pairs Composite Wooden Door with Mineral Core"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-781685d",
+    "key": "t-e087390",
     "kind": "text",
     "tag": "p",
-    "text": "Intertek Certificate of Compliance WHI22-28731442"
+    "text": "Certificate WHI25-28731463 · Spec ID 67820 · 90 Min PP Category B Door · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-06d74e6",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_58074_60162.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-fd13066",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan - Timber Door Frame - 20 Minutes - UL 10C"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-488483a",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI21-28731408 · Spec ID 58074 · 20 Min PP Category C Proprietary Frame · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-7ca3332",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_35788_60155.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-4261ab5",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan 120 Enhanced Fire Rated Wood Door Assembly"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-996cc98",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731413 · Spec ID 35788 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-aa0b073",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_42979_60161.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-d863e5d",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan 120 Prima Plus"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-9a33a48",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731439 · Spec ID 42979 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-c4d4ece",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_32870_60152.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-56dcad4",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan 30 Optima Fire Rated Door Assembly"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-105d253",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731410 · Spec ID 32870 · 30 Minute Fire Rated · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-bc228dc",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_33154_60150.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-f3cce07",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan 30 Prima and Halspan 30 Prima Plus Fire Rated Door Assembly"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-604ca8f",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731407 · Spec ID 33154 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-f664c17",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_33278_60153.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-7003e18",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan 60 Optima Fire Rated Wood Door Assembly"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-fc99a40",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731411 · Spec ID 33278 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-96c5c30",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_33281_60154.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1b2bdc8",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan 60 Prima and Halspan 60 Prima Plus Fire Rated Door Assembly"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-7aede9d",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731412 · Spec ID 33281 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-1338c19",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_33075_60151.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-99f3f27",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan 90 Fire Rated Wood Door Assembly"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-c4a510b",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731409 · Spec ID 33075 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-56f1da1",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_42924_60160.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-9d1f0b9",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan 90 Prima Plus"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-8a0ae46",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731438 · Spec ID 42924 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-f1ce624",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_67817_83714.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-8254478",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan Ltd - Halspan Universal 60 Min 45Mm Single Swing Wooden Composite Door"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-f85557f",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI25-28731461 · Spec ID 67817 · 60 Min PP Category B Door · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-d159704",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_30287_60148.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-a83b847",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan UniversaL 20 Min Category a Positive Pressure Fire Door - Single & Pair"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-6d91ce5",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731401 · Spec ID 30287 · 20 Min w/Hose Stream PP Cat A Door · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-67cbc9b",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_30288_60149.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-70b61e5",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan UniversaL 20 Min Category B Positive Pressure Fire Door – Single & Pair"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-524d7a5",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731402 · Spec ID 30288 · 20 Min w/Hose Stream PP Cat B Door · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-652045f",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_30289_60157.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-5b957c8",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan UniversaL 20-30 Minute Fire Door"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-050e3db",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731426 · Spec ID 30289 · 30 Min PP Category B Door, 20 Min Positive Pressure · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-080c9ed",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_85472_90715.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-f9a4842",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan – Halspan Universal HD 51Mm Mineral Frame – UL 10C"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-a1984ca",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI26-28731468 · Spec ID 85472 · 60 Min PP Category C Proprietary Frame, 90 Min PP Category C Proprietary · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-fdd4a55",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_75646_83717.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-2cfebb1",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan – UniversaL 60 Enhanced Core Single Leaf Wooden Door Assembly – 60-Minutes – UL 10C"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1608316",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI25-28731465 · Spec ID 75646 · 60 Min PP Category D Door/Frame Assemblies · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-198e2b6",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_77853_83718.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-a821579",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan – Universal 60 Enhanced Plus Core Wooden Door with Steel Frame Assembly – 60-Minutes – UL 10C"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-50dd369",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI25-28731466 · Spec ID 77853 · 60 Min PP Category D Door/Frame Assemblies · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-1f1bf01",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/halspan/SDReport_CertificateOfCompliance_84341_90714.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-d52ba81",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Halspan – Universal HD Core Wooden Door with Composite / Steel Frame Assembly – UL 10C"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-be3827b",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI26-28731467 · Spec ID 84341 · 60 Min PP Category D Door/Frame Assemblies, 90 Min PP Category D · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-d3bd4a8",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_30396_60138.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-cf48df1",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs - 20 Minute Solid Core Fire Door"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-792d165",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731414 · Spec ID 30396 · 20 Min w/Hose Stream NP, 20 Min w/Hose Positive Pressure · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-f1b04af",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_30395_60144.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-3563513",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs 20 Min Fire Door Frame"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-eab44ee",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731420 · Spec ID 30395 · 20 Min PP Category C Proprietary Frame, 20 Min NP Fire Doorframe · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-77f3acc",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_30394_60142.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1ea313c",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs 20 Minute Fire Door Frame (with Concealed Closer)"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-fe86530",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731418 · Spec ID 30394 · 20 Min NP Fire Doorframe · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-d01408f",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_14775_60146.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-a6a3ed6",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs 20-90 Min Fire Door Frame"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-a77e6b5",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731422 · Spec ID 14775 · 20 Min PP Category C Proprietary Frame, 45 Min PP Category C Proprietary · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-a05589a",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_30393_60139.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-67a24f9",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs 45-90 Minute Flush Doors"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-913551b",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731415 · Spec ID 30393 · 45 Min Neutral Pressure, 60 Min PP Category A Door, 90 Min Neutral Pressure, 90 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-1439817",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_30391_60141.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-c9ffdc9",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs 60 Min Single-Swing MDF Door Frame"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-68f3caa",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731417 · Spec ID 30391 · 60 Min NP Fire Doorframe, 60 Min PP Category C Proprietary Frame · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-d5b08f7",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_30392_60140.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-32a9588",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs 60 and 90 Minute Profiled Core Fire Door"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-2a09e99",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731416 · Spec ID 30392 · 90 Min Positive Pressure, 60 Min Positive Pressure · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-a63bf82",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_35497_60145.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-f5602ec",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs 60-90 Minute Single Swing Sound Transmission Doorset"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-2ead202",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731421 · Spec ID 35497 · 20 Min w/Hose Positive Pressure, 45 Min Positive Pressure, 90 Min Positive · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-90584b4",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/warm-springs/SDReport_CertificateOfCompliance_30369_60143.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-8f1750e",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Warm Springs Doors NP"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-8550861",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI18-28731419 · Spec ID 30369 · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-e641371",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/strebord-ramkor/SDReport_CertificateOfCompliance_44704_69688.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1720a4d",
+    "kind": "text",
+    "tag": "h4",
+    "text": "RAMKOR - FD120 Plus - 120 Minute Fire-Rated Particle Board Core Door"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-97f1acf",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI22-28731445 · Spec ID 44704 · 2 Hour Fire Rated · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-b1eeacc",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/strebord-ramkor/SDReport_CertificateOfCompliance_42984_69687.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-49acb6b",
+    "kind": "text",
+    "tag": "h4",
+    "text": "RAMKOR - FD90 Plus - 90 Minute Fire-Rated Particle Board Core Door"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-2351f7f",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI22-28731444 · Spec ID 42984 · 1-1/2 Hour Fire Rating · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-3fbbbff",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/strebord-ramkor/SDReport_CertificateOfCompliance_42944_69685.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-c18bfe2",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Strebord 44 - FD30 Particle Board Core Door Assembly"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-202527f",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI22-28731442 · Spec ID 42944 · 30 Minute Fire Rated · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-a22e4b8",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/strebord-ramkor/SDReport_CertificateOfCompliance_46757_69689.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-812e2b3",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Strebord 44 Core - Single Leaf Door Assembly - 20 Minutes Without Hose Stream - UL 10C"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-d066726",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI22-28731446 · Spec ID 46757 · 20 Min w/out Hose Positive Pressure · Valid to December 31, 2026"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-01ac1f0",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/fire/strebord-ramkor/SDReport_CertificateOfCompliance_42945_69686.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-af4f73e",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Strebord 54 - FD60 Particle Board Core Door Assembly"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-af6f8a7",
+    "kind": "text",
+    "tag": "p",
+    "text": "Certificate WHI22-28731443 · Spec ID 42945 · 1 Hour Fire Rating · Valid to December 31, 2026"
    },
    {
     "group": "Certified. Approved. Compliant.",

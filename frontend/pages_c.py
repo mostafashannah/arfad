@@ -1,4 +1,4 @@
-import re
+import re, json
 from components import *
 import datetime
 
@@ -40,10 +40,12 @@ def vendor_mark(v):
         return '<span class="vendor-logo" data-client-logo="%s"><img src="%s" alt="%s"></span>' % (esc(v["name"]), src, esc(v["name"]))
     return '<span class="vendor-ico">%s</span>' % v["ico"]
 
+FIRE_FOLDERS = json.load(open(os.path.join(ROOT, "fire_certs.json"), encoding="utf-8"))
+
 CERT_TABS = [
  ("fire", "Fire-Rated", "Intertek Fire-Rated Door Compliance Certificates",
   "ARFAD fire-rated doors are certified by Intertek for compliance with both American and British standards, ensuring tested performance, reliability, and safety.",
-  [("Category B, Doors", [CERTS_FIRE[1]]), ("Category C, Proprietary Frames", [CERTS_FIRE[0]]), ("Category D, Door/Frame Assemblies", [CERTS_FIRE[2]])]),
+  [(g["name"], [(i["thumb"], i["title"], i["sub"], i["pdf"]) for i in g["items"]]) for g in FIRE_FOLDERS]),
  ("iso", "ISO", "Committed to Standards, Driven by Excellence",
   "ARFAD is certified to international ISO standards, reflecting our commitment to quality management, environmental responsibility, and the health &amp; safety of our people.",
   [("ISO Management System Certificates", CERTS_ISO)]),
@@ -57,23 +59,35 @@ CERT_TABS = [
   [("Approvals &amp; Appreciations", CERTS_ARAMCO)]),
 ]
 
-def cert_row(jpg, title, sub, i=0):
-    pdf = make_pdf(jpg, jpg.rsplit(".", 1)[0])
+def cert_row(jpg, title, sub, pdf=None, i=0):
+    if isinstance(pdf, int):      # legacy positional i
+        i, pdf = pdf, None
+    given = pdf is not None
+    pdf = pdf or make_pdf(jpg, jpg.rsplit(".", 1)[0])
+    view = pdf if given else f"img/certs/{jpg}"
     dl = f'<a class="cert-btn dl" href="{pdf}" download>Download <span aria-hidden="true">&darr;</span></a>' if pdf else ""
-    return (f'<div class="cert-row rv" style="--d:{i*.07:.2f}s"><a class="cert-row-th" href="img/certs/{jpg}" target="_blank" rel="noopener" style="background-image:url(\'img/certs/{jpg}\');" aria-label="View {esc(title)}"></a>'
+    return (f'<div class="cert-row rv" style="--d:{i*.07:.2f}s"><a class="cert-row-th" href="{view}" target="_blank" rel="noopener" style="background-image:url(\'img/certs/{jpg}\');" aria-label="View {esc(title)}"></a>'
             f'<div class="cert-row-t"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div>'
-            f'<a class="cert-btn view" href="img/certs/{jpg}" target="_blank" rel="noopener">View <span aria-hidden="true">&rarr;</span></a>{dl}</div>')
+            f'<a class="cert-btn view" href="{view}" target="_blank" rel="noopener">View <span aria-hidden="true">&rarr;</span></a>{dl}</div>')
+
+FOLDER_SVG = '<svg viewBox="0 0 64 52" aria-hidden="true"><path class="fo-back" d="M4 8a4 4 0 0 1 4-4h14l6 7h28a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path class="fo-front" d="M4 22a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/></svg>'
 
 def cert_tab_panel(key, title, lede, groups):
-    inner = ""
-    for gname, items in groups:
-        rows = "".join(cert_row(*c, i=i) for i, c in enumerate(items)) or \
-            f'<div class="cert-row pending"><div class="cert-row-t"><h4>Document to be provided</h4><p>This certificate will be added here as soon as it is received.</p></div></div>'
-        if len(groups) > 1:
-            inner += f'<details class="cert-cat" open><summary><span>{gname}</span><i aria-hidden="true"></i></summary><div class="cert-rows">{rows}</div></details>'
-        else:
-            inner += f'<div class="cert-rows">{rows}</div>'
-    return f'<div class="cert-panel" id="{key}" role="tabpanel" hidden><div class="head"><p class="eyebrow">{esc(title) if False else ""}</p><h2>{title}</h2><p class="lede">{lede}</p></div>{inner}</div>'
+    head = f'<div class="head"><h2>{title}</h2><p class="lede">{lede}</p></div>'
+    empty = '<div class="cert-row pending"><div class="cert-row-t"><h4>Document to be provided</h4><p>This certificate will be added here as soon as it is received.</p></div></div>'
+    if len(groups) == 1:
+        rows = "".join(cert_row(*c, i=i) for i, c in enumerate(groups[0][1])) or empty
+        return f'<div class="cert-panel" id="{key}" role="tabpanel" hidden>{head}<div class="cert-rows">{rows}</div></div>'
+    folders = ""; views = ""
+    for n, (gname, items) in enumerate(groups):
+        fid = f"{key}-f{n}"
+        cnt = len(items)
+        folders += (f'<button type="button" class="cert-folder rv" data-folder="{fid}" style="--d:{n*.08:.2f}s">{FOLDER_SVG}'
+                    f'<span class="fo-name">{gname}</span><span class="fo-count">{cnt} certificate{"" if cnt == 1 else "s"}</span></button>')
+        rows = "".join(cert_row(*c, i=i) for i, c in enumerate(items)) or empty
+        views += (f'<div class="cert-folder-view" id="{fid}" hidden><button type="button" class="cert-back">&larr; All folders</button>'
+                  f'<h3 class="fo-title">{FOLDER_SVG}<span>{gname}</span></h3><div class="cert-rows">{rows}</div></div>')
+    return f'<div class="cert-panel" id="{key}" role="tabpanel" hidden>{head}<div class="cert-folders">{folders}</div>{views}</div>'
 
 FACTORY_GRAD = [("#0f3a66","#1d6fa5"),("#5a3d1e","#b0834a"),("#123a3a","#2f8a7a"),("#5b2a2a","#c0603f"),("#2a2f66","#4f6fd1"),("#1f4d2b","#5da35f"),("#4a2f6b","#9a63c7")]
 FACTORY_IMG = ["machine-biesse-skipper-cnc.jpg","machine-reciprocating-spray.jpg","machine-wide-belt-sanding.jpg","machine-spray-booth-2.jpg","proj-aramco.jpg","proj-rc.jpg","mod-doors-teaser.jpg"]

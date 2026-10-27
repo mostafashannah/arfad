@@ -1279,3 +1279,22 @@ html,body{overflow-x:clip;}
 /* hero video: no Ken Burns zoom, poster shows while it loads */
 .hero-slider .slide.video-slide.active{animation:none;}
 .hero-slider .slide.video-slide video{background:#0a2540;}
+
+/* certificate folders */
+.cert-folders{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px;margin-top:26px;}
+.cert-folders[hidden],.cert-folder-view[hidden]{display:none;}
+.cert-folder{all:unset;box-sizing:border-box;cursor:pointer;display:flex;flex-direction:column;align-items:flex-start;gap:6px;padding:26px 24px 24px;border-radius:20px;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow);transition:box-shadow .3s ease,border-color .3s ease;}
+.cert-folder:hover,.cert-folder:focus-visible{border-color:var(--gold);box-shadow:0 22px 44px -22px rgba(10,37,64,.5),0 0 0 1px rgba(201,166,107,.5);}
+.cert-folder:focus-visible{outline:2px solid var(--gold);outline-offset:3px;}
+.cert-folder svg,.fo-title svg{width:74px;height:60px;margin-bottom:10px;overflow:visible;}
+.fo-back{fill:#c9a66b;}
+.fo-front{fill:#e8c98d;transform-origin:50% 100%;transform-box:fill-box;transition:transform .35s cubic-bezier(.2,.9,.3,1.2);}
+.cert-folder:hover .fo-front,.cert-folder:focus-visible .fo-front{transform:perspective(200px) rotateX(-18deg);}
+.fo-name{font:800 1.1rem "Montserrat",sans-serif;color:var(--navy);line-height:1.25;}
+.fo-count{font-size:.86rem;color:var(--ink-soft);}
+.cert-folder-view{margin-top:20px;animation:panelIn .5s cubic-bezier(.16,.8,.24,1) both;}
+.cert-back{all:unset;cursor:pointer;font:700 .8rem "Montserrat",sans-serif;letter-spacing:.06em;color:var(--accent-text);padding:8px 0;}
+.cert-back:hover{text-decoration:underline;}
+.fo-title{display:flex;align-items:center;gap:16px;margin:10px 0 6px;font:800 1.5rem "Montserrat",sans-serif;color:var(--navy);}
+.fo-title svg{width:52px;height:42px;margin:0;}
+:root[data-theme="dark"] .fo-name,:root[data-theme="dark"] .fo-title{color:#fff;}

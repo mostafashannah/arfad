@@ -284,9 +284,30 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   var panels = document.querySelectorAll(".cert-panel");
   function show(k){
     tabs.forEach(function(t){ t.setAttribute("aria-selected", t.getAttribute("data-tab") === k ? "true" : "false"); });
-    panels.forEach(function(p){ p.hidden = p.id !== k; });
+    panels.forEach(function(p){
+      p.hidden = p.id !== k;
+      var fg = p.querySelector(".cert-folders");
+      if(fg){ fg.hidden = false; p.querySelectorAll(".cert-folder-view").forEach(function(v){ v.hidden = true; }); }
+    });
     panels.forEach(function(p){ if(!p.hidden) p.querySelectorAll(".rv").forEach(function(e){ e.classList.add("reveal-in"); }); });
   }
+  document.querySelectorAll(".cert-folder").forEach(function(f){
+    f.addEventListener("click", function(){
+      var panel = f.closest(".cert-panel");
+      panel.querySelector(".cert-folders").hidden = true;
+      var v = document.getElementById(f.getAttribute("data-folder"));
+      v.hidden = false;
+      v.querySelectorAll(".rv").forEach(function(e){ e.classList.add("reveal-in"); });
+      v.scrollIntoView({block:"nearest", behavior:"smooth"});
+    });
+  });
+  document.querySelectorAll(".cert-back").forEach(function(b){
+    b.addEventListener("click", function(){
+      var panel = b.closest(".cert-panel");
+      b.closest(".cert-folder-view").hidden = true;
+      panel.querySelector(".cert-folders").hidden = false;
+    });
+  });
   tabs.forEach(function(t){ t.addEventListener("click", function(){ show(t.getAttribute("data-tab")); history.replaceState(null, "", "#" + t.getAttribute("data-tab")); }); });
   var h = location.hash.replace("#", "");
   show(document.getElementById(h) && document.getElementById(h).classList.contains("cert-panel") ? h : tabs[0].getAttribute("data-tab"));
