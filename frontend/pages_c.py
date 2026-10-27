@@ -40,6 +40,7 @@ def vendor_mark(v):
         return '<span class="vendor-logo" data-client-logo="%s"><img src="%s" alt="%s"></span>' % (esc(v["name"]), src, esc(v["name"]))
     return '<span class="vendor-ico">%s</span>' % v["ico"]
 
+CERT_FILES = json.load(open(os.path.join(ROOT, "cert_files.json"), encoding="utf-8"))
 FIRE_FOLDERS = json.load(open(os.path.join(ROOT, "fire_certs.json"), encoding="utf-8"))
 
 CERT_TABS = [
@@ -48,12 +49,12 @@ CERT_TABS = [
   [(g["name"], [(i["thumb"], i["title"], i["sub"], i["pdf"]) for i in g["items"]]) for g in FIRE_FOLDERS]),
  ("iso", "ISO", "Committed to Standards, Driven by Excellence",
   "ARFAD is certified to international ISO standards, reflecting our commitment to quality management, environmental responsibility, and the health &amp; safety of our people.",
-  [("ISO Management System Certificates", CERTS_ISO)]),
+  [("ISO Management System Certificates", [(i["thumb"], i["title"], i["sub"], i["pdf"]) for i in CERT_FILES["iso"]])]),
  ("fsc", "FSC", "FSC® Chain of Custody Certificate",
   "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks.",
   [("FSC® Certificates", CERTS_FSC)]),
  ("leed", "LEED", "LEED Certificates", "LEED documentation supports projects with green-building requirements.", [("LEED Certificates", [])]),
- ("legal", "Legal", "Legal Certificates", "Commercial registration and legal documentation.", [("Legal Certificates", [])]),
+ ("legal", "Legal", "Legal Certificates", "Commercial registration, licenses, permits and company legal documents.", [("Legal Certificates", [(i["thumb"], i["title"], i["sub"], i["pdf"]) for i in CERT_FILES["legal"]])]),
  ("aramco", "Aramco Approvals", "Saudi Aramco Approvals &amp; Appreciations",
   "ARFAD is a registered Saudi Aramco Manufacturer &amp; Service Provider, supported by recognized compliance credentials and a proven record of successful project delivery. Saudi Aramco Vendor Code: 10064085.",
   [("Approvals &amp; Appreciations", CERTS_ARAMCO)]),

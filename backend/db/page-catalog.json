@@ -1124,10 +1124,10 @@
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "i-b734d0d",
+    "key": "i-c30c540",
     "kind": "image",
     "tag": "a",
-    "url": "img/certs/cert-iso-9001.jpg"
+    "url": "img/certs/iso/iso-9001.jpg"
    },
    {
     "group": "Certified. Approved. Compliant.",
@@ -1145,10 +1145,31 @@
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "i-507ac0d",
+    "key": "i-67a00b1",
     "kind": "image",
     "tag": "a",
-    "url": "img/certs/cert-iso-45001.jpg"
+    "url": "img/certs/iso/iso-14001.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-d709e89",
+    "kind": "text",
+    "tag": "h4",
+    "text": "ISO 14001:2015"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-50f47d6",
+    "kind": "text",
+    "tag": "p",
+    "text": "Environmental Management System"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-ff4bfc0",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/iso/iso-45001.jpg"
    },
    {
     "group": "Certified. Approved. Compliant.",
@@ -1166,24 +1187,24 @@
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "i-7f785ac",
+    "key": "i-916335e",
     "kind": "image",
     "tag": "a",
-    "url": "img/certs/cert-iso-14001.jpg"
+    "url": "img/certs/iso/iso-promotional-poster.jpg"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-d709e89",
+    "key": "t-3b56ab4",
     "kind": "text",
     "tag": "h4",
-    "text": "ISO 14001:2015"
+    "text": "ISO Promotional Poster"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-50f47d6",
+    "key": "t-aa9c187",
     "kind": "text",
     "tag": "p",
-    "text": "Environmental Management System"
+    "text": "ARFAD ISO certifications"
    },
    {
     "group": "Certified. Approved. Compliant.",
@@ -1257,24 +1278,241 @@
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-b278ef5",
+    "key": "t-0a134a6",
     "kind": "text",
     "tag": "p",
-    "text": "Commercial registration and legal documentation."
+    "text": "Commercial registration, licenses, permits and company legal documents."
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-d3167e7-1",
+    "key": "i-b2c21bd",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/commercial-registration.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-208165e",
     "kind": "text",
     "tag": "h4",
-    "text": "Document to Be Provided"
+    "text": "Commercial Registration (CR)"
    },
    {
     "group": "Certified. Approved. Compliant.",
-    "key": "t-642414a-1",
+    "key": "t-1496036",
     "kind": "text",
     "tag": "p",
-    "text": "This certificate will be added here as soon as it is received."
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-723b486",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/industrial-license.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-50f31f5",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Industrial License"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-1",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-efc18d7",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/safety-license.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-11c48af",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Safety License"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-2",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-0120dfd",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/environmental-permit.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-2a85d1a",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Environmental Permit Certificate"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-3",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-48271d7",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/vat-certificate.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-97518c2",
+    "kind": "text",
+    "tag": "h4",
+    "text": "VAT Certificate"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-4",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-58151ff",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/zakat-certificate.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-4f91309",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Zakat Certificate"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-5",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-08f9e88",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/saudization-certificate.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-50324a8",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Saudization Certificate"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-6",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-38fa0e8",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/local-content-certificate.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-b0282a6",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Local Content Certificate"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-7",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-4b60653",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/chamber-of-commerce.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-6d91985",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Chamber of Commerce Membership Certificate"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-8",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-2bad725",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/articles-of-association.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-d1c87ad",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Articles of Association"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-9",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "i-a1f17ed",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/legal/national-address.jpg"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-215af65",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Proof of National Address"
+   },
+   {
+    "group": "Certified. Approved. Compliant.",
+    "key": "t-1496036-10",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD International Industry Company"
    },
    {
     "group": "Certified. Approved. Compliant.",
