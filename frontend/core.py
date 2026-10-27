@@ -353,12 +353,14 @@ JS_REVEAL_OBSERVER = '''<script>
 
 /* hero slider: dot navigation + auto-advance (replaces the pure-CSS crossfade so slides, captions and dots stay in sync) */
 (function(){
-  document.querySelectorAll(".hero-slider").forEach(function(hero){
+  function initHero(hero){
     var slides = Array.prototype.slice.call(hero.querySelectorAll(":scope > .slide"));
     var captions = Array.prototype.slice.call(hero.querySelectorAll(".hero-caption-track > .hero-caption"));
     var dotsBox = hero.querySelector(":scope > .hero-dots");
-    if(slides.length < 2 || !dotsBox) return;
-    var i = 0, timer;
+    if(hero.__arfadTimer){ clearInterval(hero.__arfadTimer); hero.__arfadTimer = null; }
+    if(dotsBox) dotsBox.textContent = "";
+    if(slides.length < 2 || !dotsBox){ if(slides[0]) slides[0].classList.add("active"); return; }
+    var i = 0;
     var dots = slides.map(function(_, idx){
       var b = document.createElement("button");
       b.type = "button";
@@ -378,14 +380,80 @@ JS_REVEAL_OBSERVER = '''<script>
       dots[i].classList.add("active");
     }
     function restart(){
-      clearInterval(timer);
-      timer = setInterval(function(){ go((i + 1) % slides.length); }, 6500);
+      clearInterval(hero.__arfadTimer);
+      hero.__arfadTimer = setInterval(function(){ go((i + 1) % slides.length); }, 6500);
     }
+    slides.forEach(function(sl){ sl.classList.remove("active"); });
     slides[0].classList.add("active");
     if(captions[0]) captions[0].classList.add("active");
     var reduceMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     if(!reduceMotion) restart();
-  });
+  }
+  window.arfadInitHero = initHero;
+  document.querySelectorAll(".hero-slider").forEach(initHero);
+})();
+
+/* page editor overrides: text and images (and page-header slides) saved from the admin "Pages" section */
+(function(){
+  var els = document.querySelectorAll("[data-edit]");
+  if(!els.length) return;
+  var file = location.pathname.split("/").pop() || "index.html";
+  if(file.indexOf(".") < 0) file = "index.html";
+  function safe(u){
+    u = String(u || "").trim();
+    var flat = u.split("").filter(function(c){ return c.charCodeAt(0) > 32; }).join("");
+    if(!u || /^(javascript|data|vbscript):/i.test(flat)) return "";
+    return u;
+  }
+  function setUrl(el, u){
+    var st = el.getAttribute("style") || "";
+    var a = st.indexOf("url(");
+    var q = "url('" + u.replace(/'/g, "%27") + "')";
+    if(a < 0){ el.style.backgroundImage = q; return; }
+    var b = st.indexOf(")", a);
+    el.setAttribute("style", st.slice(0, a) + q + st.slice(b + 1));
+  }
+  function setText(el, v){
+    el.textContent = "";
+    String(v).split(String.fromCharCode(10)).forEach(function(line, i){
+      if(i) el.appendChild(document.createElement("br"));
+      el.appendChild(document.createTextNode(line));
+    });
+  }
+  function setHero(hero, list){
+    var urls = list.map(safe).filter(Boolean);
+    if(!urls.length) return;
+    var bg = hero.querySelector(":scope > .hero-bg");
+    var old = Array.prototype.slice.call(hero.querySelectorAll(":scope > .slide"));
+    if(urls.length === 1 && bg && !old.length){ setUrl(bg, urls[0]); return; }
+    var overlay = hero.querySelector(":scope > .hero-overlay");
+    if(bg) bg.remove();
+    old.forEach(function(s){ s.remove(); });
+    urls.forEach(function(u){
+      var d = document.createElement("div"); d.className = "slide";
+      d.style.backgroundImage = "url('" + u.replace(/'/g, "%27") + "')";
+      hero.insertBefore(d, overlay || hero.firstChild);
+    });
+    if(!hero.classList.contains("hero-slider")){ hero.classList.add("hero-slider", "compact"); }
+    if(!hero.querySelector(":scope > .hero-dots")){
+      var dots = document.createElement("div"); dots.className = "hero-dots";
+      hero.insertBefore(dots, overlay ? overlay.nextSibling : hero.firstChild.nextSibling);
+    }
+    if(window.arfadInitHero) window.arfadInitHero(hero);
+  }
+  fetch("/api/pages/" + encodeURIComponent(file), {headers:{Accept:"application/json"}})
+    .then(function(r){ return r.ok ? r.json() : null; })
+    .then(function(j){
+      if(!j || !j.overrides) return;
+      els.forEach(function(el){
+        var v = j.overrides[el.getAttribute("data-edit")];
+        if(v == null) return;
+        if(Array.isArray(v)) setHero(el, v);
+        else if(el.getAttribute("data-edit").charAt(0) === "i"){ var u = safe(v); if(u) setUrl(el, u); }
+        else setText(el, v);
+      });
+    })
+    .catch(function(){});
 })();
 
 /* count-up effect for stat numbers (hero facts band + factory/quality stat grids) */
@@ -928,7 +996,12 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
         # entry page: the Artifact tool wraps this one in its own skeleton
         return head + "\n" + content
 
+PAGE_CATALOG = {}
+
 def write(name, content):
+    if name.endswith(".html") and "<main" in content and "http-equiv=\"refresh\"" not in content:
+        import editable
+        content, PAGE_CATALOG[name] = editable.annotate(content, name)
     with open(os.path.join(ROOT, name), "w") as f:
         f.write(content)
     print("wrote", name)

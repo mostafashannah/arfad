@@ -20,6 +20,7 @@ import {
   FileText,
   BadgeCheck,
   Newspaper,
+  FilePen,
   PanelTop,
   PanelBottom,
   ChevronDown,
@@ -51,6 +52,7 @@ const nav: Entry[] = [
     label: "Website Content",
     icon: FileStack,
     items: [
+      { href: "/admin/pages", label: "Pages", icon: FilePen },
       { href: "/admin/services", label: "Services", icon: Hammer },
       { href: "/admin/projects", label: "Projects", icon: Building2 },
       { href: "/admin/posts", label: "Posts (Media)", icon: Newspaper },

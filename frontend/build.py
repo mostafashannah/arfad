@@ -17,4 +17,6 @@ pages_c.sitemap_and_llms(files)
 import json
 with open(os.path.join(ROOT, "..", "backend", "db", "site-defaults.json"), "w") as fh:
     json.dump({"nav": [dict(i, active=True) for i in SITE_DEFAULTS["nav"]], "footer": SITE_DEFAULTS["footer"], "accreditations": SITE_DEFAULTS["accreditations"], "posts": POSTS_JSON}, fh, ensure_ascii=False, indent=2)
-print("done", len(files), "pages")
+with open(os.path.join(ROOT, "..", "backend", "db", "page-catalog.json"), "w") as fh:
+    json.dump(PAGE_CATALOG, fh, ensure_ascii=False, indent=1, sort_keys=True)
+print("done", len(files), "pages", "catalog", len(PAGE_CATALOG))

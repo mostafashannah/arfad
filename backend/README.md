@@ -23,6 +23,13 @@ pages (`/`, `/services`, `/projects`) as a starting point for the real site.
 - **Media Library** — every uploaded image in one place, with copy-URL and delete.
 - **Team** — add/remove teammates who can log in and edit (Admin / Editor roles).
 
+- **Pages** — edit the text and pictures of any public page. Pick a page under *Website Content > Pages*,
+  change any heading, paragraph, button or list item, replace any picture, and set the **page header pictures**
+  (one picture = fixed header, two or more = automatic slider). Saved edits are stored in the database and applied
+  on the live page within about a minute; *Original* / *Reset page* undo them. The list of editable items comes from
+  `db/page-catalog.json`, which `frontend/build.py` regenerates every time the static pages are rebuilt (the pages
+  are tagged with `data-edit` keys by `frontend/editable.py`).
+
 ## Stack
 
 - **Next.js 14** (App Router, TypeScript)
