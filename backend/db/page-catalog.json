@@ -68,10 +68,26 @@
    },
    {
     "group": "ARFAD at a Glance.",
+    "key": "l-55f4aa7",
+    "kind": "link",
+    "tag": "a",
+    "text": "Explore the Factory",
+    "url": "factory.html"
+   },
+   {
+    "group": "ARFAD at a Glance.",
     "key": "t-4445138",
     "kind": "text",
     "tag": "a",
     "text": "Our Projects"
+   },
+   {
+    "group": "ARFAD at a Glance.",
+    "key": "l-9852f16",
+    "kind": "link",
+    "tag": "a",
+    "text": "Our Projects",
+    "url": "projects.html"
    },
    {
     "group": "ARFAD at a Glance.",
@@ -180,10 +196,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "About Us, Who We Are ARFAD"
@@ -199,10 +231,10 @@
    },
    {
     "group": "Page header",
-    "key": "t-b9ac44b",
+    "key": "t-345fa38",
     "kind": "text",
     "tag": "h1",
-    "text": "Build Your Career\nWith ARFAD."
+    "text": "Build Your Career\nwith ARFAD."
    },
    {
     "group": "Page header",
@@ -271,10 +303,26 @@
    },
    {
     "group": "Questions About Working at ARFAD?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Questions About Working at ARFAD?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Questions About Working at ARFAD?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Careers ARFAD"
@@ -656,10 +704,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Certificates & Awards ARFAD"
@@ -712,10 +776,26 @@
    },
    {
     "group": "Section 2",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
+   },
+   {
+    "group": "Section 2",
     "key": "t-3fd4732",
     "kind": "text",
     "tag": "a",
     "text": "WhatsApp Us"
+   },
+   {
+    "group": "Section 2",
+    "key": "l-a5e5709",
+    "kind": "link",
+    "tag": "a",
+    "text": "WhatsApp Us",
+    "url": "https://wa.me/966569164017"
    },
    {
     "group": "Section 2",
@@ -730,6 +810,14 @@
     "kind": "text",
     "tag": "a",
     "text": "Open in Google Maps"
+   },
+   {
+    "group": "Section 3",
+    "key": "l-481f1d4",
+    "kind": "link",
+    "tag": "a",
+    "text": "Open in Google Maps",
+    "url": "https://www.google.com/maps/search/?api=1&query=ARFAD+International+Industrial+Co%2C+Jubail+Industrial+City%2C+Saudi+Arabia"
    }
   ],
   "title": "Contact ARFAD"
@@ -987,10 +1075,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Factory & Technology ARFAD"
@@ -1054,6 +1158,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View HSE Policy"
+   },
+   {
+    "group": "HSE Policy",
+    "key": "l-4ef253d",
+    "kind": "link",
+    "tag": "a",
+    "text": "View HSE Policy",
+    "url": "#policy-doc"
    },
    {
     "group": "HSE Policy",
@@ -1134,10 +1246,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "HSE Policy ARFAD"
@@ -1150,6 +1278,13 @@
     "kind": "text",
     "tag": "p",
     "text": "Est. 2004 · Jubail, KSA"
+   },
+   {
+    "group": "Page header",
+    "key": "t-f8e6b6b",
+    "kind": "text",
+    "tag": "h1",
+    "text": "Two Decades of Mastery {{in WOODWORKS.}}"
    },
    {
     "group": "Page header",
@@ -1167,6 +1302,13 @@
    },
    {
     "group": "Page header",
+    "key": "t-0d2d913",
+    "kind": "text",
+    "tag": "h1",
+    "text": "Built for Scale. {{Equipped for Excellence.}}"
+   },
+   {
+    "group": "Page header",
     "key": "t-f66bce7",
     "kind": "text",
     "tag": "p",
@@ -1178,6 +1320,13 @@
     "kind": "text",
     "tag": "p",
     "text": "Our Projects"
+   },
+   {
+    "group": "Page header",
+    "key": "t-5a7d305",
+    "kind": "text",
+    "tag": "h1",
+    "text": "A 20-Year Portfolio {{You Can Rely on.}}"
    },
    {
     "group": "Page header",
@@ -1195,10 +1344,26 @@
    },
    {
     "group": "Page header",
+    "key": "l-aec95d6",
+    "kind": "link",
+    "tag": "a",
+    "text": "Start a Project",
+    "url": "contact.html"
+   },
+   {
+    "group": "Page header",
     "key": "t-1acb94d",
     "kind": "text",
     "tag": "a",
     "text": "View Our Work"
+   },
+   {
+    "group": "Page header",
+    "key": "l-f29b7e4",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Our Work",
+    "url": "projects.html"
    },
    {
     "group": "Page header",
@@ -1276,10 +1441,26 @@
    },
    {
     "group": "Woodwork Engineered for the Kingdom’s Largest Projects.",
+    "key": "l-203bf95",
+    "kind": "link",
+    "tag": "a",
+    "text": "Read Our Story",
+    "url": "about.html"
+   },
+   {
+    "group": "Woodwork Engineered for the Kingdom’s Largest Projects.",
     "key": "t-c421b8e",
     "kind": "text",
     "tag": "a",
     "text": "Why ARFAD"
+   },
+   {
+    "group": "Woodwork Engineered for the Kingdom’s Largest Projects.",
+    "key": "l-71a55a8",
+    "kind": "link",
+    "tag": "a",
+    "text": "Why ARFAD",
+    "url": "why-arfad.html"
    },
    {
     "group": "Woodwork Engineered for the Kingdom’s Largest Projects.",
@@ -1318,10 +1499,26 @@
    },
    {
     "group": "Built for Scale. Equipped for Excellence.",
+    "key": "l-55f4aa7",
+    "kind": "link",
+    "tag": "a",
+    "text": "Explore the Factory",
+    "url": "factory.html"
+   },
+   {
+    "group": "Built for Scale. Equipped for Excellence.",
     "key": "t-12fc203",
     "kind": "text",
     "tag": "a",
     "text": "Machineries"
+   },
+   {
+    "group": "Built for Scale. Equipped for Excellence.",
+    "key": "l-db9ebf6",
+    "kind": "link",
+    "tag": "a",
+    "text": "Machineries",
+    "url": "machinery.html"
    },
    {
     "group": "Page",
@@ -1569,6 +1766,14 @@
     "text": "View All Services"
    },
    {
+    "group": "A Full Scope of Architectural Woodwork.",
+    "key": "l-e43d8e0",
+    "kind": "link",
+    "tag": "a",
+    "text": "View All Services",
+    "url": "services.html"
+   },
+   {
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "t-bcfba25",
     "kind": "text",
@@ -1696,6 +1901,14 @@
    },
    {
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
+    "key": "l-27dd90c",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Full Project Portfolio",
+    "url": "projects.html"
+   },
+   {
+    "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "t-86f6103",
     "kind": "text",
     "tag": "span",
@@ -1724,10 +1937,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "ARFAD International Industrial Co."
@@ -1990,10 +2219,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Machineries ARFAD"
@@ -2095,10 +2340,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Media ARFAD"
@@ -2207,10 +2468,26 @@
    },
    {
     "group": "Section 2",
+    "key": "l-0c1b011",
+    "kind": "link",
+    "tag": "a",
+    "text": "See Our Process",
+    "url": "service-workflow.html"
+   },
+   {
+    "group": "Section 2",
     "key": "t-9f95d04",
     "kind": "text",
     "tag": "a",
     "text": "Our Vision"
+   },
+   {
+    "group": "Section 2",
+    "key": "l-9baf0bf",
+    "kind": "link",
+    "tag": "a",
+    "text": "Our Vision",
+    "url": "vision.html"
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
@@ -2235,10 +2512,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Mission ARFAD"
@@ -2312,10 +2605,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Our Clients ARFAD"
@@ -2361,10 +2670,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Media ARFAD"
@@ -2431,10 +2756,26 @@
    },
    {
     "group": "Al Eissa Compound",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Al Eissa Compound",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "Al Eissa Compound",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "Al Eissa Compound",
@@ -2480,10 +2821,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Al Eissa Compound Project, ZAC ARFAD Projects"
@@ -2557,10 +2914,26 @@
    },
    {
     "group": "KAFD",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "KAFD",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "KAFD",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "KAFD",
@@ -2606,10 +2979,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "KAFD, King Abdullah Financial District, Riyadh ARFAD Projects"
@@ -2683,10 +3072,26 @@
    },
    {
     "group": "KARAN Group",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "KARAN Group",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "KARAN Group",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "KARAN Group",
@@ -2732,10 +3137,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "KARAN 5-Star Hotel, Al Jubail ARFAD Projects"
@@ -2809,10 +3230,26 @@
    },
    {
     "group": "MARAFIQ",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "MARAFIQ",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "MARAFIQ",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "MARAFIQ",
@@ -2858,10 +3295,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "MARAFIQ New Head Office, Al Jubail ARFAD Projects"
@@ -2935,10 +3388,26 @@
    },
    {
     "group": "Ministry of Defense",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ministry of Defense",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "Ministry of Defense",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "Ministry of Defense",
@@ -2984,10 +3453,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Ministry of Defense Supporting Buildings, Al Qassim ARFAD Projects"
@@ -3061,10 +3546,26 @@
    },
    {
     "group": "MISK Foundation (Baytur)",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "MISK Foundation (Baytur)",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "MISK Foundation (Baytur)",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "MISK Foundation (Baytur)",
@@ -3110,10 +3611,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "MISK School Phase 1 & 2, Riyadh ARFAD Projects"
@@ -3187,10 +3704,26 @@
    },
    {
     "group": "Movenpick",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Movenpick",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "Movenpick",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "Movenpick",
@@ -3236,10 +3769,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Movenpick 5-Star Hotel, Wa'ad Al Shamal ARFAD Projects"
@@ -3313,10 +3862,26 @@
    },
    {
     "group": "NEOM (BECo)",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "NEOM (BECo)",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "NEOM (BECo)",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "NEOM (BECo)",
@@ -3418,10 +3983,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "NEOM Projects ARFAD Projects"
@@ -3495,10 +4076,26 @@
    },
    {
     "group": "PRIMER Steak House",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "PRIMER Steak House",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "PRIMER Steak House",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "PRIMER Steak House",
@@ -3544,10 +4141,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "PRIMER Steak House & Lounge, Riyadh ARFAD Projects"
@@ -3621,10 +4234,26 @@
    },
    {
     "group": "Red Sea Global & AMAALA",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Red Sea Global & AMAALA",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "Red Sea Global & AMAALA",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "Red Sea Global & AMAALA",
@@ -3761,10 +4390,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "The Red Sea Global & AMAALA Projects ARFAD Projects"
@@ -3838,10 +4483,26 @@
    },
    {
     "group": "Royal Commission for Jubail & Yanbu",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Royal Commission for Jubail & Yanbu",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "Royal Commission for Jubail & Yanbu",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "Royal Commission for Jubail & Yanbu",
@@ -3999,10 +4660,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Royal Commission for Jubail & Yanbu Projects ARFAD Projects"
@@ -4076,10 +4753,26 @@
    },
    {
     "group": "Saudi Aramco",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Saudi Aramco",
     "key": "t-523c5a5",
     "kind": "text",
     "tag": "a",
     "text": "All Projects"
+   },
+   {
+    "group": "Saudi Aramco",
+    "key": "l-b878a86",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Projects",
+    "url": "projects.html"
    },
    {
     "group": "Saudi Aramco",
@@ -4223,10 +4916,26 @@
    },
    {
     "group": "Ready to Start Your Next Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Next Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Saudi Aramco Projects ARFAD Projects"
@@ -4314,6 +5023,14 @@
    },
    {
     "group": "Commercial & Government",
+    "key": "l-c019696",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Ministry of Defense gallery",
+    "url": "project-ministry-of-defense.html"
+   },
+   {
+    "group": "Commercial & Government",
     "key": "t-0c91693",
     "kind": "text",
     "tag": "h3",
@@ -4349,6 +5066,14 @@
    },
    {
     "group": "Commercial & Government",
+    "key": "l-93d931f",
+    "kind": "link",
+    "tag": "a",
+    "text": "View KAFD gallery",
+    "url": "project-kafd.html"
+   },
+   {
+    "group": "Commercial & Government",
     "key": "t-2f2b73f",
     "kind": "text",
     "tag": "h3",
@@ -4381,6 +5106,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View MARAFIQ gallery"
+   },
+   {
+    "group": "Commercial & Government",
+    "key": "l-1f7068e",
+    "kind": "link",
+    "tag": "a",
+    "text": "View MARAFIQ gallery",
+    "url": "project-marafiq.html"
    },
    {
     "group": "Commercial & Government",
@@ -4440,10 +5173,26 @@
    },
    {
     "group": "Ready to Start Your Project?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Commercial & Government Projects ARFAD"
@@ -4531,6 +5280,14 @@
    },
    {
     "group": "Education",
+    "key": "l-4f57943",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Royal Commission gallery",
+    "url": "project-royal-commission.html"
+   },
+   {
+    "group": "Education",
     "key": "t-04f7a2f",
     "kind": "text",
     "tag": "h3",
@@ -4563,6 +5320,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View MISK Foundation gallery"
+   },
+   {
+    "group": "Education",
+    "key": "l-70250ad",
+    "kind": "link",
+    "tag": "a",
+    "text": "View MISK Foundation gallery",
+    "url": "project-misk.html"
    },
    {
     "group": "Education",
@@ -4622,10 +5387,26 @@
    },
    {
     "group": "Ready to Start Your Project?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Education Projects ARFAD"
@@ -4713,6 +5494,14 @@
    },
    {
     "group": "Healthcare",
+    "key": "l-ac60c10",
+    "kind": "link",
+    "tag": "a",
+    "text": "View AMAALA Hospital (BEC) gallery",
+    "url": "project-redsea-amaala.html"
+   },
+   {
+    "group": "Healthcare",
     "key": "t-b9cb08d",
     "kind": "text",
     "tag": "p",
@@ -4769,10 +5558,26 @@
    },
    {
     "group": "Ready to Start Your Project?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Healthcare Projects ARFAD"
@@ -4902,6 +5707,14 @@
    },
    {
     "group": "Hospitality & Luxury Development",
+    "key": "l-3345193",
+    "kind": "link",
+    "tag": "a",
+    "text": "View NEOM gallery",
+    "url": "project-neom.html"
+   },
+   {
+    "group": "Hospitality & Luxury Development",
     "key": "t-62e6b98",
     "kind": "text",
     "tag": "h3",
@@ -5000,6 +5813,14 @@
    },
    {
     "group": "Hospitality & Luxury Development",
+    "key": "l-3ab5044",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Red Sea Global & AMAALA gallery",
+    "url": "project-redsea-amaala.html"
+   },
+   {
+    "group": "Hospitality & Luxury Development",
     "key": "t-32d5752",
     "kind": "text",
     "tag": "h3",
@@ -5035,6 +5856,14 @@
    },
    {
     "group": "Hospitality & Luxury Development",
+    "key": "l-ae58ff4",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Movenpick gallery",
+    "url": "project-movenpick.html"
+   },
+   {
+    "group": "Hospitality & Luxury Development",
     "key": "t-6486616",
     "kind": "text",
     "tag": "h3",
@@ -5067,6 +5896,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View KARAN Group gallery"
+   },
+   {
+    "group": "Hospitality & Luxury Development",
+    "key": "l-09450a4",
+    "kind": "link",
+    "tag": "a",
+    "text": "View KARAN Group gallery",
+    "url": "project-karan.html"
    },
    {
     "group": "Hospitality & Luxury Development",
@@ -5126,10 +5963,26 @@
    },
    {
     "group": "Ready to Start Your Project?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Hospitality & Luxury Development Projects ARFAD"
@@ -5298,6 +6151,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View Saudi Aramco gallery"
+   },
+   {
+    "group": "Industrial & Infrastructure",
+    "key": "l-a17bf25",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Saudi Aramco gallery",
+    "url": "project-saudi-aramco.html"
    },
    {
     "group": "Industrial & Infrastructure",
@@ -5525,10 +6386,26 @@
    },
    {
     "group": "Ready to Start Your Project?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Industrial & Infrastructure Projects ARFAD"
@@ -5721,6 +6598,14 @@
    },
    {
     "group": "Residential and F&B",
+    "key": "l-4f57943",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Royal Commission gallery",
+    "url": "project-royal-commission.html"
+   },
+   {
+    "group": "Residential and F&B",
     "key": "t-94dee7c",
     "kind": "text",
     "tag": "h3",
@@ -5840,6 +6725,14 @@
    },
    {
     "group": "Residential and F&B",
+    "key": "l-09450a4",
+    "kind": "link",
+    "tag": "a",
+    "text": "View KARAN Group gallery",
+    "url": "project-karan.html"
+   },
+   {
+    "group": "Residential and F&B",
     "key": "t-d0904bb",
     "kind": "text",
     "tag": "h3",
@@ -5872,6 +6765,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View PRIMER Steak House gallery"
+   },
+   {
+    "group": "Residential and F&B",
+    "key": "l-a13696a",
+    "kind": "link",
+    "tag": "a",
+    "text": "View PRIMER Steak House gallery",
+    "url": "project-primer-steak-house.html"
    },
    {
     "group": "Residential and F&B",
@@ -5931,10 +6832,26 @@
    },
    {
     "group": "Ready to Start Your Project?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Residential and F&B Projects ARFAD"
@@ -6022,6 +6939,14 @@
    },
    {
     "group": "Specialized Projects",
+    "key": "l-a17bf25",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Saudi Aramco gallery",
+    "url": "project-saudi-aramco.html"
+   },
+   {
+    "group": "Specialized Projects",
     "key": "t-0e5a6da",
     "kind": "text",
     "tag": "h3",
@@ -6085,6 +7010,14 @@
    },
    {
     "group": "Specialized Projects",
+    "key": "l-3ab5044",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Red Sea Global & AMAALA gallery",
+    "url": "project-redsea-amaala.html"
+   },
+   {
+    "group": "Specialized Projects",
     "key": "t-532f568",
     "kind": "text",
     "tag": "h3",
@@ -6110,6 +7043,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View Al Eissa Compound (ZAC) gallery"
+   },
+   {
+    "group": "Specialized Projects",
+    "key": "l-12a0d42",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Al Eissa Compound (ZAC) gallery",
+    "url": "project-el-eissa.html"
    },
    {
     "group": "Specialized Projects",
@@ -6169,10 +7110,26 @@
    },
    {
     "group": "Ready to Start Your Project?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Specialized Projects Projects ARFAD"
@@ -6596,10 +7553,26 @@
    },
    {
     "group": "Ready to Start Your Project?",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Projects ARFAD"
@@ -6663,6 +7636,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View Quality Policy"
+   },
+   {
+    "group": "Quality Management",
+    "key": "l-3d895cd",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Quality Policy",
+    "url": "#policy-doc"
    },
    {
     "group": "Quality Management",
@@ -6743,10 +7724,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Quality Policy ARFAD"
@@ -7016,10 +8013,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Registered Vendors ARFAD"
@@ -7135,10 +8148,26 @@
    },
    {
     "group": "Interior Woodworks",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Interior Woodworks",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Interior Woodworks",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Interior Woodworks",
@@ -7373,10 +8402,26 @@
    },
    {
     "group": "Ready to Start Your Interior Woodworks Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Interior Woodworks Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Interior Woodworks Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Interior Woodworks ARFAD"
@@ -7464,10 +8509,26 @@
    },
    {
     "group": "Wooden Ceilings",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Wooden Ceilings",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Wooden Ceilings",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Wooden Ceilings",
@@ -7695,10 +8756,26 @@
    },
    {
     "group": "Ready to Start Your Wooden Ceilings Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Wooden Ceilings Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Wooden Ceilings Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Wooden Ceilings ARFAD"
@@ -7814,10 +8891,26 @@
    },
    {
     "group": "Countertops & Surfaces",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Countertops & Surfaces",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Countertops & Surfaces",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Countertops & Surfaces",
@@ -8038,10 +9131,26 @@
    },
    {
     "group": "Ready to Start Your Countertops & Surfaces Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Countertops & Surfaces Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Countertops & Surfaces Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Countertops & Surfaces ARFAD"
@@ -8185,10 +9294,26 @@
    },
    {
     "group": "Wooden Doors",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Wooden Doors",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Wooden Doors",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Wooden Doors",
@@ -8231,6 +9356,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View Fire-Rated Certificates"
+   },
+   {
+    "group": "Wooden Doors Crafted to Withstand the Unthinkable.",
+    "key": "l-1779975",
+    "kind": "link",
+    "tag": "a",
+    "text": "View Fire-Rated Certificates",
+    "url": "certificates.html"
    },
    {
     "group": "Related Projects",
@@ -8444,10 +9577,26 @@
    },
    {
     "group": "Ready to Start Your Wooden Doors Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Wooden Doors Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Wooden Doors Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Wooden Doors ARFAD"
@@ -8570,10 +9719,26 @@
    },
    {
     "group": "Furniture & Interiors",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Furniture & Interiors",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Furniture & Interiors",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Furniture & Interiors",
@@ -8815,10 +9980,26 @@
    },
    {
     "group": "Ready to Start Your Furniture & Interiors Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Furniture & Interiors Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Furniture & Interiors Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Furniture & Interiors ARFAD"
@@ -8948,10 +10129,26 @@
    },
    {
     "group": "Joinery",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Joinery",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Joinery",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Joinery",
@@ -9186,10 +10383,26 @@
    },
    {
     "group": "Ready to Start Your Joinery Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Joinery Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Joinery Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Joinery ARFAD"
@@ -9305,10 +10518,26 @@
    },
    {
     "group": "Thermowood",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Thermowood",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Thermowood",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Thermowood",
@@ -9543,10 +10772,26 @@
    },
    {
     "group": "Ready to Start Your Thermowood Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Thermowood Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Thermowood Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Thermowood ARFAD"
@@ -9676,10 +10921,26 @@
    },
    {
     "group": "Traditional Woodworks",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Traditional Woodworks",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Traditional Woodworks",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Traditional Woodworks",
@@ -9886,10 +11147,26 @@
    },
    {
     "group": "Ready to Start Your Traditional Woodworks Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Traditional Woodworks Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Traditional Woodworks Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Traditional Woodworks ARFAD"
@@ -9991,10 +11268,26 @@
    },
    {
     "group": "Wooden Wall Claddings",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Wooden Wall Claddings",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "Wooden Wall Claddings",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "Wooden Wall Claddings",
@@ -10222,10 +11515,26 @@
    },
    {
     "group": "Ready to Start Your Wooden Wall Claddings Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Wooden Wall Claddings Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Wooden Wall Claddings Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Wooden Wall Claddings ARFAD"
@@ -10340,6 +11649,14 @@
     "text": "Our Quality Policy"
    },
    {
+    "group": "Every Stage is Reviewed, from the First Brief to Final Hando",
+    "key": "l-e73eb3a",
+    "kind": "link",
+    "tag": "a",
+    "text": "Our Quality Policy",
+    "url": "quality-policy.html"
+   },
+   {
     "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-d90e283",
     "kind": "text",
@@ -10362,10 +11679,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Service Workflow ARFAD"
@@ -10488,10 +11821,26 @@
    },
    {
     "group": "WPC Works",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "WPC Works",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
+   },
+   {
+    "group": "WPC Works",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
    },
    {
     "group": "WPC Works",
@@ -10684,10 +12033,26 @@
    },
    {
     "group": "Ready to Start Your Wpc Works Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Wpc Works Project?",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Wpc Works Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "WPC Works ARFAD"
@@ -10957,10 +12322,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Services ARFAD"
@@ -11031,6 +12412,14 @@
     "kind": "text",
     "tag": "a",
     "text": "View FSC Certificate"
+   },
+   {
+    "group": "Sustainability & FSC® Certification",
+    "key": "l-20ceda2",
+    "kind": "link",
+    "tag": "a",
+    "text": "View FSC Certificate",
+    "url": "certificates.html#fsc"
    },
    {
     "group": "Sustainability & FSC® Certification",
@@ -11167,10 +12556,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Sustainability & FSC Certification ARFAD"
@@ -11335,10 +12740,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Our Values ARFAD"
@@ -11433,10 +12854,26 @@
    },
    {
     "group": "Section 2",
+    "key": "l-4799d31",
+    "kind": "link",
+    "tag": "a",
+    "text": "Read Our Mission",
+    "url": "mission.html"
+   },
+   {
+    "group": "Section 2",
     "key": "t-c421b8e",
     "kind": "text",
     "tag": "a",
     "text": "Why ARFAD"
+   },
+   {
+    "group": "Section 2",
+    "key": "l-71a55a8",
+    "kind": "link",
+    "tag": "a",
+    "text": "Why ARFAD",
+    "url": "why-arfad.html"
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
@@ -11461,10 +12898,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Vision ARFAD"
@@ -11622,10 +13075,26 @@
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
     "key": "t-f0473f6",
     "kind": "text",
     "tag": "a",
     "text": "Email Us"
+   },
+   {
+    "group": "Let's Build Something That Lasts Twenty Years.",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
    }
   ],
   "title": "Why ARFAD"

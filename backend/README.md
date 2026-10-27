@@ -25,7 +25,7 @@ pages (`/`, `/services`, `/projects`) as a starting point for the real site.
 
 - **Pages** — edit the text and pictures of any public page. Pick a page under *Website Content > Pages*,
   change any heading, paragraph, button or list item, replace any picture, and set the **page header pictures**
-  (one picture = fixed header, two or more = automatic slider). Saved edits are stored in the database and applied
+  (one picture = fixed header, two or more = automatic slider; slides can be pictures or MP4/WebM/MOV videos up to 40 MB, including the Home page slider). Button labels and **where each button leads** are editable too, and a heading's highlighted words are marked with `{{ }}`. Saved edits are stored in the database and applied
   on the live page within about a minute; *Original* / *Reset page* undo them. The list of editable items comes from
   `db/page-catalog.json`, which `frontend/build.py` regenerates every time the static pages are rebuilt (the pages
   are tagged with `data-edit` keys by `frontend/editable.py`).

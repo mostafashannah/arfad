@@ -17,7 +17,7 @@ const TAG_LABEL: Record<string, string> = { h1: "Main heading", h2: "Heading", h
 const abs = (u: string) => (/^(https?:)?\/\//.test(u) || u.startsWith("/") ? u : `/${u}`);
 const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
 
-export function PageEditor({ file, page, initial }: { file: string; page: CatalogPage; initial: Overrides }) {
+export function PageEditor({ file, page, initial, pageFiles = [] }: { file: string; page: CatalogPage; initial: Overrides; pageFiles?: string[] }) {
   const [values, setValues] = useState<Overrides>(initial);
   const [saved, setSaved] = useState<Overrides>(initial);
   const [busy, setBusy] = useState(false);
@@ -33,9 +33,9 @@ export function PageEditor({ file, page, initial }: { file: string; page: Catalo
       }
       map[it.group].push(it);
     }
-    // page header first
+    // page header first, and its pictures before its texts
     order.sort((a, b) => (a === "Page header" ? -1 : b === "Page header" ? 1 : 0));
-    return order.map((g) => ({ name: g, items: map[g] }));
+    return order.map((g) => ({ name: g, items: [...map[g]].sort((a, b) => Number(b.kind === "hero") - Number(a.kind === "hero")) }));
   }, [page]);
 
   const dirty = !same(values, saved);
@@ -100,6 +100,11 @@ export function PageEditor({ file, page, initial }: { file: string; page: Catalo
           </Button>
         </div>
       </div>
+      <datalist id="site-pages">
+        {pageFiles.map((f) => (
+          <option key={f} value={f} />
+        ))}
+      </datalist>
       {msg && <p className={msg.ok ? "text-sm text-emerald-600" : "text-sm text-destructive"}>{msg.text}</p>}
 
       {groups.map((g) => (
@@ -115,7 +120,7 @@ export function PageEditor({ file, page, initial }: { file: string; page: Catalo
                 <div key={it.key} className="space-y-2 border-b pb-5 last:border-0 last:pb-0">
                   <div className="flex items-center justify-between gap-2">
                     <div className="flex items-center gap-2">
-                      <Badge variant="secondary">{it.kind === "hero" ? "Header pictures" : it.kind === "image" ? "Picture" : TAG_LABEL[it.tag] || "Text"}</Badge>
+                      <Badge variant="secondary">{it.kind === "hero" ? "Header slider" : it.kind === "link" ? `Button link: ${it.text ?? ""}` : it.kind === "image" ? "Picture" : TAG_LABEL[it.tag] || "Text"}</Badge>
                       {edited && <Badge variant="success">Edited</Badge>}
                     </div>
                     {edited && (
@@ -136,6 +141,18 @@ export function PageEditor({ file, page, initial }: { file: string; page: Catalo
                       <Input value={(values[it.key] as string) ?? it.text ?? ""} onChange={(e) => setValue(it.key, e.target.value === it.text ? null : e.target.value)} />
                     ))}
 
+                  {it.kind === "link" && (
+                    <div className="space-y-1">
+                      <Input
+                        list="site-pages"
+                        placeholder="contact.html, projects.html, https://..., mailto:..."
+                        value={(values[it.key] as string) ?? it.url ?? ""}
+                        onChange={(e) => setValue(it.key, e.target.value === it.url ? null : e.target.value)}
+                      />
+                      <p className="text-xs text-muted-foreground">Where this button leads. Use a page file name from the list, a full web address, or mailto: / tel:.</p>
+                    </div>
+                  )}
+
                   {it.kind === "image" && (
                     <ImagePicker
                       value={(values[it.key] as string) ?? it.url ? abs(((values[it.key] as string) ?? it.url) as string) : null}
@@ -146,9 +163,10 @@ export function PageEditor({ file, page, initial }: { file: string; page: Catalo
                   {it.kind === "hero" && (
                     <div className="space-y-2">
                       <p className="text-xs text-muted-foreground">
-                        One picture shows as a fixed header. Add two or more and the header becomes a slider that changes every few seconds. Use the arrows to set the order.
+                        One picture shows as a fixed header. Add two or more pictures or videos (MP4, up to 40 MB) and the header becomes a slider that changes every few seconds. Use the arrows to set the order.
                       </p>
                       <GalleryPicker
+                        allowVideo
                         value={((values[it.key] as string[]) ?? it.images ?? []).map(abs)}
                         onChange={(urls) => setValue(it.key, same(urls, (it.images ?? []).map(abs)) ? null : urls)}
                       />

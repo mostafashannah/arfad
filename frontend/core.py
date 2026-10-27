@@ -396,7 +396,7 @@ JS_REVEAL_OBSERVER = '''<script>
 /* page editor overrides: text and images (and page-header slides) saved from the admin "Pages" section */
 (function(){
   var els = document.querySelectorAll("[data-edit]");
-  if(!els.length) return;
+  if(!els.length && !document.querySelector("[data-edit-link]")) return;
   var file = location.pathname.split("/").pop() || "index.html";
   if(file.indexOf(".") < 0) file = "index.html";
   function safe(u){
@@ -417,21 +417,43 @@ JS_REVEAL_OBSERVER = '''<script>
     el.textContent = "";
     String(v).split(String.fromCharCode(10)).forEach(function(line, i){
       if(i) el.appendChild(document.createElement("br"));
-      el.appendChild(document.createTextNode(line));
+      var parts = line.split("{{");
+      el.appendChild(document.createTextNode(parts[0]));
+      for(var k = 1; k < parts.length; k++){
+        var seg = parts[k].split("}}");
+        var em = document.createElement("em"); em.textContent = seg[0]; el.appendChild(em);
+        if(seg.length > 1) el.appendChild(document.createTextNode(seg.slice(1).join("}}")));
+      }
     });
+  }
+  function isVideo(u){ var p = u.split("?")[0].toLowerCase(); return p.slice(-4) === ".mp4" || p.slice(-5) === ".webm" || p.slice(-4) === ".mov" || p.slice(-4) === ".m4v"; }
+  function safeLink(u){
+    u = String(u || "").trim();
+    var flat = u.split("").filter(function(c){ return c.charCodeAt(0) > 32; }).join("");
+    if(!u || /^(javascript|data|vbscript):/i.test(flat)) return "";
+    return u;
   }
   function setHero(hero, list){
     var urls = list.map(safe).filter(Boolean);
     if(!urls.length) return;
     var bg = hero.querySelector(":scope > .hero-bg");
     var old = Array.prototype.slice.call(hero.querySelectorAll(":scope > .slide"));
-    if(urls.length === 1 && bg && !old.length){ setUrl(bg, urls[0]); return; }
+    if(urls.length === 1 && bg && !old.length && !isVideo(urls[0])){ setUrl(bg, urls[0]); return; }
     var overlay = hero.querySelector(":scope > .hero-overlay");
     if(bg) bg.remove();
     old.forEach(function(s){ s.remove(); });
     urls.forEach(function(u){
       var d = document.createElement("div"); d.className = "slide";
-      d.style.backgroundImage = "url('" + u.replace(/'/g, "%27") + "')";
+      if(isVideo(u)){
+        d.className = "slide video-slide";
+        var v = document.createElement("video");
+        v.src = u; v.muted = true; v.loop = true; v.autoplay = true; v.playsInline = true; v.preload = "metadata";
+        v.setAttribute("muted", ""); v.setAttribute("playsinline", "");
+        d.appendChild(v);
+        var pp = v.play(); if(pp && pp.catch) pp.catch(function(){});
+      } else {
+        d.style.backgroundImage = "url('" + u.replace(/'/g, "%27") + "')";
+      }
       hero.insertBefore(d, overlay || hero.firstChild);
     });
     if(!hero.classList.contains("hero-slider")){ hero.classList.add("hero-slider", "compact"); }
@@ -445,6 +467,11 @@ JS_REVEAL_OBSERVER = '''<script>
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(j){
       if(!j || !j.overrides) return;
+      document.querySelectorAll("[data-edit-link]").forEach(function(el){
+        var lv = j.overrides[el.getAttribute("data-edit-link")];
+        var lu = lv == null ? "" : safeLink(lv);
+        if(lu) el.setAttribute("href", lu);
+      });
       els.forEach(function(el){
         var v = j.overrides[el.getAttribute("data-edit")];
         if(v == null) return;
@@ -951,10 +978,10 @@ SITE_DEFAULTS_TAG = '<script type="application/json" id="site-defaults">' + _jso
 
 import re as _re
 _SMALL = {"a","an","the","and","but","or","nor","for","of","in","on","at","to","by","with","from","as","into","is"}
-def _tc_text(t):
+def _tc_text(t, cont=False):
     words = _re.split(r"(\s+)", t); out = []; first = True
     ws = [w for w in words if w.strip()]
-    n = 0
+    n = 1 if cont else 0
     for w in words:
         if not w.strip(): out.append(w); continue
         n += 1
@@ -976,7 +1003,7 @@ def title_case_headings(html_s):
         inner = m.group(3)
         if "data-" in m.group(2): return m.group(0)
         parts = _re.split(r"(<[^>]+>)", inner)
-        return "<%s%s>%s</%s>" % (m.group(1), m.group(2), "".join(p if p.startswith("<") else _tc_text(p) for p in parts), m.group(1))
+        return "<%s%s>%s</%s>" % (m.group(1), m.group(2), "".join(p if p.startswith("<") else _tc_text(p, cont=(k > 0)) for k, p in enumerate(parts)), m.group(1))
     return _re.sub(r"<(h[1-4])([^>]*)>(.*?)</\1>", fix, html_s, flags=_re.S)
 
 def page(title, desc, active, body, extra_head="", wrap=True, path=None):

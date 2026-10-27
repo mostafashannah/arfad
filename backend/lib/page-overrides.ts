@@ -5,7 +5,7 @@ import catalogJson from "@/db/page-catalog.json";
 
 export type CatalogItem = {
   key: string;
-  kind: "text" | "image" | "hero";
+  kind: "text" | "image" | "hero" | "link";
   tag: string;
   group: string;
   text?: string;
@@ -32,6 +32,14 @@ function safeUrl(v: unknown): string | null {
   return u;
 }
 
+function safeLink(v: unknown): string | null {
+  if (typeof v !== "string") return null;
+  const u = v.trim();
+  if (!u || u.length > 300) return null;
+  if (/^(javascript|data|vbscript):/i.test(u.replace(/[\u0000-\u0020]/g, ""))) return null;
+  return u;
+}
+
 /** Keeps only values that match a real item of the page, with the right type and a safe shape. */
 export function sanitize(page: string, raw: unknown): Overrides {
   const out: Overrides = {};
@@ -42,6 +50,9 @@ export function sanitize(page: string, raw: unknown): Overrides {
     if (v == null) continue;
     if (item.kind === "text") {
       if (typeof v === "string" && v.trim() && v.length <= 2000 && v.trim() !== (item.text ?? "")) out[item.key] = v.trim();
+    } else if (item.kind === "link") {
+      const u = safeLink(v);
+      if (u && u !== (item.url ?? "")) out[item.key] = u;
     } else if (item.kind === "image") {
       const u = safeUrl(v);
       if (u && norm(u) !== norm(item.url ?? "")) out[item.key] = u;

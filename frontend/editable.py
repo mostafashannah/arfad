@@ -57,7 +57,7 @@ class _Annot(HTMLParser):
             elif self.stack:
                 self.stack[-1]["child_el"] = True
             return
-        if self.stack and tag != "br":
+        if self.stack and tag not in ("br", "em"):
             self.stack[-1]["child_el"] = True
         if tag == "section" and self._in_main():
             cl = (d.get("class") or "").split()
@@ -108,14 +108,20 @@ class _Annot(HTMLParser):
         if el["tag"] in TEXT_TAGS or (el["tag"] == "a" and "btn" in cls) or (el["tag"] == "span" and ("eyebrow" in cls or "lbl" in cls)):
             if el["child_el"] or "data-edit" in el["raw"]:
                 return
-            if re.search(r"<(?!br\s*/?>)", inner):
+            marked = inner.replace("<em>", "{{").replace("</em>", "}}")
+            if re.search(r"<(?!br\s*/?>)", marked):
                 return
-            text = html.unescape(re.sub(r"<br\s*/?>", "\n", inner)).strip()
+            text = html.unescape(re.sub(r"<br\s*/?>", "\n", marked)).strip()
             if not text or len(text) > 1200:
                 return
             key = self._key("t", el["tag"] + text)
             self.inserts.append((el["off"] + 1 + len(el["tag"]), f' data-edit="{key}"'))
             self.items.append({"key": key, "kind": "text", "tag": el["tag"], "text": text, "section": self._section_idx()})
+            href = el["attrs"].get("href")
+            if el["tag"] == "a" and href:
+                lkey = self._key("l", text + "|" + href)
+                self.inserts.append((el["off"] + 1 + len(el["tag"]), f' data-edit-link="{lkey}"'))
+                self.items.append({"key": lkey, "kind": "link", "tag": "a", "text": text, "url": href, "section": self._section_idx()})
             return
         # ---- single background image on a block (cards, split images, bands)
         if "background" in style and not self._hero_inner(el):

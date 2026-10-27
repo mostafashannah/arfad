@@ -19,11 +19,13 @@ export async function POST(req: NextRequest) {
   const folder = (form.get("folder") as string) || "uploads";
 
   if (!file) return NextResponse.json({ error: "No file provided" }, { status: 400 });
-  if (!file.type.startsWith("image/")) {
-    return NextResponse.json({ error: "Only image uploads are allowed" }, { status: 400 });
+  const isVideo = ["video/mp4", "video/webm", "video/quicktime"].includes(file.type);
+  if (!file.type.startsWith("image/") && !isVideo) {
+    return NextResponse.json({ error: "Only image uploads (or MP4, WebM and MOV videos) are allowed" }, { status: 400 });
   }
-  if (file.size > 10 * 1024 * 1024) {
-    return NextResponse.json({ error: "File too large (max 10MB)" }, { status: 400 });
+  const max = isVideo ? 40 : 10;
+  if (file.size > max * 1024 * 1024) {
+    return NextResponse.json({ error: `File too large (max ${max}MB)` }, { status: 400 });
   }
 
   const { url, filename } = await saveUpload(file, folder);

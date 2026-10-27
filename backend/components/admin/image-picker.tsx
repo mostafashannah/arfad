@@ -77,14 +77,18 @@ export function ImagePicker({
 }
 
 /** Multi-image gallery picker with add / remove / reorder. */
+const isVideoUrl = (u: string) => /\.(mp4|m4v|webm|mov)(\?|$)/i.test(u);
+
 export function GalleryPicker({
   value,
   onChange,
   folder = "uploads",
+  allowVideo = false,
 }: {
   value: string[];
   onChange: (urls: string[]) => void;
   folder?: string;
+  allowVideo?: boolean;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
@@ -122,8 +126,15 @@ export function GalleryPicker({
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         {value.map((url, i) => (
           <div key={url + i} className="relative overflow-hidden rounded-lg border">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={url} alt="" className="aspect-square w-full object-cover" />
+            {isVideoUrl(url) ? (
+              <video src={url} muted loop playsInline preload="metadata" className="aspect-square w-full bg-black object-cover" />
+            ) : (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={url} alt="" className="aspect-square w-full object-cover" />
+            )}
+            <span className="absolute left-1.5 top-1.5 rounded bg-black/60 px-1.5 py-0.5 text-[10px] font-semibold text-white">
+              {i + 1}{isVideoUrl(url) ? " · video" : ""}
+            </span>
             <div className="absolute inset-x-0 bottom-0 flex justify-between bg-black/60 px-1.5 py-1">
               <div className="flex gap-1">
                 <button type="button" onClick={() => move(i, -1)} className="text-xs text-white hover:opacity-70">
@@ -140,10 +151,10 @@ export function GalleryPicker({
           </div>
         ))}
       </div>
-      <input ref={inputRef} type="file" accept="image/*" multiple className="hidden" onChange={onFiles} />
+      <input ref={inputRef} type="file" accept={allowVideo ? "image/*,video/mp4,video/webm,video/quicktime" : "image/*"} multiple className="hidden" onChange={onFiles} />
       <Button type="button" variant="outline" size="sm" onClick={() => inputRef.current?.click()} disabled={loading}>
         {loading ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Upload className="h-3.5 w-3.5" />}
-        Add photos
+        {allowVideo ? "Add pictures or videos" : "Add photos"}
       </Button>
       {err && <p className="text-xs text-destructive">{err}</p>}
     </div>
