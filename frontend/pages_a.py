@@ -7,9 +7,7 @@ def home():
         f'<div class="gc-body"><h4>{esc(s["title"])}</h4></div></a>' for s in SECTORS)
     body = f'''<main id="top">
   <section class="hero-slider hero-full">
-    <div class="slide" style="background-image:url('img/factory-aerial.jpg');"></div>
-    <div class="slide" style="background-image:url('img/machine-cefla-drying.jpg');"></div>
-    <div class="slide" style="background-image:url('img/proj-rc.jpg');"></div>
+    <div class="slide video-slide active"><video src="img/hero-video.mp4" poster="img/hero-video-poster.jpg" autoplay muted loop playsinline preload="auto"></video></div>
     <div class="hero-overlay"></div>
     <div class="hero-dots"></div>
     <div class="wrap hero-full-inner">
@@ -18,16 +16,6 @@ def home():
           <p class="eyebrow">Est. 2004 &middot; Jubail, KSA</p>
           <h1>Two Decades of Mastery <em>in WOODWORKS.</em></h1>
           <p class="hero-lede">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.</p>
-        </div>
-        <div class="hero-caption">
-          <p class="eyebrow">Mass Production</p>
-          <h1>Built for Scale. <em>Equipped for Excellence.</em></h1>
-          <p class="hero-lede">A 20,000&nbsp;m&sup2; factory with 200+ production employees and a comprehensive range of specialized woodworking machinery, supporting precision production at industrial scale.</p>
-        </div>
-        <div class="hero-caption">
-          <p class="eyebrow">Our Projects</p>
-          <h1>A 20-Year Portfolio <em>You Can Rely On.</em></h1>
-          <p class="hero-lede">Housing communities, giga-projects, hotels, schools and government buildings delivered across the Kingdom since 2004.</p>
         </div>
       </div>
       <div class="hero-cta">

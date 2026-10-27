@@ -291,7 +291,13 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     var dotsBox = hero.querySelector(":scope > .hero-dots");
     if(hero.__arfadTimer){ clearInterval(hero.__arfadTimer); hero.__arfadTimer = null; }
     if(dotsBox) dotsBox.textContent = "";
-    if(slides.length < 2 || !dotsBox){ if(slides[0]) slides[0].classList.add("active"); return; }
+    var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    hero.querySelectorAll("video").forEach(function(v){ if(calm){ v.removeAttribute("autoplay"); v.pause(); } });
+    if(slides.length < 2 || !dotsBox){
+      if(slides[0]) slides[0].classList.add("active");
+      captions.forEach(function(c, k){ c.classList.toggle("active", k === 0); });
+      return;
+    }
     var i = 0;
     var dots = slides.map(function(_, idx){
       var b = document.createElement("button");

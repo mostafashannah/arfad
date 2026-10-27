@@ -97,7 +97,7 @@ class _Annot(HTMLParser):
         inner = self.src[el["end"]:close_off]
         # ---- hero (page header): one entry holding every image
         if el["tag"] == "section" and ("detail-hero" in cls or "hero-slider" in cls):
-            urls = URL_RE.findall(inner)
+            urls = URL_RE.findall(inner) + re.findall(r"<(?:video|source)[^>]*?\ssrc=[\"']([^\"']+)[\"']", inner)
             urls = [u for u in urls if not u.startswith("data:")]
             if urls:
                 key = self._key("h", "hero")

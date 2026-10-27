@@ -1295,48 +1295,6 @@
    },
    {
     "group": "Page header",
-    "key": "t-d156310",
-    "kind": "text",
-    "tag": "p",
-    "text": "Mass Production"
-   },
-   {
-    "group": "Page header",
-    "key": "t-0d2d913",
-    "kind": "text",
-    "tag": "h1",
-    "text": "Built for Scale. {{Equipped for Excellence.}}"
-   },
-   {
-    "group": "Page header",
-    "key": "t-f66bce7",
-    "kind": "text",
-    "tag": "p",
-    "text": "A 20,000 m² factory with 200+ production employees and a comprehensive range of specialized woodworking machinery, supporting precision production at industrial scale."
-   },
-   {
-    "group": "Page header",
-    "key": "t-3b6df07",
-    "kind": "text",
-    "tag": "p",
-    "text": "Our Projects"
-   },
-   {
-    "group": "Page header",
-    "key": "t-5a7d305",
-    "kind": "text",
-    "tag": "h1",
-    "text": "A 20-Year Portfolio {{You Can Rely on.}}"
-   },
-   {
-    "group": "Page header",
-    "key": "t-31ffb42",
-    "kind": "text",
-    "tag": "p",
-    "text": "Housing communities, giga-projects, hotels, schools and government buildings delivered across the Kingdom since 2004."
-   },
-   {
-    "group": "Page header",
     "key": "t-ce39225",
     "kind": "text",
     "tag": "a",
@@ -1396,9 +1354,7 @@
    {
     "group": "Page header",
     "images": [
-     "img/factory-aerial.jpg",
-     "img/machine-cefla-drying.jpg",
-     "img/proj-rc.jpg"
+     "img/hero-video.mp4"
     ],
     "key": "h-0911aed",
     "kind": "hero",

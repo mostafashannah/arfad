@@ -88,9 +88,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
 </header>
 <main id="top">
   <section data-edit="h-0911aed" class="hero-slider hero-full">
-    <div class="slide" style="background-image:url('img/factory-aerial.jpg');"></div>
-    <div class="slide" style="background-image:url('img/machine-cefla-drying.jpg');"></div>
-    <div class="slide" style="background-image:url('img/proj-rc.jpg');"></div>
+    <div class="slide video-slide active"><video src="img/hero-video.mp4" poster="img/hero-video-poster.jpg" autoplay muted loop playsinline preload="auto"></video></div>
     <div class="hero-overlay"></div>
     <div class="hero-dots"></div>
     <div class="wrap hero-full-inner">
@@ -99,16 +97,6 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
           <p data-edit="t-1fb804b" class="eyebrow">Est. 2004 &middot; Jubail, KSA</p>
           <h1 data-edit="t-f8e6b6b">Two Decades of Mastery <em>in WOODWORKS.</em></h1>
           <p data-edit="t-3a0e917" class="hero-lede">Established in 2004, ARFAD operates in architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City.</p>
-        </div>
-        <div class="hero-caption">
-          <p data-edit="t-d156310" class="eyebrow">Mass Production</p>
-          <h1 data-edit="t-0d2d913">Built for Scale. <em>Equipped for Excellence.</em></h1>
-          <p data-edit="t-f66bce7" class="hero-lede">A 20,000&nbsp;m&sup2; factory with 200+ production employees and a comprehensive range of specialized woodworking machinery, supporting precision production at industrial scale.</p>
-        </div>
-        <div class="hero-caption">
-          <p data-edit="t-3b6df07" class="eyebrow">Our Projects</p>
-          <h1 data-edit="t-5a7d305">A 20-Year Portfolio <em>You Can Rely on.</em></h1>
-          <p data-edit="t-31ffb42" class="hero-lede">Housing communities, giga-projects, hotels, schools and government buildings delivered across the Kingdom since 2004.</p>
         </div>
       </div>
       <div class="hero-cta">
@@ -347,7 +335,13 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     var dotsBox = hero.querySelector(":scope > .hero-dots");
     if(hero.__arfadTimer){ clearInterval(hero.__arfadTimer); hero.__arfadTimer = null; }
     if(dotsBox) dotsBox.textContent = "";
-    if(slides.length < 2 || !dotsBox){ if(slides[0]) slides[0].classList.add("active"); return; }
+    var calm = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    hero.querySelectorAll("video").forEach(function(v){ if(calm){ v.removeAttribute("autoplay"); v.pause(); } });
+    if(slides.length < 2 || !dotsBox){
+      if(slides[0]) slides[0].classList.add("active");
+      captions.forEach(function(c, k){ c.classList.toggle("active", k === 0); });
+      return;
+    }
     var i = 0;
     var dots = slides.map(function(_, idx){
       var b = document.createElement("button");

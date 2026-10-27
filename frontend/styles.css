@@ -1275,3 +1275,7 @@ html,body{overflow-x:clip;}
 .rv:has(> .btn),.hero-cta.rv,.cta-btns.rv{padding-block:3px;}
 
 [data-posts-section][hidden]{display:none!important;}
+
+/* hero video: no Ken Burns zoom, poster shows while it loads */
+.hero-slider .slide.video-slide.active{animation:none;}
+.hero-slider .slide.video-slide video{background:#0a2540;}
