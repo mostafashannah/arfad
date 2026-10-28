@@ -8178,39 +8178,46 @@
     "text": "ISO 9001:2015 Certified Quality Management System"
    },
    {
-    "group": "Quality Policy Document.",
+    "group": "Quality Control Policy & Procedures Manual.",
     "key": "t-eb008ff",
     "kind": "text",
     "tag": "p",
     "text": "Documented Policy"
    },
    {
-    "group": "Quality Policy Document.",
-    "key": "t-98ee9d3",
+    "group": "Quality Control Policy & Procedures Manual.",
+    "key": "t-c768711",
     "kind": "text",
     "tag": "h2",
-    "text": "Quality Policy Document."
+    "text": "Quality Control Policy & Procedures Manual."
    },
    {
-    "group": "Quality Policy Document.",
-    "key": "t-4c3bfa9",
+    "group": "Quality Control Policy & Procedures Manual.",
+    "key": "t-ba831a5",
     "kind": "text",
     "tag": "p",
-    "text": "The documented Quality Policy will be published here as soon as it is received."
+    "text": "The documented quality system that governs every stage, from pre-production review to final inspection and records."
    },
    {
-    "group": "Quality Policy Document.",
-    "key": "t-35be8ab",
+    "group": "Quality Control Policy & Procedures Manual.",
+    "key": "i-1d834dc",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/certs/quality-manual.jpg"
+   },
+   {
+    "group": "Quality Control Policy & Procedures Manual.",
+    "key": "t-e3a631f",
     "kind": "text",
     "tag": "h4",
-    "text": "Quality Policy"
+    "text": "Quality Control Policy & Procedures Manual"
    },
    {
-    "group": "Quality Policy Document.",
-    "key": "t-8ccf2c8",
+    "group": "Quality Control Policy & Procedures Manual.",
+    "key": "t-149b529",
     "kind": "text",
     "tag": "p",
-    "text": "Document to be provided"
+    "text": "ARFAD International Industrial Company · 14 sections, 58 pages"
    },
    {
     "group": "Let's Build Something That Lasts Twenty Years.",

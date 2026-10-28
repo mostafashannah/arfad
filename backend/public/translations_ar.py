@@ -17,3 +17,4 @@ T["View"] = "عرض"
 T["Download"] = "تحميل"
 T.update({"FSC COC":"FSC COC","FSC COC Certificates":"شهادات FSC COC"})
 T.update({"View Quality Policy & Manual":"عرض سياسة الجودة والدليل"})
+T.update({"Quality Control Policy & Procedures Manual.":"دليل سياسة وإجراءات مراقبة الجودة.","Quality Control Policy & Procedures Manual":"دليل سياسة وإجراءات مراقبة الجودة","The documented quality system that governs every stage, from pre-production review to final inspection and records.":"نظام الجودة الموثّق الذي يحكم كل مرحلة، من مراجعة ما قبل الإنتاج إلى الفحص النهائي والسجلات.","ARFAD International Industrial Company · 14 sections, 58 pages":"شركة أرفاد الدولية الصناعية · 14 قسمًا، 58 صفحة"})

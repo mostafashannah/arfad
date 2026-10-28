@@ -224,8 +224,11 @@ def factory_pages():
     {scope_grid(fw, "check")}
   </div></section>
   <section class="section" id="policy-doc"><div class="wrap">
-    {head("Documented Policy","Quality Policy document.","The documented Quality Policy will be published here as soon as it is received.")}
-    <div class="cert-rows"><div class="cert-row pending rv"><div class="cert-row-t"><h4>Quality Policy</h4><p>Document to be provided</p></div></div></div>
+    {head("Documented Policy","Quality Control Policy &amp; Procedures Manual.","The documented quality system that governs every stage, from pre-production review to final inspection and records.")}
+    <div class="cert-rows"><div class="cert-row rv"><a class="cert-row-th" href="files/documents/quality-control-policy-and-procedures-manual.pdf" target="_blank" rel="noopener" aria-label="View Quality Control Policy &amp; Procedures Manual" style="background-image:url('img/certs/quality-manual.jpg');"></a>
+      <div class="cert-row-t"><h4>Quality Control Policy &amp; Procedures Manual</h4><p>ARFAD International Industrial Company · 14 sections, 58 pages</p></div>
+      <a class="cert-btn view" href="files/documents/quality-control-policy-and-procedures-manual.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>View</a>
+      <a class="cert-btn dl" href="files/documents/quality-control-policy-and-procedures-manual.pdf" download aria-label="Download" title="Download"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg></a></div></div>
   </div></section>
   {cta_band()}
 </main>'''
