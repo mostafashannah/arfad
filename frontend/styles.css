@@ -1343,3 +1343,7 @@ main section h2{font-size:var(--h2-size)!important;line-height:1.2!important;}
 main section h2{font-size:var(--h2-size)!important;line-height:1.2!important;letter-spacing:-.01em!important;font-weight:700!important;max-width:none!important;}
 
 .lk-custom{display:block;height:84px;width:auto;max-width:100%;margin-bottom:12px;object-fit:contain;}
+
+/* header logo: no glow or shadow of any kind */
+.brand-logo,header.nav.nav-scrolled .brand-logo,:root[data-theme="dark"] header.nav.nav-scrolled .brand-logo{filter:none!important;box-shadow:none!important;}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) header.nav.nav-scrolled .brand-logo{filter:none!important;} }
