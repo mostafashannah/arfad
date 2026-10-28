@@ -111,13 +111,13 @@ def cert_defaults():
         for gname, rows in groups:
             for c in rows:
                 if c[0] is None:
-                    items.append(dict(title=u(c[1]), sub=u(c[2]), file="", logo="", group=u(gname) if len(groups) > 1 else ""))
+                    items.append(dict(title=u(c[1]), sub=u(c[2]), file="", logo="", group=u(gname) if len(groups) > 1 else "", hidden=False, hideLogo=False))
                     continue
                 jpg, title, sub = c[0], c[1], c[2]
                 pdf = c[3] if len(c) > 3 else None
                 pdf = pdf or make_pdf(jpg, jpg.rsplit(".", 1)[0])
                 logo, _k = cert_logo(jpg)
-                items.append(dict(title=u(title), sub=u(sub), file="/" + (pdf or f"img/certs/{jpg}"), logo=("/" + logo) if logo else "", group=u(gname) if len(groups) > 1 else ""))
+                items.append(dict(title=u(title), sub=u(sub), file="/" + (pdf or f"img/certs/{jpg}"), logo=("/" + logo) if logo else "", group=u(gname) if len(groups) > 1 else "", hidden=title in HIDDEN_CERTS, hideLogo=False))
         tabs.append(dict(id=key, label=u(label), heading=u(heading), lede=u(lede), items=items))
     return dict(tabs=tabs)
 
@@ -130,7 +130,10 @@ def folder_mark(name):
 def pending_row(title, sub):
     return f'<div class="cert-row pending rv"><div class="cert-row-t"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div></div>'
 
+HIDDEN_CERTS = {"ISO Promotional Poster"}  # kept in the admin list as hidden
+
 def cert_tab_panel(key, title, lede, groups):
+    groups = [(g, [c for c in rows if c[1] not in HIDDEN_CERTS]) for g, rows in groups]
     head = f'<div class="head"><h2>{title}</h2><p class="lede">{lede}</p></div>'
     empty = '<div class="cert-row pending"><div class="cert-row-t"><h4>Document to be provided</h4><p>This certificate will be added here as soon as it is received.</p></div></div>'
     if len(groups) == 1:

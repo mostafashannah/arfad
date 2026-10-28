@@ -3,7 +3,7 @@ import { db } from "@/db/client";
 import { siteBlocks } from "@/db/schema";
 import defaults from "@/db/site-defaults.json";
 
-export type CertItem = { title: string; sub: string; file: string; logo: string; group: string };
+export type CertItem = { title: string; sub: string; file: string; logo: string; group: string; hidden: boolean; hideLogo: boolean };
 export type CertTab = { id: string; label: string; heading: string; lede: string; items: CertItem[] };
 export type Certificates = { tabs: CertTab[] };
 
@@ -32,7 +32,7 @@ export function cleanCertificates(raw: unknown): Certificates {
       const p = (i && typeof i === "object" ? i : {}) as Record<string, unknown>;
       const title = str(p.title, 200);
       if (!title) continue;
-      items.push({ title, sub: str(p.sub, 300), file: url(p.file), logo: url(p.logo), group: str(p.group, 80) });
+      items.push({ title, sub: str(p.sub, 300), file: url(p.file), logo: url(p.logo), group: str(p.group, 80), hidden: p.hidden === true, hideLogo: p.hideLogo === true });
     }
     tabs.push({ id, label, heading: str(o.heading, 200), lede: str(o.lede, 800), items });
   }

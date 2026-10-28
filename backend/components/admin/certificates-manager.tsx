@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowDown, ArrowUp, FileText, Loader2, Plus, RotateCcw, Save, Trash2, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -183,7 +184,7 @@ export function CertificatesManager({ initial, edited }: { initial: Certificates
           <CardContent className="space-y-3">
             {tab.items.length === 0 && <p className="text-sm text-muted-foreground">No certificates in this category yet.</p>}
             {tab.items.map((it, n) => (
-              <div key={n} className="flex flex-wrap items-start gap-3 rounded-xl border p-3">
+              <div key={n} className={cn("flex flex-wrap items-start gap-3 rounded-xl border p-3", it.hidden && "opacity-50")}>
                 <div className="flex h-16 w-28 flex-none items-center justify-center rounded-lg border bg-white p-2">
                   {it.logo ? (
                     // eslint-disable-next-line @next/next/no-img-element
@@ -195,6 +196,14 @@ export function CertificatesManager({ initial, edited }: { initial: Certificates
                 <div className="min-w-[16rem] flex-1 space-y-2">
                   <Input value={it.title} placeholder="Title" onChange={(e) => setItem(n, { title: e.target.value })} />
                   <Input value={it.sub} placeholder="Subtitle (issuer, number, validity)" onChange={(e) => setItem(n, { sub: e.target.value })} />
+                  <div className="flex flex-wrap items-center gap-4 text-sm">
+                    <label className="flex items-center gap-2">
+                      <Switch checked={!it.hidden} onCheckedChange={(v) => setItem(n, { hidden: !v })} /> Show certificate
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <Switch checked={!it.hideLogo} onCheckedChange={(v) => setItem(n, { hideLogo: !v })} /> Show logo
+                    </label>
+                  </div>
                   <div className="flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
                     <Input value={it.group} placeholder="Folder name (optional)" className="h-8 w-48" onChange={(e) => setItem(n, { group: e.target.value })} />
                     {it.file ? (
@@ -223,7 +232,7 @@ export function CertificatesManager({ initial, edited }: { initial: Certificates
                 </div>
               </div>
             ))}
-            <Button variant="outline" onClick={() => setTab({ items: [...tab.items, { title: "New certificate", sub: "", file: "", logo: "", group: folders ? tab.items[tab.items.length - 1]?.group ?? "" : "" }] })}>
+            <Button variant="outline" onClick={() => setTab({ items: [...tab.items, { title: "New certificate", sub: "", file: "", logo: "", group: folders ? tab.items[tab.items.length - 1]?.group ?? "" : "", hidden: false, hideLogo: false }] })}>
               <Plus className="h-4 w-4" /> Add certificate
             </Button>
           </CardContent>

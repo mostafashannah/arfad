@@ -324,7 +324,7 @@ document.addEventListener("click", function(e){
   function folderMark(n){ if(FLOGO[n]){ var i = el("img", "fo-logo"); i.src = FLOGO[n]; i.alt = n; return i; } return folderSvg(); }
   function folderSvg(){ return svg("0 0 64 52", [["path",{"class":"fo-back",d:"M4 8a4 4 0 0 1 4-4h14l6 7h28a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"}],["path",{"class":"fo-front",d:"M4 22a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"}]]); }
   function row(it, i){
-    var file = safeUrl(it.file), logo = safeUrl(it.logo);
+    var file = safeUrl(it.file), logo = it.hideLogo ? "" : safeUrl(it.logo);
     if(!file){
       var p = el("div", "cert-row pending rv reveal-in"), t = el("div", "cert-row-t"); t.appendChild(el("h4", null, it.title)); if(it.sub) t.appendChild(el("p", null, it.sub)); p.appendChild(t); return p;
     }
@@ -337,7 +337,7 @@ document.addEventListener("click", function(e){
     v.appendChild(icon([["path",{d:"M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"}],["circle",{cx:"12",cy:"12",r:"3"}]], 18)); v.appendChild(document.createTextNode("View"));
     var d = el("a", "cert-btn dl"); d.href = file; d.setAttribute("download", ""); d.setAttribute("aria-label", "Download"); d.title = "Download";
     d.appendChild(icon([["path",{d:"M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"}]], 18));
-    r.appendChild(lg); r.appendChild(t2); r.appendChild(v); r.appendChild(d); return r;
+    if(!it.hideLogo) r.appendChild(lg); r.appendChild(t2); r.appendChild(v); r.appendChild(d); return r;
   }
   function render(data){
     var first = document.querySelector(".cert-panel"), host = first.parentNode, anchor = first;
@@ -349,6 +349,7 @@ document.addEventListener("click", function(e){
       var p = el("div", "cert-panel"); p.id = tb.id; p.setAttribute("role", "tabpanel"); p.hidden = true;
       var head = el("div", "head"); head.appendChild(el("h2", null, tb.heading || tb.label)); if(tb.lede) head.appendChild(el("p", "lede", tb.lede)); p.appendChild(head);
       var groups = [], idx = {};
+      tb.items = tb.items.filter(function(it){ return !it.hidden; });
       tb.items.forEach(function(it){ var g = it.group || ""; if(!(g in idx)){ idx[g] = groups.length; groups.push({name:g, items:[]}); } groups[idx[g]].items.push(it); });
       var named = groups.filter(function(g){ return g.name; }).length;
       if(groups.length > 1 && named){
