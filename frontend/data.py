@@ -48,7 +48,7 @@ SERVICES = [
   scope=[],
   subs=[('Wooden Floorings', 'floorings'), ('Kitchens & Cabinets', 'kitchens'), ('Wardrobes & Closets', 'wardrobes'), ('Vanities & Storage Systems', 'vanities')],
   projects=["saudi-aramco","royal-commission","movenpick","karan"]),
- dict(slug="wall-cladding", title="Wooden Wall Claddings", img="svc-cladding.jpg",
+ dict(slug="wall-cladding", title="Wooden Wall Claddings", img="svc-cladding.jpg", page_img="projects/neom-1.jpg",
   card="Architectural wall cladding, from decorative panels to slatted finishes.",
   tagline="Architectural Wood Surfaces Engineered for Precision and Performance",
   intro=["ARFAD delivers architectural wood cladding systems tailored to each project's design intent, technical requirements, and approved specifications.",

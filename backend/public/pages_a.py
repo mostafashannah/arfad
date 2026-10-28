@@ -208,7 +208,7 @@ def services_pages():
         extra = s.get("extra")
         blocks = []
         paras = s["intro"]
-        blocks.append(f'<section class="section"><div class="wrap">{split(s["tagline"], esc(s["title"]), paras, s["img"], extra=cta_btns(("Request a Quote","contact.html"),("All Services","services.html")))}</div></section>')
+        blocks.append(f'<section class="section"><div class="wrap">{split(s["tagline"], esc(s["title"]), paras, s.get("page_img", s["img"]), extra=cta_btns(("Request a Quote","contact.html"),("All Services","services.html")))}</div></section>')
         scope_html = head("Scope & subdivisions", esc(s["scope_title"])) + scope_grid(s["scope"])
         if s.get("scope2"):
             scope_html += f'<div style="margin-top:56px;">{head("", esc(s["scope2_title"]))}{scope_grid(s["scope2"], "wood")}</div>'
