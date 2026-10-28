@@ -22,7 +22,7 @@ NAV_DEFAULT = [{"label": l, "href": h, "children": [{"label": cl, "href": ch} fo
 
 FOOTER_DEFAULT = {
     "brand": {
-        "title": "ARFAD International Industrial Co.",
+        "title": "ARFAD International Industrial Company",
         "arabicName": AR_NAME,
         "tagline": f"Crafting Excellence in Woodwork Since 2004. {TAGLINE}.",
         "downloadLabel": "Download Profile",
@@ -100,10 +100,14 @@ def render_footer(f):
   </div>
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <img class="brand-mark lg" src="img/logo.png" alt="ARFAD logo" style="margin-bottom:14px;">
-      <img src="img/wordmark.png" alt="ARFAD" style="height:22px;width:auto;display:block;margin-bottom:14px;">
-      <h4 data-foot="brandTitle" style="text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--paper-on-navy);">{esc(b["title"])}</h4>
-      <p class="ar-name" data-foot="arabicName" lang="ar" dir="rtl">{esc(b["arabicName"])}</p>
+      <div class="lk-top">
+        <img class="lk-mark" src="img/logo.png" alt="ARFAD logo">
+        <div class="lk-side">
+          <img class="lk-word" src="img/wordmark.png" alt="ARFAD">
+          <p class="ar-name lk-ar" data-foot="arabicName" lang="ar" dir="rtl">{esc(b["arabicName"])}</p>
+        </div>
+      </div>
+      <h4 class="lk-en" data-foot="brandTitle">{esc(b["title"])}</h4>
       <p data-foot="tagline" style="margin-top:8px;max-width:34ch;">{esc(b["tagline"])}</p>
       <a class="btn flash dl-btn" href="/download/company-profile" download="ARFAD-Company-Profile.pdf">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg>
