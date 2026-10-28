@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Supply and installation of 850 wooden doors, kitchen cabinets, and 4,850 m² wooden wall cladding.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css?v=d8f457de04">
+<link rel="stylesheet" href="styles.css?v=24f2eaa580">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <script type="application/ld+json">
@@ -319,6 +319,8 @@ document.addEventListener("click", function(e){
   var SVG = "http://www.w3.org/2000/svg";
   function svg(w, paths, cls){ var s = document.createElementNS(SVG, "svg"); s.setAttribute("viewBox", w); s.setAttribute("aria-hidden", "true"); if(cls) s.setAttribute("class", cls); paths.forEach(function(p){ var e = document.createElementNS(SVG, p[0]); for(var k in p[1]) e.setAttribute(k, p[1][k]); s.appendChild(e); }); return s; }
   function icon(paths, size){ var s = svg("0 0 24 24", paths); s.setAttribute("width", size); s.setAttribute("height", size); s.setAttribute("fill", "none"); s.setAttribute("stroke", "currentColor"); s.setAttribute("stroke-width", "2"); s.setAttribute("stroke-linecap", "round"); s.setAttribute("stroke-linejoin", "round"); return s; }
+  var FLOGO = {"Halspan":"/img/brands/halspan.png","Warm Springs":"/img/brands/warm-springs.png"};
+  function folderMark(n){ if(FLOGO[n]){ var i = el("img", "fo-logo"); i.src = FLOGO[n]; i.alt = n; return i; } return folderSvg(); }
   function folderSvg(){ return svg("0 0 64 52", [["path",{"class":"fo-back",d:"M4 8a4 4 0 0 1 4-4h14l6 7h28a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"}],["path",{"class":"fo-front",d:"M4 22a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"}]]); }
   function row(it, i){
     var file = safeUrl(it.file), logo = safeUrl(it.logo);
@@ -353,10 +355,10 @@ document.addEventListener("click", function(e){
         groups.forEach(function(g, n){
           var fid = tb.id + "-f" + n;
           var fb = el("button", "cert-folder rv reveal-in"); fb.type = "button"; fb.setAttribute("data-folder", fid); fb.style.setProperty("--d", (n * .08).toFixed(2) + "s");
-          fb.appendChild(folderSvg()); fb.appendChild(el("span", "fo-name", g.name || "Other")); fb.appendChild(el("span", "fo-count", g.items.length + " certificate" + (g.items.length === 1 ? "" : "s"))); fl.appendChild(fb);
+          fb.appendChild(folderMark(g.name)); fb.appendChild(el("span", "fo-name", g.name || "Other")); fb.appendChild(el("span", "fo-count", g.items.length + " certificate" + (g.items.length === 1 ? "" : "s"))); fl.appendChild(fb);
           var v = el("div", "cert-folder-view"); v.id = fid; v.hidden = true;
           var back = el("button", "cert-back", "← All folders"); back.type = "button"; v.appendChild(back);
-          var ti = el("h3", "fo-title"); ti.appendChild(folderSvg()); ti.appendChild(el("span", null, g.name || "Other")); v.appendChild(ti);
+          var ti = el("h3", "fo-title"); ti.appendChild(folderMark(g.name)); ti.appendChild(el("span", null, g.name || "Other")); v.appendChild(ti);
           var rs = el("div", "cert-rows"); g.items.forEach(function(it, i){ rs.appendChild(row(it, i)); }); v.appendChild(rs); p.appendChild(v);
         });
       } else {

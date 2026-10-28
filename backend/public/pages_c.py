@@ -121,6 +121,12 @@ def cert_defaults():
         tabs.append(dict(id=key, label=u(label), heading=u(heading), lede=u(lede), items=items))
     return dict(tabs=tabs)
 
+FOLDER_LOGOS = {"Halspan": "img/brands/halspan.png", "Warm Springs": "img/brands/warm-springs.png"}
+
+def folder_mark(name):
+    lg = FOLDER_LOGOS.get(name)
+    return f'<img class="fo-logo" src="{lg}" alt="{esc(name)}" loading="lazy">' if lg else FOLDER_SVG
+
 def pending_row(title, sub):
     return f'<div class="cert-row pending rv"><div class="cert-row-t"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div></div>'
 
@@ -134,11 +140,11 @@ def cert_tab_panel(key, title, lede, groups):
     for n, (gname, items) in enumerate(groups):
         fid = f"{key}-f{n}"
         cnt = len(items)
-        folders += (f'<button type="button" class="cert-folder rv" data-folder="{fid}" style="--d:{n*.08:.2f}s">{FOLDER_SVG}'
+        folders += (f'<button type="button" class="cert-folder rv" data-folder="{fid}" style="--d:{n*.08:.2f}s">{folder_mark(gname)}'
                     f'<span class="fo-name">{gname}</span><span class="fo-count">{cnt} certificate{"" if cnt == 1 else "s"}</span></button>')
         rows = "".join(cert_row(*c, i=i) for i, c in enumerate(items)) or empty
         views += (f'<div class="cert-folder-view" id="{fid}" hidden><button type="button" class="cert-back">&larr; All folders</button>'
-                  f'<h3 class="fo-title">{FOLDER_SVG}<span>{gname}</span></h3><div class="cert-rows">{rows}</div></div>')
+                  f'<h3 class="fo-title">{folder_mark(gname)}<span>{gname}</span></h3><div class="cert-rows">{rows}</div></div>')
     return f'<div class="cert-panel" id="{key}" role="tabpanel" hidden>{head}<div class="cert-folders">{folders}</div>{views}</div>'
 
 FACTORY_GRAD = [("#0f3a66","#1d6fa5"),("#5a3d1e","#b0834a"),("#123a3a","#2f8a7a"),("#5b2a2a","#c0603f"),("#2a2f66","#4f6fd1"),("#1f4d2b","#5da35f"),("#4a2f6b","#9a63c7")]

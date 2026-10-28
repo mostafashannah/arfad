@@ -1433,3 +1433,5 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   .submenu .sub-list{position:absolute;inset-inline:0;top:100%;z-index:5;background:#0c2038;border-radius:10px;box-shadow:0 18px 30px -12px rgba(0,0,0,.6);transition:max-height .3s ease,padding .3s ease;}
   .submenu .sub-drop:hover > .sub-list,.submenu .sub-drop:focus-within > .sub-list{padding:4px 0;}
 }
+.cert-folder .fo-logo,.fo-title .fo-logo{width:auto;height:60px;max-width:200px;object-fit:contain;object-position:left center;margin-bottom:10px;display:block;}
+.fo-title .fo-logo{height:44px;margin:0 14px 0 0;}
