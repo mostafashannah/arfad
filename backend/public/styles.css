@@ -1407,3 +1407,5 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 .foot-cols a{display:flex;align-items:center;gap:12px;}
 .foot-cols a::before{content:"";flex:none;width:6px;height:6px;border-radius:50%;background:var(--gold,#c9a66b);transition:background .25s,box-shadow .25s;}
 .foot-cols a:hover::before,.foot-cols a:focus-visible::before{background:#fff;box-shadow:0 0 8px rgba(255,255,255,.7);}
+.foot-badge.logo{padding:6px;border-radius:14px;line-height:0;}
+.foot-badge.logo img{height:62px;width:auto;display:block;border-radius:8px;}

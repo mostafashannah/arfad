@@ -47,6 +47,8 @@ FOOTER_DEFAULT = {
 
 CRED_LOGOS = "".join(f'<img src="img/accreditation/{f}.png" alt="{a}" loading="lazy">' for f, a in [("iso-9001","ISO 9001"),("iso-14001","ISO 14001"),("iso-45001","ISO 45001"),("fsc","FSC")])
 
+BADGE_LOGOS = {"Local Content Certified": "img/badges/local-content.png"}  # Saudi Made joins once its logo file is added
+
 def esc(s):
     return html.escape(s, quote=True)
 
@@ -92,7 +94,7 @@ def _accredited_track():
 def render_footer(f):
     b, ct = f["brand"], f["contact"]
     cols = "".join('<div data-foot-col><h4>%s</h4>%s</div>' % (esc(col["title"]), "".join('<a href="%s">%s</a>' % (esc(l["href"]), esc(l["label"])) for l in col["links"])) for col in f["columns"])
-    badges = "".join('<span class="foot-badge">%s</span>' % esc(x) for x in b["badges"])
+    badges = "".join(('<span class="foot-badge logo" title="%s"><img src="%s" alt="%s"></span>' % (esc(x), BADGE_LOGOS[x], esc(x))) if x in BADGE_LOGOS else '<span class="foot-badge">%s</span>' % esc(x) for x in b["badges"])
     creds = "<br>".join(esc(x) for x in ct["credentials"])
     return (f'''<footer id="contact" class="site-foot">
   <div class="foot-glow" aria-hidden="true"></div>
@@ -979,7 +981,11 @@ JS_REVEAL_OBSERVER = '''<script>
     setText("tagline", b.tagline); setText("downloadLabel", b.downloadLabel);
     setText("bottomLeft", (f.bottom || {}).left); setText("bottomRight", (f.bottom || {}).right);
     var badges = document.querySelector('[data-foot="badges"]');
-    if(badges){ badges.textContent = ""; (b.badges || []).forEach(function(x){ badges.appendChild(el("span", "foot-badge", x)); }); }
+    var BL = {"Local Content Certified":"/img/badges/local-content.png","Saudi Made":"/img/badges/saudi-made.png"};
+    if(badges){ badges.textContent = ""; (b.badges || []).forEach(function(x){
+      var s = el("span", "foot-badge", x);
+      if(BL[x]){ var im = el("img"); im.alt = x; im.onload = function(){ s.className = "foot-badge logo"; s.title = x; s.textContent = ""; s.appendChild(im); }; im.src = BL[x]; }
+      badges.appendChild(s); }); }
     var cols = document.querySelector('[data-foot="cols"]');
     if(cols){
       cols.textContent = "";
