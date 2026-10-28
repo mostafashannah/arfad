@@ -86,3 +86,7 @@ html[lang="ar"] .hero-slider .wrap,html[lang="ar"] .detail-hero .wrap{text-align
 html[lang="ar"] .eyebrow{justify-content:flex-start;}
 html[lang="ar"] .cta-band .wrap{text-align:center;}
 html[lang="ar"] .lede,html[lang="ar"] p{text-align:start;}
+/* hero shade sits behind the (right-aligned) text, so it is mirrored */
+html[lang="ar"] .hero-overlay{background:
+  linear-gradient(270deg, rgba(7,19,32,.72) 0%, rgba(7,19,32,.45) 42%, rgba(7,19,32,.08) 78%),
+  linear-gradient(180deg, rgba(7,19,32,.35) 0%, rgba(7,19,32,0) 30%, rgba(7,19,32,.68) 100%);}
