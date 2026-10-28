@@ -29,7 +29,7 @@
 <meta content="شركة أرفاد الدولية للصناعة: أعمال خشبية معمارية وتأثيث داخلي وتصنيع أثاث خشبي من مدينة الجبيل الصناعية منذ عام 2004." name="twitter:description"/>
 <meta content="https://www.arfad.com.sa/img/hero.jpg" name="twitter:image"/>
 <link href="../img/logo.png" rel="icon"/>
-<link href="../styles.css?v=1ffba80d38" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="../styles-ar.css" rel="stylesheet"/>
+<link href="../styles.css?v=56b1ea11c4" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="../styles-ar.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&amp;display=swap" rel="stylesheet"/>
 <script type="application/ld+json">
@@ -144,7 +144,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
 <a class="btn flash dl-btn" download="ARFAD-Company-Profile.pdf" href="/download/company-profile">
 <svg aria-hidden="true" fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"></path></svg>
 <span data-foot="downloadLabel">تحميل ملف الشركة</span></a>
-<div class="foot-badges" data-foot="badges"><span class="foot-badge">صناعة سعودية</span><span class="foot-badge logo" title="معتمدون في المحتوى المحلي"><img alt="معتمدون في المحتوى المحلي" src="../img/badges/local-content.png"/></span></div>
+<div class="foot-badges" data-foot="badges"><span class="foot-badge logo on-white" title="صناعة سعودية"><img alt="صناعة سعودية" src="../img/badges/saudi-made.svg"/></span><span class="foot-badge logo" title="معتمدون في المحتوى المحلي"><img alt="معتمدون في المحتوى المحلي" src="../img/badges/local-content.png"/></span></div>
 </div>
 <div class="foot-cols" data-foot="cols"><div data-foot-col=""><h4>روابط سريعة</h4><a href="index.html">الرئيسية</a><a href="about.html">من نحن</a><a href="services.html">الخدمات</a><a href="projects.html">المشاريع</a><a href="factory.html">المصنع</a><a href="sustainability.html">الاستدامة</a><a href="careers.html">الوظائف</a><a href="media.html">المركز الإعلامي</a><a href="contact.html">اتصل بنا</a></div><div data-foot-col=""><h4>الخدمات</h4><a href="service-doors.html">الأبواب الخشبية</a><a href="service-joinery.html">أعمال النجارة</a><a href="service-cabinets.html">الأعمال الخشبية الداخلية</a><a href="service-wall-cladding.html">كسوات الجدران الخشبية</a><a href="service-ceilings.html">الأسقف الخشبية</a><a href="service-thermowood.html">الخشب المعالج حراريًا (ثيرمووود)</a><a href="service-furniture.html">الأثاث والديكور الداخلي</a><a href="service-countertops.html">أسطح العمل والأسطح الصلبة</a><a href="service-traditional.html">الأعمال الخشبية التراثية</a><a href="service-wpc.html">أعمال الخشب البلاستيكي (WPC)</a></div></div>
 <div class="foot-contact" data-foot="contact">
@@ -962,10 +962,10 @@ document.addEventListener("click", function(e){
     setText("tagline", b.tagline); setText("downloadLabel", b.downloadLabel);
     setText("bottomLeft", (f.bottom || {}).left); setText("bottomRight", (f.bottom || {}).right);
     var badges = document.querySelector('[data-foot="badges"]');
-    var BL = {"Local Content Certified":"/img/badges/local-content.png","Saudi Made":"/img/badges/saudi-made.png"};
+    var BL = {"Local Content Certified":"/img/badges/local-content.png","Saudi Made":"/img/badges/saudi-made.svg"};
     if(badges){ badges.textContent = ""; (b.badges || []).forEach(function(x){
       var s = el("span", "foot-badge", x);
-      if(BL[x]){ var im = el("img"); im.alt = x; im.onload = function(){ s.className = "foot-badge logo"; s.title = x; s.textContent = ""; s.appendChild(im); }; im.src = BL[x]; }
+      if(BL[x]){ var im = el("img"); im.alt = x; im.onload = function(){ s.className = "foot-badge logo" + (x === "Saudi Made" ? " on-white" : ""); s.title = x; s.textContent = ""; s.appendChild(im); }; im.src = BL[x]; }
       badges.appendChild(s); }); }
     var cols = document.querySelector('[data-foot="cols"]');
     if(cols){

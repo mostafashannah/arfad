@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="The values behind ARFAD's work: precision, integrity, consistency, quality, safety and responsibility.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css?v=1ffba80d38">
+<link rel="stylesheet" href="styles.css?v=56b1ea11c4">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <script type="application/ld+json">
@@ -131,7 +131,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       <a class="btn flash dl-btn" href="/download/company-profile" download="ARFAD-Company-Profile.pdf">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg>
         <span data-foot="downloadLabel">Download Profile</span></a>
-      <div class="foot-badges" data-foot="badges"><span class="foot-badge">Saudi Made</span><span class="foot-badge logo" title="Local Content Certified"><img src="img/badges/local-content.png" alt="Local Content Certified"></span></div>
+      <div class="foot-badges" data-foot="badges"><span class="foot-badge logo on-white" title="Saudi Made"><img src="img/badges/saudi-made.svg" alt="Saudi Made"></span><span class="foot-badge logo" title="Local Content Certified"><img src="img/badges/local-content.png" alt="Local Content Certified"></span></div>
     </div>
     <div class="foot-cols" data-foot="cols"><div data-foot-col><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">Who We Are</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="factory.html">Factory</a><a href="sustainability.html">Sustainability</a><a href="careers.html">Careers</a><a href="media.html">Media</a><a href="contact.html">Contact</a></div><div data-foot-col><h4>Services</h4><a href="service-doors.html">Wooden Doors</a><a href="service-joinery.html">Joinery</a><a href="service-cabinets.html">Interior Woodworks</a><a href="service-wall-cladding.html">Wooden Wall Claddings</a><a href="service-ceilings.html">Wooden Ceilings</a><a href="service-thermowood.html">Thermowood</a><a href="service-furniture.html">Furniture &amp; Interiors</a><a href="service-countertops.html">Countertops &amp; Surfaces</a><a href="service-traditional.html">Traditional Woodworks</a><a href="service-wpc.html">WPC Works</a></div></div>
     <div class="foot-contact" data-foot="contact">
@@ -949,10 +949,10 @@ document.addEventListener("click", function(e){
     setText("tagline", b.tagline); setText("downloadLabel", b.downloadLabel);
     setText("bottomLeft", (f.bottom || {}).left); setText("bottomRight", (f.bottom || {}).right);
     var badges = document.querySelector('[data-foot="badges"]');
-    var BL = {"Local Content Certified":"/img/badges/local-content.png","Saudi Made":"/img/badges/saudi-made.png"};
+    var BL = {"Local Content Certified":"/img/badges/local-content.png","Saudi Made":"/img/badges/saudi-made.svg"};
     if(badges){ badges.textContent = ""; (b.badges || []).forEach(function(x){
       var s = el("span", "foot-badge", x);
-      if(BL[x]){ var im = el("img"); im.alt = x; im.onload = function(){ s.className = "foot-badge logo"; s.title = x; s.textContent = ""; s.appendChild(im); }; im.src = BL[x]; }
+      if(BL[x]){ var im = el("img"); im.alt = x; im.onload = function(){ s.className = "foot-badge logo" + (x === "Saudi Made" ? " on-white" : ""); s.title = x; s.textContent = ""; s.appendChild(im); }; im.src = BL[x]; }
       badges.appendChild(s); }); }
     var cols = document.querySelector('[data-foot="cols"]');
     if(cols){

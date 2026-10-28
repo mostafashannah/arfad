@@ -1444,3 +1444,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   .sub-drop:hover > .drop-toggle::before,.sub-drop:focus-within > .drop-toggle::before,.sub-drop.open > .drop-toggle::before{transform:rotate(-45deg);margin:-4px 0 0 -5px;}
 }
 sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.08em;font-weight:inherit;letter-spacing:0;}
+.foot-badge.logo{border:0;background:none;padding:0;border-radius:0;}
+.foot-badge.logo img{height:62px;border-radius:10px;}
+.foot-badge.logo.on-white{background:#fff;padding:9px 14px;border-radius:12px;}
+.foot-badge.logo.on-white img{height:40px;border-radius:0;}
