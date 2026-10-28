@@ -155,7 +155,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
 <a href="mailto:info@arfad.com.sa">info@arfad.com.sa</a>
 <h4 style="margin-top:18px;">الاعتمادات</h4>
 <p>ISO 9001:2015 · ISO 14001:2015<br/>ISO 45001:2018 · FSC® CoC معتمدة</p>
-<div class="cred-logos"><img alt="ISO 9001" loading="lazy" src="../../img/accreditation/iso-9001.png"/><img alt="ISO 14001" loading="lazy" src="../../img/accreditation/iso-14001.png"/><img alt="ISO 45001" loading="lazy" src="../../img/accreditation/iso-45001.png"/><img alt="FSC" loading="lazy" src="../../img/accreditation/fsc.png"/></div>
+<div class="cred-logos"><img alt="ISO 9001" loading="lazy" src="../../img/accreditation/iso-9001.png"/><img alt="ISO 14001" loading="lazy" src="../../img/accreditation/iso-14001.png"/><img alt="ISO 45001" loading="lazy" src="../../img/accreditation/iso-45001.png"/><img alt="FSC" loading="lazy" src="../../img/accreditation/fsc-mark.png"/></div>
 </div>
 </div>
 <div class="wrap foot-bottom">
@@ -987,7 +987,7 @@ document.addEventListener("click", function(e){
       if(ct.email) box.appendChild(link("mailto:" + ct.email, ct.email));
       var h = el("h4", null, ct.credentialsTitle); h.style.marginTop = "18px"; box.appendChild(h);
       var cp = el("p"); (ct.credentials || []).forEach(function(line, i){ if(i) cp.appendChild(document.createElement("br")); cp.appendChild(document.createTextNode(line)); }); box.appendChild(cp);
-      var cl = el("div", "cred-logos"); [["iso-9001","ISO 9001"],["iso-14001","ISO 14001"],["iso-45001","ISO 45001"],["fsc","FSC"]].forEach(function(l){ var im = el("img"); im.src = "../img/accreditation/" + l[0] + ".png"; im.alt = l[1]; im.loading = "lazy"; cl.appendChild(im); }); box.appendChild(cl);
+      var cl = el("div", "cred-logos"); [["iso-9001","ISO 9001"],["iso-14001","ISO 14001"],["iso-45001","ISO 45001"],["fsc-mark","FSC"]].forEach(function(l){ var im = el("img"); im.src = "../img/accreditation/" + l[0] + ".png"; im.alt = l[1]; im.loading = "lazy"; cl.appendChild(im); }); box.appendChild(cl);
     }
   }
   function renderAcc(items){
