@@ -40,6 +40,13 @@ export function BrandingManager({ initial }: { initial: Branding }) {
         </CardHeader>
         <CardContent>
           <div className="w-full max-w-xs rounded-lg bg-slate-700 p-3">
+            {!b.headerLogo && (
+              <div className="mb-3">
+                <p className="mb-2 text-xs text-slate-300">Current logo (built-in)</p>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src="/img/logo-full.png" alt="Current header logo" className="h-16 w-auto" style={{ filter: "drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 0 7px rgba(255,255,255,.55))" }} />
+              </div>
+            )}
             <ImagePicker value={b.headerLogo} onChange={(u) => setB({ ...b, headerLogo: u })} folder="branding" />
           </div>
         </CardContent>
@@ -53,6 +60,20 @@ export function BrandingManager({ initial }: { initial: Branding }) {
         </CardHeader>
         <CardContent>
           <div className="w-full max-w-xs rounded-lg bg-slate-900 p-3">
+            {!b.footerLogo && (
+              <div className="mb-3">
+                <p className="mb-2 text-xs text-slate-300">Current logo block (built-in)</p>
+                <div className="flex items-end gap-3">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img src="/img/logo.png" alt="" className="h-14 w-auto" style={{ filter: "brightness(0) invert(1)" }} />
+                  <div className="space-y-1">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src="/img/wordmark.png" alt="ARFAD" className="h-5 w-auto" />
+                    <p dir="rtl" lang="ar" className="text-base font-bold text-sky-300">شركة أرفاد الدولية للصناعة</p>
+                  </div>
+                </div>
+              </div>
+            )}
             <ImagePicker value={b.footerLogo} onChange={(u) => setB({ ...b, footerLogo: u })} folder="branding" />
           </div>
         </CardContent>
