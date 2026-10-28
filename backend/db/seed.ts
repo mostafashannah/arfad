@@ -164,6 +164,27 @@ export async function runSeed() {
     }
     await db.insert(siteBlocks).values({ key: "site_media_seeded", value: "1" }).run();
   }
+  // Once only: the PDFs and documents the site ships with (certificates, manuals, company profile).
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "site_files_seeded")).get())) {
+    const froot = path.join(process.cwd(), "public", "files");
+    const fwalk = (dir: string): string[] =>
+      readdirSync(dir).flatMap((n) => {
+        const p = path.join(dir, n);
+        return statSync(p).isDirectory() ? fwalk(p) : [p];
+      });
+    if (existsSync(froot)) {
+      const have = new Set((await db.select({ u: mediaAssets.url }).from(mediaAssets).all()).map((r) => r.u));
+      for (const p of fwalk(froot).sort()) {
+        if (!/\.pdf$/i.test(p)) continue;
+        const rel = path.relative(path.join(process.cwd(), "public"), p).split(path.sep).join("/");
+        const url = `/${rel}`;
+        if (have.has(url)) continue;
+        const parts = rel.split("/");
+        await db.insert(mediaAssets).values({ url, filename: parts[parts.length - 1], folder: parts.length > 2 ? parts[1] : "documents" }).run();
+      }
+    }
+    await db.insert(siteBlocks).values({ key: "site_files_seeded", value: "1" }).run();
+  }
   console.log(`Seeded media library`);
 
   // Once only: Thermowood and WPC Works become sub-items under Exterior Woodworks in the saved Services menu.
