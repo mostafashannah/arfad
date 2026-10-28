@@ -52,7 +52,7 @@ CERT_TABS = [
   [("ISO Management System Certificates", [(i["thumb"], i["title"], i["sub"], i["pdf"]) for i in CERT_FILES["iso"]])]),
  ("fsc", "FSC &amp; LEED", "FSC &amp; LEED Certificates",
   "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks. LEED documentation supports projects with green-building requirements.",
-  [("FSC® Certificates", CERTS_FSC), ("LEED Certificates", [])]),
+  [("FSC & LEED Certificates", list(CERTS_FSC) + [(None, "LEED Certificates", "Document to be provided")])]),
  ("legal", "Legal", "Legal Certificates", "Commercial registration, licenses, permits and company legal documents.", [("Legal Certificates", [(i["thumb"], i["title"], i["sub"], i["pdf"]) for i in CERT_FILES["legal"]])]),
  ("aramco", "Aramco Approvals", "Saudi Aramco Approvals &amp; Appreciations",
   "ARFAD is a registered Saudi Aramco Manufacturer &amp; Service Provider, supported by recognized compliance credentials and a proven record of successful project delivery. Saudi Aramco Vendor Code: 10064085.",
@@ -89,11 +89,14 @@ def cert_row(jpg, title, sub, pdf=None, i=0):
 
 FOLDER_SVG = '<svg viewBox="0 0 64 52" aria-hidden="true"><path class="fo-back" d="M4 8a4 4 0 0 1 4-4h14l6 7h28a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path class="fo-front" d="M4 22a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/></svg>'
 
+def pending_row(title, sub):
+    return f'<div class="cert-row pending rv"><div class="cert-row-t"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div></div>'
+
 def cert_tab_panel(key, title, lede, groups):
     head = f'<div class="head"><h2>{title}</h2><p class="lede">{lede}</p></div>'
     empty = '<div class="cert-row pending"><div class="cert-row-t"><h4>Document to be provided</h4><p>This certificate will be added here as soon as it is received.</p></div></div>'
     if len(groups) == 1:
-        rows = "".join(cert_row(*c, i=i) for i, c in enumerate(groups[0][1])) or empty
+        rows = "".join(pending_row(c[1], c[2]) if c[0] is None else cert_row(*c, i=i) for i, c in enumerate(groups[0][1])) or empty
         return f'<div class="cert-panel" id="{key}" role="tabpanel" hidden>{head}<div class="cert-rows">{rows}</div></div>'
     folders = ""; views = ""
     for n, (gname, items) in enumerate(groups):
