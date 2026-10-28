@@ -121,7 +121,7 @@ def cert_defaults():
         tabs.append(dict(id=key, label=u(label), heading=u(heading), lede=u(lede), items=items))
     return dict(tabs=tabs)
 
-FOLDER_LOGOS = {"Halspan": "img/brands/halspan.png", "Warm Springs": "img/brands/warm-springs.png"}
+FOLDER_LOGOS = {"Halspan": "img/brands/halspan.png", "Warm Springs": "img/brands/warm-springs.png", "Strebord & Ramkor": "img/brands/strebord.png"}
 
 def folder_mark(name):
     lg = FOLDER_LOGOS.get(name)
