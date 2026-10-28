@@ -9,6 +9,15 @@ const nextConfig = {
     instrumentationHook: true,
     serverComponentsExternalPackages: ["geoip-country"],
   },
+  // Pages and the stylesheet are re-checked on every visit, so a new deploy or an admin edit is never hidden behind a stale cached copy.
+  async headers() {
+    const revalidate = [{ key: "Cache-Control", value: "no-cache, must-revalidate" }];
+    return [
+      { source: "/", headers: revalidate },
+      { source: "/:page*.html", headers: revalidate },
+      { source: "/styles.css", headers: revalidate },
+    ];
+  },
   async rewrites() {
     return {
       beforeFiles: [{ source: "/", destination: "/index.html" }],

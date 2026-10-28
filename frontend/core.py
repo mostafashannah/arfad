@@ -170,7 +170,7 @@ HEAD = '''<title>{title}</title>
 <meta name="twitter:description" content="{desc}">
 <meta name="twitter:image" content="{site_url}/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v={css_v}">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">'''
 
@@ -1037,7 +1037,7 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     canonical_path = path or active
     canonical = f"{SITE_URL}/{canonical_path}"
     og_title = _strip_tags(title)
-    head = THEME_INIT + "\n" + HEAD.format(title=title, desc=desc, canonical=canonical, og_title=og_title, site_url=SITE_URL)
+    head = THEME_INIT + "\n" + HEAD.format(title=title, desc=desc, canonical=canonical, og_title=og_title, site_url=SITE_URL, css_v=_css_version())
     head += "\n" + ORG_SCHEMA
     if extra_head:
         head += "\n" + extra_head
@@ -1049,6 +1049,14 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     else:
         # entry page: the Artifact tool wraps this one in its own skeleton
         return head + "\n" + content
+
+import hashlib as _hashlib
+def _css_version():
+    try:
+        with open(os.path.join(ROOT, "styles.css"), "rb") as f:
+            return _hashlib.md5(f.read()).hexdigest()[:10]
+    except OSError:
+        return "1"
 
 PAGE_CATALOG = {}
 
