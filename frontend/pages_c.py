@@ -60,6 +60,23 @@ CERT_TABS = [
   [("Approvals &amp; Appreciations", CERTS_ARAMCO)]),
 ]
 
+def cert_logo(jpg):
+    """The certificate maker's logo for a row: (image, chip style)."""
+    j = jpg.lower()
+    if j.startswith("fire/") or "intertek" in j: return "img/accreditation/intertek.png", "dark"
+    if "iso-9001" in j: return "img/accreditation/iso-9001.png", "dark"
+    if "iso-14001" in j: return "img/accreditation/iso-14001.png", "dark"
+    if "iso-45001" in j: return "img/accreditation/iso-45001.png", "dark"
+    if "iso" in j: return "img/accreditation/uaf.png", "dark"
+    if "fsc" in j: return "img/accreditation/fsc.png", "dark"
+    if "aramco" in j or "cybersecurity" in j: return "img/clients/saudi-aramco.png", "light"
+    return None, "doc"
+
+def cert_logo_html(jpg, view, title):
+    img, kind = cert_logo(jpg)
+    inner = f'<img src="{img}" alt="" loading="lazy">' if img else icon("doc")
+    return f'<a class="cert-row-logo {kind}" href="{view}" target="_blank" rel="noopener" aria-label="View {esc(title)}">{inner}</a>'
+
 def cert_row(jpg, title, sub, pdf=None, i=0):
     if isinstance(pdf, int):      # legacy positional i
         i, pdf = pdf, None
@@ -67,9 +84,9 @@ def cert_row(jpg, title, sub, pdf=None, i=0):
     pdf = pdf or make_pdf(jpg, jpg.rsplit(".", 1)[0])
     view = pdf if given else f"img/certs/{jpg}"
     dl = f'<a class="cert-btn dl" href="{pdf}" download>Download <span aria-hidden="true">&darr;</span></a>' if pdf else ""
-    return (f'<div class="cert-row rv" style="--d:{i*.07:.2f}s"><a class="cert-row-th" href="{view}" target="_blank" rel="noopener" style="background-image:url(\'img/certs/{jpg}\');" aria-label="View {esc(title)}"></a>'
+    return (f'<div class="cert-row rv" style="--d:{i*.07:.2f}s">{cert_logo_html(jpg, view, title)}'
             f'<div class="cert-row-t"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div>'
-            f'<a class="cert-btn view" href="{view}" target="_blank" rel="noopener">View <span aria-hidden="true">&rarr;</span></a>{dl}</div>')
+            f'<a class="cert-btn view" href="{view}" target="_blank" rel="noopener">View full certificate <span aria-hidden="true">&rarr;</span></a>{dl}</div>')
 
 FOLDER_SVG = '<svg viewBox="0 0 64 52" aria-hidden="true"><path class="fo-back" d="M4 8a4 4 0 0 1 4-4h14l6 7h28a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path class="fo-front" d="M4 22a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/></svg>'
 

@@ -10,3 +10,4 @@ T.update({
 "Download Profile":"تحميل ملف الشركة","View <span aria-hidden=\"true\">→</span>":"عرض <span aria-hidden=\"true\">←</span>","Download <span aria-hidden=\"true\">↓</span>":"تحميل <span aria-hidden=\"true\">↓</span>",
 "View HSE Policy":"عرض سياسة الصحة والسلامة والبيئة","View Our Work":"شاهد أعمالنا","View All Services":"عرض كل الخدمات","View Full Project Portfolio":"عرض محفظة المشاريع كاملة","View gallery →":"عرض المعرض ←","View Quality Policy":"عرض سياسة الجودة","View Fire-Rated Certificates":"عرض شهادات مقاومة الحريق","View FSC Certificate":"عرض شهادة FSC",
 })
+T["View full certificate <span aria-hidden=\"true\">→</span>"] = "عرض الشهادة كاملة <span aria-hidden=\"true\">←</span>"
