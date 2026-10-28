@@ -8143,17 +8143,17 @@
    },
    {
     "group": "Quality Management",
-    "key": "t-c5119a7",
+    "key": "t-bdb79c5",
     "kind": "text",
     "tag": "a",
-    "text": "View Quality Policy"
+    "text": "View Quality Policy & Manual"
    },
    {
     "group": "Quality Management",
-    "key": "l-3d895cd",
+    "key": "l-4f1719e",
     "kind": "link",
     "tag": "a",
-    "text": "View Quality Policy",
+    "text": "View Quality Policy & Manual",
     "url": "#policy-doc"
    },
    {

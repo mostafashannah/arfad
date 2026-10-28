@@ -16,3 +16,4 @@ T.update({"FSC & LEED":"FSC وLEED","FSC & LEED Certificates":"شهادات FSC 
 T["View"] = "عرض"
 T["Download"] = "تحميل"
 T.update({"FSC COC":"FSC COC","FSC COC Certificates":"شهادات FSC COC"})
+T.update({"View Quality Policy & Manual":"عرض سياسة الجودة والدليل"})
