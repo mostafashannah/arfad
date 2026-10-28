@@ -60,6 +60,14 @@ CERT_TABS = [
 ]
 
 def cert_logo(jpg):
+    """Logo path with a content hash so a replaced logo is never served from a stale browser cache."""
+    import hashlib
+    p, k = _cert_logo(jpg)
+    if p and has_file(p):
+        p += "?v=" + hashlib.md5(open(os.path.join(ROOT, p), "rb").read()).hexdigest()[:8]
+    return p, k
+
+def _cert_logo(jpg):
     """The certificate maker's logo for a row: (image, chip style)."""
     j = jpg.lower()
     if j.startswith("legal/"):
