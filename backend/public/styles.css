@@ -1456,3 +1456,11 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
 .parallax-band{position:relative;height:clamp(240px,42vw,480px);overflow:hidden;background:#0a2540;}
 .parallax-band .pb-img{position:absolute;inset:-16% 0;background-size:cover;background-position:center;will-change:transform;}
 .parallax-band::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,37,64,.12),rgba(10,37,64,0) 40%,rgba(10,37,64,.18));pointer-events:none;}
+/* mobile home hero: the stat band sits below the content in normal flow, so it can never overlap the buttons */
+@media (max-width:760px){
+  .hero-full{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;}
+  .hero-full-inner{flex:1;order:1;padding-bottom:28px;}
+  .hero-full .hero-dots{position:relative;order:2;bottom:auto;left:auto;right:auto;margin:0 0 16px;}
+  .hero-full-facts{position:relative;order:3;left:auto;right:auto;bottom:auto;}
+  .hero-scroll-cue{display:none;}
+}
