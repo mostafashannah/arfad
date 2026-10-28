@@ -7,7 +7,7 @@ def home():
         f'<div class="gc-body"><h4>{esc(s["title"])}</h4></div></a>' for s in SECTORS)
     body = f'''<main id="top">
   <section class="hero-slider hero-full">
-    <div class="slide video-slide active"><video src="img/hero-video.mp4" poster="img/hero-video-poster.jpg" autoplay muted loop playsinline preload="auto"></video></div>
+    <div class="slide" style="background-image:url('img/factory-aerial.jpg');"></div>
     <div class="slide" style="background-image:url('img/machine-cefla-drying.jpg');"></div>
     <div class="slide" style="background-image:url('img/proj-rc.jpg');"></div>
     <div class="hero-overlay"></div>

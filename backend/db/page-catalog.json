@@ -2285,9 +2285,9 @@
    {
     "group": "Page header",
     "images": [
+     "img/factory-aerial.jpg",
      "img/machine-cefla-drying.jpg",
-     "img/proj-rc.jpg",
-     "img/hero-video.mp4"
+     "img/proj-rc.jpg"
     ],
     "key": "h-0911aed",
     "kind": "hero",
