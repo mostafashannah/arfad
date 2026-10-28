@@ -59,7 +59,22 @@ def nav(active):
         cur = ' aria-current="page"' if is_cur else ""
         if kids:
             CUR = ' aria-current="page"'
-            sub = "".join(f'<a href="{k}"{" class=\"sub-item\"" if t.startswith("– ") else ""}{CUR if k.split("#")[0] == active and "#" not in k else ""}>{esc(t[2:] if t.startswith("– ") else t)}</a>' for t, k in kids)
+            def _a(t, k, cls=""):
+                cur_a = CUR if k.split("#")[0] == active and "#" not in k else ""
+                return f'<a href="{k}"{(" class=" + chr(34) + cls + chr(34)) if cls else ""}{cur_a}>{esc(t)}</a>'
+            parts, i = [], 0
+            while i < len(kids):
+                t, k = kids[i]
+                j = i + 1
+                while j < len(kids) and kids[j][0].startswith("– "):
+                    j += 1
+                if j > i + 1:
+                    inner = "".join(_a(x[2:], y, "sub-item") for x, y in kids[i + 1:j])
+                    parts.append(f'<div class="sub-drop">{_a(t, k, "drop-parent")}<button type="button" class="drop-toggle" aria-label="Toggle {esc(t)} menu" aria-expanded="false"></button><div class="sub-list">{inner}</div></div>')
+                else:
+                    parts.append(_a(t, k))
+                i = j
+            sub = "".join(parts)
             cols = " cols-2" if len(kids) > 8 else ""
             items.append(
                 f'<div class="nav-item has-sub{" is-current" if is_cur else ""}"><a class="nav-link" href="{href}"{cur}>{esc(label)}</a>'
@@ -344,6 +359,15 @@ JS_REVEAL_OBSERVER = '''<script>
   window.addEventListener("pageshow", function(){ document.body.classList.remove("leaving"); });
 })();
 
+
+/* nested dropdown inside the Services menu */
+document.addEventListener("click", function(e){
+  var t = e.target.closest ? e.target.closest(".drop-toggle") : null;
+  if(!t) return;
+  e.preventDefault(); e.stopPropagation();
+  var d = t.parentNode, o = !d.classList.contains("open");
+  d.classList.toggle("open", o); t.setAttribute("aria-expanded", o ? "true" : "false");
+});
 
 /* certificates hub: category tabs. The admin's saved list (/api/certificates) replaces the built-in panels. */
 (function(){
@@ -967,7 +991,20 @@ JS_REVEAL_OBSERVER = '''<script>
         var b = el("button", "sub-toggle"); b.type = "button"; b.setAttribute("aria-label", "Toggle " + it.label + " menu"); b.setAttribute("aria-expanded", "false");
         wrap.appendChild(b);
         var sub = el("div", "submenu" + (kids.length > 8 ? " cols-2" : ""));
-        kids.forEach(function(k){ var sb = /^[\u2013\u2014-]\s/.test(k.label), ka = link(k.href, sb ? k.label.replace(/^[\u2013\u2014-]\s+/, "") : k.label, sb ? "sub-item" : null); if(k.href === cur) ka.setAttribute("aria-current", "page"); sub.appendChild(ka); });
+        var li = 0;
+        while(li < kids.length){
+          var k = kids[li], lj = li + 1;
+          while(lj < kids.length && /^[\u2013\u2014-]\s/.test(kids[lj].label)) lj++;
+          var ka = link(k.href, k.label, lj > li + 1 ? "drop-parent" : null); if(k.href === cur) ka.setAttribute("aria-current", "page");
+          if(lj > li + 1){
+            var dd = el("div", "sub-drop"); dd.appendChild(ka);
+            var tg = el("button", "drop-toggle"); tg.type = "button"; tg.setAttribute("aria-label", "Toggle " + k.label + " menu"); tg.setAttribute("aria-expanded", "false"); dd.appendChild(tg);
+            var sl = el("div", "sub-list");
+            kids.slice(li + 1, lj).forEach(function(s){ var sa = link(s.href, s.label.replace(/^[\u2013\u2014-]\s+/, ""), "sub-item"); if(s.href === cur) sa.setAttribute("aria-current", "page"); sl.appendChild(sa); });
+            dd.appendChild(sl); sub.appendChild(dd);
+          } else sub.appendChild(ka);
+          li = lj;
+        }
         wrap.appendChild(sub);
       }
       nav.appendChild(wrap);
