@@ -90,7 +90,7 @@ SERVICES = [
   scope=[],
   subs=[('Interior Furniture & Decors', 'interior-furniture')],
   projects=["primer-steak-house","karan","movenpick","misk"]),
- dict(slug="countertops", title="Countertops & Surfaces", img="svc-countertops-reception.jpg",
+ dict(slug="countertops", title="Countertops & Surfaces", img="svc-countertops-reception.jpg", page_img="svc-cabinets.jpg",
   card="In-house fabricated natural stone, quartz and engineered stone surfaces.",
   tagline="Tailored Surface Solutions for Functional and Refined Spaces",
   intro=["ARFAD delivers customized countertop and surface solutions tailored to project requirements, combining functional performance, precise fabrication, and refined finishes across kitchens, vanities, reception areas, and hospitality spaces.",
