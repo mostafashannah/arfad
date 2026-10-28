@@ -290,7 +290,6 @@ VENDORS = [
  ("Nesma & Partners","CL03845 / LS-004960","Nesma & Partners"),("Ma'aden","40665","MA'ADEN"),("NWC, National Water Company","13328811",""),
  ("The Red Sea Co.","S10357393","Red Sea Global"),("NEOM","10625781","NEOM"),("Al-Kifah Holding","4000006073",""),("Rua Al Madinah Holding","10384",""),
  ("El Seif Engineering Contracting Co.","21751",""),("NHC, National Housing Company","14841",""),("SEVEN, Saudi Entertainment Venture","S10350542",""),
- ("Qiddiya Investment Co.","ID to be confirmed",""),
 ]
 
 # client names from the CP "Clients & Partners" page. Logos: drop files into img/clients/<slug>.png|svg|jpg|webp and rebuild.
