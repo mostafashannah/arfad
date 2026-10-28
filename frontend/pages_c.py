@@ -86,10 +86,10 @@ def cert_row(jpg, title, sub, pdf=None, i=0):
     given = pdf is not None
     pdf = pdf or make_pdf(jpg, jpg.rsplit(".", 1)[0])
     view = pdf if given else f"img/certs/{jpg}"
-    dl = f'<a class="cert-btn dl" href="{pdf}" download>Download <span aria-hidden="true">&darr;</span></a>' if pdf else ""
+    dl = f'<a class="cert-btn dl" href="{pdf}" download aria-label="Download" title="Download"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v3h16v-3"/></svg></a>' if pdf else ""
     return (f'<div class="cert-row rv" style="--d:{i*.07:.2f}s">{cert_logo_html(jpg, view, title)}'
             f'<div class="cert-row-t"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div>'
-            f'<a class="cert-btn view" href="{view}" target="_blank" rel="noopener">View full certificate <span aria-hidden="true">&rarr;</span></a>{dl}</div>')
+            f'<a class="cert-btn view" href="{view}" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>View</a>{dl}</div>')
 
 FOLDER_SVG = '<svg viewBox="0 0 64 52" aria-hidden="true"><path class="fo-back" d="M4 8a4 4 0 0 1 4-4h14l6 7h28a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path class="fo-front" d="M4 22a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/></svg>'
 

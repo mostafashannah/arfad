@@ -1376,3 +1376,7 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 
 .cert-row-logo.wide{width:150px;padding:8px 12px;}
 @media (max-width:640px){.cert-row-logo.wide{width:120px;}}
+
+.cert-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;}
+.cert-btn.dl{width:44px;padding:10px 0;}
+.cert-btn svg{flex:none;}
