@@ -23,6 +23,7 @@ import {
   FilePen,
   Store,
   Stamp,
+  Award,
   PanelTop,
   PanelBottom,
   ChevronDown,
@@ -81,6 +82,7 @@ const nav: Entry[] = [
     items: [
       { href: "/admin/clients", label: "Clients", icon: Handshake },
       { href: "/admin/vendors", label: "Vendors", icon: Store },
+      { href: "/admin/certificates", label: "Certificates", icon: Award },
       { href: "/admin/accreditations", label: "Accreditations", icon: BadgeCheck },
       { href: "/admin/profile", label: "Company Profile", icon: FileText },
     ],

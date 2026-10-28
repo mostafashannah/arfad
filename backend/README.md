@@ -189,3 +189,7 @@ shows a warning banner on the Overview and Company Profile pages.
 - `GET /api/posts/[slug]` returns `{ post: { slug, title, category, excerpt, body, cover, date } }`, or 404 `{ error }` if missing or a draft.
 
 Admin writes (login required): `GET|POST /api/posts/admin` and `PATCH|DELETE /api/posts/admin/[id]` (`title, category, excerpt, body, coverUrl, publishedAt, published, slug`). The 6 demo posts from `db/site-defaults.json` are seeded once, guarded by a `posts_seeded` row in `site_blocks`, so deleting them in the admin keeps them gone across restarts and redeploys.
+
+## Certificates
+
+`/admin/certificates` edits every tab and certificate on Factory > Certificates & Awards (names, headings, titles, files, logos, folders, order). PDFs and images upload through `/api/media`. The saved list lives in `siteBlocks` under `certificates`; until it is saved the built-in list from `db/site-defaults.json` shows. "Reset to built-in" deletes the saved row. The Arabic page keeps its built-in list.

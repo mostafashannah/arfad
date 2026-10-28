@@ -93,6 +93,26 @@ def cert_row(jpg, title, sub, pdf=None, i=0):
 
 FOLDER_SVG = '<svg viewBox="0 0 64 52" aria-hidden="true"><path class="fo-back" d="M4 8a4 4 0 0 1 4-4h14l6 7h28a4 4 0 0 1 4 4v29a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/><path class="fo-front" d="M4 22a4 4 0 0 1 4-4h48a4 4 0 0 1 4 4v22a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4z"/></svg>'
 
+def cert_defaults():
+    """The built-in certificates as plain data: the admin starts from this and the page JS renders saved edits."""
+    import html as _h
+    u = lambda t: _h.unescape(t)
+    tabs = []
+    for key, label, heading, lede, groups in CERT_TABS:
+        items = []
+        for gname, rows in groups:
+            for c in rows:
+                if c[0] is None:
+                    items.append(dict(title=u(c[1]), sub=u(c[2]), file="", logo="", group=u(gname) if len(groups) > 1 else ""))
+                    continue
+                jpg, title, sub = c[0], c[1], c[2]
+                pdf = c[3] if len(c) > 3 else None
+                pdf = pdf or make_pdf(jpg, jpg.rsplit(".", 1)[0])
+                logo, _k = cert_logo(jpg)
+                items.append(dict(title=u(title), sub=u(sub), file="/" + (pdf or f"img/certs/{jpg}"), logo=("/" + logo) if logo else "", group=u(gname) if len(groups) > 1 else ""))
+        tabs.append(dict(id=key, label=u(label), heading=u(heading), lede=u(lede), items=items))
+    return dict(tabs=tabs)
+
 def pending_row(title, sub):
     return f'<div class="cert-row pending rv"><div class="cert-row-t"><h4>{esc(title)}</h4><p>{esc(sub)}</p></div></div>'
 

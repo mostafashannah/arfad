@@ -20,10 +20,11 @@ export async function POST(req: NextRequest) {
 
   if (!file) return NextResponse.json({ error: "No file provided" }, { status: 400 });
   const isVideo = ["video/mp4", "video/webm", "video/quicktime"].includes(file.type);
-  if (!file.type.startsWith("image/") && !isVideo) {
-    return NextResponse.json({ error: "Only image uploads (or MP4, WebM and MOV videos) are allowed" }, { status: 400 });
+  const isPdf = file.type === "application/pdf";
+  if (!file.type.startsWith("image/") && !isVideo && !isPdf) {
+    return NextResponse.json({ error: "Only image uploads, PDFs (or MP4, WebM and MOV videos) are allowed" }, { status: 400 });
   }
-  const max = isVideo ? 40 : 10;
+  const max = isVideo ? 40 : isPdf ? 25 : 10;
   if (file.size > max * 1024 * 1024) {
     return NextResponse.json({ error: `File too large (max ${max}MB)` }, { status: 400 });
   }

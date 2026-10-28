@@ -16,7 +16,7 @@ files = sorted(f for f in (os.path.basename(p) for p in glob.glob(os.path.join(R
 pages_c.sitemap_and_llms(files)
 import json
 with open(os.path.join(ROOT, "..", "backend", "db", "site-defaults.json"), "w") as fh:
-    json.dump({"nav": [dict(i, active=True) for i in SITE_DEFAULTS["nav"]], "footer": SITE_DEFAULTS["footer"], "accreditations": SITE_DEFAULTS["accreditations"], "posts": POSTS_JSON, "vendors": [dict(name=n, no=no, logo=("/" + client_logo(lg) if lg and client_logo(lg) else None)) for n, no, lg in VENDORS]}, fh, ensure_ascii=False, indent=2)
+    json.dump({"nav": [dict(i, active=True) for i in SITE_DEFAULTS["nav"]], "footer": SITE_DEFAULTS["footer"], "accreditations": SITE_DEFAULTS["accreditations"], "posts": POSTS_JSON, "certificates": pages_c.cert_defaults(), "vendors": [dict(name=n, no=no, logo=("/" + client_logo(lg) if lg and client_logo(lg) else None)) for n, no, lg in VENDORS]}, fh, ensure_ascii=False, indent=2)
 with open(os.path.join(ROOT, "..", "backend", "db", "page-catalog.json"), "w") as fh:
     json.dump(PAGE_CATALOG, fh, ensure_ascii=False, indent=1, sort_keys=True)
 import arabic
