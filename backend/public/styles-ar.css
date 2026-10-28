@@ -1,0 +1,74 @@
+/* ===== Arabic (RTL) overrides, loaded after styles.css on /ar/ pages ===== */
+:root{--ar-font:"Cairo","Tajawal","Segoe UI",Tahoma,Arial,sans-serif;}
+html[lang="ar"] body,html[lang="ar"] button,html[lang="ar"] input,html[lang="ar"] select,html[lang="ar"] textarea,
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4,html[lang="ar"] .btn,html[lang="ar"] nav.links,
+html[lang="ar"] .eyebrow,html[lang="ar"] .cert-tab,html[lang="ar"] .cert-btn,html[lang="ar"] .num,html[lang="ar"] .lbl{font-family:var(--ar-font)!important;}
+/* Arabic letters must not be spaced or upper-cased */
+html[lang="ar"] *{letter-spacing:0!important;text-transform:none!important;}
+html[lang="ar"] h1,html[lang="ar"] h2,html[lang="ar"] h3,html[lang="ar"] h4{line-height:1.35!important;}
+html[lang="ar"] main section h2{line-height:1.4!important;}
+html[lang="ar"] body{line-height:1.8;}
+html[lang="ar"] nav.links{font-size:.86rem;}
+html[lang="ar"] .submenu a{font-size:.84rem!important;}
+html[lang="ar"] .eyebrow{font-size:.9rem;}
+
+/* header */
+.has-sub > .nav-link::after{margin-left:0;margin-right:7px;}
+.submenu{left:auto;right:-18px;}
+.nav-item:nth-last-child(-n+4) .submenu{right:auto;left:-18px;}
+@media (max-width:1180px){
+  .submenu a{border-left:none!important;border-right:2px solid rgba(255,255,255,.18);padding:10px 14px 10px 0!important;}
+  nav.links{right:0;left:auto;}
+}
+/* hero facts, strips and cards: mirrored dividers */
+.hf-item{border-left:none;border-right:1px solid rgba(233,228,216,.14);}
+.hf-item:first-child{border-right:none;}
+.why-strip .why-item{border-left:none;border-right:1px solid rgba(233,228,216,.16);}
+.why-strip .why-item:first-child{border-right:none;}
+/* lists */
+.qual-list li{padding-left:0;padding-right:20px;}
+.qual-list li::before{left:auto;right:0;}
+.has-js .qual-list li.rv{transform:translateX(26px);}
+.scope-item{text-align:right;}
+.proj-item{border-left:1px solid var(--line);border-right:3px solid var(--gold);}
+.vendor-row{border-left:1px solid var(--line);border-right:4px solid var(--gold);}
+.gallery-card .gc-body{text-align:right;}
+.has-js .rv.from-left{transform:translateX(80px);}
+.has-js .rv.from-right{transform:translateX(-80px);}
+.has-js .rv.from-left.from-right-mid{transform:translateY(50px);}
+/* footer */
+.foot-grid .foot-brand .lk-top{flex-direction:row;}
+html[lang="ar"] .foot-grid .foot-brand .lk-ar{text-align:left;font-size:1.5rem;}
+.foot-badge,.cred-logos{justify-content:flex-start;}
+/* workflow path stays drawn left-to-right; only its text is Arabic */
+.wf-wrap,.wf-grid{direction:ltr;}
+.wf-node h4,.wf-node p{direction:rtl;}
+/* timeline / process */
+.timeline::before{left:auto;right:31px;}
+/* counters and numbers read left-to-right */
+.num,.hf-item .num,.stat-cell .num{direction:ltr;unicode-bidi:isolate;text-align:right;}
+/* phone, email, ids */
+a[href^="tel:"],a[href^="mailto:"],.vid{direction:ltr;unicode-bidi:isolate;display:inline-block;}
+/* certificates */
+.cert-row-t{text-align:right;}
+.cert-cat summary i{margin-right:auto;margin-left:0;}
+.cert-folder{align-items:flex-start;text-align:right;}
+.cert-back{direction:rtl;}
+/* breadcrumbs and arrows */
+.crumbs{direction:rtl;}
+/* forms */
+.enq-form label,.enq-form input,.enq-form select,.enq-form textarea{text-align:right;}
+.enq-form .hp{left:auto;right:-9999px;}
+/* gallery counters */
+.gal-count{margin-left:0;margin-right:auto;}
+/* progress bar fills from the right */
+.scroll-progress{left:auto;right:0;transform-origin:100% 50%;}
+/* decorative blobs */
+.section:not(.photo-band):not(.on-navy)::before{right:auto;left:-100px;}
+.section:not(.photo-band):not(.on-navy)::after{left:auto;right:-80px;}
+/* heading underline grows from the right */
+.head h2::after{background:linear-gradient(270deg,var(--gold),transparent);}
+/* floating buttons move to the left so they never cover right-aligned text */
+.theme-switch{right:auto!important;left:16px;}
+.wa-fab,.whatsapp-fab,a.wa{right:auto!important;left:18px;}
+.client-marquee,.client-marquee-track,.acc-marquee,.acc-track{direction:ltr;}

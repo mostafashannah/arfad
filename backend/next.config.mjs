@@ -15,12 +15,19 @@ const nextConfig = {
     return [
       { source: "/", headers: revalidate },
       { source: "/:page*.html", headers: revalidate },
+      { source: "/ar", headers: revalidate },
+      { source: "/ar/:page*.html", headers: revalidate },
       { source: "/styles.css", headers: revalidate },
+      { source: "/styles-ar.css", headers: revalidate },
     ];
   },
   async rewrites() {
     return {
-      beforeFiles: [{ source: "/", destination: "/index.html" }],
+      beforeFiles: [
+        { source: "/", destination: "/index.html" },
+        { source: "/ar", destination: "/ar/index.html" },
+        { source: "/ar/", destination: "/ar/index.html" },
+      ],
     };
   },
 };

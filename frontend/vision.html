@@ -58,6 +58,7 @@
 <body>
 <script>
 document.documentElement.classList.add("has-js");
+window.ARFAD_AR = document.documentElement.lang === "ar";
 if("scrollRestoration" in history){ history.scrollRestoration = "manual"; }
 window.scrollTo(0,0);
 window.addEventListener("pageshow", function(){ window.scrollTo(0,0); });
@@ -513,7 +514,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   var grid = document.querySelector('[data-clients="grid"]');
   var tracks = document.querySelectorAll('[data-clients="marquee"]');
   var vend = document.querySelectorAll('[data-client-logo]');
-  if(!grid && !tracks.length && !vend.length) return;
+  if(window.ARFAD_AR || (!grid && !tracks.length && !vend.length)) return;
   fetch("/api/clients", {headers:{Accept:"application/json"}})
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(j){
@@ -643,6 +644,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   function el(t, cls, text){ var e = document.createElement(t); if(cls) e.className = cls; if(text != null) e.textContent = text; return e; }
   function safeUrl(u){ u = String(u || "").trim(); return /^(javascript|data|vbscript):/i.test(u) ? "" : u; }
   function initials(n){ return n.replace(/[^A-Za-z ]/g, " ").split(/\s+/).filter(Boolean).slice(0, 2).map(function(w){ return w[0]; }).join("").toUpperCase(); }
+  if(window.ARFAD_AR) return;
   fetch("/api/vendors", {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
     if(!j || !Array.isArray(j.vendors) || !j.vendors.length) return;
     grid.textContent = "";
@@ -698,7 +700,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     pills.forEach(function(p){ p.addEventListener("click", function(){
       activeCat = p.getAttribute("data-cat") || ""; pills.forEach(function(x){ x.classList.toggle("active", x === p); }); renderGrids();
     }); });
-    fetch("/api/posts", {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+    if(!window.ARFAD_AR) fetch("/api/posts", {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
       if(!j || !Array.isArray(j.posts)) return;
       current = j.posts; renderGrids();
     }).catch(function(){});
@@ -880,6 +882,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
     }
   }
   function get(u){ return fetch(u, {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }); }
+  if(window.ARFAD_AR) return;
   get("/api/navigation").then(function(j){ if(j && j.items && j.items.length && norm(j.items) !== norm(baked.nav)) renderNav(j.items); });
   get("/api/accreditations").then(function(j){ if(j && Array.isArray(j.items) && baked.accreditations && norm(j.items) !== norm(baked.accreditations)) renderAcc(j.items); });
   get("/api/footer").then(function(j){ if(j && j.footer && norm(j.footer) !== norm(baked.footer)) renderFooter(j.footer); });
@@ -918,24 +921,24 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
         };
         req = {method:"POST", headers:{"Content-Type":"application/json"}, body: JSON.stringify(body)};
       }
-      status.textContent = file ? "Uploading your CV..." : "Sending...";
+      status.textContent = window.ARFAD_AR ? (file ? "جارٍ رفع سيرتك الذاتية..." : "جارٍ الإرسال...") : (file ? "Uploading your CV..." : "Sending...");
       btn.disabled = true;
       fetch("/api/enquiry", req)
         .then(function(r){ return r.json().catch(function(){ return {ok:false}; }); })
         .then(function(j){
           if(j && j.ok){
             status.className = "form-status ok";
-            status.textContent = "Thank you. Your message has been sent and our team will reply shortly.";
+            status.textContent = window.ARFAD_AR ? "شكرًا لك. تم إرسال رسالتك وسيرد عليك فريقنا قريبًا." : "Thank you. Your message has been sent and our team will reply shortly.";
             form.reset(); started = Date.now();
-            var fn = form.querySelector(".file-name"); if(fn) fn.textContent = "No file chosen";
+            var fn = form.querySelector(".file-name"); if(fn) fn.textContent = window.ARFAD_AR ? "لم يتم اختيار ملف" : "No file chosen";
           } else {
             status.className = "form-status err";
-            status.textContent = (j && j.error) || "We could not send your message. Please email info@arfad.com.sa or call us.";
+            status.textContent = (j && j.error) || (window.ARFAD_AR ? "تعذر إرسال رسالتك. يرجى مراسلتنا على info@arfad.com.sa أو الاتصال بنا." : "We could not send your message. Please email info@arfad.com.sa or call us.");
           }
         })
         .catch(function(){
           status.className = "form-status err";
-          status.textContent = "We could not send your message. Please email info@arfad.com.sa or call us.";
+          status.textContent = window.ARFAD_AR ? "تعذر إرسال رسالتك. يرجى مراسلتنا على info@arfad.com.sa أو الاتصال بنا." : "We could not send your message. Please email info@arfad.com.sa or call us.";
         })
         .then(function(){ btn.disabled = false; });
     });
