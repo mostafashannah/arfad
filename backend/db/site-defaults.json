@@ -889,6 +889,15 @@
         "lede": "ARFAD is a registered Saudi Aramco Manufacturer & Service Provider, supported by recognized compliance credentials and a proven record of successful project delivery. Saudi Aramco Vendor Code: 10064085.",
         "items": [
           {
+            "title": "Saudi Aramco Registration Approval Letter",
+            "sub": "Manufacturer + Service Provider · Vendor Code 10064085 · January 8, 2023",
+            "file": "/files/certificates/aramco/aramco-registration-approval-letter.pdf",
+            "logo": "/img/clients/saudi-aramco.png?v=4073e590",
+            "group": "",
+            "hidden": false,
+            "hideLogo": false
+          },
+          {
             "title": "Saudi Aramco Certificate of Appreciation",
             "sub": "Home Ownership & Infrastructure Projects Division",
             "file": "/files/certificates/cert-aramco-appreciation.pdf",

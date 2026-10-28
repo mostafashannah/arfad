@@ -315,6 +315,7 @@ CERTS_ISO = [
 ]
 CERTS_FSC = [("cert-fsc.jpg","FSC® Chain of Custody (CoC) Certification","FSC-STD-40-004 V3-1 | FSC-STD-50-001 V2-1")]
 CERTS_ARAMCO = [
+ ("cert-aramco-registration.jpg","Saudi Aramco Registration Approval Letter","Manufacturer + Service Provider · Vendor Code 10064085 · January 8, 2023","files/certificates/aramco/aramco-registration-approval-letter.pdf"),
  ("cert-aramco-appreciation.jpg","Saudi Aramco Certificate of Appreciation","Home Ownership & Infrastructure Projects Division"),
  ("cert-cybersecurity.jpg","Cybersecurity Compliance Certificate","Saudi Aramco SACS-002, assessed by RSM Saudi Arabia"),
 ]
