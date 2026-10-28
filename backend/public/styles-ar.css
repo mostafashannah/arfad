@@ -90,3 +90,6 @@ html[lang="ar"] .lede,html[lang="ar"] p{text-align:start;}
 html[lang="ar"] .hero-overlay{background:
   linear-gradient(270deg, rgba(7,19,32,.72) 0%, rgba(7,19,32,.45) 42%, rgba(7,19,32,.08) 78%),
   linear-gradient(180deg, rgba(7,19,32,.35) 0%, rgba(7,19,32,0) 30%, rgba(7,19,32,.68) 100%);}
+/* footer brand: icon on the left with the text beside it, exactly like the English footer */
+html[lang="ar"] .foot-grid .foot-brand .lk-top{direction:ltr;}
+html[lang="ar"] .foot-grid .foot-brand .lk-ar{text-align:right;direction:rtl;}
