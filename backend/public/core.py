@@ -382,6 +382,25 @@ JS_REVEAL_OBSERVER = '''<script>
   var t; new MutationObserver(function(){ if(busy) return; clearTimeout(t); t = setTimeout(run, 120); }).observe(document.body, {childList:true, subtree:true, characterData:true});
 })();
 
+/* parallax separator bands: the picture drifts slower than the page */
+(function(){
+  var bands = document.querySelectorAll(".parallax-band");
+  if(!bands.length || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var vh = window.innerHeight;
+    bands.forEach(function(b){
+      var r = b.getBoundingClientRect();
+      if(r.bottom < -50 || r.top > vh + 50) return;
+      var p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+      b.firstElementChild.style.transform = "translate3d(0," + (p * -14).toFixed(2) + "%,0)";
+    });
+  }
+  function req(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener("scroll", req, {passive:true}); window.addEventListener("resize", req); update();
+})();
+
 /* nested dropdown inside the Services menu */
 document.addEventListener("click", function(e){
   var t = e.target.closest ? e.target.closest(".drop-toggle") : null;

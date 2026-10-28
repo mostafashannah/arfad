@@ -343,6 +343,7 @@ def other_pages():
       <figure class="sus-fsc"><img src="img/accreditation/fsc-mark.png" alt="FSC® – the mark of responsible forestry"></figure>
     </div>
   </div></section>
+  <div class="parallax-band" role="img" aria-label="Forest canopy under a clear sky"><div class="pb-img" style="background-image:url('img/forest-canopy.jpg');"></div></div>
   <section class="section on-alt"><div class="wrap">
     {head("Our Process","How we build responsibly.")}
     <ol class="sus-process">

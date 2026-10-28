@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Tailored Furniture for Distinctive Spaces. ARFAD manufactures custom furniture tailored to each project's design concept, dimensions, functional requirements, and selected finishes, with a focus on quality craftsmanship and refined execution.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css?v=6cd135df8d">
+<link rel="stylesheet" href="styles.css?v=ce303dd501">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <script type="application/ld+json">
@@ -285,6 +285,25 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   function run(){ busy = true; fix(document.body); busy = false; }
   run();
   var t; new MutationObserver(function(){ if(busy) return; clearTimeout(t); t = setTimeout(run, 120); }).observe(document.body, {childList:true, subtree:true, characterData:true});
+})();
+
+/* parallax separator bands: the picture drifts slower than the page */
+(function(){
+  var bands = document.querySelectorAll(".parallax-band");
+  if(!bands.length || (window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches)) return;
+  var ticking = false;
+  function update(){
+    ticking = false;
+    var vh = window.innerHeight;
+    bands.forEach(function(b){
+      var r = b.getBoundingClientRect();
+      if(r.bottom < -50 || r.top > vh + 50) return;
+      var p = (r.top + r.height / 2 - vh / 2) / (vh / 2 + r.height / 2);
+      b.firstElementChild.style.transform = "translate3d(0," + (p * -14).toFixed(2) + "%,0)";
+    });
+  }
+  function req(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
+  window.addEventListener("scroll", req, {passive:true}); window.addEventListener("resize", req); update();
 })();
 
 /* nested dropdown inside the Services menu */
