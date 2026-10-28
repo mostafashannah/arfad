@@ -388,5 +388,72 @@
       "date": "2026-06-15",
       "published": false
     }
+  ],
+  "vendors": [
+    {
+      "name": "Saudi Aramco (Manufacturer + Service Provider)",
+      "no": "10064085",
+      "logo": "/img/clients/saudi-aramco.png"
+    },
+    {
+      "name": "SABIC",
+      "no": "11047241",
+      "logo": "/img/clients/sabic.png"
+    },
+    {
+      "name": "Royal Commission (RC)",
+      "no": "14902",
+      "logo": "/img/clients/royal-commission-for-jubail-yanbu.png"
+    },
+    {
+      "name": "Nesma & Partners",
+      "no": "CL03845 / LS-004960",
+      "logo": "/img/clients/nesma-partners.png"
+    },
+    {
+      "name": "Ma'aden",
+      "no": "40665",
+      "logo": "/img/clients/ma-aden.png"
+    },
+    {
+      "name": "NWC, National Water Company",
+      "no": "13328811",
+      "logo": null
+    },
+    {
+      "name": "The Red Sea Co.",
+      "no": "S10357393",
+      "logo": "/img/clients/red-sea-global.png"
+    },
+    {
+      "name": "NEOM",
+      "no": "10625781",
+      "logo": "/img/clients/neom.png"
+    },
+    {
+      "name": "Al-Kifah Holding",
+      "no": "4000006073",
+      "logo": null
+    },
+    {
+      "name": "Rua Al Madinah Holding",
+      "no": "10384",
+      "logo": null
+    },
+    {
+      "name": "El Seif Engineering Contracting Co.",
+      "no": "21751",
+      "logo": null
+    },
+    {
+      "name": "NHC, National Housing Company",
+      "no": "14841",
+      "logo": null
+    },
+    {
+      "name": "SEVEN, Saudi Entertainment Venture",
+      "no": "S10350542",
+      "logo": null
+    }
   ]
 }

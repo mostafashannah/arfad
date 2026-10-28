@@ -23,6 +23,7 @@ pages (`/`, `/services`, `/projects`) as a starting point for the real site.
 - **Media Library** — every uploaded image in one place, with copy-URL and delete.
 - **Team** — add/remove teammates who can log in and edit (Admin / Editor roles).
 
+- **Vendors** — the Registered Vendors cards: add, rename, change the vendor ID, replace logos, reorder, hide or delete. The public page uses this list as soon as it loads.
 - **Pages** — edit the text and pictures of any public page. Pick a page under *Website Content > Pages*,
   change any heading, paragraph, button or list item, replace any picture, and set the **page header pictures**
   (one picture = fixed header, two or more = automatic slider; slides can be pictures or MP4/WebM/MOV videos up to 40 MB, including the Home page slider). Button labels and **where each button leads** are editable too, and a heading's highlighted words are marked with `{{ }}`. Saved edits are stored in the database and applied

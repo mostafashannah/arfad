@@ -3,7 +3,7 @@ import bcrypt from "bcryptjs";
 import { db } from "./client";
 import { existsSync } from "fs";
 import path from "path";
-import { users, services, projects, settings, clients, accreditations, navItems, siteBlocks, posts } from "./schema";
+import { users, services, projects, settings, clients, vendors, accreditations, navItems, siteBlocks, posts } from "./schema";
 import { eq, and } from "drizzle-orm";
 import { slugify } from "../lib/slugify";
 import defaults from "./site-defaults.json";
@@ -110,6 +110,15 @@ export async function runSeed() {
     await db.insert(clients).values({ name, slug, logoUrl, order: i }).run();
   }
   console.log(`Seeded clients`);
+
+  // Once only: the marker row keeps deleted vendors from reappearing after a restart.
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "vendors_seeded")).get())) {
+    for (const [i, v] of (defaults as { vendors?: { name: string; no: string; logo: string | null }[] }).vendors?.entries() ?? []) {
+      await db.insert(vendors).values({ name: v.name, vendorNo: v.no, logoUrl: v.logo, order: i }).run();
+    }
+    await db.insert(siteBlocks).values({ key: "vendors_seeded", value: "1" }).run();
+  }
+  console.log(`Seeded vendors`);
 
   // Only when empty: admin edits and deletions of accreditations must survive redeploys.
   if (!(await db.select({ id: accreditations.id }).from(accreditations).get())) {

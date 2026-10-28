@@ -142,6 +142,18 @@ export const clients = sqliteTable("clients", {
     .default(sql`(unixepoch())`),
 });
 
+export const vendors = sqliteTable("vendors", {
+  id: id(),
+  name: text("name").notNull(),
+  vendorNo: text("vendor_no").notNull().default(""),
+  logoUrl: text("logo_url"),
+  order: integer("order").notNull().default(0),
+  active: integer("active", { mode: "boolean" }).notNull().default(true),
+  createdAt: integer("created_at", { mode: "timestamp" })
+    .notNull()
+    .default(sql`(unixepoch())`),
+});
+
 export const accreditations = sqliteTable("accreditations", {
   id: id(),
   name: text("name").notNull(),

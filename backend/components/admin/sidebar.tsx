@@ -21,6 +21,7 @@ import {
   BadgeCheck,
   Newspaper,
   FilePen,
+  Store,
   PanelTop,
   PanelBottom,
   ChevronDown,
@@ -77,6 +78,7 @@ const nav: Entry[] = [
     icon: ShieldCheck,
     items: [
       { href: "/admin/clients", label: "Clients", icon: Handshake },
+      { href: "/admin/vendors", label: "Vendors", icon: Store },
       { href: "/admin/accreditations", label: "Accreditations", icon: BadgeCheck },
       { href: "/admin/profile", label: "Company Profile", icon: FileText },
     ],

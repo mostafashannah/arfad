@@ -88,6 +88,15 @@ const STATEMENTS = [
     email_error TEXT,
     created_at INTEGER NOT NULL DEFAULT (unixepoch())
   )`,
+  `CREATE TABLE IF NOT EXISTS vendors (
+    id TEXT PRIMARY KEY NOT NULL,
+    name TEXT NOT NULL,
+    vendor_no TEXT NOT NULL DEFAULT '',
+    logo_url TEXT,
+    "order" INTEGER NOT NULL DEFAULT 0,
+    active INTEGER NOT NULL DEFAULT 1,
+    created_at INTEGER NOT NULL DEFAULT (unixepoch())
+  )`,
   `CREATE TABLE IF NOT EXISTS clients (
     id TEXT PRIMARY KEY NOT NULL,
     name TEXT NOT NULL,
