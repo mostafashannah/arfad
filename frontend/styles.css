@@ -1309,3 +1309,9 @@ html,body{overflow-x:clip;}
   .hero-slider .slide,.hero-slider .slide.active{transform:none;transition:opacity 1.1s ease;}
   .detail-hero:not(.hero-slider) .hero-bg{animation:none;}
 }
+
+/* one size for every section title on every page; footer column titles larger than the menu */
+:root{--h2-size:clamp(1.8rem,3.4vw,2.6rem);}
+main section h2,.cert-panel .head h2{font-size:var(--h2-size);line-height:1.2;}
+.post-article-body h2{font-size:1.45rem;}
+.foot-grid h4{font-size:1.1rem;letter-spacing:.06em;margin-bottom:16px;}

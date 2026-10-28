@@ -141,7 +141,7 @@ def cta_band(title="Let's build something that lasts twenty years.", eyebrow="Ge
     return f'''<section class="section cta-band">
     <div class="wrap" style="text-align:center;">
       <p class="eyebrow" style="justify-content:center;">{eyebrow}</p>
-      <h2 style="margin-top:14px;font-size:clamp(1.9rem,4vw,2.8rem);max-width:26ch;margin-inline:auto;">{title}</h2>
+      <h2 style="margin-top:14px;max-width:26ch;margin-inline:auto;">{title}</h2>
       {cta_btns(("Request a Quote","contact.html"),("Email Us",f"mailto:{EMAIL}"),center=True,light=True)}
     </div>
   </section>'''
