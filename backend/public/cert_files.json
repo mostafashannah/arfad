@@ -1,0 +1,96 @@
+{
+ "iso": [
+  {
+   "pdf": "files/certificates/iso/iso-9001.pdf",
+   "thumb": "iso/iso-9001.jpg",
+   "title": "ISO 9001:2015",
+   "sub": "Quality Management System"
+  },
+  {
+   "pdf": "files/certificates/iso/iso-14001.pdf",
+   "thumb": "iso/iso-14001.jpg",
+   "title": "ISO 14001:2015",
+   "sub": "Environmental Management System"
+  },
+  {
+   "pdf": "files/certificates/iso/iso-45001.pdf",
+   "thumb": "iso/iso-45001.jpg",
+   "title": "ISO 45001:2018",
+   "sub": "Occupational Health & Safety Management System"
+  },
+  {
+   "pdf": "files/certificates/iso/iso-promotional-poster.pdf",
+   "thumb": "iso/iso-promotional-poster.jpg",
+   "title": "ISO Promotional Poster",
+   "sub": "ARFAD ISO certifications"
+  }
+ ],
+ "legal": [
+  {
+   "pdf": "files/certificates/legal/commercial-registration.pdf",
+   "thumb": "legal/commercial-registration.jpg",
+   "title": "Commercial Registration (CR)",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/industrial-license.pdf",
+   "thumb": "legal/industrial-license.jpg",
+   "title": "Industrial License",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/safety-license.pdf",
+   "thumb": "legal/safety-license.jpg",
+   "title": "Safety License",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/environmental-permit.pdf",
+   "thumb": "legal/environmental-permit.jpg",
+   "title": "Environmental Permit Certificate",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/vat-certificate.pdf",
+   "thumb": "legal/vat-certificate.jpg",
+   "title": "VAT Certificate",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/zakat-certificate.pdf",
+   "thumb": "legal/zakat-certificate.jpg",
+   "title": "Zakat Certificate",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/saudization-certificate.pdf",
+   "thumb": "legal/saudization-certificate.jpg",
+   "title": "Saudization Certificate",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/local-content-certificate.pdf",
+   "thumb": "legal/local-content-certificate.jpg",
+   "title": "Local Content Certificate",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/chamber-of-commerce.pdf",
+   "thumb": "legal/chamber-of-commerce.jpg",
+   "title": "Chamber of Commerce Membership Certificate",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/articles-of-association.pdf",
+   "thumb": "legal/articles-of-association.jpg",
+   "title": "Articles of Association",
+   "sub": "ARFAD International Industry Company"
+  },
+  {
+   "pdf": "files/certificates/legal/national-address.pdf",
+   "thumb": "legal/national-address.jpg",
+   "title": "Proof of National Address",
+   "sub": "ARFAD International Industry Company"
+  }
+ ]
+}

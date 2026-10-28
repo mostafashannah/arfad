@@ -1380,3 +1380,13 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 .cert-btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;}
 .cert-btn.dl{width:44px;padding:10px 0;}
 .cert-btn svg{flex:none;}
+
+/* Certificates: no backgrounds, logos sit directly on the page */
+.cert-row-logo,.cert-row-logo.dark,.cert-row-logo.light,.cert-row-logo.doc{background:none;border:0;box-shadow:none;}
+.cert-row-logo:hover{box-shadow:none;}
+.cert-cat,.cert-folder,.cert-tab{background:none;box-shadow:none;}
+.cert-tab[aria-selected="true"]{background:var(--navy);}
+.cert-row.pending{border:0;border-top:1px solid var(--line);border-radius:0;padding:16px 0;}
+/* dark theme: logos are dark-on-light, so give them a plain white tile there only */
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .cert-row-logo.light{background:#fff;border-radius:12px;} }
+:root[data-theme="dark"] .cert-row-logo.light{background:#fff;border-radius:12px;}

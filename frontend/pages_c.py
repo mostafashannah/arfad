@@ -50,9 +50,9 @@ CERT_TABS = [
  ("iso", "ISO", "Committed to Standards, Driven by Excellence",
   "ARFAD is certified to international ISO standards, reflecting our commitment to quality management, environmental responsibility, and the health &amp; safety of our people.",
   [("ISO Management System Certificates", [(i["thumb"], i["title"], i["sub"], i["pdf"]) for i in CERT_FILES["iso"]])]),
- ("fsc", "FSC &amp; LEED", "FSC &amp; LEED Certificates",
+ ("fsc", "FSC COC", "FSC COC Certificates",
   "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks. LEED documentation supports projects with green-building requirements.",
-  [("FSC & LEED Certificates", list(CERTS_FSC) + [(None, "LEED Certificates", "Document to be provided")])]),
+  [("FSC COC Certificates", list(CERTS_FSC) + [(None, "LEED Certificates", "Document to be provided")])]),
  ("legal", "Legal", "Legal Certificates", "Commercial registration, licenses, permits and company legal documents.", [("Legal Certificates", [(i["thumb"], i["title"], i["sub"], i["pdf"]) for i in CERT_FILES["legal"]])]),
  ("aramco", "Aramco Approvals", "Saudi Aramco Approvals &amp; Appreciations",
   "ARFAD is a registered Saudi Aramco Manufacturer &amp; Service Provider, supported by recognized compliance credentials and a proven record of successful project delivery. Saudi Aramco Vendor Code: 10064085.",
@@ -66,12 +66,12 @@ def cert_logo(jpg):
         slug = j.split("/", 1)[1].rsplit(".", 1)[0]
         lp = f"img/certs/legal-logos/{slug}.png"
         if has_file(lp): return lp, "light wide"
-    if j.startswith("fire/") or "intertek" in j: return "img/accreditation/intertek.png", "dark"
-    if "iso-9001" in j: return "img/accreditation/iso-9001.png", "dark"
-    if "iso-14001" in j: return "img/accreditation/iso-14001.png", "dark"
-    if "iso-45001" in j: return "img/accreditation/iso-45001.png", "dark"
-    if "iso" in j: return "img/accreditation/uaf.png", "dark"
-    if "fsc" in j: return "img/accreditation/fsc.png", "dark"
+    if j.startswith("fire/") or "intertek" in j: return "img/accreditation/light/intertek.png", "light"
+    if "iso-9001" in j: return "img/accreditation/light/iso-9001.png", "light"
+    if "iso-14001" in j: return "img/accreditation/light/iso-14001.png", "light"
+    if "iso-45001" in j: return "img/accreditation/light/iso-45001.png", "light"
+    if "iso" in j: return "img/accreditation/light/uaf.png", "light"
+    if "fsc" in j: return "img/accreditation/light/fsc.png", "light"
     if "aramco" in j or "cybersecurity" in j: return "img/clients/saudi-aramco.png", "light"
     return None, "doc"
 

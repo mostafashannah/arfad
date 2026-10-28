@@ -15,3 +15,4 @@ T.update({"FSC & LEED":"FSC وLEED","FSC & LEED Certificates":"شهادات FSC 
 "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks. LEED documentation supports projects with green-building requirements.":"اعتمد مجلس رعاية الغابات (FSC) أرفاد بموجب شهادة سلسلة الحيازة FSC-STD-40-004 V3-1 ومتطلبات FSC-STD-50-001 V2-1، وبما يستوفي معايير استخدام العلامات التجارية لـ FSC. وتدعم وثائق LEED المشاريع ذات متطلبات المباني الخضراء."})
 T["View"] = "عرض"
 T["Download"] = "تحميل"
+T.update({"FSC COC":"FSC COC","FSC COC Certificates":"شهادات FSC COC"})
