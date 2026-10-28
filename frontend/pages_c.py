@@ -340,7 +340,7 @@ def other_pages():
       <p class="eyebrow">Sustainability</p>
       <h2 style="margin-top:10px;">Making a Positive Impact on the Environment.</h2>
       <p style="margin-top:20px;font-size:1.02rem;">Sustainability is our strategic approach to building a legacy for future generations, we understand the profound impact that the Woodwork industry can have on our natural resources and the environment. As a result, we prioritize integrating sustainable practices into all facets of our operations, ensuring that our activities, policies, and procedures align with environmentally responsible principles.</p>
-      <div class="sus-logos"><img src="img/accreditation/fsc.png" alt="FSC"></div>
+      <figure class="sus-fsc"><img src="img/accreditation/fsc.png?v=2" alt="FSC® – the mark of responsible forestry"></figure>
     </div>
   </div></section>
   <section class="section on-alt"><div class="wrap">

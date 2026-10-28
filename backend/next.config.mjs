@@ -17,6 +17,7 @@ const nextConfig = {
       { source: "/:page*.html", headers: revalidate },
       { source: "/ar", headers: revalidate },
       { source: "/ar/:page*.html", headers: revalidate },
+      { source: "/img/accreditation/:file*", headers: revalidate },
       { source: "/styles.css", headers: revalidate },
       { source: "/styles-ar.css", headers: revalidate },
     ];
