@@ -1443,3 +1443,4 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   .drop-toggle::before{transform:rotate(-45deg);margin:-4px 0 0 -5px;}
   .sub-drop:hover > .drop-toggle::before,.sub-drop:focus-within > .drop-toggle::before,.sub-drop.open > .drop-toggle::before{transform:rotate(-45deg);margin:-4px 0 0 -5px;}
 }
+sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.08em;font-weight:inherit;letter-spacing:0;}

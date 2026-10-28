@@ -360,6 +360,27 @@ JS_REVEAL_OBSERVER = '''<script>
 })();
 
 
+/* trademark sign: a small raised ® beside FSC and other marks */
+(function(){
+  function fix(root){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), hits = [], n;
+    while((n = w.nextNode())){
+      if(n.nodeValue.indexOf("\u00AE") < 0) continue;
+      var p = n.parentNode; if(!p || /^(SCRIPT|STYLE|TEXTAREA|TITLE|SUP)$/.test(p.nodeName) || (p.classList && p.classList.contains("reg"))) continue;
+      hits.push(n);
+    }
+    hits.forEach(function(t){
+      var parts = t.nodeValue.split("\u00AE"), f = document.createDocumentFragment();
+      parts.forEach(function(s, i){ if(s) f.appendChild(document.createTextNode(s)); if(i < parts.length - 1){ var e = document.createElement("sup"); e.className = "reg"; e.textContent = "\u00AE"; f.appendChild(e); } });
+      t.parentNode.replaceChild(f, t);
+    });
+  }
+  var busy = false;
+  function run(){ busy = true; fix(document.body); busy = false; }
+  run();
+  var t; new MutationObserver(function(){ if(busy) return; clearTimeout(t); t = setTimeout(run, 120); }).observe(document.body, {childList:true, subtree:true, characterData:true});
+})();
+
 /* nested dropdown inside the Services menu */
 document.addEventListener("click", function(e){
   var t = e.target.closest ? e.target.closest(".drop-toggle") : null;

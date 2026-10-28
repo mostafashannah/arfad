@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="ARFAD registered vendor numbers: Saudi Aramco 10064085, SABIC 11047241, Royal Commission 14902, Ma'aden 40665, The Red Sea Co. S10357393, NEOM 10625781 and more.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css?v=64680bf7b3">
+<link rel="stylesheet" href="styles.css?v=1ffba80d38">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <script type="application/ld+json">
@@ -265,6 +265,27 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   window.addEventListener("pageshow", function(){ document.body.classList.remove("leaving"); });
 })();
 
+
+/* trademark sign: a small raised ® beside FSC and other marks */
+(function(){
+  function fix(root){
+    var w = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null), hits = [], n;
+    while((n = w.nextNode())){
+      if(n.nodeValue.indexOf("®") < 0) continue;
+      var p = n.parentNode; if(!p || /^(SCRIPT|STYLE|TEXTAREA|TITLE|SUP)$/.test(p.nodeName) || (p.classList && p.classList.contains("reg"))) continue;
+      hits.push(n);
+    }
+    hits.forEach(function(t){
+      var parts = t.nodeValue.split("®"), f = document.createDocumentFragment();
+      parts.forEach(function(s, i){ if(s) f.appendChild(document.createTextNode(s)); if(i < parts.length - 1){ var e = document.createElement("sup"); e.className = "reg"; e.textContent = "®"; f.appendChild(e); } });
+      t.parentNode.replaceChild(f, t);
+    });
+  }
+  var busy = false;
+  function run(){ busy = true; fix(document.body); busy = false; }
+  run();
+  var t; new MutationObserver(function(){ if(busy) return; clearTimeout(t); t = setTimeout(run, 120); }).observe(document.body, {childList:true, subtree:true, characterData:true});
+})();
 
 /* nested dropdown inside the Services menu */
 document.addEventListener("click", function(e){
