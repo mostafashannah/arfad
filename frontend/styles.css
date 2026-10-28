@@ -1352,3 +1352,11 @@ main section h2{font-size:var(--h2-size)!important;line-height:1.2!important;let
 .cred-logos{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:16px;}
 .cred-logos img{height:42px;width:auto;max-width:96px;object-fit:contain;opacity:.92;transition:opacity .2s,transform .2s;}
 .cred-logos img:hover{opacity:1;transform:translateY(-2px);}
+
+/* mobile menu: every sub-item the same size on every phone (iOS was enlarging the long Services list) */
+html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
+@media (max-width:1180px){
+  .submenu,.submenu.cols-2{min-width:0!important;width:100%!important;display:block!important;max-width:100%;}
+  .nav-item.open > .submenu{max-height:1400px;}
+  .submenu a,.submenu.cols-2 a{font-size:12px!important;letter-spacing:.07em;line-height:1.35;white-space:normal;}
+}
