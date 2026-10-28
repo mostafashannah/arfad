@@ -1331,3 +1331,9 @@ main section h2,.cert-panel .head h2{font-size:var(--h2-size);line-height:1.2;}
 .lk-mark{filter:brightness(0) invert(1) drop-shadow(0 1px 3px rgba(0,0,0,.45));}
 .foot-grid .foot-brand .lk-ar{white-space:nowrap;font-size:1.4rem;}
 .lk-word{height:34px;}
+/* header logo without the white chip: a light edge glow keeps the dark blue readable over photos and dark headers */
+.brand.brand-full{background:none;box-shadow:none;padding:0;border-radius:0;}
+.brand-logo{filter:drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 0 7px rgba(255,255,255,.55));}
+header.nav.nav-scrolled .brand-logo{filter:none;}
+:root[data-theme="dark"] header.nav.nav-scrolled .brand-logo{filter:drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 0 7px rgba(255,255,255,.5));}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) header.nav.nav-scrolled .brand-logo{filter:drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 0 7px rgba(255,255,255,.5));} }
