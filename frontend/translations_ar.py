@@ -11,3 +11,5 @@ T.update({
 "View HSE Policy":"عرض سياسة الصحة والسلامة والبيئة","View Our Work":"شاهد أعمالنا","View All Services":"عرض كل الخدمات","View Full Project Portfolio":"عرض محفظة المشاريع كاملة","View gallery →":"عرض المعرض ←","View Quality Policy":"عرض سياسة الجودة","View Fire-Rated Certificates":"عرض شهادات مقاومة الحريق","View FSC Certificate":"عرض شهادة FSC",
 })
 T["View full certificate <span aria-hidden=\"true\">→</span>"] = "عرض الشهادة كاملة <span aria-hidden=\"true\">←</span>"
+T.update({"FSC & LEED":"FSC وLEED","FSC & LEED Certificates":"شهادات FSC وLEED","FSC® Certificates":"شهادات FSC®","1 certificate":"شهادة واحدة","0 certificates":"لا توجد شهادات",
+"Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks. LEED documentation supports projects with green-building requirements.":"اعتمد مجلس رعاية الغابات (FSC) أرفاد بموجب شهادة سلسلة الحيازة FSC-STD-40-004 V3-1 ومتطلبات FSC-STD-50-001 V2-1، وبما يستوفي معايير استخدام العلامات التجارية لـ FSC. وتدعم وثائق LEED المشاريع ذات متطلبات المباني الخضراء."})
