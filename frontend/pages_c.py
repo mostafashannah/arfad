@@ -349,6 +349,7 @@ def other_pages():
       <li class="rv"><span class="sp-ico">{icon("wood")}</span><h4>Sustainable Materials</h4><p>We use only environmentally friendly and sustainable materials in our projects to reduce our environmental impact while creating long-lasting and durable structures.</p></li>
       <li class="rv" style="--d:.1s"><span class="sp-ico">{icon("gear")}</span><h4>Smart &amp; Digital Solutions</h4><p>Our team utilizes the latest technology and innovative digital solutions to deliver efficient and cost-effective projects while minimizing our environmental footprint.</p></li>
       <li class="rv" style="--d:.2s"><span class="sp-ico">{icon("leaf")}</span><h4>Maximizing Resource Utilization</h4><p>We maximize the utilization of resources to reduce waste and promote sustainability. Our team is trained to be resourceful and efficient, ensuring that every material and resource is used to its fullest potential.</p></li>
+      <li class="rv" style="--d:.3s"><span class="sp-ico">{icon("shield")}</span><h4>Sustainable Sourcing</h4><p>Sourcing materials and products from sustainable sources, such as FSC-Certified Wood can promote sustainability and support responsible production practices.</p></li>
     </ol>
   </div></section>
   <section class="section"><div class="wrap">

@@ -1254,8 +1254,9 @@ body.lb-open{overflow:hidden;}
 /* sustainability */
 .sus-logos{margin-top:22px;display:inline-flex;gap:14px;background:var(--navy);padding:12px 18px;border-radius:14px;}
 .sus-logos img{height:46px;width:auto;}
-.sus-process{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
-@media (max-width:860px){.sus-process{grid-template-columns:1fr;}}
+.sus-process{list-style:none;margin:30px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:22px;}
+@media (max-width:1100px){.sus-process{grid-template-columns:1fr 1fr;}}
+@media (max-width:640px){.sus-process{grid-template-columns:1fr;}}
 .sus-process li{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:28px 26px;box-shadow:var(--shadow);}
 .sus-process .sp-ico{width:62px;height:62px;border-radius:50%;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;margin-bottom:16px;}
 .sus-process .sp-ico .ico{width:28px;height:28px;}
