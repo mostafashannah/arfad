@@ -1,9 +1,9 @@
 import "dotenv/config";
 import bcrypt from "bcryptjs";
 import { db } from "./client";
-import { existsSync } from "fs";
+import { existsSync, readdirSync, statSync } from "fs";
 import path from "path";
-import { users, services, projects, settings, clients, vendors, accreditations, navItems, siteBlocks, posts } from "./schema";
+import { users, services, projects, settings, clients, vendors, accreditations, navItems, siteBlocks, posts, mediaAssets } from "./schema";
 import { eq, and } from "drizzle-orm";
 import { slugify } from "../lib/slugify";
 import defaults from "./site-defaults.json";
@@ -132,6 +132,29 @@ export async function runSeed() {
   if (!(await db.select({ id: navItems.id }).from(navItems).get())) await resetNav();
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "footer")).get())) await resetFooter();
   console.log(`Seeded menu and footer`);
+
+  // Once only: put every image and video the site ships with into the Media library (certificate thumbnails excluded).
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "site_media_seeded")).get())) {
+    const root = path.join(process.cwd(), "public", "img");
+    const walk = (dir: string): string[] =>
+      readdirSync(dir).flatMap((n) => {
+        const p = path.join(dir, n);
+        return statSync(p).isDirectory() ? (n === "certs" ? [] : walk(p)) : [p];
+      });
+    if (existsSync(root)) {
+      const have = new Set((await db.select({ u: mediaAssets.url }).from(mediaAssets).all()).map((r) => r.u));
+      for (const p of walk(root).sort()) {
+        if (!/\.(jpe?g|png|webp|svg|mp4|webm)$/i.test(p)) continue;
+        const rel = path.relative(path.join(process.cwd(), "public"), p).split(path.sep).join("/");
+        const url = `/${rel}`;
+        if (have.has(url)) continue;
+        const parts = rel.split("/");
+        await db.insert(mediaAssets).values({ url, filename: parts[parts.length - 1], folder: parts.length > 3 ? parts[1] : "site" }).run();
+      }
+    }
+    await db.insert(siteBlocks).values({ key: "site_media_seeded", value: "1" }).run();
+  }
+  console.log(`Seeded media library`);
 
   // Once only: Thermowood and WPC Works become sub-items under Exterior Woodworks in the saved Services menu.
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "services_sub_migrated")).get())) {

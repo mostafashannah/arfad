@@ -332,7 +332,7 @@ def other_pages():
     {split("Committed to Responsible Forestry","Sustainability &amp; FSC® Certification",
       ["ARFAD is FSC Chain of Custody certified, demonstrating its commitment to responsible wood sourcing and the traceability of certified wood products throughout the supply chain. This certification enables ARFAD to support projects with sustainability and responsible sourcing requirements.",
        "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks."],
-      "projects/primer-steak-house-2.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="certificates.html#fsc">View FSC Certificate</a></div>')}
+      "fsc-timber.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="certificates.html#fsc">View FSC Certificate</a></div>')}
   </div></section>
   <section class="section sus-impact"><div class="wrap about-grid">
     <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/projects/el-eissa-2.jpg');"></div>
