@@ -1435,3 +1435,11 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 }
 .cert-folder .fo-logo,.fo-title .fo-logo{width:auto;height:60px;max-width:200px;object-fit:contain;object-position:left center;margin-bottom:10px;display:block;}
 .fo-title .fo-logo{height:44px;margin:0 14px 0 0;}
+/* desktop: the nested list opens as a fly-out on the right of its parent */
+@media (min-width:901px){
+  .submenu .sub-list{max-height:none;inset-inline:auto;inset-inline-start:calc(100% + 8px);top:-4px;min-width:210px;padding:8px;opacity:0;visibility:hidden;transform:translateX(-8px);transition:opacity .25s ease,transform .25s ease,visibility .25s;border:1px solid rgba(255,255,255,.1);}
+  .submenu .sub-drop::after{content:"";position:absolute;inset-block:0;inset-inline-start:100%;width:12px;}
+  .submenu .sub-drop:hover > .sub-list,.submenu .sub-drop:focus-within > .sub-list,.submenu .sub-drop.open > .sub-list{opacity:1;visibility:visible;transform:none;padding:8px;max-height:none;}
+  .drop-toggle::before{transform:rotate(-45deg);margin:-4px 0 0 -5px;}
+  .sub-drop:hover > .drop-toggle::before,.sub-drop:focus-within > .drop-toggle::before,.sub-drop.open > .drop-toggle::before{transform:rotate(-45deg);margin:-4px 0 0 -5px;}
+}

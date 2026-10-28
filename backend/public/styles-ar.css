@@ -96,3 +96,4 @@ html[lang="ar"] .foot-grid .foot-brand .lk-ar{text-align:right;direction:rtl;}
 .foot-cols a,.foot-contact a{transform-origin:right center;}
 .foot-cols a:hover,.foot-cols a:focus-visible,.foot-contact a:hover,.foot-contact a:focus-visible{transform:translateX(-12px) scale(1.08);}
 .foot-contact a[href^="tel:"],.foot-contact a[href^="mailto:"]{direction:rtl;}
+@media (min-width:901px){ .submenu .sub-list{transform:translateX(8px);} .drop-toggle::before,.sub-drop:hover > .drop-toggle::before{transform:rotate(135deg);} }
