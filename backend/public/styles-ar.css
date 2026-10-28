@@ -77,3 +77,12 @@ a[href^="tel:"],a[href^="mailto:"],.vid{direction:ltr;unicode-bidi:isolate;displ
 nav.links{direction:rtl;}
 .nav-inner .brand{direction:ltr;}
 @media (max-width:1180px){ nav.links{direction:rtl;} }
+/* everything aligns to the right (start) unless a block is deliberately centred */
+html[lang="ar"] .hero-caption,html[lang="ar"] .hero-lede,html[lang="ar"] .eyebrow,html[lang="ar"] .hero-slider h1,html[lang="ar"] .detail-hero h1,
+html[lang="ar"] .hero-full-inner,html[lang="ar"] .head,html[lang="ar"] .head *,html[lang="ar"] .band-lede,html[lang="ar"] .photo-band h2{text-align:right;}
+html[lang="ar"] .vid,html[lang="ar"] .vendor-row h4{display:block;text-align:right;}
+html[lang="ar"] .hero-cta,html[lang="ar"] .badge-line,html[lang="ar"] .pill-links,html[lang="ar"] .cert-tabs{justify-content:flex-start;}
+html[lang="ar"] .hero-slider .wrap,html[lang="ar"] .detail-hero .wrap{text-align:right;}
+html[lang="ar"] .eyebrow{justify-content:flex-start;}
+html[lang="ar"] .cta-band .wrap{text-align:center;}
+html[lang="ar"] .lede,html[lang="ar"] p{text-align:start;}
