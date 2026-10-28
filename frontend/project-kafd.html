@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Premium woodworks and joinery works throughout one of Riyadh's key financial district developments.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css?v=e792f1fd6d">
+<link rel="stylesheet" href="styles.css?v=e23d291eeb">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <script type="application/ld+json">
@@ -614,6 +614,19 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   }
   sel.forEach(function(x){ x.addEventListener("change", apply); });
   document.querySelector("[data-gf-reset]").addEventListener("click", function(){ projectSel.value = ""; serviceSel.value = ""; apply(); });
+})();
+
+/* header and footer logo: pick up the logos set in the admin Logos section */
+(function(){
+  function safe(u){ u = String(u || "").trim(); return /^(\/|https?:)/i.test(u) ? u : ""; }
+  fetch("/api/branding", {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+    var b = j && j.branding; if(!b) return;
+    var h = safe(b.headerLogo); if(h){ var hi = document.querySelector(".brand-logo"); if(hi) hi.src = h; }
+    var f = safe(b.footerLogo); if(f){
+      var top = document.querySelector(".foot-brand .lk-top");
+      if(top){ var im = document.createElement("img"); im.src = f; im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); }
+    }
+  }).catch(function(){});
 })();
 
 /* registered vendors: the admin Vendors list replaces the built-in cards */

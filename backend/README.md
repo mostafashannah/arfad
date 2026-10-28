@@ -23,6 +23,7 @@ pages (`/`, `/services`, `/projects`) as a starting point for the real site.
 - **Media Library** — every uploaded image in one place, with copy-URL and delete.
 - **Team** — add/remove teammates who can log in and edit (Admin / Editor roles).
 
+- **Logos** — replace the header logo and the footer logo block with your own images (Site Layout > Logos). Footer text and links stay in *Footer*.
 - **Vendors** — the Registered Vendors cards: add, rename, change the vendor ID, replace logos, reorder, hide or delete. The public page uses this list as soon as it loads.
 - **Pages** — edit the text and pictures of any public page. Pick a page under *Website Content > Pages*,
   change any heading, paragraph, button or list item, replace any picture, and set the **page header pictures**

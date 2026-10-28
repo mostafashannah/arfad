@@ -22,6 +22,7 @@ import {
   Newspaper,
   FilePen,
   Store,
+  Stamp,
   PanelTop,
   PanelBottom,
   ChevronDown,
@@ -68,6 +69,7 @@ const nav: Entry[] = [
     icon: LayoutTemplate,
     items: [
       { href: "/admin/menu", label: "Header Menu", icon: PanelTop },
+      { href: "/admin/branding", label: "Logos", icon: Stamp },
       { href: "/admin/footer", label: "Footer", icon: PanelBottom },
     ],
   },

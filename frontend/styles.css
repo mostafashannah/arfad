@@ -1341,3 +1341,5 @@ header.nav.nav-scrolled .brand-logo{filter:none;}
 main section h2{font-size:var(--h2-size)!important;line-height:1.2!important;}
 /* identical title typography everywhere: size, weight, spacing, line height */
 main section h2{font-size:var(--h2-size)!important;line-height:1.2!important;letter-spacing:-.01em!important;font-weight:700!important;max-width:none!important;}
+
+.lk-custom{display:block;height:84px;width:auto;max-width:100%;margin-bottom:12px;object-fit:contain;}

@@ -690,6 +690,19 @@ JS_REVEAL_OBSERVER = '''<script>
   document.querySelector("[data-gf-reset]").addEventListener("click", function(){ projectSel.value = ""; serviceSel.value = ""; apply(); });
 })();
 
+/* header and footer logo: pick up the logos set in the admin Logos section */
+(function(){
+  function safe(u){ u = String(u || "").trim(); return /^(\/|https?:)/i.test(u) ? u : ""; }
+  fetch("/api/branding", {headers:{Accept:"application/json"}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(j){
+    var b = j && j.branding; if(!b) return;
+    var h = safe(b.headerLogo); if(h){ var hi = document.querySelector(".brand-logo"); if(hi) hi.src = h; }
+    var f = safe(b.footerLogo); if(f){
+      var top = document.querySelector(".foot-brand .lk-top");
+      if(top){ var im = document.createElement("img"); im.src = f; im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); }
+    }
+  }).catch(function(){});
+})();
+
 /* registered vendors: the admin Vendors list replaces the built-in cards */
 (function(){
   var grid = document.querySelector(".vendor-grid-2");
