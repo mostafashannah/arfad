@@ -1360,3 +1360,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
   .nav-item.open > .submenu{max-height:1400px;}
   .submenu a,.submenu.cols-2 a{font-size:12px!important;letter-spacing:.07em;line-height:1.35;white-space:normal;}
 }
+/* service cards: the description always starts right under the title, so text begins at the same height in every card */
+.svc-card .body{justify-content:flex-start;}
+.svc-card p{margin-top:0;}
