@@ -327,7 +327,7 @@ def other_pages():
     # ---- Sustainability
     pts = ["FSC Chain of Custody Certified","Certified Wood Product Traceability","Responsible Wood Sourcing","Controlled Chain of Custody Procedures","Support for Sustainability-Focused Projects"]
     body = f'''<main>
-  {subhero([("Sustainability",None)],"FSC® Certification &amp; Sustainability","FSC® Certification &amp;<br>Sustainability","Responsible Wood Sourcing. Certified Chain of Custody.","projects/redsea-amaala-7.jpg")}
+  {subhero([("Sustainability",None)],"FSC® Certification &amp; Sustainability","FSC® Certification &amp;<br>Sustainability","Responsible Wood Sourcing. Certified Chain of Custody.","sustainability-hero.jpg")}
   <section class="section"><div class="wrap">
     {split("Committed to Responsible Forestry","Sustainability &amp; FSC® Certification",
       ["ARFAD is FSC Chain of Custody certified, demonstrating its commitment to responsible wood sourcing and the traceability of certified wood products throughout the supply chain. This certification enables ARFAD to support projects with sustainability and responsible sourcing requirements.",
