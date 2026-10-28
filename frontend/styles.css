@@ -1373,3 +1373,6 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 .cert-row-logo .ico{width:30px;height:30px;}
 .cert-row-logo:hover{transform:translateY(-2px);box-shadow:0 12px 24px -14px rgba(10,37,64,.5);}
 @media (max-width:640px){.cert-row-logo{width:96px;height:60px;}}
+
+.cert-row-logo.wide{width:150px;padding:8px 12px;}
+@media (max-width:640px){.cert-row-logo.wide{width:120px;}}

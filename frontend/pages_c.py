@@ -62,6 +62,10 @@ CERT_TABS = [
 def cert_logo(jpg):
     """The certificate maker's logo for a row: (image, chip style)."""
     j = jpg.lower()
+    if j.startswith("legal/"):
+        slug = j.split("/", 1)[1].rsplit(".", 1)[0]
+        lp = f"img/certs/legal-logos/{slug}.png"
+        if has_file(lp): return lp, "light wide"
     if j.startswith("fire/") or "intertek" in j: return "img/accreditation/intertek.png", "dark"
     if "iso-9001" in j: return "img/accreditation/iso-9001.png", "dark"
     if "iso-14001" in j: return "img/accreditation/iso-14001.png", "dark"
