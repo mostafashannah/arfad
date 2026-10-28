@@ -1347,3 +1347,8 @@ main section h2{font-size:var(--h2-size)!important;line-height:1.2!important;let
 /* header logo: no glow or shadow of any kind */
 .brand-logo,header.nav.nav-scrolled .brand-logo,:root[data-theme="dark"] header.nav.nav-scrolled .brand-logo{filter:none!important;box-shadow:none!important;}
 @media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) header.nav.nav-scrolled .brand-logo{filter:none!important;} }
+
+/* credential logos under the footer credentials text */
+.cred-logos{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:16px;}
+.cred-logos img{height:42px;width:auto;max-width:96px;object-fit:contain;opacity:.92;transition:opacity .2s,transform .2s;}
+.cred-logos img:hover{opacity:1;transform:translateY(-2px);}
