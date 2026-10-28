@@ -72,3 +72,8 @@ a[href^="tel:"],a[href^="mailto:"],.vid{direction:ltr;unicode-bidi:isolate;displ
 .theme-switch{right:auto!important;left:16px;}
 .wa-fab,.whatsapp-fab,a.wa{right:auto!important;left:18px;}
 .client-marquee,.client-marquee-track,.acc-marquee,.acc-track{direction:ltr;}
+/* header: logo on the left, call-to-action on the right; the menu itself still reads right-to-left */
+.nav-inner{direction:ltr;}
+nav.links{direction:rtl;}
+.nav-inner .brand{direction:ltr;}
+@media (max-width:1180px){ nav.links{direction:rtl;} }
