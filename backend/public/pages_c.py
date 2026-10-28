@@ -217,7 +217,7 @@ def factory_pages():
     body = f'''<main>
   {subhero([("Factory","factory.html"),("Quality Policy",None)],"Quality Management","Quality Management","Quality Built Into Every Stage.","projects/marafiq-3.jpg")}
   <section class="section"><div class="wrap">
-    {split("Quality Built Into Every Stage.","Quality management",["Quality at ARFAD is managed through documented procedures, approved specifications, material control, production checks, and site supervision. Every stage is reviewed to ensure that the final output meets the required technical, functional, and finishing standards."],"machine-wide-belt-sanding.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="#policy-doc">View Quality Policy</a></div>')}
+    {split("Quality Built Into Every Stage.","Quality management",["Quality at ARFAD is managed through documented procedures, approved specifications, material control, production checks, and site supervision. Every stage is reviewed to ensure that the final output meets the required technical, functional, and finishing standards."],"quality-slide.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="#policy-doc">View Quality Policy</a></div>')}
   </div></section>
   <section class="section on-alt"><div class="wrap">
     {head("Quality Framework","ISO 9001:2015 Certified Quality Management System")}
