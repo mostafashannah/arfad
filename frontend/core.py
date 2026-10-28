@@ -68,9 +68,8 @@ def nav(active):
     cta_href = "contact.html" if active != "contact.html" else f"mailto:{EMAIL}"
     return f'''<header class="nav">
   <div class="nav-inner">
-    <a class="brand" href="index.html">
-      <img class="brand-mark" src="img/logo.png" alt="ARFAD logo">
-      <span class="brand-name"><img src="img/wordmark.png" alt="ARFAD" style="height:15px;width:auto;display:block;"></span>
+    <a class="brand brand-full" href="index.html" aria-label="ARFAD home">
+      <img class="brand-logo" src="img/logo-full.png" alt="ARFAD">
     </a>
     <nav class="links" id="primary-nav" aria-label="Main">
       {links_html}
