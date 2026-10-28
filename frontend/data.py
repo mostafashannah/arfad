@@ -123,8 +123,8 @@ SERVICE_BY_SLUG = {s["slug"]: s for s in SERVICES}
 SERVICE_MENU = [("Wooden Doors","service-doors.html"),("Wooden Wall Claddings","service-wall-cladding.html"),("Wooden Ceilings","service-ceilings.html"),
  ("Wooden Floorings","service-cabinets.html#sub-floorings"),("Kitchens & Cabinets","service-cabinets.html#sub-kitchens"),("Wardrobes & Closets","service-cabinets.html#sub-wardrobes"),
  ("Vanities & Storage Systems","service-cabinets.html#sub-vanities"),("Reception Counters","service-joinery.html#sub-reception"),("Interior Furniture & Decors","service-furniture.html#sub-interior-furniture"),
- ("Exterior Woodworks","service-thermowood.html#sub-exterior"),("Counter Tops & Solid Surfaces","service-countertops.html"),("Traditional Woodworks","service-traditional.html"),
- ("Joinery","service-joinery.html"),("Interior Woodworks","service-cabinets.html"),("Thermowood","service-thermowood.html"),("WPC Works","service-wpc.html")]
+ ("Exterior Woodworks","service-thermowood.html#sub-exterior"),("– Thermowood","service-thermowood.html"),("– WPC Works","service-wpc.html"),("Counter Tops & Solid Surfaces","service-countertops.html"),("Traditional Woodworks","service-traditional.html"),
+ ("Joinery","service-joinery.html"),("Interior Woodworks","service-cabinets.html")]
 SERVICE_HERO = {"doors":"svc-doors.jpg","joinery":"projects/kafd-2.jpg","cabinets":"svc-cabinets.jpg","wall-cladding":"projects/kafd-3.jpg","ceilings":"projects/movenpick-2.jpg",
  "thermowood":"projects/el-eissa-3.jpg","furniture":"projects/karan-3.jpg","countertops":"projects/movenpick-3.jpg","traditional":"projects/neom-6.jpg","wpc":"projects/redsea-amaala-5.jpg"}
 DOOR_PHOTOS = ["mod-doors-teaser.jpg","projects/ministry-of-defense-3.jpg","projects/marafiq-1.jpg"]

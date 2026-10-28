@@ -1409,3 +1409,8 @@ html{-webkit-text-size-adjust:100%;text-size-adjust:100%;}
 .foot-cols a:hover::before,.foot-cols a:focus-visible::before{background:#fff;box-shadow:0 0 8px rgba(255,255,255,.7);}
 .foot-badge.logo{padding:6px;border-radius:14px;line-height:0;}
 .foot-badge.logo img{height:62px;width:auto;display:block;border-radius:8px;}
+/* a menu entry labelled "– Name" is a sub-item of the entry above it */
+.submenu a.sub-item{padding-inline-start:30px;font-size:.66rem;opacity:.92;}
+.submenu a.sub-item::before{content:"";position:absolute;inset-inline-start:15px;top:50%;width:8px;height:1px;background:var(--gold,#c9a66b);}
+@media (max-width:900px){.submenu a.sub-item{padding-inline-start:30px;}.submenu a.sub-item::before{inset-inline-start:16px;}}
+@media (min-width:901px){.submenu.cols-2{grid-auto-flow:column;grid-template-rows:repeat(8,auto);}}

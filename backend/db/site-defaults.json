@@ -78,6 +78,14 @@
           "href": "service-thermowood.html#sub-exterior"
         },
         {
+          "label": "– Thermowood",
+          "href": "service-thermowood.html"
+        },
+        {
+          "label": "– WPC Works",
+          "href": "service-wpc.html"
+        },
+        {
           "label": "Counter Tops & Solid Surfaces",
           "href": "service-countertops.html"
         },
@@ -92,14 +100,6 @@
         {
           "label": "Interior Woodworks",
           "href": "service-cabinets.html"
-        },
-        {
-          "label": "Thermowood",
-          "href": "service-thermowood.html"
-        },
-        {
-          "label": "WPC Works",
-          "href": "service-wpc.html"
         }
       ],
       "active": true

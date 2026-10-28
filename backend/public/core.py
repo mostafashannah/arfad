@@ -59,7 +59,7 @@ def nav(active):
         cur = ' aria-current="page"' if is_cur else ""
         if kids:
             CUR = ' aria-current="page"'
-            sub = "".join(f'<a href="{k}"{CUR if k.split("#")[0] == active and "#" not in k else ""}>{esc(t)}</a>' for t, k in kids)
+            sub = "".join(f'<a href="{k}"{" class=\"sub-item\"" if t.startswith("– ") else ""}{CUR if k.split("#")[0] == active and "#" not in k else ""}>{esc(t[2:] if t.startswith("– ") else t)}</a>' for t, k in kids)
             cols = " cols-2" if len(kids) > 8 else ""
             items.append(
                 f'<div class="nav-item has-sub{" is-current" if is_cur else ""}"><a class="nav-link" href="{href}"{cur}>{esc(label)}</a>'
@@ -967,7 +967,7 @@ JS_REVEAL_OBSERVER = '''<script>
         var b = el("button", "sub-toggle"); b.type = "button"; b.setAttribute("aria-label", "Toggle " + it.label + " menu"); b.setAttribute("aria-expanded", "false");
         wrap.appendChild(b);
         var sub = el("div", "submenu" + (kids.length > 8 ? " cols-2" : ""));
-        kids.forEach(function(k){ var ka = link(k.href, k.label); if(k.href === cur) ka.setAttribute("aria-current", "page"); sub.appendChild(ka); });
+        kids.forEach(function(k){ var sb = /^[\u2013\u2014-]\s/.test(k.label), ka = link(k.href, sb ? k.label.replace(/^[\u2013\u2014-]\s+/, "") : k.label, sb ? "sub-item" : null); if(k.href === cur) ka.setAttribute("aria-current", "page"); sub.appendChild(ka); });
         wrap.appendChild(sub);
       }
       nav.appendChild(wrap);

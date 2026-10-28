@@ -133,6 +133,22 @@ export async function runSeed() {
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "footer")).get())) await resetFooter();
   console.log(`Seeded menu and footer`);
 
+  // Once only: Thermowood and WPC Works become sub-items under Exterior Woodworks in the saved Services menu.
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "services_sub_migrated")).get())) {
+    const tree = await getNavTree();
+    const svc = tree.find((n) => n.href === "services.html");
+    const moved = svc?.children.filter((c) => c.href === "service-thermowood.html" || c.href === "service-wpc.html") ?? [];
+    const ext = svc?.children.findIndex((c) => c.href === "service-thermowood.html#sub-exterior") ?? -1;
+    if (svc && moved.length && ext >= 0) {
+      const rest = svc.children.filter((c) => !moved.includes(c));
+      const at = rest.findIndex((c) => c.href === "service-thermowood.html#sub-exterior") + 1;
+      rest.splice(at, 0, ...moved.map((c) => ({ ...c, label: c.label.startsWith("– ") ? c.label : `– ${c.label}` })));
+      svc.children = rest;
+      await saveNav(tree.map((n) => ({ label: n.label, href: n.href, active: n.active, children: n.children.map((c) => ({ label: c.label, href: c.href, active: c.active })) })));
+    }
+    await db.insert(siteBlocks).values({ key: "services_sub_migrated", value: "1" }).run();
+  }
+
   // Once only: move an existing menu and footer from the 12-service structure to the 9 services.
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "services_9_migrated")).get())) {
     const oldHrefs = new Set(["service-wall-cladding.html", "service-ceilings.html", "service-flooring.html", "service-kitchens.html", "service-wardrobes.html", "service-vanities.html", "service-reception-counters.html", "service-exterior.html"]);
