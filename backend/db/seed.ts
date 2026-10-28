@@ -133,6 +133,16 @@ export async function runSeed() {
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "footer")).get())) await resetFooter();
   console.log(`Seeded menu and footer`);
 
+  // Once only: fill in the logos of vendors that were saved without one (never overwrites a logo set in the admin).
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "vendor_logos_v2")).get())) {
+    for (const v of (defaults as { vendors?: { name: string; logo: string | null }[] }).vendors ?? []) {
+      if (!v.logo) continue;
+      const row = await db.select().from(vendors).where(eq(vendors.name, v.name)).get();
+      if (row && !row.logoUrl) await db.update(vendors).set({ logoUrl: v.logo }).where(eq(vendors.id, row.id)).run();
+    }
+    await db.insert(siteBlocks).values({ key: "vendor_logos_v2", value: "1" }).run();
+  }
+
   // Once only: put every image and video the site ships with into the Media library (certificate thumbnails excluded).
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "site_media_seeded")).get())) {
     const root = path.join(process.cwd(), "public", "img");
