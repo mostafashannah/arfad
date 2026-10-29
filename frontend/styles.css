@@ -1520,3 +1520,5 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
 nav.links{font-size:calc(.7rem + 1px);}
 .submenu a{font-size:calc(.7rem + 1px);}
 @media (min-width:901px) and (max-width:1279px){ nav.links{font-size:.7rem;} }
+/* footer: the company-name line under the logo is removed */
+.foot-grid .foot-brand .lk-en,.foot-grid .foot-brand [data-foot="brandTitle"]{display:none;}
