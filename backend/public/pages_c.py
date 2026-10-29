@@ -180,6 +180,14 @@ def factory_pages():
     <p class="eyebrow">Factory Overview</p>
     <h2 style="margin-top:10px;max-width:24ch;">Built for Scale. Equipped for Excellence.</h2>
     <p class="band-lede" style="max-width:62ch;">A 20,000&nbsp;m&sup2; facility in Jubail Industrial City, with dedicated production zones from raw material storage to quality control.</p>""", cls="on-navy theme-gold")}
+  <section class="section fact-figures"><div class="wrap"><div class="ff-grid">
+    <div class="ff-item rv"><span class="ff-num">237,000+</span><span class="ff-lbl">Wooden doors installed</span></div>
+    <div class="ff-item rv" style="--d:.06s"><span class="ff-num">161,500+ m&sup2;</span><span class="ff-lbl">Cladding, ceiling &amp; flooring works delivered</span></div>
+    <div class="ff-item rv" style="--d:.12s"><span class="ff-num">347,000+ m&sup2;</span><span class="ff-lbl">Kitchens &amp; wardrobes fitted</span></div>
+    <div class="ff-item rv" style="--d:.18s"><span class="ff-num">20,000 m&sup2;</span><span class="ff-lbl">Total built-up factory area</span></div>
+    <div class="ff-item rv" style="--d:.24s"><span class="ff-num">200+</span><span class="ff-lbl">Production employees</span></div>
+    <div class="ff-item rv" style="--d:.30s"><span class="ff-num">30+</span><span class="ff-lbl">CNC &amp; precision machines</span></div>
+  </div></div></section>
   <section class="section"><div class="wrap">
     {head("In-House Capability","Everything under one roof.","ARFAD Wood Factory is equipped with a comprehensive range of specialized woodworking machinery, supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale.")}
     <div class="value-grid">{icards}</div>

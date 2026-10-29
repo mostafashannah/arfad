@@ -1527,3 +1527,12 @@ nav.links{font-size:calc(.7rem + 1px);}
 .cert-tab.has-logo .sr-only{position:static;width:auto;height:auto;margin:0;padding:0;overflow:visible;clip:auto;white-space:nowrap;font:700 .66rem "Montserrat",sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);}
 .cert-tab.has-logo[aria-selected="true"] .sr-only{color:var(--navy);}
 .cert-tab.has-logo .tab-logo{height:36px;}
+
+/* factory: plain figures, number with text below, no boxes */
+.fact-figures{padding-block:56px 20px;}
+.ff-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:34px 28px;}
+@media (max-width:1100px){.ff-grid{grid-template-columns:repeat(3,1fr);}}
+@media (max-width:560px){.ff-grid{grid-template-columns:repeat(2,1fr);gap:28px 18px;}}
+.ff-item{display:block;background:none;border:0;box-shadow:none;padding:0;}
+.ff-num{display:block;font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(1.5rem,2.3vw,2.1rem);line-height:1.1;color:var(--navy);white-space:nowrap;}
+.ff-lbl{display:block;margin-top:8px;font-family:"Montserrat",sans-serif;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);}
