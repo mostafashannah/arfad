@@ -107,8 +107,21 @@ def _accredited_track():
         for n, f, dark in ACCREDITED)
     return chips * 3
 
+def _foot_logo_block(b):
+    """A footer logo shipped with the site (img/footer-logo.png) wins over the built-in block, so a database reset never brings the old logo back."""
+    if has_file("img/footer-logo.png"):
+        return '<img class="lk-custom" src="img/footer-logo.png" alt="ARFAD" data-knockout>'
+    return f'''<div class="lk-top">
+        <img class="lk-mark" src="img/logo.png" alt="ARFAD logo">
+        <div class="lk-side">
+          <img class="lk-word" src="img/wordmark.png" alt="ARFAD">
+          <p class="ar-name lk-ar" data-foot="arabicName" lang="ar" dir="rtl">{esc(b["arabicName"])}</p>
+        </div>
+      </div>'''
+
 def render_footer(f):
     b, ct = f["brand"], f["contact"]
+    FOOT_LOGO_BLOCK = _foot_logo_block(b)
     cols = "".join('<div data-foot-col><h4>%s</h4>%s</div>' % (esc(col["title"]), "".join('<a href="%s">%s</a>' % (esc(l["href"]), esc(l["label"][2:] if l["label"].startswith("– ") else l["label"])) for l in col["links"])) for col in f["columns"])
     badges = "".join(('<span class="foot-badge logo%s" title="%s"><img src="%s" alt="%s"></span>' % (" on-white" if x in BADGE_ON_WHITE else "", esc(x), BADGE_LOGOS[x], esc(x))) if x in BADGE_LOGOS else '<span class="foot-badge">%s</span>' % esc(x) for x in b["badges"])
     creds = "<br>".join(esc(x) for x in ct["credentials"])
@@ -120,13 +133,7 @@ def render_footer(f):
   </div>
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <div class="lk-top">
-        <img class="lk-mark" src="img/logo.png" alt="ARFAD logo">
-        <div class="lk-side">
-          <img class="lk-word" src="img/wordmark.png" alt="ARFAD">
-          <p class="ar-name lk-ar" data-foot="arabicName" lang="ar" dir="rtl">{esc(b["arabicName"])}</p>
-        </div>
-      </div>
+      {FOOT_LOGO_BLOCK}
       <h4 class="lk-en" data-foot="brandTitle">{esc(b["title"])}</h4>
       <p data-foot="tagline" style="margin-top:8px;max-width:34ch;">{esc(b["tagline"])}</p>
       <a class="btn flash dl-btn" href="/download/company-profile" download="ARFAD-Company-Profile.pdf">
@@ -427,6 +434,7 @@ window.__arfadLogoKnockout = function(img, src){
   raw.onerror = function(){ img.src = src; };
   raw.src = src;
 };
+document.querySelectorAll("img[data-knockout]").forEach(function(i){ window.__arfadLogoKnockout(i, i.getAttribute("src")); });
 
 /* count-up figures: numbers run from 0 to their value when they scroll into view */
 (function(){
@@ -888,8 +896,11 @@ document.addEventListener("click", function(e){
     var b = j && j.branding; if(!b) return;
     var h = safe(b.headerLogo); if(h){ var hi = document.querySelector(".brand-logo"); if(hi) hi.src = h; }
     var f = safe(b.footerLogo); if(f){
-      var top = document.querySelector(".foot-brand .lk-top");
-      if(top){ var im = document.createElement("img"); im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); window.__arfadLogoKnockout(im, f); }
+      var top = document.querySelector(".foot-brand .lk-top, .foot-brand .lk-custom");
+      if(top){
+        if(top.classList.contains("lk-custom")){ window.__arfadLogoKnockout(top, f); }
+        else { var im = document.createElement("img"); im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); window.__arfadLogoKnockout(im, f); }
+      }
     }
   }).catch(function(){});
 })();

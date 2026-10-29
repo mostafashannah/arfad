@@ -193,3 +193,7 @@ Admin writes (login required): `GET|POST /api/posts/admin` and `PATCH|DELETE /ap
 ## Certificates
 
 `/admin/certificates` edits every tab and certificate on Factory > Certificates & Awards (names, headings, titles, files, logos, folders, order). PDFs and images upload through `/api/media`. The saved list lives in `siteBlocks` under `certificates`; until it is saved the built-in list from `db/site-defaults.json` shows. "Reset to built-in" deletes the saved row. The Arabic page keeps its built-in list.
+
+## Footer logo that survives redeploys
+
+If `frontend/img/footer-logo.png` exists, the built site uses it for the footer logo (with the light background removed and recoloured for the dark footer) instead of the built-in mark + lettering block, so a database reset on deploy cannot bring the old logo back. A logo uploaded in Admin → Logos still overrides it. To change the shipped logo, replace that file, rebuild (`python3 frontend/build.py`) and copy `frontend/` into `backend/public/`.

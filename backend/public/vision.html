@@ -125,13 +125,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   </div>
   <div class="wrap foot-grid">
     <div class="foot-brand">
-      <div class="lk-top">
-        <img class="lk-mark" src="img/logo.png" alt="ARFAD logo">
-        <div class="lk-side">
-          <img class="lk-word" src="img/wordmark.png" alt="ARFAD">
-          <p class="ar-name lk-ar" data-foot="arabicName" lang="ar" dir="rtl">شركة أرفاد الدولية للصناعة</p>
-        </div>
-      </div>
+      <img class="lk-custom" src="img/footer-logo.png" alt="ARFAD" data-knockout>
       <h4 class="lk-en" data-foot="brandTitle">ARFAD International Industrial Company</h4>
       <p data-foot="tagline" style="margin-top:8px;max-width:34ch;">Crafting Excellence in Woodwork Since 2004. Luxury Wooden Works is Our Professional Identity.</p>
       <a class="btn flash dl-btn" href="/download/company-profile" download="ARFAD-Company-Profile.pdf">
@@ -339,6 +333,7 @@ window.__arfadLogoKnockout = function(img, src){
   raw.onerror = function(){ img.src = src; };
   raw.src = src;
 };
+document.querySelectorAll("img[data-knockout]").forEach(function(i){ window.__arfadLogoKnockout(i, i.getAttribute("src")); });
 
 /* count-up figures: numbers run from 0 to their value when they scroll into view */
 (function(){
@@ -800,8 +795,11 @@ document.addEventListener("click", function(e){
     var b = j && j.branding; if(!b) return;
     var h = safe(b.headerLogo); if(h){ var hi = document.querySelector(".brand-logo"); if(hi) hi.src = h; }
     var f = safe(b.footerLogo); if(f){
-      var top = document.querySelector(".foot-brand .lk-top");
-      if(top){ var im = document.createElement("img"); im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); window.__arfadLogoKnockout(im, f); }
+      var top = document.querySelector(".foot-brand .lk-top, .foot-brand .lk-custom");
+      if(top){
+        if(top.classList.contains("lk-custom")){ window.__arfadLogoKnockout(top, f); }
+        else { var im = document.createElement("img"); im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); window.__arfadLogoKnockout(im, f); }
+      }
     }
   }).catch(function(){});
 })();

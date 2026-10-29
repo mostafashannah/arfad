@@ -135,13 +135,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
 </div>
 <div class="wrap foot-grid">
 <div class="foot-brand">
-<div class="lk-top">
-<img alt="شعار أرفاد" class="lk-mark" src="../img/logo.png"/>
-<div class="lk-side">
-<img alt="ARFAD" class="lk-word" src="../img/wordmark.png"/>
-<p class="ar-name lk-ar" data-foot="arabicName" dir="rtl" lang="ar">شركة أرفاد الدولية للصناعة</p>
-</div>
-</div>
+<img alt="ARFAD" class="lk-custom" data-knockout="" src="../img/footer-logo.png"/>
 <h4 class="lk-en" data-foot="brandTitle">شركة أرفاد الدولية للصناعة</h4>
 <p data-foot="tagline" style="margin-top:8px;max-width:34ch;">نصنع التميز في الأعمال الخشبية منذ عام 2004. الأعمال الخشبية الفاخرة هي هويتنا المهنية.</p>
 <a class="btn flash dl-btn" download="ARFAD-Company-Profile.pdf" href="/download/company-profile">
@@ -349,6 +343,7 @@ window.__arfadLogoKnockout = function(img, src){
   raw.onerror = function(){ img.src = src; };
   raw.src = src;
 };
+document.querySelectorAll("img[data-knockout]").forEach(function(i){ window.__arfadLogoKnockout(i, i.getAttribute("src")); });
 
 /* count-up figures: numbers run from 0 to their value when they scroll into view */
 (function(){
@@ -810,8 +805,11 @@ document.addEventListener("click", function(e){
     var b = j && j.branding; if(!b) return;
     var h = safe(b.headerLogo); if(h){ var hi = document.querySelector(".brand-logo"); if(hi) hi.src = h; }
     var f = safe(b.footerLogo); if(f){
-      var top = document.querySelector(".foot-brand .lk-top");
-      if(top){ var im = document.createElement("img"); im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); window.__arfadLogoKnockout(im, f); }
+      var top = document.querySelector(".foot-brand .lk-top, .foot-brand .lk-custom");
+      if(top){
+        if(top.classList.contains("lk-custom")){ window.__arfadLogoKnockout(top, f); }
+        else { var im = document.createElement("img"); im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); window.__arfadLogoKnockout(im, f); }
+      }
     }
   }).catch(function(){});
 })();
