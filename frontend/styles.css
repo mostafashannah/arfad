@@ -1507,3 +1507,4 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
 /* sub-menu items: no dash in front, just the text */
 .submenu a.sub-item::before{display:none;}
 .submenu a.sub-item,.sub-list a.sub-item{padding-inline-start:14px;}
+@media (max-width:900px){ .submenu a.sub-item,.sub-list a.sub-item{padding-inline-start:30px;} }
