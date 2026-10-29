@@ -334,7 +334,14 @@ window.__arfadLogoKnockout = function(img, src){
         var v = 255 - lum * 0.5;
         p[i] = v; p[i+1] = v; p[i+2] = v + 6; p[i+3] = Math.round(a * 255);
       }
-      x.putImageData(d, 0, 0); img.src = c.toDataURL("image/png");
+      var x0 = w, y0 = h, x1 = 0, y1 = 0;
+      for(var yy = 0; yy < h; yy++) for(var xx = 0; xx < w; xx++){ if(p[(yy * w + xx) * 4 + 3] > 24){ if(xx < x0) x0 = xx; if(xx > x1) x1 = xx; if(yy < y0) y0 = yy; if(yy > y1) y1 = yy; } }
+      x.putImageData(d, 0, 0);
+      if(x1 > x0 && y1 > y0){
+        var t = document.createElement("canvas"); t.width = x1 - x0 + 1; t.height = y1 - y0 + 1;
+        t.getContext("2d").drawImage(c, x0, y0, t.width, t.height, 0, 0, t.width, t.height); c = t;
+      }
+      img.src = c.toDataURL("image/png");
     }catch(e){ img.src = src; }
   };
   raw.onerror = function(){ img.src = src; };
