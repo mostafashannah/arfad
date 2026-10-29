@@ -1542,3 +1542,5 @@ nav.links{font-size:calc(.7rem + 1px);}
 .ff-num .od-strip{display:flex;flex-direction:column;transform:translateY(0);transition:transform 1.6s cubic-bezier(.16,.84,.24,1);will-change:transform;}
 .ff-num .od-strip span{display:block;height:1.1em;line-height:1.1em;}
 .ff-num .od-sep{display:inline-block;line-height:1.1em;}
+/* project cards: the picture always covers the whole card (no repeat, no strip of a second image) */
+.gallery-card,.gallery-card:hover{background-size:cover;background-repeat:no-repeat;}
