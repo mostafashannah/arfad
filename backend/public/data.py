@@ -346,11 +346,11 @@ POSTS_DEFAULT = [
 
 # the two interior-woodwork sub-services that have their own pages
 SUBSERVICES = [
- dict(slug="kitchens", title="Kitchens & Cabinets", hero="svc-kitchen-1.jpg", imgs=["svc-kitchen-1.jpg","svc-kitchen-2.jpg"],
-  tagline="Kitchens Crafted to Be Lived In",
-  intro=["ARFAD designs, manufactures and installs fitted kitchens and cabinetry that balance everyday function with refined finishing, from warm natural veneers to bold painted and shaker-style doors.",
-         "Every kitchen is built in our Jubail factory to approved drawings, with controlled material selection, precise edge-banding and spray finishing, and coordinated installation on site.",
-         ["Fitted kitchen cabinets, base, wall and tall units","Veneer, laminate and painted spray-lacquer finishes","Shaker, flat-panel and custom door profiles","Integrated appliance housings and glazed display units","Countertops and splashbacks in stone, quartz or engineered surfaces","Under-cabinet lighting, open shelving and breakfast-bar joinery","Hardware, drawers and soft-close fittings selected to specification"]],
+ dict(slug="kitchens", title="Kitchens & Cabinets", heading="Wooden Kitchen Cabinets", hero="svc-kitchen-1.jpg", imgs=["svc-kitchen-1.jpg","svc-kitchen-2.jpg"],
+  tagline="Timeless Craftsmanship & Natural Warmth for Modern Spaces",
+  intro=["Our premium wooden kitchen cabinets, expertly engineered to blend structural strength with organic elegance. Crafted from high-grade hardwoods, durable wood veneers, and precision engineered cores, our cabinetry delivers long-lasting reliability, rich tactile textures, and unmatched storage versatility.",
+         "Key Features:",
+         ["Premium Material Selection: Built using solid oak, walnut, pine, or high-density core plywood with grain-matched finishes.","Superior Durability: Treated with protective moisture- and scratch-resistant sealants for effortless cleaning and daily wear resistance.","Precision Hardware: Integrated with soft-close hinges and full-extension drawer runners for smooth, quiet operation.","Customizable Styles: Available in classic Shaker frames, modern flat slab doors, or rustic hand-finished styles tailored to your space."]],
   scope_title="What a Kitchens & Cabinets package covers",
   points=["Design development and approved shop drawings","In-house CNC cutting, edge-banding and spray finishing","Quality checks at every stage before delivery","Site installation and final adjustment"]),
  dict(slug="wardrobes", title="Wardrobes & Closets", hero="svc-wardrobes.jpg", imgs=["svc-wardrobes.jpg"],

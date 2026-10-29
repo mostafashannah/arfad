@@ -10923,91 +10923,70 @@
     "tag": "hero"
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-4df0388",
+    "group": "Wooden Kitchen Cabinets",
+    "key": "t-e111b5a",
     "kind": "text",
     "tag": "p",
-    "text": "Kitchens Crafted to Be Lived In"
+    "text": "Timeless Craftsmanship & Natural Warmth for Modern Spaces"
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-003fef2",
+    "group": "Wooden Kitchen Cabinets",
+    "key": "t-f005783",
     "kind": "text",
     "tag": "h2",
-    "text": "Kitchens & Cabinets"
+    "text": "Wooden Kitchen Cabinets"
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-1be490a",
+    "group": "Wooden Kitchen Cabinets",
+    "key": "t-7705868",
     "kind": "text",
     "tag": "p",
-    "text": "ARFAD designs, manufactures and installs fitted kitchens and cabinetry that balance everyday function with refined finishing, from warm natural veneers to bold painted and shaker-style doors."
+    "text": "Our premium wooden kitchen cabinets, expertly engineered to blend structural strength with organic elegance. Crafted from high-grade hardwoods, durable wood veneers, and precision engineered cores, our cabinetry delivers long-lasting reliability, rich tactile textures, and unmatched storage versatility."
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-f1c739c",
+    "group": "Wooden Kitchen Cabinets",
+    "key": "t-2c9ea5a",
     "kind": "text",
     "tag": "p",
-    "text": "Every kitchen is built in our Jubail factory to approved drawings, with controlled material selection, precise edge-banding and spray finishing, and coordinated installation on site."
+    "text": "Key Features:"
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-f8f4fc6",
+    "group": "Wooden Kitchen Cabinets",
+    "key": "t-2a5c2af",
     "kind": "text",
     "tag": "li",
-    "text": "Fitted kitchen cabinets, base, wall and tall units"
+    "text": "Premium Material Selection: Built using solid oak, walnut, pine, or high-density core plywood with grain-matched finishes."
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-f5cf236",
+    "group": "Wooden Kitchen Cabinets",
+    "key": "t-01ae484",
     "kind": "text",
     "tag": "li",
-    "text": "Veneer, laminate and painted spray-lacquer finishes"
+    "text": "Superior Durability: Treated with protective moisture- and scratch-resistant sealants for effortless cleaning and daily wear resistance."
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-b9841ab",
+    "group": "Wooden Kitchen Cabinets",
+    "key": "t-6121436",
     "kind": "text",
     "tag": "li",
-    "text": "Shaker, flat-panel and custom door profiles"
+    "text": "Precision Hardware: Integrated with soft-close hinges and full-extension drawer runners for smooth, quiet operation."
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-86029ab",
+    "group": "Wooden Kitchen Cabinets",
+    "key": "t-73015c1",
     "kind": "text",
     "tag": "li",
-    "text": "Integrated appliance housings and glazed display units"
+    "text": "Customizable Styles: Available in classic Shaker frames, modern flat slab doors, or rustic hand-finished styles tailored to your space."
    },
    {
-    "group": "Kitchens & Cabinets",
-    "key": "t-445eb8a",
-    "kind": "text",
-    "tag": "li",
-    "text": "Countertops and splashbacks in stone, quartz or engineered surfaces"
-   },
-   {
-    "group": "Kitchens & Cabinets",
-    "key": "t-a97534c",
-    "kind": "text",
-    "tag": "li",
-    "text": "Under-cabinet lighting, open shelving and breakfast-bar joinery"
-   },
-   {
-    "group": "Kitchens & Cabinets",
-    "key": "t-42d476b",
-    "kind": "text",
-    "tag": "li",
-    "text": "Hardware, drawers and soft-close fittings selected to specification"
-   },
-   {
-    "group": "Kitchens & Cabinets",
+    "group": "Wooden Kitchen Cabinets",
     "key": "t-5ba997a",
     "kind": "text",
     "tag": "a",
     "text": "Request a Quote"
    },
    {
-    "group": "Kitchens & Cabinets",
+    "group": "Wooden Kitchen Cabinets",
     "key": "l-e061aea",
     "kind": "link",
     "tag": "a",
@@ -11015,14 +10994,14 @@
     "url": "contact.html"
    },
    {
-    "group": "Kitchens & Cabinets",
+    "group": "Wooden Kitchen Cabinets",
     "key": "t-c549873",
     "kind": "text",
     "tag": "a",
     "text": "All Services"
    },
    {
-    "group": "Kitchens & Cabinets",
+    "group": "Wooden Kitchen Cabinets",
     "key": "l-660cb1a",
     "kind": "link",
     "tag": "a",
@@ -11030,7 +11009,7 @@
     "url": "services.html"
    },
    {
-    "group": "Kitchens & Cabinets",
+    "group": "Wooden Kitchen Cabinets",
     "key": "i-42ade09",
     "kind": "image",
     "tag": "div",
@@ -11045,7 +11024,7 @@
    },
    {
     "group": "Kitchens & Cabinets",
-    "key": "t-003fef2-1",
+    "key": "t-003fef2",
     "kind": "text",
     "tag": "h2",
     "text": "Kitchens & Cabinets"
