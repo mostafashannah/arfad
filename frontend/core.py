@@ -109,7 +109,7 @@ def _accredited_track():
 
 def render_footer(f):
     b, ct = f["brand"], f["contact"]
-    cols = "".join('<div data-foot-col><h4>%s</h4>%s</div>' % (esc(col["title"]), "".join('<a href="%s">%s</a>' % (esc(l["href"]), esc(l["label"])) for l in col["links"])) for col in f["columns"])
+    cols = "".join('<div data-foot-col><h4>%s</h4>%s</div>' % (esc(col["title"]), "".join('<a href="%s">%s</a>' % (esc(l["href"]), esc(l["label"][2:] if l["label"].startswith("– ") else l["label"])) for l in col["links"])) for col in f["columns"])
     badges = "".join(('<span class="foot-badge logo%s" title="%s"><img src="%s" alt="%s"></span>' % (" on-white" if x in BADGE_ON_WHITE else "", esc(x), BADGE_LOGOS[x], esc(x))) if x in BADGE_LOGOS else '<span class="foot-badge">%s</span>' % esc(x) for x in b["badges"])
     creds = "<br>".join(esc(x) for x in ct["credentials"])
     return (f'''<footer id="contact" class="site-foot">
@@ -1073,7 +1073,7 @@ document.addEventListener("click", function(e){
       (f.columns || []).forEach(function(col){
         var d = el("div"); d.setAttribute("data-foot-col", "");
         d.appendChild(el("h4", null, col.title));
-        (col.links || []).forEach(function(l){ d.appendChild(link(l.href, l.label)); });
+        (col.links || []).forEach(function(l){ d.appendChild(link(l.href, String(l.label).replace(/^[\u2013\u2014-]\s+/, ""))); });
         cols.appendChild(d);
       });
     }

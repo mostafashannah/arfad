@@ -988,7 +988,7 @@ document.addEventListener("click", function(e){
       (f.columns || []).forEach(function(col){
         var d = el("div"); d.setAttribute("data-foot-col", "");
         d.appendChild(el("h4", null, col.title));
-        (col.links || []).forEach(function(l){ d.appendChild(link(l.href, l.label)); });
+        (col.links || []).forEach(function(l){ d.appendChild(link(l.href, String(l.label).replace(/^[–—-]\s+/, ""))); });
         cols.appendChild(d);
       });
     }
