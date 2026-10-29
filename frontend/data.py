@@ -57,7 +57,7 @@ SERVICES = [
   scope_title="Wall Cladding",
   scope=[],
   projects=["neom","misk","ministry-of-defense","movenpick","redsea-amaala"]),
- dict(slug="ceilings", title="Wooden Ceilings", img="projects/primer-steak-house-3.jpg",
+ dict(slug="ceilings", title="Wooden Ceilings", img="projects/primer-steak-house-3.jpg", page_img="svc-ceilings-auditorium.jpg",
   card="Wooden ceilings, from decorative panels to slatted finishes.",
   tagline="Architectural Wood Ceilings Engineered for Precision and Performance",
   intro=["ARFAD delivers architectural wood ceiling systems tailored to each project's design intent, technical requirements, and approved specifications.",
