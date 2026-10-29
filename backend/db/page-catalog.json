@@ -10897,6 +10897,409 @@
   ],
   "title": "Joinery ARFAD"
  },
+ "service-kitchens.html": {
+  "items": [
+   {
+    "group": "Page header",
+    "key": "t-a669da7",
+    "kind": "text",
+    "tag": "p",
+    "text": "Interior Woodworks"
+   },
+   {
+    "group": "Page header",
+    "key": "t-c9e40fc",
+    "kind": "text",
+    "tag": "h1",
+    "text": "Kitchens & Cabinets"
+   },
+   {
+    "group": "Page header",
+    "images": [
+     "img/svc-kitchen-1.jpg"
+    ],
+    "key": "h-0911aed",
+    "kind": "hero",
+    "tag": "hero"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-4df0388",
+    "kind": "text",
+    "tag": "p",
+    "text": "Kitchens Crafted to Be Lived In"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-003fef2",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Kitchens & Cabinets"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-1be490a",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD designs, manufactures and installs fitted kitchens and cabinetry that balance everyday function with refined finishing, from warm natural veneers to bold painted and shaker-style doors."
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-f1c739c",
+    "kind": "text",
+    "tag": "p",
+    "text": "Every kitchen is built in our Jubail factory to approved drawings, with controlled material selection, precise edge-banding and spray finishing, and coordinated installation on site."
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-f8f4fc6",
+    "kind": "text",
+    "tag": "li",
+    "text": "Fitted kitchen cabinets, base, wall and tall units"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-f5cf236",
+    "kind": "text",
+    "tag": "li",
+    "text": "Veneer, laminate and painted spray-lacquer finishes"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-b9841ab",
+    "kind": "text",
+    "tag": "li",
+    "text": "Shaker, flat-panel and custom door profiles"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-86029ab",
+    "kind": "text",
+    "tag": "li",
+    "text": "Integrated appliance housings and glazed display units"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-445eb8a",
+    "kind": "text",
+    "tag": "li",
+    "text": "Countertops and splashbacks in stone, quartz or engineered surfaces"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-a97534c",
+    "kind": "text",
+    "tag": "li",
+    "text": "Under-cabinet lighting, open shelving and breakfast-bar joinery"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-42d476b",
+    "kind": "text",
+    "tag": "li",
+    "text": "Hardware, drawers and soft-close fittings selected to specification"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-5ba997a",
+    "kind": "text",
+    "tag": "a",
+    "text": "Request a Quote"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-c549873",
+    "kind": "text",
+    "tag": "a",
+    "text": "All Services"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "i-42ade09",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/svc-kitchen-1.jpg"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-a54f8cc",
+    "kind": "text",
+    "tag": "p",
+    "text": "Gallery"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "t-003fef2-1",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Kitchens & Cabinets"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "i-42ade09-1",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/svc-kitchen-1.jpg"
+   },
+   {
+    "group": "Kitchens & Cabinets",
+    "key": "i-d427728",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/svc-kitchen-2.jpg"
+   },
+   {
+    "group": "What a Kitchens & Cabinets Package Covers",
+    "key": "t-24d2057",
+    "kind": "text",
+    "tag": "p",
+    "text": "How we deliver"
+   },
+   {
+    "group": "What a Kitchens & Cabinets Package Covers",
+    "key": "t-5e36238",
+    "kind": "text",
+    "tag": "h2",
+    "text": "What a Kitchens & Cabinets Package Covers"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-d3a6266",
+    "kind": "text",
+    "tag": "p",
+    "text": "Where we have delivered"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-bd621fd",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Related Projects"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-5f1c8db",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Saudi Aramco Projects"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-aedfacd",
+    "kind": "text",
+    "tag": "p",
+    "text": "Jubail, Dhahran, Ras Al Khair"
+   },
+   {
+    "group": "Related Projects",
+    "key": "i-d6dddb2",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/projects/saudi-aramco-1.jpg"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-2e60910",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Royal Commission for Jubail & Yanbu Projects"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-3056636",
+    "kind": "text",
+    "tag": "p",
+    "text": "Al Jubail"
+   },
+   {
+    "group": "Related Projects",
+    "key": "i-d4c6750",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/projects/royal-commission-1.jpg"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-d0ec511",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Movenpick 5-Star Hotel, Wa'ad Al Shamal"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-1e98ab8",
+    "kind": "text",
+    "tag": "p",
+    "text": "Wa'ad Al Shamal"
+   },
+   {
+    "group": "Related Projects",
+    "key": "i-3270b82",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/projects/movenpick-1.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-e8f81c5",
+    "kind": "text",
+    "tag": "p",
+    "text": "Explore"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-93e2b3e",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Other Services from ARFAD."
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "i-1fdba08",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/mod-doors-teaser.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-5fa3a98",
+    "kind": "text",
+    "tag": "h3",
+    "text": "Wooden Doors"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-61bdd87",
+    "kind": "text",
+    "tag": "p",
+    "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "i-3ad4a13",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/svc-joinery.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-6393400",
+    "kind": "text",
+    "tag": "h3",
+    "text": "Joinery"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-785029c",
+    "kind": "text",
+    "tag": "p",
+    "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "i-3b22734",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/svc-cladding.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-5505a2a",
+    "kind": "text",
+    "tag": "h3",
+    "text": "Wooden Wall Claddings"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-e592b85",
+    "kind": "text",
+    "tag": "p",
+    "text": "Architectural wall cladding, from decorative panels to slatted finishes."
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "i-e1061b2",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/projects/primer-steak-house-3.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-319cc46",
+    "kind": "text",
+    "tag": "h3",
+    "text": "Wooden Ceilings"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-d35c2bf",
+    "kind": "text",
+    "tag": "p",
+    "text": "Wooden ceilings, from decorative panels to slatted finishes."
+   },
+   {
+    "group": "Ready to Start Your Kitchens & Cabinets Project?",
+    "key": "t-d90e283",
+    "kind": "text",
+    "tag": "p",
+    "text": "Get in touch"
+   },
+   {
+    "group": "Ready to Start Your Kitchens & Cabinets Project?",
+    "key": "t-fc99542",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Ready to Start Your Kitchens & Cabinets Project?"
+   },
+   {
+    "group": "Ready to Start Your Kitchens & Cabinets Project?",
+    "key": "t-5ba997a-1",
+    "kind": "text",
+    "tag": "a",
+    "text": "Request a Quote"
+   },
+   {
+    "group": "Ready to Start Your Kitchens & Cabinets Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Kitchens & Cabinets Project?",
+    "key": "t-f0473f6",
+    "kind": "text",
+    "tag": "a",
+    "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Kitchens & Cabinets Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
+   }
+  ],
+  "title": "Kitchens & Cabinets ARFAD"
+ },
  "service-thermowood.html": {
   "items": [
    {
@@ -12028,6 +12431,381 @@
    }
   ],
   "title": "Wooden Wall Claddings ARFAD"
+ },
+ "service-wardrobes.html": {
+  "items": [
+   {
+    "group": "Page header",
+    "key": "t-a669da7",
+    "kind": "text",
+    "tag": "p",
+    "text": "Interior Woodworks"
+   },
+   {
+    "group": "Page header",
+    "key": "t-0102c92",
+    "kind": "text",
+    "tag": "h1",
+    "text": "Wardrobes & Closets"
+   },
+   {
+    "group": "Page header",
+    "images": [
+     "img/svc-wardrobes.jpg"
+    ],
+    "key": "h-0911aed",
+    "kind": "hero",
+    "tag": "hero"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-cfea2aa",
+    "kind": "text",
+    "tag": "p",
+    "text": "Storage Designed Around the Way You Live"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-0a5c2ad",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Wardrobes & Closets"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-f0ae47c",
+    "kind": "text",
+    "tag": "p",
+    "text": "ARFAD manufactures bespoke wardrobes, walk-in closets and dressing rooms planned around each space, from compact built-in units to full walk-in suites with integrated lighting and vanity areas."
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-f21ecce",
+    "kind": "text",
+    "tag": "p",
+    "text": "Interiors are configured to the client’s needs, with hanging rails, shelving, drawers, shoe storage and accessories, finished to match the surrounding interior."
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-855adcc",
+    "kind": "text",
+    "tag": "li",
+    "text": "Built-in and walk-in wardrobes"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-495bf02",
+    "kind": "text",
+    "tag": "li",
+    "text": "Dressing rooms with vanity and mirror units"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-062831f",
+    "kind": "text",
+    "tag": "li",
+    "text": "Hanging rails, shelves, drawers and pull-out shoe racks"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-fb50c26",
+    "kind": "text",
+    "tag": "li",
+    "text": "Integrated LED strip and shelf lighting"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-ea6d71e",
+    "kind": "text",
+    "tag": "li",
+    "text": "Sliding, hinged and flush door systems"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-8fc04c7",
+    "kind": "text",
+    "tag": "li",
+    "text": "Veneer, laminate and spray-finished panels"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-84496b4",
+    "kind": "text",
+    "tag": "li",
+    "text": "Custom storage for hotels, villas and staff housing"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-5ba997a",
+    "kind": "text",
+    "tag": "a",
+    "text": "Request a Quote"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "l-e061aea",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "t-c549873",
+    "kind": "text",
+    "tag": "a",
+    "text": "All Services"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "l-660cb1a",
+    "kind": "link",
+    "tag": "a",
+    "text": "All Services",
+    "url": "services.html"
+   },
+   {
+    "group": "Wardrobes & Closets",
+    "key": "i-d32e948",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/svc-wardrobes.jpg"
+   },
+   {
+    "group": "What a Wardrobes & Closets Package Covers",
+    "key": "t-24d2057",
+    "kind": "text",
+    "tag": "p",
+    "text": "How we deliver"
+   },
+   {
+    "group": "What a Wardrobes & Closets Package Covers",
+    "key": "t-f275216",
+    "kind": "text",
+    "tag": "h2",
+    "text": "What a Wardrobes & Closets Package Covers"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-d3a6266",
+    "kind": "text",
+    "tag": "p",
+    "text": "Where we have delivered"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-bd621fd",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Related Projects"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-5f1c8db",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Saudi Aramco Projects"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-aedfacd",
+    "kind": "text",
+    "tag": "p",
+    "text": "Jubail, Dhahran, Ras Al Khair"
+   },
+   {
+    "group": "Related Projects",
+    "key": "i-d6dddb2",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/projects/saudi-aramco-1.jpg"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-2e60910",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Royal Commission for Jubail & Yanbu Projects"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-3056636",
+    "kind": "text",
+    "tag": "p",
+    "text": "Al Jubail"
+   },
+   {
+    "group": "Related Projects",
+    "key": "i-d4c6750",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/projects/royal-commission-1.jpg"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-d0ec511",
+    "kind": "text",
+    "tag": "h4",
+    "text": "Movenpick 5-Star Hotel, Wa'ad Al Shamal"
+   },
+   {
+    "group": "Related Projects",
+    "key": "t-1e98ab8",
+    "kind": "text",
+    "tag": "p",
+    "text": "Wa'ad Al Shamal"
+   },
+   {
+    "group": "Related Projects",
+    "key": "i-3270b82",
+    "kind": "image",
+    "tag": "a",
+    "url": "img/projects/movenpick-1.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-e8f81c5",
+    "kind": "text",
+    "tag": "p",
+    "text": "Explore"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-93e2b3e",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Other Services from ARFAD."
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "i-1fdba08",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/mod-doors-teaser.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-5fa3a98",
+    "kind": "text",
+    "tag": "h3",
+    "text": "Wooden Doors"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-61bdd87",
+    "kind": "text",
+    "tag": "p",
+    "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "i-3ad4a13",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/svc-joinery.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-6393400",
+    "kind": "text",
+    "tag": "h3",
+    "text": "Joinery"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-785029c",
+    "kind": "text",
+    "tag": "p",
+    "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "i-3b22734",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/svc-cladding.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-5505a2a",
+    "kind": "text",
+    "tag": "h3",
+    "text": "Wooden Wall Claddings"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-e592b85",
+    "kind": "text",
+    "tag": "p",
+    "text": "Architectural wall cladding, from decorative panels to slatted finishes."
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "i-e1061b2",
+    "kind": "image",
+    "tag": "div",
+    "url": "img/projects/primer-steak-house-3.jpg"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-319cc46",
+    "kind": "text",
+    "tag": "h3",
+    "text": "Wooden Ceilings"
+   },
+   {
+    "group": "Other Services from ARFAD.",
+    "key": "t-d35c2bf",
+    "kind": "text",
+    "tag": "p",
+    "text": "Wooden ceilings, from decorative panels to slatted finishes."
+   },
+   {
+    "group": "Ready to Start Your Wardrobes & Closets Project?",
+    "key": "t-d90e283",
+    "kind": "text",
+    "tag": "p",
+    "text": "Get in touch"
+   },
+   {
+    "group": "Ready to Start Your Wardrobes & Closets Project?",
+    "key": "t-f7f851d",
+    "kind": "text",
+    "tag": "h2",
+    "text": "Ready to Start Your Wardrobes & Closets Project?"
+   },
+   {
+    "group": "Ready to Start Your Wardrobes & Closets Project?",
+    "key": "t-5ba997a-1",
+    "kind": "text",
+    "tag": "a",
+    "text": "Request a Quote"
+   },
+   {
+    "group": "Ready to Start Your Wardrobes & Closets Project?",
+    "key": "l-e061aea-1",
+    "kind": "link",
+    "tag": "a",
+    "text": "Request a Quote",
+    "url": "contact.html"
+   },
+   {
+    "group": "Ready to Start Your Wardrobes & Closets Project?",
+    "key": "t-f0473f6",
+    "kind": "text",
+    "tag": "a",
+    "text": "Email Us"
+   },
+   {
+    "group": "Ready to Start Your Wardrobes & Closets Project?",
+    "key": "l-9de7dcc",
+    "kind": "link",
+    "tag": "a",
+    "text": "Email Us",
+    "url": "mailto:info@arfad.com.sa"
+   }
+  ],
+  "title": "Wardrobes & Closets ARFAD"
  },
  "service-workflow.html": {
   "items": [

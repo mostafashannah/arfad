@@ -252,3 +252,19 @@ def services_pages():
   {cta_band(f"Ready to start your {esc(s['title']).lower()} project?")}
 </main>'''
         write(f"service-{s['slug']}.html", page(f"{s['title']} ARFAD", s["tagline"] + ". " + s["intro"][0], f"service-{s['slug']}.html", body))
+
+    for sv in SUBSERVICES:
+        pics = "".join(f'<div class="split-img" style="aspect-ratio:16/11;background-image:url(\'img/{im}\');"></div>' for im in sv["imgs"][1:])
+        blocks = [f'<section class="section"><div class="wrap">{split(sv["tagline"], esc(sv["title"]), sv["intro"], sv["imgs"][0], extra=cta_btns(("Request a Quote","contact.html"),("All Services","services.html")))}</div></section>']
+        if pics:
+            blocks.append(f'<section class="section on-alt"><div class="wrap">{head("Gallery", esc(sv["title"]))}<div class="feature-grid" style="margin-top:0;grid-template-columns:repeat(2,1fr);">' + "".join(f'<div class="split-img" style="aspect-ratio:16/11;background-image:url(\'img/{im}\');"></div>' for im in sv["imgs"]) + '</div></div></section>')
+        blocks.append(f'<section class="section on-alt"><div class="wrap">{head("How we deliver", esc(sv["scope_title"]))}{scope_grid(sv["points"])}</div></section>')
+        rel = [p for p in ("saudi-aramco","royal-commission","movenpick","karan") if p in PROJECT_PAGES]
+        blocks.append(f'<section class="section related-sec"><div class="wrap">{head("Where we have delivered", "Related projects")}<div class="feature-grid" style="margin-top:0;">' + "".join(project_card(p) for p in rel[:3]) + '</div></div></section>')
+        blocks.append(f'<section class="section on-alt"><div class="wrap">{head("Explore","Other services from ARFAD.")}{other_services("cabinets")}</div></section>')
+        body = f'''<main>
+  {subhero([("Services","services.html"),("Interior Woodworks","service-cabinets.html"),(esc(sv["title"]),None)],"Interior Woodworks", esc(sv["title"]), "", sv["hero"])}
+  {chr(10).join(blocks)}
+  {cta_band(f"Ready to start your {esc(sv['title']).lower()} project?")}
+</main>'''
+        write(f"service-{sv['slug']}.html", page(f"{sv['title']} ARFAD", sv["tagline"] + ". " + sv["intro"][0], f"service-{sv['slug']}.html", body))

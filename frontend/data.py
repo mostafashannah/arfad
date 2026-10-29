@@ -121,7 +121,7 @@ SERVICES = [
 SERVICE_BY_SLUG = {s["slug"]: s for s in SERVICES}
 # client's Services menu (REV-01), each item points at the page that covers it
 SERVICE_MENU = [("Wooden Doors","service-doors.html"),("Wooden Wall Claddings","service-wall-cladding.html"),("Wooden Ceilings","service-ceilings.html"),
- ("Wooden Floorings","service-cabinets.html#sub-floorings"),("Kitchens & Cabinets","service-cabinets.html#sub-kitchens"),("Wardrobes & Closets","service-cabinets.html#sub-wardrobes"),
+ ("Wooden Floorings","service-cabinets.html#sub-floorings"),("Kitchens & Cabinets","service-kitchens.html"),("Wardrobes & Closets","service-wardrobes.html"),
  ("Vanities & Storage Systems","service-cabinets.html#sub-vanities"),("Reception Counters","service-joinery.html#sub-reception"),("Interior Furniture & Decors","service-furniture.html#sub-interior-furniture"),
  ("Exterior Woodworks","service-thermowood.html#sub-exterior"),("– Thermowood","service-thermowood.html"),("– WPC Works","service-wpc.html"),("Counter Tops & Solid Surfaces","service-countertops.html"),("Traditional Woodworks","service-traditional.html"),
  ("Joinery","service-joinery.html"),("Interior Woodworks","service-cabinets.html")]
@@ -341,4 +341,23 @@ POSTS_DEFAULT = [
   title="Meet ARFAD at upcoming exhibitions",
   excerpt="Exhibition dates, stand details and highlights will be announced here as they are confirmed.",
   body="ARFAD takes part in exhibitions and trade fairs across the Kingdom to meet architects, consultants and developers.\n\n## Stay informed\nStand locations, dates and what we are showing will be posted in this section as soon as they are confirmed.\n\nThis is a sample post. Replace it with your own exhibition announcements from the admin."),
+]
+
+
+# the two interior-woodwork sub-services that have their own pages
+SUBSERVICES = [
+ dict(slug="kitchens", title="Kitchens & Cabinets", hero="svc-kitchen-1.jpg", imgs=["svc-kitchen-1.jpg","svc-kitchen-2.jpg"],
+  tagline="Kitchens Crafted to Be Lived In",
+  intro=["ARFAD designs, manufactures and installs fitted kitchens and cabinetry that balance everyday function with refined finishing, from warm natural veneers to bold painted and shaker-style doors.",
+         "Every kitchen is built in our Jubail factory to approved drawings, with controlled material selection, precise edge-banding and spray finishing, and coordinated installation on site.",
+         ["Fitted kitchen cabinets, base, wall and tall units","Veneer, laminate and painted spray-lacquer finishes","Shaker, flat-panel and custom door profiles","Integrated appliance housings and glazed display units","Countertops and splashbacks in stone, quartz or engineered surfaces","Under-cabinet lighting, open shelving and breakfast-bar joinery","Hardware, drawers and soft-close fittings selected to specification"]],
+  scope_title="What a Kitchens & Cabinets package covers",
+  points=["Design development and approved shop drawings","In-house CNC cutting, edge-banding and spray finishing","Quality checks at every stage before delivery","Site installation and final adjustment"]),
+ dict(slug="wardrobes", title="Wardrobes & Closets", hero="svc-wardrobes.jpg", imgs=["svc-wardrobes.jpg"],
+  tagline="Storage Designed Around the Way You Live",
+  intro=["ARFAD manufactures bespoke wardrobes, walk-in closets and dressing rooms planned around each space, from compact built-in units to full walk-in suites with integrated lighting and vanity areas.",
+         "Interiors are configured to the client\u2019s needs, with hanging rails, shelving, drawers, shoe storage and accessories, finished to match the surrounding interior.",
+         ["Built-in and walk-in wardrobes","Dressing rooms with vanity and mirror units","Hanging rails, shelves, drawers and pull-out shoe racks","Integrated LED strip and shelf lighting","Sliding, hinged and flush door systems","Veneer, laminate and spray-finished panels","Custom storage for hotels, villas and staff housing"]],
+  scope_title="What a Wardrobes & Closets package covers",
+  points=["Space planning and approved shop drawings","Factory-built units for consistent quality","Interior fittings configured to the brief","Site installation and final adjustment"]),
 ]

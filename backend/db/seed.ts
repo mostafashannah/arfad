@@ -207,6 +207,16 @@ export async function runSeed() {
     await db.insert(siteBlocks).values({ key: "footer_certs_link", value: "1" }).run();
   }
 
+  // Once only: Kitchens & Cabinets and Wardrobes & Closets now have their own pages; repoint the saved menu and footer.
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "kitchens_wardrobes_pages")).get())) {
+    const map: Record<string, string> = { "service-cabinets.html#sub-kitchens": "service-kitchens.html", "service-cabinets.html#sub-wardrobes": "service-wardrobes.html" };
+    const tree = await getNavTree();
+    let changed = false;
+    for (const n of tree) for (const c of n.children) if (map[c.href]) { c.href = map[c.href]; changed = true; }
+    if (changed) await saveNav(tree.map((n) => ({ label: n.label, href: n.href, active: n.active, children: n.children.map((c) => ({ label: c.label, href: c.href, active: c.active })) })));
+    await db.insert(siteBlocks).values({ key: "kitchens_wardrobes_pages", value: "1" }).run();
+  }
+
   // Once only: Thermowood and WPC Works become sub-items under Exterior Woodworks in the saved Services menu.
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "services_sub_migrated")).get())) {
     const tree = await getNavTree();

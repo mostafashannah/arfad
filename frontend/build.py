@@ -22,6 +22,6 @@ with open(os.path.join(ROOT, "..", "backend", "db", "page-catalog.json"), "w") a
 import arabic
 _n, _missing = arabic.build()
 if _missing:
-    print("UNTRANSLATED (%d):" % len(_missing), sorted(_missing)[:10])
+    print("UNTRANSLATED (%d):" % len(_missing), sorted(_missing)[:60])
 print("arabic", _n, "pages")
 print("done", len(files), "pages", "catalog", len(PAGE_CATALOG))

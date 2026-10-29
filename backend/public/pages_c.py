@@ -439,7 +439,7 @@ def other_pages():
 
 REDIRECTS = {"quality.html":"quality-policy.html",
              "service-cladding.html":"service-wall-cladding.html","service-flooring.html":"service-cabinets.html#sub-floorings",
-             "service-kitchens.html":"service-cabinets.html#sub-kitchens","service-wardrobes.html":"service-cabinets.html#sub-wardrobes","service-vanities.html":"service-cabinets.html#sub-vanities",
+             "service-vanities.html":"service-cabinets.html#sub-vanities",
              "service-reception-counters.html":"service-joinery.html#sub-reception","service-exterior.html":"service-thermowood.html#sub-exterior"}
 
 def redirects():
