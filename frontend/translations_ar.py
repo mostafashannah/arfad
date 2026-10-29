@@ -21,3 +21,4 @@ T.update({"Quality Control Policy & Procedures Manual.":"دليل سياسة و�
 T.update({"Saudi Aramco Registration Approval Letter":"خطاب اعتماد التسجيل لدى أرامكو السعودية","Manufacturer + Service Provider · Vendor Code 10064085 · January 8, 2023":"مصنّع + مزوّد خدمات · رمز المورّد 10064085 · 8 يناير 2023"})
 T.update({"The mark of responsible forestry":"علامة الإدارة المسؤولة للغابات"})
 T.update({"Sustainable Sourcing":"التوريد المستدام","Sourcing materials and products from sustainable sources, such as FSC-Certified Wood can promote sustainability and support responsible production practices.":"إن توريد المواد والمنتجات من مصادر مستدامة، مثل الخشب المعتمد من FSC، يعزز الاستدامة ويدعم ممارسات الإنتاج المسؤولة."})
+T.update({"Certificates & Awards":"الشهادات والجوائز"})

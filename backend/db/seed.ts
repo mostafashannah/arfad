@@ -195,6 +195,18 @@ export async function runSeed() {
     await db.insert(siteBlocks).values({ key: "iso_marks_v2", value: "1" }).run();
   }
 
+  // Once only: add "Certificates & Awards" to the Quick Links column of the saved footer.
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "footer_certs_link")).get())) {
+    const footer = await getFooter();
+    const col = footer.columns.find((c) => c.title === "Quick Links");
+    if (col && !col.links.some((l) => l.href === "certificates.html")) {
+      const at = col.links.findIndex((l) => l.href === "factory.html") + 1;
+      col.links.splice(at || col.links.length, 0, { label: "Certificates & Awards", href: "certificates.html" });
+      await saveFooter(footer);
+    }
+    await db.insert(siteBlocks).values({ key: "footer_certs_link", value: "1" }).run();
+  }
+
   // Once only: Thermowood and WPC Works become sub-items under Exterior Woodworks in the saved Services menu.
   if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "services_sub_migrated")).get())) {
     const tree = await getNavTree();

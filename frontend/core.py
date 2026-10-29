@@ -30,7 +30,7 @@ FOOTER_DEFAULT = {
     },
     "columns": [
         {"title": "Quick Links", "links": [{"label": l, "href": h} for l, h in
-            [("Home","index.html"),("Who We Are","about.html"),("Services","services.html"),("Projects","projects.html"),("Factory","factory.html"),
+            [("Home","index.html"),("Who We Are","about.html"),("Services","services.html"),("Projects","projects.html"),("Factory","factory.html"),("Certificates & Awards","certificates.html"),
              ("Sustainability","sustainability.html"),("Careers","careers.html"),("Media","media.html"),("Contact","contact.html")]]},
         {"title": "Services", "links": [{"label": s["title"], "href": f"service-{s['slug']}.html"} for s in SERVICES]},
     ],
