@@ -1464,3 +1464,5 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
   .hero-full-facts{position:relative;order:3;left:auto;right:auto;bottom:auto;}
   .hero-scroll-cue{display:none;}
 }
+/* header menu in bold */
+.nav-link,.submenu a{font-weight:700;}
