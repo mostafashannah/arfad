@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Tailored Furniture for Distinctive Spaces. ARFAD manufactures custom furniture tailored to each project's design concept, dimensions, functional requirements, and selected finishes, with a focus on quality craftsmanship and refined execution.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css?v=ee8dfa2e0f">
+<link rel="stylesheet" href="styles.css?v=358eb348c9">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <script type="application/ld+json">
@@ -328,27 +328,36 @@ window.__arfadLogoKnockout = function(img, src){
 };
 document.querySelectorAll("img[data-knockout]").forEach(function(i){ window.__arfadLogoKnockout(i, i.getAttribute("src")); });
 
-/* count-up figures: numbers run from 0 to their value when they scroll into view */
+/* rolling-digit figures: every digit spins through 0-9 like a slot reel and settles on its value when scrolled into view */
 (function(){
   var items = document.querySelectorAll(".ff-num");
   if(!items.length) return;
   var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-  function parse(t){ var m = /^(\D*)([\d][\d,\.]*)(.*)$/.exec(t); if(!m) return null; var raw = m[2], dec = (raw.split(".")[1] || "").length; return {pre:m[1], val:parseFloat(raw.replace(/,/g, "")), dec:dec, suf:m[3], commas: raw.indexOf(",") >= 0}; }
-  function fmt(p, v){ var s = v.toFixed(p.dec); if(p.commas){ var a = s.split("."); a[0] = a[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); s = a.join("."); } return p.pre + s + p.suf; }
-  function run(e){
-    var full = e.textContent, p = parse(full); if(!p || reduce || isNaN(p.val)) return;
-    e.style.minWidth = e.getBoundingClientRect().width + "px";
-    var t0 = null, D = 1900;
-    function step(ts){
-      if(t0 === null) t0 = ts;
-      var k = Math.min(1, (ts - t0) / D), v = p.val * (1 - Math.pow(1 - k, 3));
-      e.textContent = k < 1 ? fmt(p, v) : full;
-      if(k < 1) requestAnimationFrame(step); else e.style.minWidth = "";
+  if(reduce || !("IntersectionObserver" in window)) return;
+  function build(e){
+    var txt = e.textContent; e.setAttribute("aria-label", txt); e.textContent = "";
+    var strips = [];
+    for(var i = 0; i < txt.length; i++){
+      var ch = txt.charAt(i);
+      if(/\d/.test(ch)){
+        var col = document.createElement("span"); col.className = "od"; col.setAttribute("aria-hidden", "true");
+        var st = document.createElement("span"); st.className = "od-strip";
+        for(var n = 0; n < 30; n++){ var d = document.createElement("span"); d.textContent = String(n % 10); st.appendChild(d); }
+        col.appendChild(st); e.appendChild(col); strips.push({el: st, digit: parseInt(ch, 10)});
+      } else { var t = document.createElement("span"); t.className = "od-sep"; t.setAttribute("aria-hidden", "true"); t.textContent = ch === " " ? " " : ch; e.appendChild(t); }
     }
-    e.textContent = fmt(p, 0); requestAnimationFrame(step);
+    e._strips = strips;
   }
-  if(!("IntersectionObserver" in window)) return;
-  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ io.unobserve(en.target); run(en.target); } }); }, {threshold:.6});
+  function roll(e){
+    var strips = e._strips || [];
+    strips.forEach(function(s, i){
+      var target = 10 * (1 + Math.min(i, 1)) + s.digit;
+      s.el.style.transitionDuration = (1.5 + i * 0.16).toFixed(2) + "s";
+      s.el.style.transform = "translateY(" + (-target * 1.1).toFixed(2) + "em)";
+    });
+  }
+  items.forEach(build);
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ io.unobserve(en.target); roll(en.target); } }); }, {threshold:.6});
   items.forEach(function(e){ io.observe(e); });
 })();
 

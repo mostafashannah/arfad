@@ -1536,3 +1536,9 @@ nav.links{font-size:calc(.7rem + 1px);}
 .ff-item{display:block;background:none;border:0;box-shadow:none;padding:0;}
 .ff-num{display:block;font-family:"Montserrat",sans-serif;font-weight:700;font-size:clamp(1.5rem,2.3vw,2.1rem);line-height:1.1;color:var(--navy);white-space:nowrap;}
 .ff-lbl{display:block;margin-top:8px;font-family:"Montserrat",sans-serif;font-size:.7rem;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-soft);}
+/* rolling digits */
+.ff-num{display:flex;align-items:flex-start;height:1.1em;overflow:hidden;font-variant-numeric:tabular-nums;}
+.ff-num .od{display:inline-block;height:1.1em;overflow:hidden;line-height:1.1em;}
+.ff-num .od-strip{display:flex;flex-direction:column;transform:translateY(0);transition:transform 1.6s cubic-bezier(.16,.84,.24,1);will-change:transform;}
+.ff-num .od-strip span{display:block;height:1.1em;line-height:1.1em;}
+.ff-num .od-sep{display:inline-block;line-height:1.1em;}
