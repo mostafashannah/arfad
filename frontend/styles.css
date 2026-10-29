@@ -1516,3 +1516,7 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
 .cert-tab.has-logo[aria-selected="true"]{background:#fff;color:inherit;border-color:var(--navy);box-shadow:0 0 0 2px var(--navy),0 14px 26px -14px rgba(10,37,64,.55);}
 .cert-tab.has-logo:not([aria-selected="true"]){opacity:.82;}
 .cert-tab.has-logo:hover{opacity:1;}
+/* header menu text 1px larger */
+nav.links{font-size:calc(.7rem + 1px);}
+.submenu a{font-size:calc(.7rem + 1px);}
+@media (min-width:901px) and (max-width:1279px){ nav.links{font-size:.7rem;} }
