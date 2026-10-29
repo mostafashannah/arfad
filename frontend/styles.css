@@ -1466,3 +1466,30 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
 }
 /* header menu in bold */
 .nav-link,.submenu a{font-weight:700;}
+/* colour ISO marks: a white tile behind each credential logo in the footer */
+.cred-logos img{background:#fff;border-radius:10px;padding:4px;box-sizing:content-box;}
+.cred-logos img[alt="FSC"]{background:none;padding:0;border-radius:0;}
+.cred-logos img[alt^="ISO"]{height:56px;width:56px;max-width:none;object-fit:contain;}
+
+/* Sustainability page: a light green look with soft illuminated glows inside the boxes */
+.green-page{--sg:#2f8f4e;--sg-soft:#e6f4ea;}
+.green-page .section.on-alt{background:linear-gradient(180deg,#f3faf5,#eaf5ee);}
+.green-page .sus-process li,.green-page .scope-item{
+  position:relative;overflow:hidden;border-color:rgba(47,143,78,.28);
+  background:
+    radial-gradient(120% 90% at 100% 0%,rgba(134,214,142,.42),rgba(134,214,142,0) 58%),
+    radial-gradient(90% 70% at 0% 100%,rgba(190,236,170,.40),rgba(190,236,170,0) 62%),
+    linear-gradient(145deg,#ffffff,#eef8f0);
+  box-shadow:0 18px 38px -24px rgba(47,143,78,.55);
+}
+.green-page .sus-process li::before,.green-page .scope-item::before{
+  content:"";position:absolute;width:150px;height:150px;right:-50px;top:-60px;border-radius:50%;
+  background:radial-gradient(circle,rgba(120,210,130,.38),rgba(120,210,130,0) 70%);
+  animation:greenGlow 7s ease-in-out infinite alternate;pointer-events:none;
+}
+@keyframes greenGlow{from{transform:translate(0,0) scale(1);opacity:.7;}to{transform:translate(-14px,10px) scale(1.18);opacity:1;}}
+.green-page .sus-process li > *,.green-page .scope-item > *{position:relative;}
+.green-page .sus-process .sp-ico{background:linear-gradient(135deg,#1f7a42,#3aa862);box-shadow:0 10px 20px -8px rgba(47,143,78,.7);}
+.green-page .scope-item .ico{color:var(--sg);}
+.green-page .scope-item:hover{border-color:var(--sg);}
+@media (prefers-reduced-motion:reduce){.green-page .sus-process li::before,.green-page .scope-item::before{animation:none;}}

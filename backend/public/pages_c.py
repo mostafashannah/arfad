@@ -326,7 +326,7 @@ def other_pages():
     post_page()
     # ---- Sustainability
     pts = ["FSC Chain of Custody Certified","Certified Wood Product Traceability","Responsible Wood Sourcing","Controlled Chain of Custody Procedures","Support for Sustainability-Focused Projects"]
-    body = f'''<main>
+    body = f'''<main class="green-page">
   {subhero([("Sustainability",None)],"FSC® Certification &amp; Sustainability","FSC® Certification &amp;<br>Sustainability","Responsible Wood Sourcing. Certified Chain of Custody.","sustainability-hero.jpg")}
   <section class="section"><div class="wrap">
     {split("Committed to Responsible Forestry","Sustainability &amp; FSC® Certification",
