@@ -757,22 +757,13 @@
         "id": "fsc",
         "label": "FSC COC",
         "heading": "FSC COC Certificates",
-        "lede": "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks. LEED documentation supports projects with green-building requirements.",
+        "lede": "Forest Stewardship Council of UK approved ARFAD as a FSC-STD-40-004 V3-1 Chain of Custody Certification, FSC-STD-50-001 V2-1 Requirements and meeting the Standards for use of the FSC trademarks.",
         "items": [
           {
             "title": "FSC® Chain of Custody (CoC) Certification",
             "sub": "FSC-STD-40-004 V3-1 | FSC-STD-50-001 V2-1",
             "file": "/files/certificates/cert-fsc.pdf",
             "logo": "/img/accreditation/light/fsc.png?v=fa76de5b",
-            "group": "",
-            "hidden": false,
-            "hideLogo": false
-          },
-          {
-            "title": "LEED Certificates",
-            "sub": "Document to be provided",
-            "file": "",
-            "logo": "",
             "group": "",
             "hidden": false,
             "hideLogo": false
