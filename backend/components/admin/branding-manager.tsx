@@ -55,7 +55,7 @@ export function BrandingManager({ initial }: { initial: Branding }) {
         <CardHeader>
           <CardTitle className="text-base">Footer logo</CardTitle>
           <CardDescription>
-            Replaces the logo block in the footer (mark, ARFAD lettering and Arabic name). The footer sits on a dark background, so use a light or white logo. Remove it to go back to the built-in block.
+            Replaces the logo block in the footer (mark, ARFAD lettering and Arabic name). Upload any logo, dark or light: a logo on a white or light background has its background removed and is shown in light colours automatically, and it is sized to match the company-name line under it. A PNG with a transparent background gives the cleanest result (use an image from this site's own media). Remove it to go back to the built-in block.
           </CardDescription>
         </CardHeader>
         <CardContent>
