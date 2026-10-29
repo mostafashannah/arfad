@@ -1493,3 +1493,7 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
 .green-page .scope-item .ico{color:var(--sg);}
 .green-page .scope-item:hover{border-color:var(--sg);}
 @media (prefers-reduced-motion:reduce){.green-page .sus-process li::before,.green-page .scope-item::before{animation:none;}}
+/* header logo a little bigger */
+.brand-logo{height:54px;}
+@media (max-width:720px){ .brand-logo{height:41px;} }
+@media (min-width:901px) and (max-width:1279px){ .brand-logo{height:46px;} }
