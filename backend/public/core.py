@@ -45,7 +45,7 @@ FOOTER_DEFAULT = {
     "bottom": {"left": "\u00a9 2026 ARFAD International Industrial Co. \u00b7 Est. 2004", "right": "ARFAD, 20+ Years of Excellence in Woodwork"},
 }
 
-CRED_LOGOS = "".join(f'<img src="img/accreditation/{f}.png{"?v=2" if f.startswith("iso") else ""}" alt="{a}" loading="lazy">' for f, a in [("iso-9001","ISO 9001"),("iso-14001","ISO 14001"),("iso-45001","ISO 45001"),("fsc-mark","FSC")])
+CRED_LOGOS = "".join(f'<img src="img/accreditation/{f}.png{"?v=3" if f.startswith("iso") else ""}" alt="{a}" loading="lazy">' for f, a in [("iso-9001","ISO 9001"),("iso-14001","ISO 14001"),("iso-45001","ISO 45001"),("fsc-mark","FSC")])
 
 BADGE_LOGOS = {"Local Content Certified": "img/badges/local-content.png", "Saudi Made": "img/badges/saudi-made.svg"}
 BADGE_ON_WHITE = {"Saudi Made"}  # green artwork needs a light tile on the navy footer
@@ -1087,7 +1087,7 @@ document.addEventListener("click", function(e){
       if(ct.email) box.appendChild(link("mailto:" + ct.email, ct.email));
       var h = el("h4", null, ct.credentialsTitle); h.style.marginTop = "18px"; box.appendChild(h);
       var cp = el("p"); (ct.credentials || []).forEach(function(line, i){ if(i) cp.appendChild(document.createElement("br")); cp.appendChild(document.createTextNode(line)); }); box.appendChild(cp);
-      var cl = el("div", "cred-logos"); [["iso-9001","ISO 9001"],["iso-14001","ISO 14001"],["iso-45001","ISO 45001"],["fsc-mark","FSC"]].forEach(function(l){ var im = el("img"); im.src = "img/accreditation/" + l[0] + ".png" + (l[0].indexOf("iso") === 0 ? "?v=2" : ""); im.alt = l[1]; im.loading = "lazy"; cl.appendChild(im); }); box.appendChild(cl);
+      var cl = el("div", "cred-logos"); [["iso-9001","ISO 9001"],["iso-14001","ISO 14001"],["iso-45001","ISO 45001"],["fsc-mark","FSC"]].forEach(function(l){ var im = el("img"); im.src = "img/accreditation/" + l[0] + ".png" + (l[0].indexOf("iso") === 0 ? "?v=3" : ""); im.alt = l[1]; im.loading = "lazy"; cl.appendChild(im); }); box.appendChild(cl);
     }
   }
   function renderAcc(items){

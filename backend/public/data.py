@@ -299,7 +299,7 @@ CLIENTS = ["Royal Commission for Jubail & Yanbu","Saudi Aramco","SATORP","YASREF
  "Ewan","Thabat","Retal Residence","Nesma & Partners","TMG","Jabal Technical Institute","Imam Abdulrahman Bin Faisal University","Zakat, Tax and Customs Authority","GACA","Dar Al-Arkan","Technical Development for Contracting"]
 
 # (name, file in img/accreditation, dark card for white-on-transparent logos)
-ACCREDITED = [("ISO 9001:2015","iso-9001.png?v=2",False),("ISO 14001:2015","iso-14001.png?v=2",False),("ISO 45001:2018","iso-45001.png?v=2",False),
+ACCREDITED = [("ISO 9001:2015","iso-9001.png?v=3",False),("ISO 14001:2015","iso-14001.png?v=3",False),("ISO 45001:2018","iso-45001.png?v=3",False),
               ("FSC","fsc.png",True),("Intertek","intertek.png",True),("UAF","uaf.png",True),("Americo","americo.png",True),
               ("IAF","iaf.png",True),("Control Union","control-union.png",True)]
 

@@ -4,7 +4,7 @@ import { db } from "./client";
 import { existsSync, readdirSync, statSync } from "fs";
 import path from "path";
 import { users, services, projects, settings, clients, vendors, accreditations, navItems, siteBlocks, posts, mediaAssets } from "./schema";
-import { eq, and } from "drizzle-orm";
+import { eq, and, like } from "drizzle-orm";
 import { slugify } from "../lib/slugify";
 import defaults from "./site-defaults.json";
 import { getFooter, getNavTree, resetFooter, resetNav, saveFooter, saveNav } from "../lib/site-content";
@@ -188,11 +188,11 @@ export async function runSeed() {
   console.log(`Seeded media library`);
 
   // Once only: the three ISO marks in the saved Accreditations list switch to the new colour artwork (shown on white tiles).
-  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "iso_marks_v2")).get())) {
+  if (!(await db.select().from(siteBlocks).where(eq(siteBlocks.key, "iso_marks_v3")).get())) {
     for (const f of ["iso-9001", "iso-14001", "iso-45001"]) {
-      await db.update(accreditations).set({ logoUrl: `/img/accreditation/${f}.png?v=2`, light: true }).where(eq(accreditations.logoUrl, `/img/accreditation/${f}.png`)).run();
+      await db.update(accreditations).set({ logoUrl: `/img/accreditation/${f}.png?v=3`, light: true }).where(like(accreditations.logoUrl, `/img/accreditation/${f}.png%`)).run();
     }
-    await db.insert(siteBlocks).values({ key: "iso_marks_v2", value: "1" }).run();
+    await db.insert(siteBlocks).values({ key: "iso_marks_v3", value: "1" }).run();
   }
 
   // Once only: add "Certificates & Awards" to the Quick Links column of the saved footer.

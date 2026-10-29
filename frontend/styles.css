@@ -1497,3 +1497,8 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
 .brand-logo{height:54px;}
 @media (max-width:720px){ .brand-logo{height:41px;} }
 @media (min-width:901px) and (max-width:1279px){ .brand-logo{height:46px;} }
+/* accreditation strip: logos sit directly on the band, no tile behind them */
+.acc-chip.acc-logo,.acc-chip.acc-logo.dark,.acc-chip.acc-logo.light{background:none;border:0;box-shadow:none;}
+.acc-chip.acc-logo::after{display:none;}
+.acc-chip.acc-logo img{filter:brightness(1.1);}
+.acc-chip.acc-logo img[alt^="ISO"]{filter:brightness(1.22);}

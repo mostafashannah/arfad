@@ -327,17 +327,17 @@
   "accreditations": [
     {
       "name": "ISO 9001:2015",
-      "logo": "/img/accreditation/iso-9001.png?v=2",
+      "logo": "/img/accreditation/iso-9001.png?v=3",
       "light": true
     },
     {
       "name": "ISO 14001:2015",
-      "logo": "/img/accreditation/iso-14001.png?v=2",
+      "logo": "/img/accreditation/iso-14001.png?v=3",
       "light": true
     },
     {
       "name": "ISO 45001:2018",
-      "logo": "/img/accreditation/iso-45001.png?v=2",
+      "logo": "/img/accreditation/iso-45001.png?v=3",
       "light": true
     },
     {
@@ -719,7 +719,7 @@
             "title": "ISO 9001:2015",
             "sub": "Quality Management System",
             "file": "/files/certificates/iso/iso-9001.pdf",
-            "logo": "/img/accreditation/light/iso-9001.png?v=b95940c5",
+            "logo": "/img/accreditation/light/iso-9001.png?v=848d233b",
             "group": "",
             "hidden": false,
             "hideLogo": false
@@ -728,7 +728,7 @@
             "title": "ISO 14001:2015",
             "sub": "Environmental Management System",
             "file": "/files/certificates/iso/iso-14001.pdf",
-            "logo": "/img/accreditation/light/iso-14001.png?v=921f753d",
+            "logo": "/img/accreditation/light/iso-14001.png?v=f30e1bea",
             "group": "",
             "hidden": false,
             "hideLogo": false
@@ -737,7 +737,7 @@
             "title": "ISO 45001:2018",
             "sub": "Occupational Health & Safety Management System",
             "file": "/files/certificates/iso/iso-45001.pdf",
-            "logo": "/img/accreditation/light/iso-45001.png?v=27809dc1",
+            "logo": "/img/accreditation/light/iso-45001.png?v=aeaf27a3",
             "group": "",
             "hidden": false,
             "hideLogo": false
