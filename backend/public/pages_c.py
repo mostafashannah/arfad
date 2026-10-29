@@ -335,7 +335,7 @@ def other_pages():
       "fsc-timber.jpg", extra='<div class="hero-cta" style="margin-top:26px;"><a class="btn solid flash" href="certificates.html#fsc">View FSC Certificate</a></div>')}
   </div></section>
   <section class="section sus-impact"><div class="wrap about-grid">
-    <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/projects/el-eissa-2.jpg');"></div>
+    <div class="split-img" style="aspect-ratio:16/11;background-image:url('img/fsc-forest.jpg');"></div>
     <div>
       <p class="eyebrow">Sustainability</p>
       <h2 style="margin-top:10px;">Making a Positive Impact on the Environment.</h2>
