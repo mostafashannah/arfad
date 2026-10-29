@@ -1504,3 +1504,6 @@ sup.reg{font-size:.42em;line-height:0;vertical-align:super;margin-inline-start:.
 .acc-chip.acc-logo img[alt^="ISO"]{filter:brightness(1.22);}
 /* custom footer logo: no background box, as wide as the company-name line beneath it */
 .foot-grid .foot-brand .lk-custom{height:auto;width:min(100%,22.6rem);max-height:none;}
+/* sub-menu items: no dash in front, just the text */
+.submenu a.sub-item::before{display:none;}
+.submenu a.sub-item,.sub-list a.sub-item{padding-inline-start:14px;}
