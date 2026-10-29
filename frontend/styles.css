@@ -1522,3 +1522,8 @@ nav.links{font-size:calc(.7rem + 1px);}
 @media (min-width:901px) and (max-width:1279px){ nav.links{font-size:.7rem;} }
 /* footer: the company-name line under the logo is removed */
 .foot-grid .foot-brand .lk-en,.foot-grid .foot-brand [data-foot="brandTitle"]{display:none;}
+/* certificate tabs: the name shows again, under the logo */
+.cert-tab.has-logo{flex-direction:column;gap:7px;height:auto;min-height:96px;padding:14px 24px 12px;border-radius:26px;}
+.cert-tab.has-logo .sr-only{position:static;width:auto;height:auto;margin:0;padding:0;overflow:visible;clip:auto;white-space:nowrap;font:700 .66rem "Montserrat",sans-serif;letter-spacing:.09em;text-transform:uppercase;color:var(--ink);}
+.cert-tab.has-logo[aria-selected="true"] .sr-only{color:var(--navy);}
+.cert-tab.has-logo .tab-logo{height:36px;}
