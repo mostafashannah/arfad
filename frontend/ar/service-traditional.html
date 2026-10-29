@@ -306,7 +306,7 @@ window.__arfadLogoKnockout = function(img, src){
       var x = c.getContext("2d"); x.drawImage(raw, 0, 0);
       var d = x.getImageData(0, 0, w, h), p = d.data;
       for(var i = 0; i < p.length; i += 4){
-        var lum = (p[i] + p[i+1] + p[i+2]) / 3, a = Math.max(0, Math.min(1, (240 - lum) / 45)) * (p[i+3] / 255);
+        var lum = (p[i] + p[i+1] + p[i+2]) / 3, a = Math.max(0, Math.min(1, (205 - lum) / 40)) * (p[i+3] / 255);
         var v = 255 - lum * 0.5;
         p[i] = v; p[i+1] = v; p[i+2] = v + 6; p[i+3] = Math.round(a * 255);
       }
