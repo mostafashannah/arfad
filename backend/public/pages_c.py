@@ -293,7 +293,7 @@ def factory_pages():
     write("our-clients.html", page("Our Clients ARFAD", "Clients and partners of ARFAD: Royal Commission for Jubail & Yanbu, Saudi Aramco, SATORP, YASREF, SABIC, MA'ADEN, Red Sea Global, NEOM, AMAALA and more.", "our-clients.html", body))
 
     # ---- Certificates & Awards
-    tabs = "".join(f'<button type="button" role="tab" class="cert-tab" data-tab="{k}" aria-controls="{k}">{lbl}</button>' for k, lbl, *_ in CERT_TABS)
+    tabs = "".join((f'<button type="button" role="tab" class="cert-tab has-logo" data-tab="{k}" aria-controls="{k}" aria-label="{lbl}" title="{lbl}"><img class="tab-logo" src="img/tabs/{k}.png" alt=""><span class="sr-only">{lbl}</span></button>' if has_file(f"img/tabs/{k}.png") else f'<button type="button" role="tab" class="cert-tab" data-tab="{k}" aria-controls="{k}">{lbl}</button>') for k, lbl, *_ in CERT_TABS)
     panels = "".join(cert_tab_panel(k, t, l, g) for k, lbl, t, l, g in CERT_TABS)
     body = f'''<main>
   {subhero([("Factory","factory.html"),("Certificates & Awards",None)],"Certifications &amp; Approvals","Certificates &amp; Awards","Certified. Approved. Compliant.","projects/neom-4.jpg")}

@@ -29,7 +29,7 @@
 <meta content="رؤية أرفاد: أن نصبح معيارًا إقليميًا في الأعمال الخشبية المعمارية، معروفين بالدقة والنزاهة وانتظام تسليم المشاريع." name="twitter:description"/>
 <meta content="https://www.arfad.com.sa/img/hero.jpg" name="twitter:image"/>
 <link href="../img/logo.png" rel="icon"/>
-<link href="../styles.css?v=ace9fc2879" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="../styles-ar.css" rel="stylesheet"/>
+<link href="../styles.css?v=1b54b5cfd3" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/><link href="../styles-ar.css" rel="stylesheet"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&amp;display=swap" rel="stylesheet"/>
 <script type="application/ld+json">
@@ -409,7 +409,8 @@ document.addEventListener("click", function(e){
     bar.textContent = "";
     var frag = document.createDocumentFragment();
     data.tabs.forEach(function(tb){
-      var b = el("button", "cert-tab", tb.label); b.type = "button"; b.setAttribute("role", "tab"); b.setAttribute("data-tab", tb.id); b.setAttribute("aria-controls", tb.id); bar.appendChild(b);
+      var TL = {fire:1, iso:1, fsc:1, legal:1, aramco:1}, b = el("button", "cert-tab" + (TL[tb.id] ? " has-logo" : ""), TL[tb.id] ? "" : tb.label); b.type = "button";
+      if(TL[tb.id]){ var tl = el("img", "tab-logo"); tl.src = "/img/tabs/" + tb.id + ".png"; tl.alt = ""; b.appendChild(tl); b.appendChild(el("span", "sr-only", tb.label)); b.setAttribute("aria-label", tb.label); b.title = tb.label; } b.setAttribute("role", "tab"); b.setAttribute("data-tab", tb.id); b.setAttribute("aria-controls", tb.id); bar.appendChild(b);
       var p = el("div", "cert-panel"); p.id = tb.id; p.setAttribute("role", "tabpanel"); p.hidden = true;
       var head = el("div", "head"); head.appendChild(el("h2", null, tb.heading || tb.label)); if(tb.lede) head.appendChild(el("p", "lede", tb.lede)); p.appendChild(head);
       var groups = [], idx = {};
