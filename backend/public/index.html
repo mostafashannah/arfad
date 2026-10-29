@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Architectural wood works, interior furnishing and wooden furniture manufacturing from Jubail Industrial City, KSA since 2004.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css?v=75a253f266">
+<link rel="stylesheet" href="styles.css?v=88bbe42f8b">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <script type="application/ld+json">
@@ -368,6 +368,26 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
   function req(){ if(!ticking){ ticking = true; requestAnimationFrame(update); } }
   window.addEventListener("scroll", req, {passive:true}); window.addEventListener("resize", req); update();
 })();
+
+/* footer logo: a dark logo on a light box becomes a light logo with no box (same-origin images only) */
+window.__arfadLogoKnockout = function(img, src){
+  var raw = new Image();
+  raw.onload = function(){
+    try{
+      var w = raw.naturalWidth, h = raw.naturalHeight, c = document.createElement("canvas"); c.width = w; c.height = h;
+      var x = c.getContext("2d"); x.drawImage(raw, 0, 0);
+      var d = x.getImageData(0, 0, w, h), p = d.data;
+      for(var i = 0; i < p.length; i += 4){
+        var lum = (p[i] + p[i+1] + p[i+2]) / 3, a = Math.max(0, Math.min(1, (240 - lum) / 45)) * (p[i+3] / 255);
+        var v = 255 - lum * 0.5;
+        p[i] = v; p[i+1] = v; p[i+2] = v + 6; p[i+3] = Math.round(a * 255);
+      }
+      x.putImageData(d, 0, 0); img.src = c.toDataURL("image/png");
+    }catch(e){ img.src = src; }
+  };
+  raw.onerror = function(){ img.src = src; };
+  raw.src = src;
+};
 
 /* nested dropdown inside the Services menu */
 document.addEventListener("click", function(e){
@@ -805,7 +825,7 @@ document.addEventListener("click", function(e){
     var h = safe(b.headerLogo); if(h){ var hi = document.querySelector(".brand-logo"); if(hi) hi.src = h; }
     var f = safe(b.footerLogo); if(f){
       var top = document.querySelector(".foot-brand .lk-top");
-      if(top){ var im = document.createElement("img"); im.src = f; im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); }
+      if(top){ var im = document.createElement("img"); im.alt = "ARFAD"; im.className = "lk-custom"; top.replaceWith(im); window.__arfadLogoKnockout(im, f); }
     }
   }).catch(function(){});
 })();
