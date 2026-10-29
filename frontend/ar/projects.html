@@ -346,6 +346,30 @@ window.__arfadLogoKnockout = function(img, src){
   raw.src = src;
 };
 
+/* count-up figures: numbers run from 0 to their value when they scroll into view */
+(function(){
+  var items = document.querySelectorAll(".ff-num");
+  if(!items.length) return;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function parse(t){ var m = /^(\D*)([\d][\d,\.]*)(.*)$/.exec(t); if(!m) return null; var raw = m[2], dec = (raw.split(".")[1] || "").length; return {pre:m[1], val:parseFloat(raw.replace(/,/g, "")), dec:dec, suf:m[3], commas: raw.indexOf(",") >= 0}; }
+  function fmt(p, v){ var s = v.toFixed(p.dec); if(p.commas){ var a = s.split("."); a[0] = a[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); s = a.join("."); } return p.pre + s + p.suf; }
+  function run(e){
+    var full = e.textContent, p = parse(full); if(!p || reduce || isNaN(p.val)) return;
+    e.style.minWidth = e.getBoundingClientRect().width + "px";
+    var t0 = null, D = 1900;
+    function step(ts){
+      if(t0 === null) t0 = ts;
+      var k = Math.min(1, (ts - t0) / D), v = p.val * (1 - Math.pow(1 - k, 3));
+      e.textContent = k < 1 ? fmt(p, v) : full;
+      if(k < 1) requestAnimationFrame(step); else e.style.minWidth = "";
+    }
+    e.textContent = fmt(p, 0); requestAnimationFrame(step);
+  }
+  if(!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function(es){ es.forEach(function(en){ if(en.isIntersecting){ io.unobserve(en.target); run(en.target); } }); }, {threshold:.6});
+  items.forEach(function(e){ io.observe(e); });
+})();
+
 /* nested dropdown inside the Services menu */
 document.addEventListener("click", function(e){
   var t = e.target.closest ? e.target.closest(".drop-toggle") : null;
