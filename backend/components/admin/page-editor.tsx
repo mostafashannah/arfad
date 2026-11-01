@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { GalleryPicker, ImagePicker } from "@/components/admin/image-picker";
+import { SIZE_HINTS, hintForClasses } from "@/lib/image-sizes";
 import { ArrowLeft, ExternalLink, Loader2, RotateCcw, Save } from "lucide-react";
 import type { CatalogItem, CatalogPage, Overrides } from "@/lib/page-overrides";
 
@@ -155,6 +156,7 @@ export function PageEditor({ file, page, initial, pageFiles = [] }: { file: stri
 
                   {it.kind === "image" && (
                     <ImagePicker
+                      hint={hintForClasses(it.cls)}
                       value={(values[it.key] as string) ?? it.url ? abs(((values[it.key] as string) ?? it.url) as string) : null}
                       onChange={(url) => setValue(it.key, url && abs(url) !== abs(it.url ?? "") ? url : null)}
                     />
@@ -166,6 +168,7 @@ export function PageEditor({ file, page, initial, pageFiles = [] }: { file: stri
                         One picture shows as a fixed header. Add two or more pictures or videos (MP4, up to 40 MB) and the header becomes a slider that changes every few seconds. Use the arrows to set the order.
                       </p>
                       <GalleryPicker
+                        hint={SIZE_HINTS.hero}
                         allowVideo
                         value={((values[it.key] as string[]) ?? it.images ?? []).map(abs)}
                         onChange={(urls) => setValue(it.key, same(urls, (it.images ?? []).map(abs)) ? null : urls)}

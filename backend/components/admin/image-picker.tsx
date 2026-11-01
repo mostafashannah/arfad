@@ -22,10 +22,12 @@ export function ImagePicker({
   value,
   onChange,
   folder = "uploads",
+  hint,
 }: {
   value: string | null;
   onChange: (url: string | null) => void;
   folder?: string;
+  hint?: string;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
@@ -71,6 +73,7 @@ export function ImagePicker({
         {loading ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Upload className="h-3.5 w-3.5" />}
         {value ? "Replace image" : "Upload image"}
       </Button>
+      {hint && <p className="max-w-md text-xs text-muted-foreground">Recommended size: {hint}</p>}
       {err && <p className="text-xs text-destructive">{err}</p>}
     </div>
   );
@@ -84,11 +87,13 @@ export function GalleryPicker({
   onChange,
   folder = "uploads",
   allowVideo = false,
+  hint,
 }: {
   value: string[];
   onChange: (urls: string[]) => void;
   folder?: string;
   allowVideo?: boolean;
+  hint?: string;
 }) {
   const inputRef = useRef<HTMLInputElement>(null);
   const [loading, setLoading] = useState(false);
@@ -156,6 +161,7 @@ export function GalleryPicker({
         {loading ? <Loader2 className="h-3.5 w-3.5 animate-spin" /> : <Upload className="h-3.5 w-3.5" />}
         {allowVideo ? "Add pictures or videos" : "Add photos"}
       </Button>
+      {hint && <p className="max-w-2xl text-xs text-muted-foreground">Recommended size: {hint}</p>}
       {err && <p className="text-xs text-destructive">{err}</p>}
     </div>
   );

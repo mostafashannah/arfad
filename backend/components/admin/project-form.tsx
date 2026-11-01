@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { GalleryPicker } from "@/components/admin/image-picker";
 import { Loader2 } from "lucide-react";
+import { SIZE_HINTS } from "@/lib/image-sizes";
 
 type Project = {
   id?: string;
@@ -111,7 +112,7 @@ export function ProjectForm({ initial }: { initial?: Partial<Project> & { id: st
 
       <div className="space-y-1.5">
         <Label>Project photos</Label>
-        <GalleryPicker value={project.images} onChange={(urls) => set("images", urls)} folder="projects" />
+        <GalleryPicker value={project.images} onChange={(urls) => set("images", urls)} folder="projects" hint="Project photos: 1600 × 1100 px (landscape, about 16:11), JPG or WebP. The first photo is the cover and is also cropped to 4:3 and 16:10 on cards, so keep the subject in the middle." />
       </div>
 
       <div className="flex items-center gap-6">

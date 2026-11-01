@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { ImagePicker } from "@/components/admin/image-picker";
+import { SIZE_HINTS } from "@/lib/image-sizes";
 import { Trash2, Plus, Loader2 } from "lucide-react";
 
 type Service = {
@@ -95,7 +96,7 @@ export function ServiceForm({ initial }: { initial?: Partial<Service> & { id: st
 
       <div className="space-y-1.5">
         <Label>Card image</Label>
-        <ImagePicker value={service.image} onChange={(url) => set("image", url)} folder="services" />
+        <ImagePicker value={service.image} onChange={(url) => set("image", url)} folder="services" hint={SIZE_HINTS.card} />
       </div>
 
       <div className="space-y-1.5">

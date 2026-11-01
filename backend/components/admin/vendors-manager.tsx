@@ -8,6 +8,7 @@ import { Switch } from "@/components/ui/switch";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowDown, ArrowUp, Check, Loader2, Pencil, Plus, Trash2, Upload, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SIZE_HINTS } from "@/lib/image-sizes";
 
 type Client = { id: string; name: string; vendorNo: string; logoUrl: string | null; active: boolean };
 
@@ -216,6 +217,7 @@ export function VendorsManager({ initial }: { initial: Client[] }) {
           <CardDescription>
             {items.length} total. Changes appear on the public Registered Vendors page within about a minute of saving. A vendor without a logo shows its initials.
           </CardDescription>
+          <p className="text-xs text-muted-foreground">Recommended logo size: {SIZE_HINTS.logoSquare}</p>
         </div>
         {!adding && (
           <Button onClick={() => setAdding(true)}>

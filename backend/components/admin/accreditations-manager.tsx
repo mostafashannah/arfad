@@ -8,6 +8,7 @@ import { Switch } from "@/components/ui/switch";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowDown, ArrowUp, Check, Loader2, Pencil, Plus, Trash2, Upload, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SIZE_HINTS } from "@/lib/image-sizes";
 
 type Item = { id: string; name: string; logoUrl: string; light: boolean; active: boolean };
 
@@ -230,6 +231,7 @@ export function AccreditationsManager({ initial }: { initial: Item[] }) {
             {items.length} total. Changes appear in the website footer within about a minute. Use transparent PNG or SVG
             logos, ideally white or light artwork for the dark cards. Turn on White card for logos with dark text.
           </CardDescription>
+          <p className="text-xs text-muted-foreground">Recommended logo size: {SIZE_HINTS.logoSquare}</p>
         </div>
         {!adding && (
           <Button onClick={() => setAdding(true)}>

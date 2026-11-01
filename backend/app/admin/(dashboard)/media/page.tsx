@@ -89,7 +89,7 @@ export default function MediaPage() {
     <div>
       <PageHeader
         title="Media Library"
-        subtitle="Every image, video and PDF used across the website. Filter by file type or folder."
+        subtitle="Every image, video and PDF used across the website. Filter by file type or folder. Recommended: pictures 1600 × 1000 px (JPG or WebP, under 500 KB), header pictures 1920 × 1080 px, videos MP4 1920 × 1080 (10–20 s, no sound, under 40 MB), logos PNG with a transparent background."
         action={
           <div>
             <input ref={inputRef} type="file" accept="image/*,video/mp4,video/webm,video/quicktime,application/pdf,.pdf" multiple className="hidden" onChange={onFiles} />

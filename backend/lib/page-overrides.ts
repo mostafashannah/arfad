@@ -11,6 +11,7 @@ export type CatalogItem = {
   text?: string;
   url?: string;
   images?: string[];
+  cls?: string;
 };
 export type CatalogPage = { title: string; items: CatalogItem[] };
 export type Overrides = Record<string, string | string[]>;

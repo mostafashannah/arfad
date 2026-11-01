@@ -130,7 +130,7 @@ class _Annot(HTMLParser):
                 url = m.group(1)
                 key = self._key("i", url)
                 self.inserts.append((el["off"] + 1 + len(el["tag"]), f' data-edit="{key}"'))
-                self.items.append({"key": key, "kind": "image", "tag": el["tag"], "url": url, "section": self._section_idx()})
+                self.items.append({"key": key, "kind": "image", "tag": el["tag"], "url": url, "cls": " ".join(cls), "section": self._section_idx()})
 
     def _excluded_for(self, el):
         return self._excluded()

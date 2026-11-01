@@ -90,6 +90,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "ARFAD at a Glance.",
     "key": "i-decdb44",
     "kind": "image",
@@ -1665,6 +1666,7 @@
     "url": "#policy-doc"
    },
    {
+    "cls": "split-img",
     "group": "HSE Policy",
     "key": "i-22e9030",
     "kind": "image",
@@ -1960,6 +1962,7 @@
     "url": "why-arfad.html"
    },
    {
+    "cls": "split-img",
     "group": "Woodwork Engineered for the Kingdom’s Largest Projects.",
     "key": "i-65bc5c0",
     "kind": "image",
@@ -2018,6 +2021,7 @@
     "url": "machinery.html"
    },
    {
+    "cls": "section photo-band on-navy",
     "group": "Page",
     "key": "i-a5b4525",
     "kind": "image",
@@ -2046,6 +2050,7 @@
     "text": "From certified fire-rated doors to custom joinery, traditional heritage carving and modern composite decking."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -2067,6 +2072,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -2088,6 +2094,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -2109,6 +2116,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-3b22734",
     "kind": "image",
@@ -2130,6 +2138,7 @@
     "text": "Architectural wall cladding, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-e1061b2",
     "kind": "image",
@@ -2151,6 +2160,7 @@
     "text": "Wooden ceilings, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-878395b",
     "kind": "image",
@@ -2172,6 +2182,7 @@
     "text": "Heat-treated timber cladding, decking and pergolas for lasting exterior use."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-4894da8",
     "kind": "image",
@@ -2193,6 +2204,7 @@
     "text": "Custom furniture for hotels, restaurants, offices and residential interiors."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-6e497d9",
     "kind": "image",
@@ -2214,6 +2226,7 @@
     "text": "In-house fabricated natural stone, quartz and engineered stone surfaces."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-3cd04c5",
     "kind": "image",
@@ -2235,6 +2248,7 @@
     "text": "Hand-carved panels, mashrabiya screens and heritage Islamic craftsmanship."
    },
    {
+    "cls": "thumb",
     "group": "A Full Scope of Architectural Woodwork.",
     "key": "i-11a5014",
     "kind": "image",
@@ -2299,6 +2313,7 @@
     "text": "Industrial & Infrastructure"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "i-d1846a4",
     "kind": "image",
@@ -2313,6 +2328,7 @@
     "text": "Hospitality & Luxury Development"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "i-06c6db8",
     "kind": "image",
@@ -2327,6 +2343,7 @@
     "text": "Residential and F&B"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "i-855e724",
     "kind": "image",
@@ -2341,6 +2358,7 @@
     "text": "Commercial & Government"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "i-239db79",
     "kind": "image",
@@ -2355,6 +2373,7 @@
     "text": "Healthcare"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "i-3ef98e2",
     "kind": "image",
@@ -2369,6 +2388,7 @@
     "text": "Education"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "i-2abd6ad",
     "kind": "image",
@@ -2383,6 +2403,7 @@
     "text": "Specialized Projects"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Every Project We Deliver is a Physical Reflection of Our Sta",
     "key": "i-866f0c3",
     "kind": "image",
@@ -2512,6 +2533,7 @@
     "text": "ARFAD Wood Factory is equipped with a comprehensive range of specialized woodworking machinery, supporting precision cutting, routing, shaping, sanding, pressing, edge banding, veneering, and CNC machining at industrial scale."
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-84b780d",
     "kind": "image",
@@ -2526,6 +2548,7 @@
     "text": "Wide Belt Sanding Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-492ccc5",
     "kind": "image",
@@ -2540,6 +2563,7 @@
     "text": "CEFLA 2000D Drying Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-faedd6a",
     "kind": "image",
@@ -2554,6 +2578,7 @@
     "text": "Painting Spray Booth"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-297bba1",
     "kind": "image",
@@ -2568,6 +2593,7 @@
     "text": "Painting Spray Booth"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-a5b4525",
     "kind": "image",
@@ -2582,6 +2608,7 @@
     "text": "Cabinet Presser Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-a6f0b09",
     "kind": "image",
@@ -2596,6 +2623,7 @@
     "text": "Sektar 430 Panel Saw Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-5c5d182",
     "kind": "image",
@@ -2610,6 +2638,7 @@
     "text": "Sektar 430 Panel Saw Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-6553dc1",
     "kind": "image",
@@ -2624,6 +2653,7 @@
     "text": "Hot & Cold Presser Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-ecde963",
     "kind": "image",
@@ -2638,6 +2668,7 @@
     "text": "Reciprocating Spraying Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-449d1bf",
     "kind": "image",
@@ -2652,6 +2683,7 @@
     "text": "Single Side Edge Banding Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-4359d40",
     "kind": "image",
@@ -2666,6 +2698,7 @@
     "text": "Biesse Skipper - 100 - CNC Boring Machine"
    },
    {
+    "cls": "machine-img",
     "group": "Advanced Machinery. Precise Output. Every Time.",
     "key": "i-22e9030",
     "kind": "image",
@@ -3275,6 +3308,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "Al Eissa Compound",
     "key": "i-cb821ac",
     "kind": "image",
@@ -3433,6 +3467,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "KAFD",
     "key": "i-f9ee841",
     "kind": "image",
@@ -3591,6 +3626,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "KARAN Group",
     "key": "i-e2f5840",
     "kind": "image",
@@ -3749,6 +3785,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "MARAFIQ",
     "key": "i-2e5e871",
     "kind": "image",
@@ -3907,6 +3944,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "Ministry of Defense",
     "key": "i-1b065ae",
     "kind": "image",
@@ -4065,6 +4103,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "MISK Foundation (Baytur)",
     "key": "i-f42851b",
     "kind": "image",
@@ -4223,6 +4262,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "Movenpick",
     "key": "i-3270b82",
     "kind": "image",
@@ -4381,6 +4421,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "NEOM (BECo)",
     "key": "i-ceaf7e0",
     "kind": "image",
@@ -4595,6 +4636,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "PRIMER Steak House",
     "key": "i-855e724",
     "kind": "image",
@@ -4753,6 +4795,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "Red Sea Global & AMAALA",
     "key": "i-a81fa98",
     "kind": "image",
@@ -5002,6 +5045,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "Royal Commission for Jubail & Yanbu",
     "key": "i-d4c6750",
     "kind": "image",
@@ -5272,6 +5316,7 @@
     "url": "projects.html"
    },
    {
+    "cls": "split-img",
     "group": "Saudi Aramco",
     "key": "i-d6dddb2",
     "kind": "image",
@@ -7699,6 +7744,7 @@
     "text": "Housing, airport, railway and industrial-city developments delivered for the…"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Explore Our Work by Sector.",
     "key": "i-d1846a4",
     "kind": "image",
@@ -7720,6 +7766,7 @@
     "text": "Giga-project resorts, five-star hotels and luxury developments across NEOM,…"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Explore Our Work by Sector.",
     "key": "i-06c6db8",
     "kind": "image",
@@ -7741,6 +7788,7 @@
     "text": "Villas, apartment buildings, compounds and restaurant fit-outs, from large…"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Explore Our Work by Sector.",
     "key": "i-855e724",
     "kind": "image",
@@ -7762,6 +7810,7 @@
     "text": "Government supporting buildings, headquarters and financial-district…"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Explore Our Work by Sector.",
     "key": "i-239db79",
     "kind": "image",
@@ -7783,6 +7832,7 @@
     "text": "Wooden doors, wall cladding, joinery and custom casework for hospital…"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Explore Our Work by Sector.",
     "key": "i-3ef98e2",
     "kind": "image",
@@ -7804,6 +7854,7 @@
     "text": "School campuses and educational complexes, from doors and joinery to cladding…"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Explore Our Work by Sector.",
     "key": "i-2abd6ad",
     "kind": "image",
@@ -7825,6 +7876,7 @@
     "text": "Mosques, airport joinery, thermowood infrastructure and custom architectural…"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Explore Our Work by Sector.",
     "key": "i-866f0c3",
     "kind": "image",
@@ -7832,6 +7884,7 @@
     "url": "img/proj-neom.jpg"
    },
    {
+    "cls": "section photo-band on-navy",
     "group": "Page",
     "key": "i-a3300fe",
     "kind": "image",
@@ -8143,6 +8196,7 @@
     "url": "#policy-doc"
    },
    {
+    "cls": "split-img",
     "group": "Quality Management",
     "key": "i-d281680",
     "kind": "image",
@@ -8185,6 +8239,7 @@
     "text": "The documented quality system that governs every stage, from pre-production review to final inspection and records."
    },
    {
+    "cls": "cert-row-th",
     "group": "Quality Control Policy & Procedures Manual.",
     "key": "i-1d834dc",
     "kind": "image",
@@ -8660,6 +8715,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Interior Woodworks",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -8709,6 +8765,7 @@
     "text": "Jubail, Dhahran, Ras Al Khair"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d6dddb2",
     "kind": "image",
@@ -8730,6 +8787,7 @@
     "text": "Al Jubail"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d4c6750",
     "kind": "image",
@@ -8751,6 +8809,7 @@
     "text": "Wa'ad Al Shamal"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-3270b82",
     "kind": "image",
@@ -8786,6 +8845,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -8807,6 +8867,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -8828,6 +8889,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -8849,6 +8911,7 @@
     "text": "Architectural wall cladding, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-e1061b2",
     "kind": "image",
@@ -9021,6 +9084,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Wooden Ceilings",
     "key": "i-80517ba",
     "kind": "image",
@@ -9056,6 +9120,7 @@
     "text": "NEOM"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-ceaf7e0",
     "kind": "image",
@@ -9084,6 +9149,7 @@
     "text": "Riyadh"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-f42851b",
     "kind": "image",
@@ -9105,6 +9171,7 @@
     "text": "Al Qassim"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-1b065ae",
     "kind": "image",
@@ -9140,6 +9207,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -9161,6 +9229,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -9182,6 +9251,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -9203,6 +9273,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -9403,6 +9474,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Countertops & Surfaces",
     "key": "i-83af65d",
     "kind": "image",
@@ -9438,6 +9510,7 @@
     "text": "Jubail, Dhahran, Ras Al Khair"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d6dddb2",
     "kind": "image",
@@ -9459,6 +9532,7 @@
     "text": "Al Jubail"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d4c6750",
     "kind": "image",
@@ -9480,6 +9554,7 @@
     "text": "Riyadh"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-f9ee841",
     "kind": "image",
@@ -9515,6 +9590,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -9536,6 +9612,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -9557,6 +9634,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -9578,6 +9656,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -9806,6 +9885,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Wooden Doors",
     "key": "i-f08cc93",
     "kind": "image",
@@ -9884,6 +9964,7 @@
     "text": "Jubail, Dhahran, Ras Al Khair"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d6dddb2",
     "kind": "image",
@@ -9905,6 +9986,7 @@
     "text": "Al Jubail"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d4c6750",
     "kind": "image",
@@ -9926,6 +10008,7 @@
     "text": "AMAALA, Triple Bay, NEOM"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-a81fa98",
     "kind": "image",
@@ -9961,6 +10044,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -9982,6 +10066,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -10003,6 +10088,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -10024,6 +10110,7 @@
     "text": "Architectural wall cladding, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-e1061b2",
     "kind": "image",
@@ -10231,6 +10318,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Furniture & Interiors",
     "key": "i-4894da8",
     "kind": "image",
@@ -10280,6 +10368,7 @@
     "text": "Riyadh"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-855e724",
     "kind": "image",
@@ -10308,6 +10397,7 @@
     "text": "Al Jubail"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-e2f5840",
     "kind": "image",
@@ -10329,6 +10419,7 @@
     "text": "Wa'ad Al Shamal"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-3270b82",
     "kind": "image",
@@ -10364,6 +10455,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -10385,6 +10477,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -10406,6 +10499,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -10427,6 +10521,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -10641,6 +10736,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Joinery",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -10690,6 +10786,7 @@
     "text": "NEOM"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-ceaf7e0",
     "kind": "image",
@@ -10711,6 +10808,7 @@
     "text": "Al Jubail"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-2e5e871",
     "kind": "image",
@@ -10732,6 +10830,7 @@
     "text": "Riyadh"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-f9ee841",
     "kind": "image",
@@ -10767,6 +10866,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -10788,6 +10888,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -10809,6 +10910,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -10830,6 +10932,7 @@
     "text": "Architectural wall cladding, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-e1061b2",
     "kind": "image",
@@ -11009,6 +11112,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Wooden Kitchen Cabinets",
     "key": "i-42ade09",
     "kind": "image",
@@ -11030,6 +11134,7 @@
     "text": "Kitchens & Cabinets"
    },
    {
+    "cls": "split-img",
     "group": "Kitchens & Cabinets",
     "key": "i-42ade09-1",
     "kind": "image",
@@ -11037,6 +11142,7 @@
     "url": "img/svc-kitchen-1.jpg"
    },
    {
+    "cls": "split-img",
     "group": "Kitchens & Cabinets",
     "key": "i-d427728",
     "kind": "image",
@@ -11086,6 +11192,7 @@
     "text": "Jubail, Dhahran, Ras Al Khair"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d6dddb2",
     "kind": "image",
@@ -11107,6 +11214,7 @@
     "text": "Al Jubail"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d4c6750",
     "kind": "image",
@@ -11128,6 +11236,7 @@
     "text": "Wa'ad Al Shamal"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-3270b82",
     "kind": "image",
@@ -11149,6 +11258,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -11170,6 +11280,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -11191,6 +11302,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -11212,6 +11324,7 @@
     "text": "Architectural wall cladding, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-e1061b2",
     "kind": "image",
@@ -11412,6 +11525,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Thermowood",
     "key": "i-878395b",
     "kind": "image",
@@ -11489,6 +11603,7 @@
     "text": "AMAALA, Triple Bay, NEOM"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-a81fa98",
     "kind": "image",
@@ -11503,6 +11618,7 @@
     "text": "Al Eissa Compound Project, ZAC"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-cb821ac",
     "kind": "image",
@@ -11538,6 +11654,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -11559,6 +11676,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -11580,6 +11698,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -11601,6 +11720,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -11815,6 +11935,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Traditional Woodworks",
     "key": "i-3cd04c5",
     "kind": "image",
@@ -11850,6 +11971,7 @@
     "text": "Jubail, Dhahran, Ras Al Khair"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d6dddb2",
     "kind": "image",
@@ -11878,6 +12000,7 @@
     "text": "Al Jubail"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-e2f5840",
     "kind": "image",
@@ -11913,6 +12036,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -11934,6 +12058,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -11955,6 +12080,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -11976,6 +12102,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -12162,6 +12289,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Wooden Wall Claddings",
     "key": "i-ceaf7e0",
     "kind": "image",
@@ -12197,6 +12325,7 @@
     "text": "NEOM"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-ceaf7e0-1",
     "kind": "image",
@@ -12225,6 +12354,7 @@
     "text": "Riyadh"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-f42851b",
     "kind": "image",
@@ -12246,6 +12376,7 @@
     "text": "Al Qassim"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-1b065ae",
     "kind": "image",
@@ -12281,6 +12412,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -12302,6 +12434,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -12323,6 +12456,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -12344,6 +12478,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-e1061b2",
     "kind": "image",
@@ -12544,6 +12679,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "Wardrobes & Closets",
     "key": "i-d32e948",
     "kind": "image",
@@ -12593,6 +12729,7 @@
     "text": "Jubail, Dhahran, Ras Al Khair"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d6dddb2",
     "kind": "image",
@@ -12614,6 +12751,7 @@
     "text": "Al Jubail"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-d4c6750",
     "kind": "image",
@@ -12635,6 +12773,7 @@
     "text": "Wa'ad Al Shamal"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-3270b82",
     "kind": "image",
@@ -12656,6 +12795,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -12677,6 +12817,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -12698,6 +12839,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -12719,6 +12861,7 @@
     "text": "Architectural wall cladding, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-e1061b2",
     "kind": "image",
@@ -13090,6 +13233,7 @@
     "url": "services.html"
    },
    {
+    "cls": "split-img",
     "group": "WPC Works",
     "key": "i-11a5014",
     "kind": "image",
@@ -13125,6 +13269,7 @@
     "text": "AMAALA, Triple Bay, NEOM"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-a81fa98",
     "kind": "image",
@@ -13139,6 +13284,7 @@
     "text": "Al Eissa Compound Project, ZAC"
    },
    {
+    "cls": "gallery-card flash",
     "group": "Related Projects",
     "key": "i-cb821ac",
     "kind": "image",
@@ -13174,6 +13320,7 @@
     "text": "Other Services from ARFAD."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-1fdba08",
     "kind": "image",
@@ -13195,6 +13342,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -13216,6 +13364,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -13237,6 +13386,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Other Services from ARFAD.",
     "key": "i-3b22734",
     "kind": "image",
@@ -13337,6 +13487,7 @@
     "tag": "hero"
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-1fdba08",
     "kind": "image",
@@ -13358,6 +13509,7 @@
     "text": "Engineered doors from fire-rated to X-ray protected, built to full specification."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-3ad4a13",
     "kind": "image",
@@ -13379,6 +13531,7 @@
     "text": "Custom joints, timber framing and architectural fit-outs, built to spec."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-cd2b47f",
     "kind": "image",
@@ -13400,6 +13553,7 @@
     "text": "Complete interior solutions, cabinets, wardrobes, staircases and handrails."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-3b22734",
     "kind": "image",
@@ -13421,6 +13575,7 @@
     "text": "Architectural wall cladding, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-e1061b2",
     "kind": "image",
@@ -13442,6 +13597,7 @@
     "text": "Wooden ceilings, from decorative panels to slatted finishes."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-878395b",
     "kind": "image",
@@ -13463,6 +13619,7 @@
     "text": "Heat-treated timber cladding, decking and pergolas for lasting exterior use."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-4894da8",
     "kind": "image",
@@ -13484,6 +13641,7 @@
     "text": "Custom furniture for hotels, restaurants, offices and residential interiors."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-6e497d9",
     "kind": "image",
@@ -13505,6 +13663,7 @@
     "text": "In-house fabricated natural stone, quartz and engineered stone surfaces."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-3cd04c5",
     "kind": "image",
@@ -13526,6 +13685,7 @@
     "text": "Hand-carved panels, mashrabiya screens and heritage Islamic craftsmanship."
    },
    {
+    "cls": "thumb",
     "group": "Section 2",
     "key": "i-11a5014",
     "kind": "image",
@@ -13669,6 +13829,7 @@
     "url": "certificates.html#fsc"
    },
    {
+    "cls": "split-img",
     "group": "Sustainability & FSC® Certification",
     "key": "i-7db68d0",
     "kind": "image",
@@ -13676,6 +13837,7 @@
     "url": "img/fsc-timber.jpg"
    },
    {
+    "cls": "split-img",
     "group": "Making a Positive Impact on the Environment.",
     "key": "i-1420f77",
     "kind": "image",
@@ -13704,6 +13866,7 @@
     "text": "Sustainability is our strategic approach to building a legacy for future generations, we understand the profound impact that the Woodwork industry can have on our natural resources and the environment. As a result, we prioritize integrating sustainable practices into all facets of our operations, ensuring that our activities, policies, and procedures align with environmentally responsible principles."
    },
    {
+    "cls": "pb-img",
     "group": "Page",
     "key": "i-a94c4a7",
     "kind": "image",

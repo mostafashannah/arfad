@@ -8,6 +8,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { ImagePicker } from "@/components/admin/image-picker";
+import { SIZE_HINTS } from "@/lib/image-sizes";
 import { Loader2, ExternalLink } from "lucide-react";
 
 type Post = {
@@ -122,7 +123,7 @@ export function PostForm({ initial }: { initial?: Post & { id: string } }) {
 
       <div className="space-y-1.5">
         <Label>Cover image</Label>
-        <ImagePicker value={post.coverUrl} onChange={(url) => set("coverUrl", url)} folder="posts" />
+        <ImagePicker value={post.coverUrl} onChange={(url) => set("coverUrl", url)} folder="posts" hint={SIZE_HINTS.cover} />
       </div>
 
       {initial && (

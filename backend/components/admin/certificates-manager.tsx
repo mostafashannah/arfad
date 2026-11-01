@@ -7,6 +7,7 @@ import { Switch } from "@/components/ui/switch";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { ArrowDown, ArrowUp, FileText, Loader2, Plus, RotateCcw, Save, Trash2, Upload } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { SIZE_HINTS } from "@/lib/image-sizes";
 import type { CertItem, CertTab, Certificates } from "@/lib/certificates";
 
 async function upload(file: File, kinds: string[]): Promise<string> {
@@ -173,6 +174,7 @@ export function CertificatesManager({ initial, edited }: { initial: Certificates
               <Input value={tab.label} placeholder="Tab name" onChange={(e) => setTab({ label: e.target.value })} />
               <Input value={tab.heading} placeholder="Page heading" onChange={(e) => setTab({ heading: e.target.value })} />
             </div>
+            <p className="text-xs text-muted-foreground">Recommended: {SIZE_HINTS.certificate}</p>
             <textarea
               value={tab.lede}
               placeholder="Intro text"

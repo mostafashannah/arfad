@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ImagePicker } from "@/components/admin/image-picker";
+import { SIZE_HINTS } from "@/lib/image-sizes";
 import { Loader2, Save } from "lucide-react";
 import type { Branding } from "@/lib/branding";
 
@@ -47,7 +48,7 @@ export function BrandingManager({ initial }: { initial: Branding }) {
                 <img src="/img/logo-full.png" alt="Current header logo" className="h-16 w-auto" style={{ filter: "drop-shadow(0 0 1.5px rgba(255,255,255,.95)) drop-shadow(0 0 7px rgba(255,255,255,.55))" }} />
               </div>
             )}
-            <ImagePicker value={b.headerLogo} onChange={(u) => setB({ ...b, headerLogo: u })} folder="branding" />
+            <ImagePicker value={b.headerLogo} onChange={(u) => setB({ ...b, headerLogo: u })} folder="branding" hint={SIZE_HINTS.logoHeader} />
           </div>
         </CardContent>
       </Card>
@@ -74,7 +75,7 @@ export function BrandingManager({ initial }: { initial: Branding }) {
                 </div>
               </div>
             )}
-            <ImagePicker value={b.footerLogo} onChange={(u) => setB({ ...b, footerLogo: u })} folder="branding" />
+            <ImagePicker value={b.footerLogo} onChange={(u) => setB({ ...b, footerLogo: u })} folder="branding" hint={SIZE_HINTS.logoFooter} />
           </div>
         </CardContent>
       </Card>
