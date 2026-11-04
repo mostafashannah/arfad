@@ -1583,3 +1583,5 @@ header.nav.nav-scrolled .lang-switch:hover{background:var(--navy);color:#fff;bor
 .foot-lang{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid rgba(233,228,216,.3);border-radius:999px;color:#fff;text-decoration:none;font:700 .74rem "Montserrat","Cairo",sans-serif;letter-spacing:.06em;transition:background .25s,color .25s,transform .25s;}
 .foot-lang:hover{background:#fff;color:var(--navy);transform:translateY(-2px);}
 .foot-bottom{align-items:center;}
+.foot-contact .foot-lang{margin-top:16px;}
+.foot-contact a.foot-lang{display:inline-flex;width:fit-content;margin-bottom:0;}

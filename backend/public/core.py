@@ -154,11 +154,11 @@ def render_footer(f):
       <h4 style="margin-top:18px;">{esc(ct["credentialsTitle"])}</h4>
       <p>{creds}</p>
       <div class="cred-logos">{CRED_LOGOS}</div>
+      <a class="foot-lang" href="ar/__PAGE__" hreflang="ar" lang="ar" title="عرض الموقع بالعربية"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span class="fl-text">العربية</span></a>
     </div>
   </div>
   <div class="wrap foot-bottom">
     <span class="doc-tag" data-foot="bottomLeft">{esc(f["bottom"]["left"])}</span>
-    <a class="foot-lang" href="ar/__PAGE__" hreflang="ar" lang="ar" title="عرض الموقع بالعربية"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span class="fl-text">العربية</span></a>
     <span class="doc-tag" data-foot="bottomRight">{esc(f["bottom"]["right"])}</span>
   </div>
 </footer>''')
@@ -1155,6 +1155,7 @@ document.addEventListener("click", function(e){
     }
     var box = document.querySelector('[data-foot="contact"]');
     if(box){
+      var keepLang = box.querySelector(".foot-lang");
       box.textContent = "";
       box.appendChild(el("h4", null, ct.title));
       var p = el("p"); (ct.addressLines || []).forEach(function(line, i){ if(i) p.appendChild(document.createElement("br")); p.appendChild(document.createTextNode(line)); }); box.appendChild(p);
@@ -1163,7 +1164,7 @@ document.addEventListener("click", function(e){
       if(ct.email) box.appendChild(link("mailto:" + ct.email, ct.email));
       var h = el("h4", null, ct.credentialsTitle); h.style.marginTop = "18px"; box.appendChild(h);
       var cp = el("p"); (ct.credentials || []).forEach(function(line, i){ if(i) cp.appendChild(document.createElement("br")); cp.appendChild(document.createTextNode(line)); }); box.appendChild(cp);
-      var cl = el("div", "cred-logos"); [["iso-9001","ISO 9001"],["iso-14001","ISO 14001"],["iso-45001","ISO 45001"],["fsc-mark","FSC"]].forEach(function(l){ var im = el("img"); im.src = "img/accreditation/" + l[0] + ".png" + (l[0].indexOf("iso") === 0 ? "?v=3" : ""); im.alt = l[1]; im.loading = "lazy"; cl.appendChild(im); }); box.appendChild(cl);
+      var cl = el("div", "cred-logos"); [["iso-9001","ISO 9001"],["iso-14001","ISO 14001"],["iso-45001","ISO 45001"],["fsc-mark","FSC"]].forEach(function(l){ var im = el("img"); im.src = "img/accreditation/" + l[0] + ".png" + (l[0].indexOf("iso") === 0 ? "?v=3" : ""); im.alt = l[1]; im.loading = "lazy"; cl.appendChild(im); }); box.appendChild(cl); if(keepLang) box.appendChild(keepLang);
     }
   }
   function renderAcc(items){
