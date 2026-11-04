@@ -158,6 +158,7 @@ def render_footer(f):
   </div>
   <div class="wrap foot-bottom">
     <span class="doc-tag" data-foot="bottomLeft">{esc(f["bottom"]["left"])}</span>
+    <a class="foot-lang" href="ar/__PAGE__" hreflang="ar" lang="ar" title="عرض الموقع بالعربية"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.2 3 14.8 0 18M12 3c-3 3.2-3 14.8 0 18"/></svg><span class="fl-text">العربية</span></a>
     <span class="doc-tag" data-foot="bottomRight">{esc(f["bottom"]["right"])}</span>
   </div>
 </footer>''')
@@ -1314,7 +1315,7 @@ def page(title, desc, active, body, extra_head="", wrap=True, path=None):
     if extra_head:
         head += "\n" + extra_head
     body = title_case_headings(body)
-    content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER + "\n" + SITE_DEFAULTS_TAG + "\n" + WHATSAPP_FAB + "\n" + THEME_SWITCH + "\n" + JS_REVEAL_OBSERVER + "\n" + TRACK_SCRIPT
+    content = JS_REVEAL_INIT + "\n" + nav(active) + "\n" + body + "\n" + FOOTER.replace("__PAGE__", active) + "\n" + SITE_DEFAULTS_TAG + "\n" + WHATSAPP_FAB + "\n" + THEME_SWITCH + "\n" + JS_REVEAL_OBSERVER + "\n" + TRACK_SCRIPT
     if wrap:
         # standalone page (served as-is, not auto-wrapped by the Artifact skeleton)
         return DOCTYPE_OPEN.format(head=head) + content + DOCTYPE_CLOSE

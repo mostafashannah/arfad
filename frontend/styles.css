@@ -1578,3 +1578,8 @@ header.nav.nav-scrolled .lang-switch:hover{background:var(--navy);color:#fff;bor
 .nav-actions{display:flex;align-items:center;gap:8px;flex:none;}
 .nav-actions .lang-switch{margin:0;}
 @media (max-width:900px){ .nav-actions .lang-switch{margin:0;} }
+
+/* footer language switch */
+.foot-lang{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border:1px solid rgba(233,228,216,.3);border-radius:999px;color:#fff;text-decoration:none;font:700 .74rem "Montserrat","Cairo",sans-serif;letter-spacing:.06em;transition:background .25s,color .25s,transform .25s;}
+.foot-lang:hover{background:#fff;color:var(--navy);transform:translateY(-2px);}
+.foot-bottom{align-items:center;}

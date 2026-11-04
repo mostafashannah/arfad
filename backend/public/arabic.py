@@ -160,6 +160,11 @@ def translate(page_html, T, missing=None):
         sw.clear()
         for cls_, txt in (("ls-full", "English"), ("ls-short", "EN")):
             sp = soup.new_tag("span", attrs={"class": cls_}); sp.string = txt; sw.append(sp)
+    for sw in soup.find_all("a", class_="foot-lang"):
+        m = re.match(r"^ar/(.+)$", sw.get("href", ""))
+        sw["href"] = "../" + (m.group(1) if m else "index.html")
+        sw["hreflang"] = "en"; sw["lang"] = "en"; sw["title"] = "View the site in English"
+        sw.find("span", class_="fl-text").string = "English"
     # the admin's page editor addresses elements by these keys, so the Arabic page keeps them
     for el, found in keep:
         if el.parent is not None or el.name == "html":
