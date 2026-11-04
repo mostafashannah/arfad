@@ -1585,3 +1585,6 @@ header.nav.nav-scrolled .lang-switch:hover{background:var(--navy);color:#fff;bor
 .foot-bottom{align-items:center;}
 .foot-contact .foot-lang{margin-top:16px;}
 .foot-contact a.foot-lang{display:inline-flex;width:fit-content;margin-bottom:0;}
+.foot-contact a.foot-lang:hover,.foot-contact a.foot-lang:focus-visible{background:#fff;color:#0a2540;transform:translateY(-2px);text-shadow:none;}
+.foot-contact a.foot-lang:hover .fl-text,.foot-contact a.foot-lang:hover svg{color:#0a2540;}
+.foot-contact a.foot-lang::before{display:none;}
