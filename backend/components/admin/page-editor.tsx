@@ -89,6 +89,11 @@ export function PageEditor({ file, page, initial, pageFiles = [] }: { file: stri
           </Link>
         </Button>
         <div className="flex flex-wrap items-center gap-2">
+          {pageFiles.length > 0 && (
+            <Button asChild variant="outline" size="sm">
+              <Link href={`/admin/pages/${encodeURIComponent(isAr ? file.slice(3) : `ar:${file}`)}`}>{isAr ? "Edit English version" : "Edit Arabic version (العربية)"}</Link>
+            </Button>
+          )}
           <Button asChild variant="outline" size="sm">
             <a href={isAr ? `/ar/${file.slice(3)}` : `/${file}`} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-3.5 w-3.5" /> View page
