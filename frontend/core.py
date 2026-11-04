@@ -113,7 +113,7 @@ def _accredited_track():
 def _foot_logo_block(b):
     """A footer logo shipped with the site (img/footer-logo.png) wins over the built-in block, so a database reset never brings the old logo back."""
     if has_file("img/footer-logo.png"):
-        return '<img class="lk-custom" src="img/footer-logo.png" alt="ARFAD" data-knockout>'
+        return '<img class="lk-custom" src="img/footer-logo.png?v=2" alt="ARFAD">'
     return f'''<div class="lk-top">
         <img class="lk-mark" src="img/logo.png" alt="ARFAD logo">
         <div class="lk-side">
