@@ -1573,3 +1573,8 @@ header.nav.nav-scrolled .lang-switch:hover{background:var(--navy);color:#fff;bor
 .brand.brand-full{flex:none;}
 @media (max-width:480px){ header.nav .cta-desktop,header.nav .nav-inner > .btn.solid{padding-inline:12px;font-size:.72rem;letter-spacing:.02em;white-space:nowrap;} .nav-inner{gap:6px;} }
 @media (max-width:480px){ .brand-logo{height:32px;} .lang-switch{min-width:32px;height:32px;margin-inline-end:4px;} header.nav .cta-desktop,header.nav .nav-inner > .btn.solid{padding-inline:10px;} .nav-toggle{width:34px;} }
+
+/* the switcher and the CTA travel together, right beside each other */
+.nav-actions{display:flex;align-items:center;gap:8px;flex:none;}
+.nav-actions .lang-switch{margin:0;}
+@media (max-width:900px){ .nav-actions .lang-switch{margin:0;} }

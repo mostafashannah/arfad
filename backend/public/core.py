@@ -94,8 +94,10 @@ def nav(active):
     <nav class="links" id="primary-nav" aria-label="Main">
       {links_html}
     </nav>
+    <div class="nav-actions">
     <a class="lang-switch" href="ar/{active}" hreflang="ar" lang="ar" title="عرض الموقع بالعربية"><span class="ls-full">العربية</span><span class="ls-short">ع</span></a>
     <a class="btn solid cta-desktop" href="{cta_href}">{cta}</a>
+    </div>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
       <span></span><span></span><span></span>
     </button>
