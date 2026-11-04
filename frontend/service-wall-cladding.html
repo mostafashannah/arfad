@@ -29,7 +29,7 @@
 <meta name="twitter:description" content="Architectural Wood Surfaces Engineered for Precision and Performance. ARFAD delivers architectural wood cladding systems tailored to each project's design intent, technical requirements, and approved specifications.">
 <meta name="twitter:image" content="https://www.arfad.com.sa/img/hero.jpg">
 <link rel="icon" href="img/logo.png">
-<link rel="stylesheet" href="styles.css?v=5b8c3bdcc3">
+<link rel="stylesheet" href="styles.css?v=cd4af3bc19">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;1,500&display=swap">
 <script type="application/ld+json">
@@ -80,6 +80,7 @@ window.addEventListener("load", function(){ window.scrollTo(0,0); });
       <div class="nav-item"><a class="nav-link" href="media.html">Media</a></div>
       <div class="nav-item"><a class="nav-link" href="contact.html">Contact</a></div>
     </nav>
+    <a class="lang-switch" href="ar/service-wall-cladding.html" hreflang="ar" lang="ar" title="عرض الموقع بالعربية"><span class="ls-full">العربية</span><span class="ls-short">ع</span></a>
     <a class="btn solid cta-desktop" href="contact.html">Request a Quote</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -526,7 +527,7 @@ document.addEventListener("click", function(e){
 (function(){
   var els = document.querySelectorAll("[data-edit]");
   if(!els.length && !document.querySelector("[data-edit-link]")) return;
-  var file = location.pathname.split("/").pop() || "index.html";
+  var file = location.pathname.split("/").pop() || "index.html"; if(window.ARFAD_AR) file = "ar:" + file;
   if(file.indexOf(".") < 0) file = "index.html";
   function safe(u){
     u = String(u || "").trim();

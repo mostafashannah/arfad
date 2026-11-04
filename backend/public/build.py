@@ -21,6 +21,9 @@ with open(os.path.join(ROOT, "..", "backend", "db", "page-catalog.json"), "w") a
     json.dump(PAGE_CATALOG, fh, ensure_ascii=False, indent=1, sort_keys=True)
 import arabic
 _n, _missing = arabic.build()
+PAGE_CATALOG.update(arabic.arabic_catalog(dict((k, v) for k, v in PAGE_CATALOG.items() if not k.startswith("ar:"))))
+with open(os.path.join(ROOT, "..", "backend", "db", "page-catalog.json"), "w") as fh:
+    json.dump(PAGE_CATALOG, fh, ensure_ascii=False, indent=1, sort_keys=True)
 if _missing:
     print("UNTRANSLATED (%d):" % len(_missing), sorted(_missing)[:60])
 print("arabic", _n, "pages")

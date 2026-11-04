@@ -12,12 +12,17 @@ type Row = { file: string; title: string; editable: number; edited: number };
 
 export function PagesList({ pages }: { pages: Row[] }) {
   const [q, setQ] = useState("");
-  const rows = pages.filter((p) => `${p.title} ${p.file}`.toLowerCase().includes(q.trim().toLowerCase()));
+  const [lang, setLang] = useState<"en" | "ar">("en");
+  const rows = pages.filter((p) => p.file.startsWith("ar:") === (lang === "ar") && `${p.title} ${p.file}`.toLowerCase().includes(q.trim().toLowerCase()));
   return (
     <Card>
       <CardHeader>
         <CardTitle>All pages</CardTitle>
         <CardDescription>{rows.length} shown. Pick a page to change its text, pictures or header slider.</CardDescription>
+        <div className="mt-2 flex gap-2">
+          <Button size="sm" variant={lang === "en" ? "default" : "outline"} onClick={() => setLang("en")}>English pages</Button>
+          <Button size="sm" variant={lang === "ar" ? "default" : "outline"} onClick={() => setLang("ar")}>Arabic pages (العربية)</Button>
+        </div>
         <input
           value={q}
           onChange={(e) => setQ(e.target.value)}
@@ -46,7 +51,7 @@ export function PagesList({ pages }: { pages: Row[] }) {
                 <TableCell>
                   <div className="flex justify-end gap-2">
                     <Button asChild size="sm" variant="outline">
-                      <a href={`/${p.file}`} target="_blank" rel="noopener noreferrer">
+                      <a href={p.file.startsWith("ar:") ? `/ar/${p.file.slice(3)}` : `/${p.file}`} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="h-3.5 w-3.5" /> View
                       </a>
                     </Button>

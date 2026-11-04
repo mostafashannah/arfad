@@ -19,6 +19,7 @@ const abs = (u: string) => (/^(https?:)?\/\//.test(u) || u.startsWith("/") ? u :
 const same = (a: unknown, b: unknown) => JSON.stringify(a) === JSON.stringify(b);
 
 export function PageEditor({ file, page, initial, pageFiles = [] }: { file: string; page: CatalogPage; initial: Overrides; pageFiles?: string[] }) {
+  const isAr = file.startsWith("ar:");
   const [values, setValues] = useState<Overrides>(initial);
   const [saved, setSaved] = useState<Overrides>(initial);
   const [busy, setBusy] = useState(false);
@@ -89,7 +90,7 @@ export function PageEditor({ file, page, initial, pageFiles = [] }: { file: stri
         </Button>
         <div className="flex flex-wrap items-center gap-2">
           <Button asChild variant="outline" size="sm">
-            <a href={`/${file}`} target="_blank" rel="noopener noreferrer">
+            <a href={isAr ? `/ar/${file.slice(3)}` : `/${file}`} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-3.5 w-3.5" /> View page
             </a>
           </Button>
@@ -134,12 +135,13 @@ export function PageEditor({ file, page, initial, pageFiles = [] }: { file: stri
                   {it.kind === "text" &&
                     (((values[it.key] as string) ?? it.text ?? "").length > 70 || (it.text ?? "").includes("\n") ? (
                       <Textarea
+                        dir={isAr ? "rtl" : undefined}
                         rows={Math.min(10, Math.max(3, Math.ceil(((values[it.key] as string) ?? it.text ?? "").length / 90)))}
                         value={(values[it.key] as string) ?? it.text ?? ""}
                         onChange={(e) => setValue(it.key, e.target.value === it.text ? null : e.target.value)}
                       />
                     ) : (
-                      <Input value={(values[it.key] as string) ?? it.text ?? ""} onChange={(e) => setValue(it.key, e.target.value === it.text ? null : e.target.value)} />
+                      <Input dir={isAr ? "rtl" : undefined} value={(values[it.key] as string) ?? it.text ?? ""} onChange={(e) => setValue(it.key, e.target.value === it.text ? null : e.target.value)} />
                     ))}
 
                   {it.kind === "link" && (

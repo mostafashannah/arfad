@@ -94,6 +94,7 @@ def nav(active):
     <nav class="links" id="primary-nav" aria-label="Main">
       {links_html}
     </nav>
+    <a class="lang-switch" href="ar/{active}" hreflang="ar" lang="ar" title="عرض الموقع بالعربية"><span class="ls-full">العربية</span><span class="ls-short">ع</span></a>
     <a class="btn solid cta-desktop" href="{cta_href}">{cta}</a>
     <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Open menu">
       <span></span><span></span><span></span>
@@ -635,7 +636,7 @@ document.addEventListener("click", function(e){
 (function(){
   var els = document.querySelectorAll("[data-edit]");
   if(!els.length && !document.querySelector("[data-edit-link]")) return;
-  var file = location.pathname.split("/").pop() || "index.html";
+  var file = location.pathname.split("/").pop() || "index.html"; if(window.ARFAD_AR) file = "ar:" + file;
   if(file.indexOf(".") < 0) file = "index.html";
   function safe(u){
     u = String(u || "").trim();

@@ -11,7 +11,7 @@ export default async function EditPage({ params }: { params: { page: string } })
   return (
     <div>
       <PageHeader title={CATALOG[file].title} subtitle={`/${file}`} />
-      <PageEditor file={file} page={CATALOG[file]} initial={await getOverrides(file)} pageFiles={Object.keys(CATALOG).sort()} />
+      <PageEditor file={file} page={CATALOG[file]} initial={await getOverrides(file)} pageFiles={Object.keys(CATALOG).filter((k) => !k.startsWith("ar:")).sort()} />
     </div>
   );
 }

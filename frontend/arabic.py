@@ -27,12 +27,16 @@ def has_text(el):
 def key_of(el):
     return norm("".join(str(c) for c in el.children))
 
-def parse(page_html):
+def parse(page_html, keep=None):
     soup = BeautifulSoup(page_html, "lxml")
     for el in soup.find_all(True):
+        found = {}
         for a in ("data-edit", "data-edit-link"):
             if a in el.attrs:
+                found[a] = el.attrs[a]
                 del el.attrs[a]
+        if found and keep is not None:
+            keep.append((el, found))
     return soup
 
 RULES = [
@@ -91,7 +95,8 @@ def prefix_assets(val):
     return val
 
 def translate(page_html, T, missing=None):
-    soup = parse(page_html)
+    keep = []
+    soup = parse(page_html, keep)
     html_tag = soup.find("html")
     if html_tag is not None:
         html_tag["lang"] = "ar"; html_tag["dir"] = "rtl"
@@ -147,6 +152,18 @@ def translate(page_html, T, missing=None):
         a = tr(norm(t.get_text()))
         if a is not None:
             t.string = a
+    # language switch: on the Arabic site it leads back to the same English page
+    for sw in soup.find_all("a", class_="lang-switch"):
+        m = re.match(r"^ar/(.+)$", sw.get("href", ""))
+        sw["href"] = "../" + (m.group(1) if m else "index.html")
+        sw["hreflang"] = "en"; sw["lang"] = "en"; sw["title"] = "View the site in English"
+        sw.clear()
+        for cls_, txt in (("ls-full", "English"), ("ls-short", "EN")):
+            sp = soup.new_tag("span", attrs={"class": cls_}); sp.string = txt; sw.append(sp)
+    # the admin's page editor addresses elements by these keys, so the Arabic page keeps them
+    for el, found in keep:
+        if el.parent is not None or el.name == "html":
+            el.attrs.update(found)
     # Arabic font + stylesheet, canonical address, no link to the English twin
     head = soup.find("head")
     if head is not None:
@@ -196,6 +213,9 @@ def build(files_dir=ROOT):
         if 'http-equiv="refresh"' in s or "<main" not in s:
             continue
         out = translate(s, T, missing)
+        if name == "index.html":
+            # the home slider picture is mirrored on the Arabic site so the building sits opposite the right-aligned text
+            out = out.replace("url('../img/proj-rc.jpg')", "url('../img/flipped/proj-rc.jpg')")
         with open(os.path.join(outdir, name), "w", encoding="utf-8") as fh:
             fh.write(out)
         n += 1
@@ -213,3 +233,51 @@ if __name__ == "__main__":
                 allk.setdefault(k, os.path.basename(f))
         json.dump(allk, open(os.path.join(ROOT, "strings_en.json"), "w"), ensure_ascii=False, indent=0)
         print(len(allk))
+
+
+def arabic_catalog(page_catalog):
+    """The admin catalog of every Arabic page: the same editable items as the English page, holding the current Arabic text."""
+    import html as _h
+    out = {}
+    for name, page in page_catalog.items():
+        p = os.path.join(ROOT, "ar", name)
+        if not os.path.exists(p):
+            continue
+        soup = BeautifulSoup(open(p, encoding="utf-8").read(), "lxml")
+        by_edit = {el["data-edit"]: el for el in soup.find_all(attrs={"data-edit": True})}
+        by_link = {el["data-edit-link"]: el for el in soup.find_all(attrs={"data-edit-link": True})}
+        title = soup.find("title")
+        items = []
+        for it in page["items"]:
+            it = dict(it)
+            if it["kind"] == "text":
+                el = by_edit.get(it["key"])
+                if el is None:
+                    continue
+                inner = "".join(str(c) for c in el.children)
+                marked = inner.replace("<em>", "{{").replace("</em>", "}}")
+                it["text"] = _h.unescape(re.sub(r"<br\s*/?>", "\n", marked)).strip()
+                it["text"] = re.sub(r"<[^>]+>", "", it["text"])
+            elif it["kind"] == "link":
+                el = by_link.get(it["key"])
+                if el is None:
+                    continue
+                it["url"] = el.get("href", it.get("url", ""))
+                it["text"] = norm(el.get_text())
+            elif it["kind"] == "image":
+                el = by_edit.get(it["key"])
+                if el is None:
+                    continue
+                m = re.search(r"url\(['\"]?([^'\")]+)", el.get("style") or "")
+                if m:
+                    it["url"] = re.sub(r"^(\.\./)+", "", m.group(1))
+            elif it["kind"] == "hero":
+                el = by_edit.get(it["key"])
+                if el is None:
+                    continue
+                inner = str(el)
+                urls = re.findall(r"url\(['\"]?([^'\")]+)", inner) + re.findall(r"<(?:video|source)[^>]*?\ssrc=[\"']([^\"']+)[\"']", inner)
+                it["images"] = [re.sub(r"^(\.\./)+", "", u) for u in urls if not u.startswith("data:")] or it.get("images", [])
+            items.append(it)
+        out["ar:" + name] = {"title": (norm(title.get_text()) if title else name) + " (العربية)", "items": items}
+    return out
