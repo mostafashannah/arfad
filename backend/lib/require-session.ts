@@ -6,7 +6,8 @@ import { NextResponse } from "next/server";
 // PREVIEW_SESSION usages below) before this holds any real content. While
 // true, every admin API route treats every request as a logged-in ADMIN,
 // with no password required.
-const PREVIEW_NO_LOGIN = true;
+// Turn the login ON without changing code: set the environment variable ADMIN_REQUIRE_LOGIN=true and restart.
+const PREVIEW_NO_LOGIN = process.env.ADMIN_REQUIRE_LOGIN !== "true";
 const PREVIEW_SESSION = {
   user: { id: "preview", name: "Preview Admin", email: "preview@arfad.com.sa", role: "ADMIN" },
 } as any;

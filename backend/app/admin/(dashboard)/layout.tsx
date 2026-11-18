@@ -5,7 +5,11 @@ import { Sidebar } from "@/components/admin/sidebar";
 
 // TEMPORARY PREVIEW BYPASS — matches lib/require-session.ts. Set to false
 // before this holds any real content: with it true, /admin needs no login.
-const PREVIEW_NO_LOGIN = true;
+// Turn the login ON without changing code: set the environment variable ADMIN_REQUIRE_LOGIN=true and restart.
+const PREVIEW_NO_LOGIN = process.env.ADMIN_REQUIRE_LOGIN !== "true";
+
+// read the setting on every request, not once at build time
+export const dynamic = "force-dynamic";
 
 export default async function AdminLayout({ children }: { children: React.ReactNode }) {
   const session = PREVIEW_NO_LOGIN

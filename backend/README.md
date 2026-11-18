@@ -208,3 +208,7 @@ Admin → Pages has an "Arabic pages (العربية)" tab. Each Arabic page lis
 `rsync -a --exclude='*.py' --exclude='__pycache__' --exclude='*.json' frontend/ backend/public/`
 (`site-defaults.json` and `page-catalog.json` live in `backend/db`, not in `public`.)
 To measure what is large on a server: `du -ah <app folder> | sort -rh | head -30`. The usual causes are `DATA_DIR/uploads` (videos and images uploaded from the admin), `.next/cache`, `node_modules`, log files and old backups stored inside the app folder.
+
+## Admin login switch
+
+While the site is in testing, `/admin` needs no password. Before the domain goes public, set the environment variable `ADMIN_REQUIRE_LOGIN=true` and restart: every admin page and admin API then requires the login (`SEED_ADMIN_EMAIL` / `SEED_ADMIN_PASSWORD`). Remove the variable to go back to the open testing mode.
