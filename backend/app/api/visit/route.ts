@@ -14,12 +14,18 @@ export async function POST(req: NextRequest) {
 
     const forwardedFor = req.headers.get("x-forwarded-for");
     const ip = (forwardedFor ? forwardedFor.split(",")[0].trim() : null) || req.headers.get("x-real-ip");
-    const geo = ip ? geoip.lookup(ip) : null;
-    const country = geo?.country ?? null;
+    // the country is a bonus: if the lookup fails the visit is still recorded
+    let country: string | null = null;
+    try {
+      country = (ip ? geoip.lookup(ip) : null)?.country ?? null;
+    } catch (e) {
+      console.error("[visit] country lookup failed:", e instanceof Error ? e.message : e);
+    }
 
     await db.insert(pageViews).values({ path, country, referrer }).run();
     return new NextResponse(null, { status: 204 });
-  } catch {
+  } catch (e) {
+    console.error("[visit] could not record a pageview:", e instanceof Error ? e.message : e);
     return new NextResponse(null, { status: 204 });
   }
 }
