@@ -20,7 +20,13 @@ export const postFields = {
   publishedAt: z
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/, "Date must be YYYY-MM-DD")
-    .refine((v) => new Date(v + "T00:00:00Z").toISOString().slice(0, 10) === v, "Invalid date"),
+    .refine((v) => {
+      try {
+        return new Date(v + "T00:00:00Z").toISOString().slice(0, 10) === v;
+      } catch {
+        return false;
+      }
+    }, "Invalid date"),
   published: z.boolean(),
   slug: z
     .string()
