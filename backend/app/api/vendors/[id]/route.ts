@@ -19,7 +19,8 @@ const patchSchema = z.object({
   active: z.boolean().optional(),
 });
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
   const parsed = patchSchema.safeParse(await req.json().catch(() => null));
@@ -37,7 +38,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json(vendor);
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
   await db.delete(vendors).where(eq(vendors.id, params.id)).run();

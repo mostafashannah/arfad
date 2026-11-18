@@ -4,13 +4,15 @@ import { projects } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { requireSession } from "@/lib/require-session";
 
-export async function GET(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(_req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const project = await db.select().from(projects).where(eq(projects.id, params.id)).get();
   if (!project) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(project);
 }
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
 
@@ -37,7 +39,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json(project);
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
 

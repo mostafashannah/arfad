@@ -20,7 +20,8 @@ const TYPES: Record<string, string> = {
   ".mov": "video/quicktime",
 };
 
-export async function GET(req: Request, { params }: { params: { path: string[] } }) {
+export async function GET(req: Request, ctx: { params: Promise<{ path: string[] }> }) {
+  const params = await ctx.params;
   for (const root of ROOTS) {
     const file = path.resolve(root, ...params.path);
     const type = TYPES[path.extname(file).toLowerCase()];

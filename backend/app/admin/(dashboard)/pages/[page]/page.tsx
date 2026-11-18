@@ -5,7 +5,8 @@ import { CATALOG, getOverrides, isPage } from "@/lib/page-overrides";
 
 export const dynamic = "force-dynamic";
 
-export default async function EditPage({ params }: { params: { page: string } }) {
+export default async function EditPage(ctx: { params: Promise<{ page: string }> }) {
+  const params = await ctx.params;
   const file = decodeURIComponent(params.page);
   if (!isPage(file)) notFound();
   return (

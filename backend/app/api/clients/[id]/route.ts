@@ -20,7 +20,8 @@ const patchSchema = z.object({
   order: z.number().int().min(0).optional(),
 });
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
 
@@ -42,7 +43,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json(client);
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
 

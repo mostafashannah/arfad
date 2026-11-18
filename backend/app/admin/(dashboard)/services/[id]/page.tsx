@@ -6,7 +6,8 @@ import { ServiceForm } from "@/components/admin/service-form";
 
 export const dynamic = "force-dynamic";
 
-export default async function EditServicePage({ params }: { params: { id: string } }) {
+export default async function EditServicePage(ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const service = await db.select().from(services).where(eq(services.id, params.id)).get();
   if (!service) notFound();
 

@@ -6,7 +6,8 @@ import { PostForm } from "@/components/admin/post-form";
 
 export const dynamic = "force-dynamic";
 
-export default async function EditPostPage({ params }: { params: { id: string } }) {
+export default async function EditPostPage(ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const post = await db.select().from(posts).where(eq(posts.id, params.id)).get();
   if (!post) notFound();
 

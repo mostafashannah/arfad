@@ -10,7 +10,8 @@ export const dynamic = "force-dynamic";
 
 const patchSchema = z.object(postFields).partial();
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
 
@@ -29,7 +30,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json(post);
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
 

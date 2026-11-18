@@ -4,14 +4,16 @@ import { CATALOG, getOverrides, isPage, saveOverrides } from "@/lib/page-overrid
 
 export const dynamic = "force-dynamic";
 
-export async function GET(_req: NextRequest, { params }: { params: { page: string } }) {
+export async function GET(_req: NextRequest, ctx: { params: Promise<{ page: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
   if (!isPage(params.page)) return NextResponse.json({ error: "Page not found" }, { status: 404 });
   return NextResponse.json({ page: CATALOG[params.page], overrides: await getOverrides(params.page) });
 }
 
-export async function PUT(req: NextRequest, { params }: { params: { page: string } }) {
+export async function PUT(req: NextRequest, ctx: { params: Promise<{ page: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
   if (!isPage(params.page)) return NextResponse.json({ error: "Page not found" }, { status: 404 });
@@ -20,7 +22,8 @@ export async function PUT(req: NextRequest, { params }: { params: { page: string
   return NextResponse.json({ overrides });
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { page: string } }) {
+export async function DELETE(_req: NextRequest, ctx: { params: Promise<{ page: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
   if (!isPage(params.page)) return NextResponse.json({ error: "Page not found" }, { status: 404 });

@@ -6,7 +6,8 @@ import { ProjectForm } from "@/components/admin/project-form";
 
 export const dynamic = "force-dynamic";
 
-export default async function EditProjectPage({ params }: { params: { id: string } }) {
+export default async function EditProjectPage(ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const project = await db.select().from(projects).where(eq(projects.id, params.id)).get();
   if (!project) notFound();
 

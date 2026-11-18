@@ -15,7 +15,8 @@ const TYPES: Record<string, string> = {
   ".docx": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
 };
 
-export async function GET(_req: Request, { params }: { params: { id: string } }) {
+export async function GET(_req: Request, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
   const id = Number(params.id);

@@ -5,7 +5,8 @@ import { posts } from "@/db/schema";
 
 export const dynamic = "force-dynamic";
 
-export async function GET(_req: Request, { params }: { params: { slug: string } }) {
+export async function GET(_req: Request, ctx: { params: Promise<{ slug: string }> }) {
+  const params = await ctx.params;
   const p = await db
     .select()
     .from(posts)

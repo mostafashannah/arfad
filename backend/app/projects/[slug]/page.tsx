@@ -6,7 +6,8 @@ import { eq } from "drizzle-orm";
 
 export const dynamic = "force-dynamic";
 
-export default async function ProjectDetailPage({ params }: { params: { slug: string } }) {
+export default async function ProjectDetailPage(ctx: { params: Promise<{ slug: string }> }) {
+  const params = await ctx.params;
   const project = await db.select().from(projects).where(eq(projects.slug, params.slug)).get();
   if (!project || !project.published) notFound();
 

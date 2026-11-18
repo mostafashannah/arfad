@@ -4,13 +4,15 @@ import { services } from "@/db/schema";
 import { eq } from "drizzle-orm";
 import { requireSession } from "@/lib/require-session";
 
-export async function GET(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function GET(_req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const service = await db.select().from(services).where(eq(services.id, params.id)).get();
   if (!service) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(service);
 }
 
-export async function PATCH(req: NextRequest, { params }: { params: { id: string } }) {
+export async function PATCH(req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
 
@@ -33,7 +35,8 @@ export async function PATCH(req: NextRequest, { params }: { params: { id: string
   return NextResponse.json(service);
 }
 
-export async function DELETE(_req: NextRequest, { params }: { params: { id: string } }) {
+export async function DELETE(_req: NextRequest, ctx: { params: Promise<{ id: string }> }) {
+  const params = await ctx.params;
   const { error } = await requireSession();
   if (error) return error;
 
