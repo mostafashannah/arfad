@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import bcrypt from "bcryptjs";
 import { db } from "@/db/client";
 import { users } from "@/db/schema";
-import { asc } from "drizzle-orm";
+import { asc, sql } from "drizzle-orm";
 import { requireAdmin } from "@/lib/require-session";
 
 export async function GET() {
@@ -26,12 +26,24 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "name, email and password are required" }, { status: 400 });
   }
 
-  const passwordHash = await bcrypt.hash(body.password, 10);
+  const email = String(body.email).trim().toLowerCase();
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+    return NextResponse.json({ error: "Please enter a valid email address." }, { status: 400 });
+  }
+  if (String(body.password).length < 8) {
+    return NextResponse.json({ error: "The password must be at least 8 characters." }, { status: 400 });
+  }
+  const existing = await db.select({ id: users.id }).from(users).where(sql`lower(${users.email}) = ${email}`).get();
+  if (existing) {
+    return NextResponse.json({ error: "A user with this email already exists." }, { status: 409 });
+  }
+
+  const passwordHash = await bcrypt.hash(String(body.password), 10);
   const [user] = await db
     .insert(users)
     .values({
       name: body.name,
-      email: body.email,
+      email,
       passwordHash,
       role: body.role === "ADMIN" ? "ADMIN" : "EDITOR",
     })
