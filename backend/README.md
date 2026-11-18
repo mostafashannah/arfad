@@ -46,7 +46,7 @@ pages (`/`, `/services`, `/projects`) as a starting point for the real site.
 ```bash
 npm install
 cp .env.example .env        # edit NEXTAUTH_SECRET at minimum
-npm run db:push             # creates the SQLite tables
+# the SQLite tables are created automatically on first start
 npm run seed                # creates an admin user + seeds real ARFAD content
 npm run dev
 ```
@@ -68,7 +68,7 @@ persistent volume for them (don't let them live only in the container's ephemera
 layer). Steps:
 
 1. Set `DATABASE_URL`, `NEXTAUTH_SECRET`, `NEXTAUTH_URL` env vars.
-2. `npm run build && npm run db:push && npm run seed && npm start`.
+2. `npm run build && npm run seed && npm start`.
 3. Mount a persistent volume over `./dev.db*` and `./public/uploads`.
 
 ### Option B — Vercel (serverless)
@@ -91,7 +91,7 @@ change** before deploying there:
 ## Extending it
 
 - **Add a new editable field**: add a column in `db/schema.ts`, run
-  `npm run db:push`, add it to the relevant form component and API route.
+  add the column in `db/ensure-schema.ts` (and `db/schema.ts`), then add it to the relevant form component and API route.
 - **Add a new content type** (e.g. Certificates — the schema already has a
   `certificates` table ready to wire up): copy the `services` list/form/API
   pattern.
