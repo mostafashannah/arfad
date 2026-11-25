@@ -159,7 +159,7 @@ def render_footer(f):
   </div>
   <div class="wrap foot-bottom">
     <span class="doc-tag" data-foot="bottomLeft">{esc(f["bottom"]["left"])}</span>
-    <span class="doc-tag" data-foot="bottomRight">{esc(f["bottom"]["right"])}</span>
+    <span class="doc-tag site-credit">Website designed by <a href="https://admepro.com/" title="admepro, marketing and advertising agency in Cairo">admepro</a></span>
   </div>
 </footer>''')
 

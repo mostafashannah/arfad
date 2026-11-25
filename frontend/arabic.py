@@ -66,7 +66,7 @@ def collect(page_html):
         for c in list(el.children):
             if isinstance(c, Comment) or isinstance(c, NavigableString):
                 continue
-            if c.name in SKIP or c.get("id") == "site-defaults":
+            if c.name in SKIP or c.get("id") == "site-defaults" or "site-credit" in (c.get("class") or []):
                 continue
             if inline_only(c) and has_text(c):
                 out.append(key_of(c))
@@ -121,7 +121,7 @@ def translate(page_html, T, missing=None):
         for c in list(el.children):
             if isinstance(c, Comment) or isinstance(c, NavigableString):
                 continue
-            if c.name in SKIP or c.get("id") == "site-defaults":
+            if c.name in SKIP or c.get("id") == "site-defaults" or "site-credit" in (c.get("class") or []):
                 continue
             if inline_only(c) and has_text(c):
                 a = tr(key_of(c))
@@ -152,6 +152,9 @@ def translate(page_html, T, missing=None):
         a = tr(norm(t.get_text()))
         if a is not None:
             t.string = a
+    # footer credit: Arabic wording, linking the Arabic address
+    for cr in soup.find_all(class_="site-credit"):
+        set_inner(cr, 'تصميم الموقع بواسطة <a href="https://admepro.com/ar/" title="admepro, marketing and advertising agency in Cairo">أدمي برو</a>')
     # language switch: on the Arabic site it leads back to the same English page
     for sw in soup.find_all("a", class_="lang-switch"):
         m = re.match(r"^ar/(.+)$", sw.get("href", ""))
